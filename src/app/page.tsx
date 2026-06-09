@@ -16,25 +16,26 @@ import Footer from '@/components/layout/Footer'
 import BaskiCozumleri from '@/components/sections/BaskiCozumleri'
 import KampanyaSerit from '@/components/sections/KampanyaSerit'
 import Yelenbayrak from '@/components/sections/YelkenBayrak'
+import GuvenRozetleri from '@/components/sections/GuvenRozetleri'
+import FloatingCardsSection from '@/components/sections/FloatingCardsSection'
 
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
 
 export const metadata: Metadata = {
-  title: 'smartdiafon.com.tr — Türkiye\'nin En Hızlı Online Matbaası',
+  title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
   description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında. Profesyonel baskı, hızlı teslimat, uygun fiyat.',
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'smartdiafon.com.tr — Türkiye\'nin En Hızlı Online Matbaası',
+    title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
     description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında.',
     url: SITE_URL,
-    siteName: 'smartdiafon.com.tr',
+    siteName: 'baskıurunleri.com',
     locale: 'tr_TR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'smartdiafon.com.tr — Türkiye\'nin En Hızlı Online Matbaası',
+    title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
     description: 'Büyük format, kartvizit, sticker, tabela. 48 saatte kapında.',
   },
 }
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'smartdiafon.com.tr',
+  name: 'baskıurunleri.com',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   contactPoint: {
@@ -65,8 +66,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 pt-3 sm:pt-6">
           <HeroCarousel />
         </div>
+        <ReferencesSection />
         <BaskiCozumleri />
+        <GuvenRozetleri />
         <KampanyaSerit />
+        <FloatingCardsSection />
         <Favorilerim />
         <UrunlerSection />
         <YeniGelenler />
@@ -76,9 +80,7 @@ export default function Home() {
         <Sektorler />
         <HesaplamaSection />
         <NedenBiz />
-        <ReferencesSection />
         <ReviewsSection />
-        <CtaSection />
       </main>
       <Footer />
     </>

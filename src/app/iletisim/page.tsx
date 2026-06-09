@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -96,7 +96,7 @@ export default function IletisimPage() {
               {/* İletişim kartları */}
               {[
                 { icon: Phone, label: 'Telefon', value: '0212 000 00 00', href: 'tel:02120000000' },
-                { icon: Mail, label: 'E-posta', value: 'info@smartdiafon.com.tr', href: 'mailto:info@smartdiafon.com.tr' },
+                { icon: Mail, label: 'E-posta', value: 'info@baskiurunleri.com', href: 'mailto:info@baskiurunleri.com' },
                 { icon: MapPin, label: 'Adres', value: 'İkitelli OSB, Atatürk Blv. No:1, İstanbul', href: undefined },
                 { icon: Clock, label: 'Çalışma Saatleri', value: 'Pzt–Cmt: 08:00–18:00', href: undefined },
               ].map(({ icon: Icon, label, value, href }) => (
@@ -230,4 +230,3 @@ export default function IletisimPage() {
     </>
   )
 }
-

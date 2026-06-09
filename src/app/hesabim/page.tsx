@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer'
 import { useAuthStore } from '@/lib/store/auth'
 import { orderApi, addressApi, catalogOrderApi } from '@/lib/api'
 import {
-  Package, User, LogOut, MapPin, Plus, Edit3, Trash2, Star, Loader2, X, Check, Truck, Search,
+  Package, LogOut, MapPin, Plus, Edit3, Trash2, Star, Loader2, X, Check, Truck, Search, ExternalLink,
 } from 'lucide-react'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
@@ -44,23 +44,37 @@ const statusMap: Record<string, { label: string; color: string }> = {
 
 type TabKey = 'orders' | 'catalog_orders' | 'addresses'
 
+function getTrackingUrl(trackingNumber: string, cargoCompany?: string): string {
+  const company = (cargoCompany || '').toLowerCase()
+  if (company.includes('yurtiçi') || company.includes('yurtici'))
+    return `https://www.yurticikargo.com/tr/online-islemler/gonderi-sorgula?code=${trackingNumber}`
+  if (company.includes('aras'))
+    return `https://kargotakip.araskargo.com.tr/?takipNo=${trackingNumber}`
+  if (company.includes('mng'))
+    return `https://www.mngkargo.com.tr/gonderi-sorgula?trackno=${trackingNumber}`
+  if (company.includes('ptt'))
+    return `https://www.ptt.gov.tr/tr/takip?barkod=${trackingNumber}`
+  if (company.includes('sürat') || company.includes('surat'))
+    return `https://www.suratkargo.com.tr/kargo-takip?takipNo=${trackingNumber}`
+  if (company.includes('sendeo'))
+    return `https://www.sendeo.com.tr/gonderi-sorgula?trackingNumber=${trackingNumber}`
+  // Varsayılan — Yurtiçi
+  return `https://www.yurticikargo.com/tr/online-islemler/gonderi-sorgula?code=${trackingNumber}`
+}
+
 export default function HesabimPage() {
   const { user, logout } = useAuthStore()
   const router = useRouter()
   const [mounted, setMounted] = useState(false)
-
   const [activeTab, setActiveTab] = useState<TabKey>('catalog_orders')
 
-  // Orders (eski sistem)
   const [orders, setOrders] = useState<any[]>([])
   const [ordersLoading, setOrdersLoading] = useState(true)
 
-  // Katalog siparişleri
   const [catalogOrders, setCatalogOrders] = useState<any[]>([])
   const [catalogOrdersLoading, setCatalogOrdersLoading] = useState(true)
   const [trackingSearch, setTrackingSearch] = useState('')
 
-  // Addresses
   const [addresses, setAddresses] = useState<Address[]>([])
   const [addressesLoading, setAddressesLoading] = useState(true)
   const [addrModalOpen, setAddrModalOpen] = useState(false)
@@ -78,7 +92,6 @@ export default function HesabimPage() {
       if (!stored) { router.push('/giris'); return }
       const { state } = JSON.parse(stored)
       if (!state?.token) { router.push('/giris'); return }
-
       loadOrders()
       loadCatalogOrders()
       loadAddresses()
@@ -119,7 +132,7 @@ export default function HesabimPage() {
       ...EMPTY_ADDR_FORM,
       fullName: user?.name || '',
       phone: user?.phone || '',
-      isDefault: addresses.length === 0,  // ilk adres ise default
+      isDefault: addresses.length === 0,
     })
     setAddrModalOpen(true)
   }
@@ -256,7 +269,6 @@ export default function HesabimPage() {
           {/* KATALOG SİPARİŞLERİM TAB */}
           {activeTab === 'catalog_orders' && (
             <>
-              {/* Sipariş no ile hızlı sorgula */}
               <div className="rounded-xl p-4 mb-4 flex gap-2"
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                 <input
@@ -280,6 +292,7 @@ export default function HesabimPage() {
                   <Search size={13} /> Takip Et
                 </button>
               </div>
+
               {catalogOrdersLoading ? (
                 <div className="space-y-3">
                   {Array.from({ length: 3 }).map((_, i) => (
@@ -310,8 +323,8 @@ export default function HesabimPage() {
                     }
                     const st = statusColors[o.status] || statusColors.PENDING
                     return (
-                      <Link key={o.id} href={`/siparis/${o.orderNumber}`}
-                        className="block rounded-xl p-4 transition-all hover:shadow-sm"
+                      <div key={o.id}
+                        className="rounded-xl p-4 transition-all hover:shadow-sm"
                         style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex-1 min-w-0">
@@ -323,13 +336,6 @@ export default function HesabimPage() {
                                 style={{ background: st.bg, color: st.color }}>
                                 {st.label}
                               </span>
-                              {o.trackingNumber && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold"
-                                  style={{ background: 'rgba(5,150,105,0.1)', color: '#059669' }}>
-                                  <Truck size={9} className="inline mr-1" />
-                                  {o.trackingNumber}
-                                </span>
-                              )}
                             </div>
                             <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
                               {new Date(o.createdAt).toLocaleDateString('tr-TR', {
@@ -341,23 +347,45 @@ export default function HesabimPage() {
                                 {item.productName} ×{item.tierQty}
                               </p>
                             ))}
+
+                            {/* Kargo takip butonu */}
+                            {o.trackingNumber && (
+                              <a
+                                href={getTrackingUrl(o.trackingNumber, o.cargoCompany)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={e => e.stopPropagation()}
+                                className="inline-flex items-center gap-1.5 mt-2 px-3 py-1.5 rounded-lg text-[11px] font-bold hover:opacity-80 transition-opacity"
+                                style={{ background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }}>
+                                <Truck size={11} />
+                                {o.cargoCompany ? `${o.cargoCompany}: ` : 'Kargo: '}
+                                <span className="font-mono">{o.trackingNumber}</span>
+                                <ExternalLink size={9} />
+                              </a>
+                            )}
                           </div>
                           <div className="text-right flex-shrink-0">
                             <p className="text-[18px] font-black" style={{ color: '#F4821F' }}>
                               ₺{Number(o.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                             </p>
-                            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                              Takip →
-                            </p>
+                            <Link
+                              href={`/siparis/${o.orderNumber}`}
+                              className="text-[11px] mt-0.5 hover:underline"
+                              style={{ color: 'var(--text-muted)' }}>
+                              Detay →
+                            </Link>
                           </div>
                         </div>
-                      </Link>
+                      </div>
                     )
                   })}
                 </div>
               )}
             </>
           )}
+
+          {/* ESKİ SİPARİŞLER TAB */}
+          {activeTab === 'orders' && (
             <>
               {ordersLoading ? (
                 <div className="space-y-3">
@@ -437,9 +465,7 @@ export default function HesabimPage() {
                   {addresses.map(a => (
                     <div key={a.id}
                       className="bg-white dark:bg-[#141414] rounded-xl p-4 transition-colors"
-                      style={{
-                        border: a.isDefault ? '1.5px solid #F4821F' : '1px solid var(--border)',
-                      }}>
+                      style={{ border: a.isDefault ? '1.5px solid #F4821F' : '1px solid var(--border)' }}>
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2">
                           <p className="text-[14px] font-bold">{a.title}</p>
@@ -451,7 +477,6 @@ export default function HesabimPage() {
                           )}
                         </div>
                       </div>
-
                       <div className="space-y-1 mb-3">
                         <p className="text-[12px]" style={{ color: 'var(--text-secondary)' }}>
                           {a.fullName} <span className="text-gray-400">·</span> {a.phone}
@@ -463,7 +488,6 @@ export default function HesabimPage() {
                           {a.district}/{a.city}
                         </p>
                       </div>
-
                       <div className="flex items-center gap-2 pt-3 border-t" style={{ borderColor: 'var(--border)' }}>
                         {!a.isDefault && (
                           <button onClick={() => setDefault(a)}
@@ -502,7 +526,6 @@ export default function HesabimPage() {
             <div onClick={e => e.stopPropagation()}
               className="w-full max-w-md rounded-2xl p-6 max-h-[90vh] overflow-y-auto bg-white dark:bg-[#141414]"
               style={{ border: '1px solid var(--border)' }}>
-
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-[16px] font-bold">
                   {editingId ? 'Adresi Düzenle' : 'Yeni Adres'}
@@ -513,11 +536,9 @@ export default function HesabimPage() {
                   <X size={14} />
                 </button>
               </div>
-
               <div className="space-y-3">
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5"
-                    style={{ color: 'var(--text-muted)' }}>
+                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5" style={{ color: 'var(--text-muted)' }}>
                     Adres Adı <span style={{ color: '#EF4444' }}>*</span>
                   </label>
                   <input value={addrForm.title}
@@ -526,10 +547,8 @@ export default function HesabimPage() {
                     className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none"
                     style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }} />
                 </div>
-
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5"
-                    style={{ color: 'var(--text-muted)' }}>
+                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5" style={{ color: 'var(--text-muted)' }}>
                     Ad Soyad <span style={{ color: '#EF4444' }}>*</span>
                   </label>
                   <input value={addrForm.fullName}
@@ -538,10 +557,8 @@ export default function HesabimPage() {
                     className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none"
                     style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }} />
                 </div>
-
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5"
-                    style={{ color: 'var(--text-muted)' }}>
+                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5" style={{ color: 'var(--text-muted)' }}>
                     Telefon <span style={{ color: '#EF4444' }}>*</span>
                   </label>
                   <input value={addrForm.phone}
@@ -550,10 +567,8 @@ export default function HesabimPage() {
                     className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none"
                     style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }} />
                 </div>
-
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5"
-                    style={{ color: 'var(--text-muted)' }}>
+                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5" style={{ color: 'var(--text-muted)' }}>
                     Adres Detayı <span style={{ color: '#EF4444' }}>*</span>
                   </label>
                   <textarea value={addrForm.addressLine}
@@ -563,11 +578,9 @@ export default function HesabimPage() {
                     className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none resize-none"
                     style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }} />
                 </div>
-
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5"
-                      style={{ color: 'var(--text-muted)' }}>
+                    <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5" style={{ color: 'var(--text-muted)' }}>
                       Şehir <span style={{ color: '#EF4444' }}>*</span>
                     </label>
                     <input value={addrForm.city}
@@ -577,8 +590,7 @@ export default function HesabimPage() {
                       style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }} />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5"
-                      style={{ color: 'var(--text-muted)' }}>
+                    <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-1.5" style={{ color: 'var(--text-muted)' }}>
                       İlçe <span style={{ color: '#EF4444' }}>*</span>
                     </label>
                     <input value={addrForm.district}
@@ -588,7 +600,6 @@ export default function HesabimPage() {
                       style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }} />
                   </div>
                 </div>
-
                 <div className="rounded-lg p-3"
                   style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
                   <label className="flex items-center gap-2 cursor-pointer">
@@ -603,7 +614,6 @@ export default function HesabimPage() {
                   </label>
                 </div>
               </div>
-
               <div className="flex gap-3 mt-5 pt-4" style={{ borderTop: '1px solid var(--border)' }}>
                 <button onClick={closeAddrModal}
                   className="px-5 py-2.5 text-[13px] rounded-lg"
