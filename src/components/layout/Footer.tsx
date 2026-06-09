@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <Logo className="h-8 mb-4" />
             <p className="text-[11px] leading-relaxed max-w-[200px]" style={{ color: 'var(--text-muted)' }}>
-              Türkiye'nin en hızlı online matbaa platformu. Kaliteli baskı, hızlı teslimat.
+              IP interkom, görüntülü zil ve güvenlik sistemleri çözümleri.
             </p>
             <div className="flex gap-2 mt-5">
               {[Instagram, Linkedin].map((Icon, i) => (
@@ -80,8 +80,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-[12px]" style={{ color: 'var(--text-muted)' }}>
                 <Mail size={13} className="flex-shrink-0" />
-                <a href="mailto:info@baskıurunleri.com" className="hover:text-[#F4821F] transition-colors">
-                  info@baskıurunleri.com
+                <a href="mailto:info@smartdiafon.com.tr" className="hover:text-[#F4821F] transition-colors">
+                  info@smartdiafon.com.tr
                 </a>
               </li>
             </ul>
@@ -92,7 +92,7 @@ export default function Footer() {
         <div className="pt-6 flex items-center justify-between flex-wrap gap-3"
           style={{ borderTop: '1px solid var(--border)' }}>
           <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
-            © 2026 baskıurunleri.com — Tüm hakları saklıdır
+            © 2026 smartdiafon.com.tr — Tüm hakları saklıdır
           </span>
           <div className="flex items-center gap-4">
             <Link href="/gizlilik" className="text-[11px] transition-colors hover:text-[#F4821F]"

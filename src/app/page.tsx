@@ -18,23 +18,23 @@ import KampanyaSerit from '@/components/sections/KampanyaSerit'
 import Yelenbayrak from '@/components/sections/YelkenBayrak'
 
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 export const metadata: Metadata = {
-  title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
+  title: 'smartdiafon.com.tr — Türkiye\'nin En Hızlı Online Matbaası',
   description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında. Profesyonel baskı, hızlı teslimat, uygun fiyat.',
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
+    title: 'smartdiafon.com.tr — Türkiye\'nin En Hızlı Online Matbaası',
     description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında.',
     url: SITE_URL,
-    siteName: 'baskıurunleri.com',
+    siteName: 'smartdiafon.com.tr',
     locale: 'tr_TR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
+    title: 'smartdiafon.com.tr — Türkiye\'nin En Hızlı Online Matbaası',
     description: 'Büyük format, kartvizit, sticker, tabela. 48 saatte kapında.',
   },
 }
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'baskıurunleri.com',
+  name: 'smartdiafon.com.tr',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   contactPoint: {

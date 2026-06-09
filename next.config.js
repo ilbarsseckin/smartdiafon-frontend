@@ -1,19 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: false,`n  output: 'standalone',
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080',
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com',
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8082',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr',
   },
   async redirects() {
-    return [
-      // Eski statik sistemden kalan kartvizit URL'si → yeni katalog ürününe kalıcı yönlendir
-      {
-        source: '/urun/kartvizit',
-        destination: '/urun/standart-kartvizit',
-        permanent: true, // 301 — tarayıcı + Google cache'ler, SEO aktarılır
-      },
-    ]
+    return []
   },
 }
 

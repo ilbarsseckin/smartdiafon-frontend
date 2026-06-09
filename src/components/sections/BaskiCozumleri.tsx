@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { ArrowRight, Phone, Sparkles } from 'lucide-react'
@@ -52,7 +52,7 @@ export default function BaskiCozumleri() {
           style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
         >
           <img
-            src="/baskiurunleri-showcase.png"
+            src="/smartdiafon-showcase.png"
             alt="Baskı ürünleri vitrini"
             className="block h-auto w-full select-none"
             loading="lazy"

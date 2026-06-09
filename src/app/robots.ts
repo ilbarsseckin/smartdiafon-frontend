@@ -1,6 +1,6 @@
-import type { MetadataRoute } from 'next'
+﻿import type { MetadataRoute } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -32,3 +32,4 @@ export default function robots(): MetadataRoute.Robots {
     host: SITE_URL,
   }
 }
+

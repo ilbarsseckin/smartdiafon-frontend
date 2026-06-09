@@ -1,7 +1,7 @@
-import type { MetadataRoute } from 'next'
+﻿import type { MetadataRoute } from 'next'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 async function fetchProducts(): Promise<Array<{ slug: string; updatedAt?: string }>> {
   try {
@@ -93,3 +93,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRoutes, ...categoryRoutes, ...productRoutes]
 }
+

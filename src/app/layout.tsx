@@ -9,13 +9,13 @@ import WhatsAppButton from '@/components/ui/WhatsAppButton'
 import CookieConsent from '@/components/ui/CookieConsent'
 import Analytics from '@/components/ui/Analytics'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "baskıurunleri.com — Türkiye'nin En Hızlı Online Matbaası",
-    template: '%s | baskıurunleri.com',
+    default: "smartdiafon.com.tr — IP nterkom & Güvenlik Sistemleri",
+    template: '%s | smartdiafon.com.tr',
   },
   description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında.',
   icons: {
@@ -51,3 +51,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
+
