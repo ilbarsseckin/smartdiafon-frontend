@@ -66,7 +66,7 @@ export default function Home() {
         <ReferencesSection />
         <GuvenRozetleri />
         <KampanyaSerit />
-       // <FloatingCardsSection />
+  
         <Favorilerim />
         <UrunlerSection />
         <YeniGelenler />
