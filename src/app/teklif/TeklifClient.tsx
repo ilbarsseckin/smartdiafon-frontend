@@ -347,6 +347,35 @@ export default function TeklifClient() {
             <Info size={14} style={{ flexShrink: 0, marginTop: 2 }} />
             <span>Her blokta bahçe, otopark gibi ek girişler için kapı paneli sayısını artırabilirsiniz (blok başına 4 adede kadar önerilir).</span>
           </div>
+
+          {/* İki yol — otomatik veya kendi seçimi */}
+          {daire > 0 && kapi > 0 && (
+            <div className="grid md:grid-cols-2 gap-4 mt-6">
+              <button onClick={() => { setTeklifMode('otomatik'); setStep(4) }}
+                className="text-left p-5 rounded-2xl transition-all hover:scale-[1.01]"
+                style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)', color: '#fff' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <Zap size={20} />
+                  <span className="font-black text-[15px]">Otomatik Teklif Hazırla</span>
+                </div>
+                <p className="text-[12px] opacity-90">
+                  Daire ve kapı sayınıza göre ekonomik, standart ve premium paketleri hemen görün.
+                </p>
+              </button>
+
+              <button onClick={() => { setTeklifMode('kendi'); setStep(3) }}
+                className="text-left p-5 rounded-2xl transition-all hover:scale-[1.01]"
+                style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <Cpu size={20} style={{ color: '#F4821F' }} />
+                  <span className="font-black text-[15px]" style={{ color: 'var(--text-primary)' }}>Ürünleri Kendim Seçeceğim</span>
+                </div>
+                <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                  Monitör ve kapı paneli modellerini tek tek seçerek özel teklif oluşturun.
+                </p>
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -573,18 +602,18 @@ export default function TeklifClient() {
           <ChevronLeft size={18} /> Geri
         </button>
 
-        {step < 4 ? (
+        {step < 4 && step !== 2 ? (
           <button onClick={() => canNext && setStep(s => s + 1)}
             disabled={!canNext}
             className="flex items-center gap-1 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02] disabled:opacity-40 disabled:hover:scale-100"
             style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)' }}>
             {step === 3 ? 'Teklifi Oluştur' : 'Devam Et'} <ChevronRight size={18} />
           </button>
-        ) : (
+        ) : step === 4 ? (
           <span className="text-[13px] font-bold" style={{ color: 'var(--text-muted)' }}>
-            Toplam (seçili): {fmtTl(seciliTotal)}
+            {teklifMode === 'kendi' ? `Toplam: ${fmtTl(seciliTotal)}` : 'Size en uygun paketi seçin'}
           </span>
-        )}
+        ) : <span />}
       </div>
     </div>
   )
