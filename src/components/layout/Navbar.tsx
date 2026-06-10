@@ -38,9 +38,8 @@ interface Product {
 
 const topUtility = [
   { href: '/kampanyalar',     label: 'Kampanyalar',                icon: Sparkles   },
+  { href: '/teklif',          label: 'Teklif Hazırla',             icon: FileText   },
   { href: '/nasil-siparis',   label: 'Nasıl Sipariş Verebilirim?', icon: FileText   },
-  { href: '/tasarim-yukleme', label: 'Tasarım Yükleme ve Onay',   icon: Upload     },
-  { href: '/tasarim-destegi', label: 'Ücretsiz Tasarım Desteği',  icon: Sparkles   },
   { href: '/blog',            label: 'Blog',                       icon: BookOpen   },
   { href: '/yardim',          label: 'Yardım Merkezi',             icon: HelpCircle },
   { href: '/iletisim',        label: 'İletişim',                   icon: Phone      },
@@ -59,6 +58,12 @@ function getBadge(slug: string): { label: string; bg: string; color: string } | 
   if (slug.startsWith('yaldizli-') || slug.includes('yaldiz'))
     return { label: 'Yaldızlı', bg: '#F59E0B', color: '#fff' }
   return null
+}
+
+/* Kategori linki — "teklif" slug'ı teklif aracına gider */
+function katHref(slug: string): string {
+  if (slug === 'teklif') return '/teklif'
+  return `/katalog/${slug}`
 }
 
 export default function Navbar() {
@@ -194,7 +199,7 @@ export default function Navbar() {
               </Link>
 
               {/* Hamburger */}
-              <button onClick={() => { setMobileMenu(o => !o); setMobileSearch(false) }}
+              <button onClick={() => { setMobileMenu(o => !o) }}
                 className="w-10 h-10 rounded-xl flex items-center justify-center"
                 style={{ border: '1px solid var(--border)' }}>
                 {mobileMenu ? <X size={16} style={{ color: 'var(--text-secondary)' }} /> : <Menu size={16} style={{ color: 'var(--text-secondary)' }} />}
@@ -265,7 +270,7 @@ export default function Navbar() {
                   {idx > 0 && !isActive && (
                     <div className="w-px h-4 mx-0.5" style={{ background: 'var(--border)' }} />
                   )}
-                  <Link href={`/katalog/${k.slug}`}
+                  <Link href={katHref(k.slug)}
                     className="relative flex items-center gap-1 text-[11.5px] font-bold px-3 py-1.5 rounded-md transition-all whitespace-nowrap"
                     style={{
                       color: isActive ? '#fff' : 'var(--text-primary)',
@@ -357,7 +362,7 @@ export default function Navbar() {
                   Kategoriler
                 </p>
                 {categories.map(k => (
-                  <Link key={k.slug} href={`/katalog/${k.slug}`} onClick={() => setMobileMenu(false)}
+                  <Link key={k.slug} href={katHref(k.slug)} onClick={() => setMobileMenu(false)}
                     className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[13px]"
                     style={{ color: 'var(--text-secondary)' }}>
                     {k.icon} {k.name}

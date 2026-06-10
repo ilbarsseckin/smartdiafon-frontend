@@ -137,6 +137,24 @@ export default function TeklifClient() {
   // Ek aksesuarlar: { productId: adet }
   const [aksesuarlar, setAksesuarlar] = useState<Record<string, number>>({})
 
+  /* ---- URL parametrelerinden ön doldur (ana sayfa hızlı teklif) ---- */
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const d = parseInt(params.get('daire') || '0')
+    const k = parseInt(params.get('kapi') || '0')
+    const s = params.get('sistem')
+    const auto = params.get('auto')
+    if (s === 'ip') setAltyapi('cat')
+    else if (s === 'dt8') setAltyapi('dt8')
+    if (d > 0) setDaire(d)
+    if (k > 0) setKapi(k)
+    if (auto === '1' && d > 0) {
+      setTeklifMode('otomatik')
+      setStep(4)
+    }
+  }, [])
+
   /* ---- Veri çek ---- */
   useEffect(() => {
     let active = true
