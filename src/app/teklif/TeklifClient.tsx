@@ -30,21 +30,14 @@ interface Paket {
   totalTl: number
 }
 
-/* ---------- Ürün ismi sınıflandırma yardımcıları ---------- */
-// Bir Multibus monitör mü?
-function isMonitor(name: string) {
-  const n = name.toUpperCase()
-  return (/\bMB-?\d/.test(n) || n.includes('MBT-70')) && n.includes('MONITOR')
-}
-function isKapiPaneli(name: string) {
-  const n = name.toUpperCase()
-  return n.includes('KAPI PANELI') && n.startsWith('MB')
-}
+/* ---------- Multibus kategori slug'ları ---------- */
+const SLUG_MONITOR = 'multibus-ev-ici-monitor'
+const SLUG_PANEL = 'multibus-kapi-paneli'
+const SLUG_GUVENLIK = 'multibus-guvenlik'
+const SLUG_DIAFONBOX = 'multibus-diafonbox'
+
 function isGuvenlikKonsolu(name: string) {
   return name.toUpperCase().includes('GUVENLIK KONSOL')
-}
-function isDiafonBox(name: string) {
-  return name.toUpperCase().includes('DIYAFON BOX') || name.toUpperCase().includes('DIAFON BOX')
 }
 
 /* Monitör seviyesi (paketleme için) — düşük=ekonomik */
@@ -129,18 +122,32 @@ export default function TeklifClient() {
     return () => { active = false }
   }, [])
 
-  /* ---- Multibus ürünlerini ayıkla ---- */
+  /* ---- Multibus ürünlerini ayıkla (kategori slug bazlı) ---- */
   const monitorler = useMemo(
-    () => products.filter(p => isMonitor(p.name)).sort((a, b) => monitorSeviye(a.name) - monitorSeviye(b.name)),
+    () => products.filter(p => {
+      if (p.categorySlug !== SLUG_MONITOR) return false
+      const n = p.name.toUpperCase()
+      if (!n.includes('MONITOR')) return false
+      if (n.includes('APARAT') || n.includes('KASA') || n.includes('TUTTURMA')) return false
+      return true
+    }).sort((a, b) => monitorSeviye(a.name) - monitorSeviye(b.name)),
     [products]
   )
   const paneller = useMemo(
-    () => products.filter(p => isKapiPaneli(p.name)).sort((a, b) => paneliSeviye(a.name) - paneliSeviye(b.name)),
+    () => products.filter(p => {
+      if (p.categorySlug !== SLUG_PANEL) return false
+      const n = p.name.toUpperCase()
+      if (!n.includes('KAPI PANELI')) return false
+      // Aksesuarları hariç tut
+      if (n.includes('YAGMURLUK') || n.includes('CEVIRME') || n.includes('APARAT') ||
+          n.includes('KASA') || n.includes('ISIMLIK') || n.includes('ISIMLI')) return false
+      return true
+    }).sort((a, b) => paneliSeviye(a.name) - paneliSeviye(b.name)),
     [products]
   )
-  const guvenlik = useMemo(() => products.find(p => isGuvenlikKonsolu(p.name)), [products])
-  const dbMini = useMemo(() => products.find(p => p.name.toUpperCase().includes('DIYAFON BOX MINI')), [products])
-  const dbMaxi = useMemo(() => products.find(p => p.name.toUpperCase().includes('DIYAFON BOX MAXI')), [products])
+  const guvenlik = useMemo(() => products.find(p => p.categorySlug === SLUG_GUVENLIK && isGuvenlikKonsolu(p.name)) || products.find(p => isGuvenlikKonsolu(p.name)), [products])
+  const dbMini = useMemo(() => products.find(p => p.categorySlug === SLUG_DIAFONBOX && p.name.toUpperCase().includes('MINI')), [products])
+  const dbMaxi = useMemo(() => products.find(p => p.categorySlug === SLUG_DIAFONBOX && p.name.toUpperCase().includes('MAXI')), [products])
   const gucKaynagiUrun = useMemo(
     () => products.find(p => p.name.toUpperCase().includes('GUC KAYNAGI') || p.name.toUpperCase().includes('REDRESOR')),
     [products]
