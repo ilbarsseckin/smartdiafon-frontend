@@ -63,8 +63,8 @@ export default function Home() {
           <HeroCarousel />
         </div>
         <ReferencesSection />
-        <GuvenRozetleri />
         <AkilliEvShowcase />
+        <GuvenRozetleri />
         <KampanyaSerit />
         <FloatingCardsSection />
         <Favorilerim />
