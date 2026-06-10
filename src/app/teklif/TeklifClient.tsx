@@ -93,6 +93,9 @@ export default function TeklifClient() {
   const [telefon, setTelefon] = useState('')
   const [eposta, setEposta] = useState('')
 
+  // Adım 4 görünüm modu: kendi seçimi mi, otomatik paketler mi
+  const [teklifMode, setTeklifMode] = useState<'kendi' | 'otomatik'>('otomatik')
+
   /* ---- Veri çek ---- */
   useEffect(() => {
     let active = true
@@ -363,15 +366,20 @@ export default function TeklifClient() {
             <label className="block text-[13px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
               Daire İçi Monitör <span style={{ color: '#F4821F' }}>({daire} adet)</span>
             </label>
-            <select value={monitorId} onChange={e => setMonitorId(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl text-[14px]"
-              style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}>
-              {monitorler.map(m => (
-                <option key={m.id} value={m.id}>
-                  {m.name} — {fmtTl(m.minPriceUsd * kur)}
-                </option>
-              ))}
-            </select>
+            <div className="flex gap-3 items-start">
+              <img src={products.find(p => p.id === monitorId)?.mainImageUrl || ''}
+                alt="" className="w-20 h-20 rounded-xl object-cover flex-shrink-0"
+                style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }} />
+              <select value={monitorId} onChange={e => setMonitorId(e.target.value)}
+                className="flex-1 px-4 py-3 rounded-xl text-[14px]"
+                style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}>
+                {monitorler.map(m => (
+                  <option key={m.id} value={m.id}>
+                    {m.name} — {fmtTl(m.minPriceUsd * kur)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* Kapı paneli */}
@@ -379,15 +387,20 @@ export default function TeklifClient() {
             <label className="block text-[13px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
               Kapı Paneli <span style={{ color: '#F4821F' }}>({kapi} adet)</span>
             </label>
-            <select value={panelId} onChange={e => setPanelId(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl text-[14px]"
-              style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}>
-              {paneller.map(p => (
-                <option key={p.id} value={p.id}>
-                  {p.name} — {fmtTl(p.minPriceUsd * kur)}
-                </option>
-              ))}
-            </select>
+            <div className="flex gap-3 items-start">
+              <img src={products.find(p => p.id === panelId)?.mainImageUrl || ''}
+                alt="" className="w-20 h-20 rounded-xl object-cover flex-shrink-0"
+                style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)' }} />
+              <select value={panelId} onChange={e => setPanelId(e.target.value)}
+                className="flex-1 px-4 py-3 rounded-xl text-[14px]"
+                style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}>
+                {paneller.map(p => (
+                  <option key={p.id} value={p.id}>
+                    {p.name} — {fmtTl(p.minPriceUsd * kur)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* Güç kaynağı + video yükseltici — elle */}
@@ -415,7 +428,28 @@ export default function TeklifClient() {
       {/* ===== ADIM 4: Teklif ===== */}
       {step === 4 && (
         <div className="space-y-6">
-          {/* 3 Paket */}
+          {/* Mod seçici */}
+          <div className="flex gap-2 p-1 rounded-2xl" style={{ background: 'var(--bg-secondary)' }}>
+            <button onClick={() => setTeklifMode('otomatik')}
+              className="flex-1 py-3 rounded-xl font-bold text-[13px] transition-all"
+              style={{
+                background: teklifMode === 'otomatik' ? '#F4821F' : 'transparent',
+                color: teklifMode === 'otomatik' ? '#fff' : 'var(--text-muted)',
+              }}>
+              Otomatik Paketler
+            </button>
+            <button onClick={() => setTeklifMode('kendi')}
+              className="flex-1 py-3 rounded-xl font-bold text-[13px] transition-all"
+              style={{
+                background: teklifMode === 'kendi' ? '#F4821F' : 'transparent',
+                color: teklifMode === 'kendi' ? '#fff' : 'var(--text-muted)',
+              }}>
+              Kendi Seçimim
+            </button>
+          </div>
+
+          {/* OTOMATİK — 3 Paket */}
+          {teklifMode === 'otomatik' && (
           <div className="grid md:grid-cols-3 gap-4">
             {paketler.map(pk => (
               <div key={pk.key} className="rounded-2xl p-5 flex flex-col"
@@ -444,6 +478,38 @@ export default function TeklifClient() {
               </div>
             ))}
           </div>
+          )}
+
+          {/* KENDİ SEÇİMİ — tek teklif tablosu */}
+          {teklifMode === 'kendi' && (
+          <div className="rounded-2xl p-5 md:p-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
+            <h3 className="text-lg font-black mb-4" style={{ color: 'var(--text-primary)' }}>Seçtiğiniz Ürünler</h3>
+            <div className="space-y-2 mb-4">
+              {seciliItems.length === 0 && (
+                <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>Henüz ürün seçilmedi. Önceki adımdan ürün ekleyin.</p>
+              )}
+              {seciliItems.map((it, i) => (
+                <div key={i} className="flex items-center justify-between py-2"
+                  style={{ borderBottom: '1px solid var(--border)' }}>
+                  <div className="flex-1 pr-3">
+                    <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>{it.name}</p>
+                    <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                      {it.qty} × {fmtTl(it.unitUsd * kur)}
+                    </p>
+                  </div>
+                  <p className="text-[14px] font-black" style={{ color: 'var(--text-primary)' }}>
+                    {fmtTl(it.qty * it.unitUsd * kur)}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-between pt-3" style={{ borderTop: '2px solid var(--border)' }}>
+              <span className="text-[15px] font-bold" style={{ color: 'var(--text-primary)' }}>Genel Toplam</span>
+              <span className="text-2xl font-black" style={{ color: '#F4821F' }}>{fmtTl(seciliTotal)}</span>
+            </div>
+            <p className="text-[10px] mt-2" style={{ color: 'var(--text-muted)' }}>KDV hariç. Kurulum/kablaj dahil değildir.</p>
+          </div>
+          )}
 
           {/* İstanbul kurulum notu */}
           {sehir.toLowerCase().includes('istanbul') && (
