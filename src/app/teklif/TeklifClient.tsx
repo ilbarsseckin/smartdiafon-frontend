@@ -16,11 +16,15 @@ interface ApiProduct {
   categorySlug: string
   minPriceUsd: number
   mainImageUrl: string
+  shortDesc?: string
 }
 interface LineItem {
   name: string
   qty: number
   unitUsd: number
+  slug?: string
+  image?: string
+  shortDesc?: string
 }
 interface Paket {
   key: 'ekonomik' | 'standart' | 'premium'
@@ -112,7 +116,7 @@ export default function TeklifClient() {
         const list: ApiProduct[] = (prodRes.data?.data || []).map((p: any) => ({
           id: p.id, name: p.name, slug: p.slug,
           categorySlug: p.categorySlug, minPriceUsd: p.minPriceUsd || 0,
-          mainImageUrl: p.mainImageUrl,
+          mainImageUrl: p.mainImageUrl, shortDesc: p.shortDesc,
         }))
         setProducts(list)
       } catch (e) {
@@ -196,12 +200,12 @@ export default function TeklifClient() {
       const mon = monitorler.find(m => monitorSeviye(m.name) >= monLvl) || monitorler[monitorler.length - 1]
       const pan = paneller.find(p => paneliSeviye(p.name) >= panLvl) || paneller[paneller.length - 1]
       const items: LineItem[] = []
-      if (mon) items.push({ name: mon.name, qty: daire, unitUsd: mon.minPriceUsd })
-      if (pan) items.push({ name: pan.name, qty: kapi, unitUsd: pan.minPriceUsd })
-      if (guvenlik) items.push({ name: guvenlik.name, qty: 1, unitUsd: guvenlik.minPriceUsd })
+      if (mon) items.push({ name: mon.name, qty: daire, unitUsd: mon.minPriceUsd, slug: mon.slug, image: mon.mainImageUrl, shortDesc: mon.shortDesc })
+      if (pan) items.push({ name: pan.name, qty: kapi, unitUsd: pan.minPriceUsd, slug: pan.slug, image: pan.mainImageUrl, shortDesc: pan.shortDesc })
+      if (guvenlik) items.push({ name: guvenlik.name, qty: 1, unitUsd: guvenlik.minPriceUsd, slug: guvenlik.slug, image: guvenlik.mainImageUrl, shortDesc: guvenlik.shortDesc })
       if (diafon) {
         const db = pickDiafonBox()
-        if (db) items.push({ name: db.name, qty: 1, unitUsd: db.minPriceUsd })
+        if (db) items.push({ name: db.name, qty: 1, unitUsd: db.minPriceUsd, slug: db.slug, image: db.mainImageUrl, shortDesc: db.shortDesc })
       }
       const totalTl = items.reduce((s, it) => s + it.qty * it.unitUsd * kur, 0)
       return { key, label, items, totalTl }
@@ -279,7 +283,7 @@ export default function TeklifClient() {
       <div className="flex items-start gap-2 p-3 rounded-xl mb-6 text-[13px]"
         style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-secondary)' }}>
         <Info size={16} style={{ color: '#F4821F', flexShrink: 0, marginTop: 2 }} />
-        <span>Bu hesaplama aracı <b>Multibus görüntülü diyafon</b> sistemleri içindir. Fiyatlar güncel USD kuru ({kur}₺) ile hesaplanır.</span>
+        <span>Bu hesaplama aracı <b>Multibus görüntülü diyafon</b> sistemleri içindir. Mevcut altyapınızın DT8 kablo yapısına uygun olması gerekir.</span>
       </div>
 
       {/* ===== ADIM 1: Altyapı ===== */}
@@ -457,24 +461,11 @@ export default function TeklifClient() {
       {/* ===== ADIM 4: Teklif ===== */}
       {step === 4 && (
         <div className="space-y-6">
-          {/* Mod seçici */}
-          <div className="flex gap-2 p-1 rounded-2xl" style={{ background: 'var(--bg-secondary)' }}>
-            <button onClick={() => setTeklifMode('otomatik')}
-              className="flex-1 py-3 rounded-xl font-bold text-[13px] transition-all"
-              style={{
-                background: teklifMode === 'otomatik' ? '#F4821F' : 'transparent',
-                color: teklifMode === 'otomatik' ? '#fff' : 'var(--text-muted)',
-              }}>
-              Otomatik Paketler
-            </button>
-            <button onClick={() => setTeklifMode('kendi')}
-              className="flex-1 py-3 rounded-xl font-bold text-[13px] transition-all"
-              style={{
-                background: teklifMode === 'kendi' ? '#F4821F' : 'transparent',
-                color: teklifMode === 'kendi' ? '#fff' : 'var(--text-muted)',
-              }}>
-              Kendi Seçimim
-            </button>
+          {/* Geçerlilik süresi */}
+          <div className="flex items-center justify-center gap-2 text-[12px] font-medium py-2 px-4 rounded-full mx-auto w-fit"
+            style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-secondary)' }}>
+            <Info size={13} style={{ color: '#F4821F' }} />
+            <span>Bu teklif hazırlanma tarihinden itibaren <b>7 gün</b> geçerlidir.</span>
           </div>
 
           {/* OTOMATİK — 3 Paket */}
@@ -494,16 +485,31 @@ export default function TeklifClient() {
                   </span>
                 )}
                 <h3 className="text-lg font-black mb-1" style={{ color: 'var(--text-primary)' }}>{pk.label}</h3>
-                <p className="text-2xl font-black mb-3" style={{ color: '#F4821F' }}>{fmtTl(pk.totalTl)}</p>
-                <ul className="space-y-2 flex-1 mb-4">
+                <p className="text-2xl font-black mb-4" style={{ color: '#F4821F' }}>{fmtTl(pk.totalTl)}</p>
+                <div className="space-y-3 flex-1 mb-4">
                   {pk.items.map((it, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
-                      <Check size={14} style={{ color: '#10B981', flexShrink: 0, marginTop: 2 }} />
-                      <span>{it.qty}× {it.name.length > 38 ? it.name.slice(0, 38) + '…' : it.name}</span>
-                    </li>
+                    <a key={i} href={it.slug ? `/urun/${it.slug}` : '#'} target="_blank" rel="noopener noreferrer"
+                      className="flex gap-3 p-2 rounded-xl transition-colors"
+                      style={{ background: 'var(--bg-secondary)' }}>
+                      <img src={it.image || ''} alt="" className="w-14 h-14 rounded-lg object-cover flex-shrink-0"
+                        style={{ border: '1px solid var(--border)' }} />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[12px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>
+                          {it.qty}× {it.name.length > 30 ? it.name.slice(0, 30) + '…' : it.name}
+                        </p>
+                        {it.shortDesc && (
+                          <p className="text-[10px] mt-0.5 leading-tight" style={{ color: 'var(--text-muted)' }}>
+                            {it.shortDesc.length > 50 ? it.shortDesc.slice(0, 50) + '…' : it.shortDesc}
+                          </p>
+                        )}
+                        <p className="text-[10px] mt-0.5 font-medium" style={{ color: '#F4821F' }}>
+                          Ürünü incele →
+                        </p>
+                      </div>
+                    </a>
                   ))}
-                </ul>
-                <p className="text-[10px] mb-3" style={{ color: 'var(--text-muted)' }}>KDV hariç. Kurulum/kablaj dahil değildir.</p>
+                </div>
+                <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>KDV hariç. Kurulum/kablaj dahil değildir.</p>
               </div>
             ))}
           </div>
@@ -620,8 +626,12 @@ export default function TeklifClient() {
 
   /* ---- Aksiyonlar ---- */
   function buildSummaryText() {
+    const bugun = new Date()
+    const sonGecerlilik = new Date(bugun.getTime() + 7 * 24 * 60 * 60 * 1000)
     const lines = [
       'SMARTDIAFON — PROJE TEKLİFİ',
+      `Tarih: ${bugun.toLocaleDateString('tr-TR')}`,
+      `Geçerlilik: ${sonGecerlilik.toLocaleDateString('tr-TR')} tarihine kadar`,
       `Altyapı: Multibus (DT8)`,
       `Daire: ${daire} | Blok: ${blok} | Kapı: ${kapi}`,
       sehir ? `Şehir: ${sehir}` : '',
