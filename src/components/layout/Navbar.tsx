@@ -265,7 +265,9 @@ export default function Navbar() {
             {categories.map((k, idx) => {
               const isActive = megaOpen === k.slug
               return (
-                <div key={k.slug} onMouseEnter={() => openMega(k.slug)} onMouseLeave={closeMega}
+                <div key={k.slug}
+                  onMouseEnter={() => k.slug !== 'teklif' && openMega(k.slug)}
+                  onMouseLeave={closeMega}
                   className="relative h-full flex items-center">
                   {idx > 0 && !isActive && (
                     <div className="w-px h-4 mx-0.5" style={{ background: 'var(--border)' }} />

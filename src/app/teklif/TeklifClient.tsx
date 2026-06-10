@@ -124,6 +124,7 @@ export default function TeklifClient() {
   const [videoYukseltici, setVideoYukseltici] = useState(0)
   const [guvenlikKonsolu, setGuvenlikKonsolu] = useState(false)
   const [diafonBox, setDiafonBox] = useState(false)
+  const [asansor, setAsansor] = useState(false)
   const [sehir, setSehir] = useState('')
 
   // Lead
@@ -227,6 +228,10 @@ export default function TeklifClient() {
     () => products.find(p => p.name.toUpperCase().includes('GUC KAYNAGI') || p.name.toUpperCase().includes('REDRESOR')),
     [products]
   )
+  const asansorUrun = useMemo(
+    () => products.find(p => p.name.toUpperCase().includes('ASANSOR')),
+    [products]
+  )
 
   /* ---- Ek aksesuarlar (sisteme göre) ---- */
   const aksesuarListesi = useMemo(() => {
@@ -300,6 +305,8 @@ export default function TeklifClient() {
     }
     if (gucKaynagi > 0 && gucKaynagiUrun)
       items.push({ name: gucKaynagiUrun.name, qty: gucKaynagi, unitUsd: gucKaynagiUrun.minPriceUsd })
+    if (asansor && asansorUrun)
+      items.push({ name: asansorUrun.name, qty: 1, unitUsd: asansorUrun.minPriceUsd, slug: asansorUrun.slug, image: asansorUrun.mainImageUrl, shortDesc: asansorUrun.shortDesc })
     // Ek aksesuarlar
     Object.entries(aksesuarlar).forEach(([id, qty]) => {
       const p = products.find(x => x.id === id)
@@ -353,7 +360,7 @@ export default function TeklifClient() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-12">
+    <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-12 overflow-x-hidden">
       {/* Başlık */}
       <div className="text-center mb-8">
         <h1 className="text-2xl md:text-3xl font-black tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
@@ -566,8 +573,9 @@ export default function TeklifClient() {
           {/* Opsiyonlar */}
           <div className="space-y-3">
             <Toggle label="Güvenlik Konsolu" desc="Bina girişinde güvenlik/danışma birimi" checked={guvenlikKonsolu} onChange={setGuvenlikKonsolu} />
+            <Toggle label="Asansör Bağlantısı" desc="Asansör kabini arama/haberleşme seti" checked={asansor} onChange={setAsansor} />
             {sistem === 'multibus' && (
-              <Toggle label="DiafonBox (Cebe Bağlantı)" desc="Tüm binanın diyafonunu cep telefonuna taşır" checked={diafonBox} onChange={setDiafonBox} />
+              <Toggle label="DiafonBox (Cebe Bağlantı)" desc="Tüm binanın diyafonunu cep telefonuna taşır — yalnızca Multibus" checked={diafonBox} onChange={setDiafonBox} />
             )}
           </div>
 
@@ -584,11 +592,18 @@ export default function TeklifClient() {
       {/* ===== ADIM 4: Teklif ===== */}
       {step === 4 && (
         <div className="space-y-6">
-          {/* Geçerlilik süresi */}
-          <div className="flex items-center justify-center gap-2 text-[12px] font-medium py-2 px-4 rounded-full mx-auto w-fit"
-            style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-secondary)' }}>
-            <Info size={13} style={{ color: '#F4821F' }} />
-            <span>Bu teklif hazırlanma tarihinden itibaren <b>7 gün</b> geçerlidir.</span>
+          {/* Sistem + Geçerlilik */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="flex items-center gap-1.5 text-[12px] font-bold py-2 px-4 rounded-full"
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+              <Cable size={13} />
+              {sistem === 'ip' ? 'IP İnterkom · Cat5/Cat6 Kablo' : 'Multibus · DT8 Kablo'}
+            </span>
+            <span className="flex items-center gap-1.5 text-[12px] font-medium py-2 px-4 rounded-full"
+              style={{ background: 'var(--bg-secondary)', color: 'var(--text-secondary)' }}>
+              <Info size={13} />
+              Bu teklif 7 gün geçerlidir.
+            </span>
           </div>
 
           {/* OTOMATİK — 3 Paket */}
