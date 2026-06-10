@@ -79,9 +79,7 @@ export default function Navbar() {
   const [products, setProducts] = useState<Product[]>([])
   const [searchOpen, setSearchOpen] = useState(false)
   const [megaOpen, setMegaOpen] = useState<string | null>(null)
-  const [kurumsalOpen, setKurumsalOpen] = useState(false)
   const [mobileMenu, setMobileMenu] = useState(false)
-  const kurumsalRef = useRef<HTMLDivElement>(null)
   const megaTimer = useRef<NodeJS.Timeout>()
 
   useEffect(() => {
@@ -101,15 +99,6 @@ export default function Navbar() {
       setAllCategories(flat)
       setProducts(prodRes.data.data || [])
     }).catch(err => console.error('Navbar veri yüklenemedi:', err))
-  }, [])
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (kurumsalRef.current && !kurumsalRef.current.contains(e.target as Node))
-        setKurumsalOpen(false)
-    }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
   }, [])
 
   // Mobil arama açılınca input'a focus
@@ -290,26 +279,6 @@ export default function Navbar() {
               )
             })}
             <div className="flex-1" />
-            <div ref={kurumsalRef} className="relative flex-shrink-0">
-              <button onClick={() => setKurumsalOpen(o => !o)}
-                className="flex items-center gap-1 text-[11.5px] font-medium px-2.5 py-1.5 rounded-lg transition-colors whitespace-nowrap"
-                style={{ color: 'var(--text-secondary)' }}>
-                Kurumsal
-                <ChevronDown size={11} className={`transition-transform duration-200 ${kurumsalOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {kurumsalOpen && (
-                <div className="absolute top-full right-0 mt-1 w-[180px] rounded-xl overflow-hidden shadow-lg z-50"
-                  style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-                  {kurumsal.map(l => (
-                    <Link key={l.href} href={l.href} onClick={() => setKurumsalOpen(false)}
-                      className="block px-4 py-2.5 text-[13px] transition-colors hover:text-[#F4821F]"
-                      style={{ color: 'var(--text-secondary)', borderBottom: '1px solid var(--border)' }}>
-                      {l.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
           </div>
         </div>
 

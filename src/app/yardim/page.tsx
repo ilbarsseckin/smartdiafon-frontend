@@ -4,33 +4,34 @@ import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import {
-  ShoppingBag, Palette, UserCircle, CreditCard, XCircle, Package,
-  Tag, Sparkles, MessageCircle, Phone, ChevronDown, HelpCircle, Search,
+  ShoppingBag, Wrench, UserCircle, CreditCard, XCircle, Package,
+  Tag, Shield, MessageCircle, Phone, ChevronDown, HelpCircle, Search,
 } from 'lucide-react'
 
 const quickCards = [
   { icon: ShoppingBag, title: 'Sipariş Süreçleri', desc: 'Nasıl sipariş verilir?', color: '#F4821F', href: '/nasil-siparis' },
-  { icon: Palette, title: 'Tasarım & İade', desc: 'Tasarım yükleme süreci', color: '#16a34a', href: '/tasarim-yukleme' },
+  { icon: Tag, title: 'Teklif & Fiyat', desc: 'Proje teklifi hesaplama', color: '#D97706', href: '/teklif' },
+  { icon: Wrench, title: 'Kurulum & Montaj', desc: 'Montaj ekibi desteği', color: '#16a34a', href: '/kurulum-ekibi' },
   { icon: UserCircle, title: 'Üyelik & Hesap', desc: 'Hesap işlemleri', color: '#2563eb', href: '/hesabim' },
   { icon: CreditCard, title: 'Ödeme & Fatura', desc: 'Ödeme yöntemleri', color: '#9333ea', href: '#odeme' },
-  { icon: XCircle, title: 'İptal & İade', desc: 'İade koşulları', color: '#db2777', href: '#iade' },
-  { icon: Package, title: 'Ürün Bilgileri', desc: 'Ürün özellikleri', color: '#0891b2', href: '/urunler' },
-  { icon: Tag, title: 'Fiyat & Teklif', desc: 'Fiyat hesaplama', color: '#D97706', href: '#fiyat' },
-  { icon: Sparkles, title: 'Ücretsiz Tasarım', desc: 'Tasarım desteği', color: '#059669', href: '/tasarim-destegi' },
+  { icon: Shield, title: 'Garanti', desc: 'Ürün garanti şartları', color: '#0891b2', href: '#garanti' },
+  { icon: Package, title: 'Ürün Bilgileri', desc: 'Sistem ve ürün özellikleri', color: '#db2777', href: '/urunler' },
+  { icon: XCircle, title: 'İptal & İade', desc: 'İade koşulları', color: '#059669', href: '#iade' },
 ]
 
 const faqs = [
-  { q: 'Adreslerimi nasıl yönetebilirim?', a: 'Hesabım sayfasındaki "Adreslerim" sekmesinden yeni adres ekleyebilir, mevcut adreslerinizi düzenleyebilir veya silebilirsiniz. Varsayılan adres belirleyerek siparişlerinizde otomatik dolmasını sağlayabilirsiniz.' },
-  { q: 'Sipariş numaramı nereden öğrenebilirim?', a: 'Siparişinizi tamamladığınızda size bir sipariş numarası verilir. Bu numarayı Hesabım > Siparişlerim sayfasından veya size gönderilen e-postadan bulabilirsiniz.' },
-  { q: 'Siparişimi nasıl takip edebilirim?', a: 'Hesabım > Siparişlerim sayfasından siparişinizin güncel durumunu görebilirsiniz. Kargoya verildiğinde takip numarası eklenir ve doğrudan kargo firmasının sayfasından takip edebilirsiniz.' },
-  { q: 'Siparişim ne zaman elime ulaşır?', a: 'Tasarım onayından sonra ürünleriniz genellikle 48 saat içinde hazırlanır ve kargoya verilir. Kargo süresi bulunduğunuz şehre göre 1-3 iş günü arasında değişir.' },
-  { q: 'Siparişimin durumunu nasıl öğrenebilirim?', a: 'Siparişiniz şu aşamalardan geçer: Ödeme Bekliyor → Onaylandı → Üretimde → Hazır → Kargoda → Teslim Edildi. Her aşamayı Hesabım sayfasından takip edebilirsiniz.' },
-  { q: 'Siparişimi iptal edebilir miyim?', a: 'Üretime başlanmamış siparişlerinizi iptal edebilirsiniz. Üretime geçen veya kişiye özel tasarım içeren siparişlerde iptal mümkün olmayabilir. Detaylı bilgi için müşteri hizmetlerimizle iletişime geçin.' },
-  { q: 'Tasarımı onayladıktan sonra değişiklik yapabilir miyim?', a: 'Tasarım onayından sonra üretim başladığı için değişiklik yapılamaz. Bu yüzden onay vermeden önce tasarımınızı dikkatlice kontrol etmenizi öneririz.' },
+  { q: 'Hangi diyafon sistemini seçmeliyim?', a: 'Mevcut altyapınıza göre değişir: Eski binalarda DT8 kablo varsa Multibus, yeni binalarda Cat5/Cat6 ethernet altyapısı varsa IP veya Linux interkom sistemleri önerilir. Teklif hesaplama aracımızdan üç sistemi karşılaştırabilirsiniz.' },
+  { q: 'Görüntüsüz diyafonumu görüntülüye çevirebilir miyim?', a: 'Evet. Mevcut altyapınıza uygun bir görüntülü diyafon sistemi ile yükseltme yapılabilir. Çoğu durumda mevcut kablolama korunarak monitör ve kapı paneli değişimi yeterlidir.' },
+  { q: 'DiafonBox nedir, ne işe yarar?', a: 'DiafonBox, binanızdaki diyafon sistemini cep telefonunuza bağlayan bir cihazdır. Evde olmasanız bile kapı zilini telefonunuzdan görüp cevaplayabilir, kapıyı açabilirsiniz. Yalnızca Multibus (DT8) sistemlerle çalışır.' },
+  { q: 'Proje için nasıl teklif alabilirim?', a: 'Teklif Hazırla sayfasından daire, kapı ve blok sayınızı girerek saniyeler içinde ekonomik, standart ve premium paket tekliflerini görebilirsiniz. Dilerseniz ürünleri kendiniz de seçebilirsiniz.' },
+  { q: 'Kurulum ve montaj hizmeti veriyor musunuz?', a: 'Teklif aldıktan sonra "Kurulum ve Montaj da İstiyorum" seçeneğini işaretlerseniz, bölgenizdeki yetkili montaj ekibimiz sizinle iletişime geçer. İstanbul ve çevresinde kurulum ekibimiz hazırdır.' },
+  { q: 'Ürünler orijinal mi, garantili mi?', a: 'Tüm ürünlerimiz Multitek yetkili satıcısı olarak orijinaldir ve üretici garantisi kapsamındadır. Garanti süresi ve şartları ürüne göre değişir, ürün sayfasında belirtilir.' },
+  { q: 'Siparişimi nasıl takip edebilirim?', a: 'Hesabım > Siparişlerim sayfasından siparişinizin güncel durumunu görebilirsiniz. Kargoya verildiğinde takip numarası eklenir ve kargo firmasının sayfasından takip edebilirsiniz.' },
+  { q: 'Siparişim ne zaman elime ulaşır?', a: 'Stokta bulunan ürünler sipariş onayından sonra genellikle aynı gün veya ertesi gün kargoya verilir. Kargo süresi bulunduğunuz şehre göre 1-3 iş günü arasında değişir.' },
   { q: 'Ödeme yöntemleri nelerdir?', a: 'iyzico altyapısı ile güvenli kredi kartı ve banka kartı ödemesi kabul ediyoruz. Tüm kartlara taksit imkânı sunulmaktadır.' },
   { q: 'Faturamı nasıl alabilirim?', a: 'Siparişiniz tamamlandığında e-faturanız kayıtlı e-posta adresinize gönderilir. Kurumsal fatura için sipariş sırasında firma bilgilerinizi girmeniz yeterlidir.' },
-  { q: 'Neden üye olmalıyım?', a: 'Üye olarak siparişlerinizi takip edebilir, adreslerinizi kaydedebilir, geçmiş siparişlerinize ulaşabilir ve kampanyalardan haberdar olabilirsiniz.' },
-  { q: 'Tasarım yüklerken nelere dikkat etmeliyim?', a: 'Tasarımınız en az 300 DPI çözünürlükte, CMYK renk modunda ve baskı boyutuna uygun olmalıdır. Yazı tiplerini outline yapmayı ve kenarlarda taşma payı bırakmayı unutmayın.' },
+  { q: 'Montaj ekibi olarak nasıl başvurabilirim?', a: 'Diyafon, interkom ve güvenlik sistemleri montajında uzmansanız "Kurulum ve Montaj Ekibine Katıl" sayfasından başvurabilirsiniz. Bölgenizden gelen kurulum taleplerini size yönlendiririz.' },
+  { q: 'Apartmanım için kaç monitör ve panel gerekir?', a: 'Genel kural: her daireye 1 monitör, her bina girişine (bahçe, otopark dahil) 1 kapı paneli gerekir. Teklif aracımız daire ve kapı sayınıza göre adetleri otomatik hesaplar.' },
 ]
 
 export default function YardimPage() {
@@ -165,7 +166,7 @@ export default function YardimPage() {
                 Hızlı yanıt için WhatsApp üzerinden bize ulaşın.
               </p>
               <span className="text-[12px] font-bold" style={{ color: '#25D366' }}>
-                BİZE ARAYIN →
+                BİZE ULAŞIN →
               </span>
             </a>
           </div>

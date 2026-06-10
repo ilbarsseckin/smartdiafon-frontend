@@ -12,9 +12,10 @@ const WA_URL = (mesaj: string) =>
 
 const KONULAR = [
   'Fiyat Teklifi',
+  'Proje Danışmanlığı',
   'Sipariş Takibi',
-  'Tasarım Desteği',
-  'Teknik Sorun',
+  'Teknik Destek',
+  'Kurulum & Montaj',
   'Bayi / İş Birliği',
   'Diğer',
 ]
@@ -65,7 +66,7 @@ export default function IletisimPage() {
               Size nasıl yardımcı olabiliriz?
             </h1>
             <p className="text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Formu doldurun, WhatsApp'tan yazın ya da doğrudan arayın — en kısa sürede dönüş yaparız.
+              Projeniz için teklif alın, ürünlerimiz hakkında bilgi edinin ya da teknik destek için bize ulaşın — en kısa sürede dönüş yaparız.
             </p>
           </div>
         </div>
@@ -96,9 +97,9 @@ export default function IletisimPage() {
               {/* İletişim kartları */}
               {[
                 { icon: Phone, label: 'Telefon', value: '0212 000 00 00', href: 'tel:02120000000' },
-                { icon: Mail, label: 'E-posta', value: 'info@baskiurunleri.com', href: 'mailto:info@baskiurunleri.com' },
-                { icon: MapPin, label: 'Adres', value: 'İkitelli OSB, Atatürk Blv. No:1, İstanbul', href: undefined },
-                { icon: Clock, label: 'Çalışma Saatleri', value: 'Pzt–Cmt: 08:00–18:00', href: undefined },
+                { icon: Mail, label: 'E-posta', value: 'info@smartdiafon.com.tr', href: 'mailto:info@smartdiafon.com.tr' },
+                { icon: MapPin, label: 'Adres', value: 'İstanbul', href: undefined },
+                { icon: Clock, label: 'Çalışma Saatleri', value: 'Pzt–Cmt: 09:00–18:00', href: undefined },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label}
                   className="flex items-start gap-4 p-4 rounded-2xl"
@@ -195,7 +196,7 @@ export default function IletisimPage() {
                     <label className="text-[11px] font-bold uppercase tracking-[1px] mb-1.5 block"
                       style={{ color: 'var(--text-muted)' }}>Mesajınız *</label>
                     <textarea value={form.mesaj} onChange={e => set('mesaj', e.target.value)}
-                      placeholder="Merhaba, kartvizit baskısı için fiyat almak istiyorum..."
+                      placeholder="Merhaba, apartmanımız için görüntülü diyafon sistemi teklifi almak istiyorum..."
                       rows={5}
                       className="w-full px-3 py-2.5 rounded-xl text-[13px] outline-none resize-none"
                       style={{ background: 'var(--bg-secondary)', border: form.mesaj ? '1.5px solid #F4821F' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
