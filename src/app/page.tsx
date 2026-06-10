@@ -62,11 +62,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 pt-3 sm:pt-6">
           <HeroCarousel />
         </div>
-        <ReferencesSection />
         <AkilliEvShowcase />
+        <ReferencesSection />
         <GuvenRozetleri />
         <KampanyaSerit />
-        <FloatingCardsSection />
+       // <FloatingCardsSection />
         <Favorilerim />
         <UrunlerSection />
         <YeniGelenler />
