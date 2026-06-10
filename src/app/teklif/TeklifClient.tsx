@@ -126,6 +126,7 @@ export default function TeklifClient() {
   const [diafonBox, setDiafonBox] = useState(false)
   const [asansor, setAsansor] = useState(false)
   const [sehir, setSehir] = useState('')
+  const [kurulumIstiyor, setKurulumIstiyor] = useState(false)
 
   // Lead
   const [adSoyad, setAdSoyad] = useState('')
@@ -731,6 +732,20 @@ export default function TeklifClient() {
             </div>
           )}
 
+          {/* Kurulum onay mesajı */}
+          {kurulumIstiyor && (
+            <div className="flex items-center gap-3 p-4 rounded-2xl"
+              style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)' }}>
+              <MapPin size={20} style={{ color: '#10B981' }} />
+              <div>
+                <p className="font-bold text-[14px]" style={{ color: 'var(--text-primary)' }}>Kurulum talebiniz alındı</p>
+                <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                  {sehir ? `${sehir} bölgesindeki` : 'Bölgenizdeki'} yetkili montaj ekibimiz, teklifinizi gönderdikten sonra sizinle iletişime geçecek.
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* İstanbul kurulum notu */}
           {sehir.toLowerCase().includes('istanbul') && (
             <div className="flex items-center gap-3 p-4 rounded-2xl"
@@ -742,6 +757,27 @@ export default function TeklifClient() {
               </div>
             </div>
           )}
+
+          {/* Kurulum & montaj talebi */}
+          <button onClick={() => setKurulumIstiyor(v => !v)}
+            className="w-full flex items-center justify-between p-4 rounded-2xl transition-all text-left"
+            style={{
+              background: kurulumIstiyor ? 'rgba(16,185,129,0.1)' : 'var(--bg-card)',
+              border: kurulumIstiyor ? '1px solid #10B981' : '1px solid var(--border)',
+            }}>
+            <div className="flex items-center gap-3">
+              <MapPin size={20} style={{ color: kurulumIstiyor ? '#10B981' : '#F4821F' }} />
+              <div>
+                <p className="font-bold text-[14px]" style={{ color: 'var(--text-primary)' }}>Kurulum ve Montaj da İstiyorum</p>
+                <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>Bölgenizdeki yetkili montaj ekibimiz sizinle iletişime geçsin</p>
+              </div>
+            </div>
+            <div className="w-11 h-6 rounded-full flex-shrink-0 transition-all relative"
+              style={{ background: kurulumIstiyor ? '#10B981' : 'var(--border)' }}>
+              <div className="w-5 h-5 rounded-full bg-white absolute top-0.5 transition-all"
+                style={{ left: kurulumIstiyor ? '22px' : '2px' }} />
+            </div>
+          </button>
 
           {/* Lead formu */}
           <div className="rounded-2xl p-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
@@ -820,6 +856,7 @@ export default function TeklifClient() {
       `Altyapı: ${sistem === 'ip' ? 'IP İnterkom (Cat5/Cat6)' : 'Multibus (DT8)'}`,
       `Daire: ${daire} | Blok: ${blok} | Kapı: ${kapi}`,
       sehir ? `Şehir: ${sehir}` : '',
+      kurulumIstiyor ? '>>> KURULUM VE MONTAJ TALEBİ VAR <<<' : '',
       '',
       'Paketler:',
       ...paketler.map(p => `- ${p.label}: ${fmtTl(p.totalTl)} (KDV hariç)`),
