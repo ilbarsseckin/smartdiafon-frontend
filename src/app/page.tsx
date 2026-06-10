@@ -14,7 +14,7 @@ import Footer from '@/components/layout/Footer'
 import KampanyaSerit from '@/components/sections/KampanyaSerit'
 import GuvenRozetleri from '@/components/sections/GuvenRozetleri'
 import FloatingCardsSection from '@/components/sections/FloatingCardsSection'
-
+import AkilliEvShowcase from '@/components/sections/AkilliEvShowcase'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 export const metadata: Metadata = {
@@ -64,6 +64,7 @@ export default function Home() {
         </div>
         <ReferencesSection />
         <GuvenRozetleri />
+        <AkilliEvShowcase />
         <KampanyaSerit />
         <FloatingCardsSection />
         <Favorilerim />
