@@ -16,10 +16,10 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-xl md:text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
-                Baskı Siparişinizi Dakikalar İçinde Oluşturun
+                Projeniz İçin Doğru Sistemi Birlikte Belirleyelim
               </h3>
               <p className="text-sm md:text-base" style={{ color: 'var(--text-muted)' }}>
-                Kartvizit, Broşür, Sticker, Bayrak, Promosyon Ürünleri ve Kurumsal Baskı Çözümleri.
+                Multitek IP İnterkom, Görüntülü Diyafon, Yangın Alarm ve Akıllı Ev Çözümleri.
               </p>
             </div>
             <Link href="/urunler"
@@ -38,8 +38,8 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <Logo className="h-9 mb-4" />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: 'var(--text-muted)' }}>
-              Türkiye'nin online matbaa ve promosyon ürünleri platformu.
-              Kaliteli baskı, hızlı üretim ve güvenli teslimat.
+              Multitek yetkili satıcısı. IP interkom, görüntülü diyafon,
+              yangın alarm ve güvenlik sistemlerinde güvenilir çözüm ortağınız.
             </p>
             <div className="flex gap-3 mt-6">
               {[Instagram, Linkedin].map((Icon, i) => (
@@ -58,12 +58,19 @@ export default function Footer() {
               Ürünler
             </h4>
             <ul className="space-y-3">
-              {['Kartvizit', 'Broşür', 'Bayrak', 'Sticker', 'Roll-Up', 'Promosyon'].map(item => (
-                <li key={item}>
-                  <Link href={`/urunler?q=${encodeURIComponent(item.toLowerCase())}`}
+              {[
+                { label: 'IP İnterkom', slug: 'ip-interkom' },
+                { label: 'Görüntülü Diyafon', slug: 'multibus-interkom' },
+                { label: 'APT160 Sistemleri', slug: 'apt160-interkom' },
+                { label: 'Linux İnterkom', slug: 'linux-ip-interkom' },
+                { label: 'Yangın Alarm', slug: 'yangin-alarm' },
+                { label: 'Akıllı Ev', slug: 'ip-interkom' },
+              ].map(item => (
+                <li key={item.label}>
+                  <Link href={`/katalog/${item.slug}`}
                     className="text-sm transition-all hover:text-[#F4821F]"
                     style={{ color: 'var(--text-muted)' }}>
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -127,7 +134,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                <span>İkitelli Organize Sanayi Bölgesi<br />İstanbul</span>
+                <span>İstanbul</span>
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <Phone size={18} />
@@ -135,8 +142,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <Mail size={18} />
-                <a href="mailto:info@baskiurunleri.com" className="hover:text-[#F4821F]">
-                  info@baskiurunleri.com
+                <a href="mailto:info@smartdiafon.com.tr" className="hover:text-[#F4821F]">
+                  info@smartdiafon.com.tr
                 </a>
               </li>
             </ul>
@@ -147,7 +154,7 @@ export default function Footer() {
         <div className="mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
           style={{ borderTop: '1px solid var(--border)' }}>
           <span className="text-xs text-center md:text-left" style={{ color: 'var(--text-muted)' }}>
-            © 2026 baskiurunleri.com — Tüm hakları saklıdır.
+            © 2026 smartdiafon.com — Tüm hakları saklıdır.
           </span>
           <div className="flex flex-wrap justify-center gap-5">
             <Link href="/iade-kosullari" className="text-xs hover:text-[#F4821F]" style={{ color: 'var(--text-muted)' }}>

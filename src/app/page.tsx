@@ -7,43 +7,39 @@ import Favorilerim from '@/components/sections/Favorilerim'
 import SonBaktiklarin from '@/components/sections/SonBaktiklarin'
 import NedenBiz from '@/components/sections/NedenBiz'
 import Sektorler from '@/components/sections/Sektorler'
-import HesaplamaSection from '@/components/sections/HesaplamaSection'
 import ReferencesSection from '@/components/sections/ReferencesSection'
 import ReviewsSection from '@/components/sections/ReviewsSection'
-import CtaSection from '@/components/sections/CtaSection'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import BaskiCozumleri from '@/components/sections/BaskiCozumleri'
 import KampanyaSerit from '@/components/sections/KampanyaSerit'
-import Yelenbayrak from '@/components/sections/YelkenBayrak'
 import GuvenRozetleri from '@/components/sections/GuvenRozetleri'
 import FloatingCardsSection from '@/components/sections/FloatingCardsSection'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 export const metadata: Metadata = {
-  title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
-  description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında. Profesyonel baskı, hızlı teslimat, uygun fiyat.',
+  title: 'Smartdiafon — Multitek Diyafon, İnterkom ve Güvenlik Sistemleri',
+  description: 'Multitek IP interkom, görüntülü diyafon, daire monitörü, kapı paneli, yangın alarm ve akıllı ev sistemleri. Yetkili satıcı, hızlı teslimat, uygun fiyat.',
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
-    description: 'Büyük format, kartvizit, sticker, tabela. Tasarımını yükle, anlık fiyatı gör, 48 saatte kapında.',
+    title: 'Smartdiafon — Multitek Diyafon, İnterkom ve Güvenlik Sistemleri',
+    description: 'Multitek IP interkom, görüntülü diyafon, daire monitörü, kapı paneli, yangın alarm ve akıllı ev sistemleri.',
     url: SITE_URL,
-    siteName: 'baskıurunleri.com',
+    siteName: 'smartdiafon.com',
     locale: 'tr_TR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'baskıurunleri.com — Türkiye\'nin En Hızlı Online Matbaası',
-    description: 'Büyük format, kartvizit, sticker, tabela. 48 saatte kapında.',
+    title: 'Smartdiafon — Multitek Diyafon ve İnterkom Sistemleri',
+    description: 'Multitek IP interkom, görüntülü diyafon, yangın alarm ve akıllı ev sistemleri.',
   },
 }
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'baskıurunleri.com',
+  name: 'smartdiafon.com',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   contactPoint: {
@@ -67,18 +63,15 @@ export default function Home() {
           <HeroCarousel />
         </div>
         <ReferencesSection />
-        <BaskiCozumleri />
         <GuvenRozetleri />
         <KampanyaSerit />
         <FloatingCardsSection />
         <Favorilerim />
         <UrunlerSection />
         <YeniGelenler />
-        <Yelenbayrak />
         <EnCokSatan />
         <SonBaktiklarin />
         <Sektorler />
-        <HesaplamaSection />
         <NedenBiz />
         <ReviewsSection />
       </main>
