@@ -6,33 +6,33 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import WelcomeDialog from '@/components/ui/WelcomeDialog'
 import AnnouncementBar from '@/components/ui/AnnouncementBar'
 export const metadata: Metadata = {
-  metadataBase: new URL('https://baskiurunleri.com'),
+  metadataBase: new URL('https://smartdiafon.com.tr'),
   title: {
-    default: 'Baskı Ürünleri — Türkiye\'nin En Hızlı Online Matbaası',
-    template: '%s | Baskıürünleri.com',
+    default: 'Smartdiafon — Multitek Diyafon, İnterkom ve Güvenlik Sistemleri',
+    template: '%s | Smartdiafon.com',
   },
-  description: 'Kartvizit, broşür, bayrak, tabela, promosyon ürünleri ve daha fazlası. Profesyonel baskı kalitesi, hızlı teslimat, uygun fiyat. Tasarımını yükle, 48 saatte kapında.',
+  description: 'Multitek diyafon, IP interkom, görüntülü interkom, yangın alarm ve güvenlik sistemleri. Akıllı ev çözümleri, kapı panelleri, daire monitörleri. Yetkili satıcı, hızlı teslimat.',
   keywords: [
-    'kartvizit baskı', 'broşür baskı', 'bayrak baskı', 'tabela baskı',
-    'online matbaa', 'ucuz baskı', 'hızlı baskı', 'promosyon ürünleri',
-    'dijital baskı', 'baskı fiyatları', 'kartvizit fiyatı'
+    'multitek diyafon', 'ip interkom', 'görüntülü interkom', 'daire monitörü',
+    'kapı paneli', 'yangın alarm', 'güvenlik sistemleri', 'akıllı ev',
+    'diafon', 'apartman diyafon', 'villa interkom', 'multibus interkom'
   ],
-  authors: [{ name: 'Baskıürünleri.com' }],
-  creator: 'Baskıürünleri.com',
-  publisher: 'Baskıürünleri.com',
+  authors: [{ name: 'Smartdiafon.com' }],
+  creator: 'Smartdiafon.com',
+  publisher: 'Smartdiafon.com',
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
-    url: 'https://baskiurunleri.com',
-    siteName: 'Baskıürünleri.com',
-    title: 'Baskı Ürünleri — Türkiye\'nin En Hızlı Online Matbaası',
-    description: 'Kartvizit, broşür, bayrak, tabela ve promosyon ürünleri. 48 saatte kapında.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Baskıürünleri.com' }],
+    url: 'https://smartdiafon.com.tr',
+    siteName: 'Smartdiafon.com',
+    title: 'Smartdiafon — Multitek Diyafon, İnterkom ve Güvenlik Sistemleri',
+    description: 'Multitek diyafon, IP interkom, görüntülü interkom, yangın alarm ve güvenlik sistemleri. Yetkili satıcı, hızlı teslimat.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Smartdiafon.com' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Baskı Ürünleri — Online Matbaa',
-    description: 'Kartvizit, broşür, bayrak, tabela. 48 saatte kapında.',
+    title: 'Smartdiafon — Multitek Diyafon ve İnterkom Sistemleri',
+    description: 'Multitek diyafon, IP interkom, yangın alarm ve güvenlik sistemleri.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -51,10 +51,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.svg',
   },
   alternates: {
-    canonical: 'https://baskiurunleri.com',
-  },
-  verification: {
-    google: 'dXF9UI_9aX1dEwnwmRqVcSFlm6DFwjPa4sLOOknPYpQ',
+    canonical: 'https://smartdiafon.com.tr',
   },
 }
 

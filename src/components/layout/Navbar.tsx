@@ -54,7 +54,7 @@ const kurumsal = [
 ]
 
 function getBadge(slug: string): { label: string; bg: string; color: string } | null {
-  if (slug.startsWith('hizli-') || slug === 'acil-baski')
+  if (slug.startsWith('hizli-') || slug === 'acil')
     return { label: 'Acil', bg: '#DC2626', color: '#fff' }
   if (slug.startsWith('yaldizli-') || slug.includes('yaldiz'))
     return { label: 'Yaldızlı', bg: '#F59E0B', color: '#fff' }
@@ -169,7 +169,7 @@ export default function Navbar() {
               className="hidden md:flex flex-1 max-w-[640px] items-center gap-3 px-4 py-3 rounded-xl text-[13px] transition-all hover:border-[#F4821F]"
               style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-muted)' }}>
               <Search size={14} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
-              <span>Ne bastırmak istiyorsunuz?</span>
+              <span>Ürün, kod veya kategori ara...</span>
             </button>
 
             {/* Mobil sağ ikonlar */}
