@@ -32,8 +32,8 @@ const badges = [
         <circle cx="20" cy="19" r="2" stroke="#F4821F" strokeWidth="1.5"/>
       </svg>
     ),
-    title: '48 Saat Teslimat',
-    desc: 'Hızlı kargo garantisi',
+    title: 'Hızlı Kargo',
+    desc: 'Türkiye geneli teslimat',
     color: '#F4821F',
   },
   {
@@ -44,30 +44,40 @@ const badges = [
       </svg>
     ),
     title: '7/24 Destek',
-    desc: 'WhatsApp & canlı chat',
+    desc: 'WhatsApp & telefon',
     color: '#0EA5E9',
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-        <path d="M14 4l2.5 7.5H24l-6.5 4.7 2.5 7.5L14 19.2l-6 4.5 2.5-7.5L4 11.5h7.5L14 4z" stroke="#F59E0B" strokeWidth="1.8" strokeLinejoin="round"/>
+        <path d="M14 3L4 7v7c0 5.5 4.3 10.7 10 12 5.7-1.3 10-6.5 10-12V7L14 3z" stroke="#F59E0B" strokeWidth="1.8" strokeLinejoin="round"/>
+        <path d="M14 9v5M14 17.5v.5" stroke="#F59E0B" strokeWidth="1.8" strokeLinecap="round"/>
       </svg>
     ),
-    title: '4.9 Google Puanı',
-    desc: '840+ müşteri yorumu',
+    title: '2 Yıl Garanti',
+    desc: 'Üretici garantisi',
     color: '#F59E0B',
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-        <path d="M9 12h10M9 16h6" stroke="#EC4899" strokeWidth="1.8" strokeLinecap="round"/>
-        <rect x="4" y="5" width="20" height="18" rx="2" stroke="#EC4899" strokeWidth="1.8"/>
-        <path d="M9 5V3M19 5V3" stroke="#EC4899" strokeWidth="1.8" strokeLinecap="round"/>
+        <path d="M14 4l2.5 7.5H24l-6.5 4.7 2.5 7.5L14 19.2l-6 4.5 2.5-7.5L4 11.5h7.5L14 4z" stroke="#EC4899" strokeWidth="1.8" strokeLinejoin="round"/>
       </svg>
     ),
-    title: 'Ücretsiz Tasarım',
-    desc: 'Grafiker desteği',
+    title: 'Yetkili Satıcı',
+    desc: 'Orijinal Multitek ürünleri',
     color: '#EC4899',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="11" r="6" stroke="#8B5CF6" strokeWidth="1.8"/>
+        <path d="M6 24c0-4 3.6-6 8-6s8 2 8 6" stroke="#8B5CF6" strokeWidth="1.8" strokeLinecap="round"/>
+      </svg>
+    ),
+    title: 'Teknik Danışmanlık',
+    desc: 'Proje desteği',
+    color: '#8B5CF6',
   },
 ]
 
