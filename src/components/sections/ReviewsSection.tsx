@@ -2,9 +2,9 @@
 
 const reviews = [
   {
-    text: 'Mağazamızın tüm tabela işlerini buradan yaptırıyoruz. Kalite ve hız konusunda hiç sorun yaşamadık. Kesinlikle tavsiye ederim.',
+    text: 'Apartmanımızın eski diyafon sistemini Multitek görüntülü sisteme çevirdik. Kurulum hızlıydı, görüntü kalitesi mükemmel. Tüm sakinler çok memnun.',
     name: 'Ahmet Yılmaz',
-    role: 'Mağaza sahibi',
+    role: 'Site yöneticisi',
     location: 'İstanbul',
     initials: 'AY',
     color: '#185FA5',
@@ -12,9 +12,9 @@ const reviews = [
     time: '2 hafta önce',
   },
   {
-    text: 'Fuar brandamız 2 günde hazırdı. Renk tutarlılığı mükemmeldi. Bir dahaki fuarda yine buradayım. Çok teşekkürler!',
+    text: 'Villamıza IP interkom ve akıllı ev sistemi kurduk. Telefondan kapıyı görüp açabiliyorum, ışıkları kontrol ediyorum. Teknik destek çok ilgiliydi.',
     name: 'Seda Demir',
-    role: 'Etkinlik organizatörü',
+    role: 'Ev sahibi',
     location: 'Ankara',
     initials: 'SD',
     color: '#F4821F',
@@ -22,9 +22,9 @@ const reviews = [
     time: '1 ay önce',
   },
   {
-    text: 'Dosyamı yükledim, anlık fiyatı gördüm, ödedim. 48 saatte kapımdaydı. Harika bir hizmet, fiyatlar da çok uygun.',
+    text: 'İnşaat firması olarak projelerimizde tercih ediyoruz. Ürünler orijinal, fiyatlar uygun, teslimat hızlı. Proje desteği de veriyorlar.',
     name: 'Murat Kaya',
-    role: 'Grafik tasarımcı',
+    role: 'İnşaat müteahhidi',
     location: 'İzmir',
     initials: 'MK',
     color: '#1D9E75',
@@ -32,19 +32,19 @@ const reviews = [
     time: '3 hafta önce',
   },
   {
-    text: '500 adet kartvizit siparişim 2 günde elime ulaştı. Kalitesi harikaydı, renk geçişleri mükemmel. Tekrar tercih edeceğim.',
+    text: 'Yangın alarm sistemimizi buradan aldık. Adresli panel ve dedektörler sorunsuz çalışıyor. Ürün açıklamaları detaylı, doğru ürünü seçmek kolay oldu.',
     name: 'Fatma Şahin',
-    role: 'Emlak danışmanı',
-    location: 'Gaziantep',
+    role: 'Otel işletmecisi',
+    location: 'Antalya',
     initials: 'FŞ',
     color: '#9333EA',
     stars: 5,
     time: '5 gün önce',
   },
   {
-    text: 'Roll-up siparişlerimizi hep buradan veriyoruz. Teslimat hızı ve baskı kalitesi çok iyi. Müşteri hizmetleri de gayet ilgili.',
+    text: 'Rezidans projemiz için merkezi interkom sistemi kurduk. APT160 sistemi çok daireli yapımız için ideal oldu. Kargo Türkiye geneli hızlı geldi.',
     name: 'Kemal Arslan',
-    role: 'Pazarlama müdürü',
+    role: 'Proje sorumlusu',
     location: 'Bursa',
     initials: 'KA',
     color: '#0891B2',
@@ -52,10 +52,10 @@ const reviews = [
     time: '1 hafta önce',
   },
   {
-    text: 'Kafe açılışımız için broşür ve kartvizit bastırdım. Tasarım desteği de aldım, gerçekten profesyonelce ilgilendiler.',
+    text: 'Eski binamızın altyapısına uygun Multibus sistemi önerdiler. Mevcut kabloları kullanarak görüntülü diyafona geçtik. Çok pratik bir çözüm oldu.',
     name: 'Zeynep Koç',
-    role: 'Kafe sahibi',
-    location: 'Antalya',
+    role: 'Apartman sakini',
+    location: 'Gaziantep',
     initials: 'ZK',
     color: '#DB2777',
     stars: 5,
@@ -140,7 +140,7 @@ export default function ReviewsSection() {
         </div>
 
         {/* Google rating özeti */}
-        <a href="https://g.co/kgs/baskiurunleri" target="_blank" rel="noopener noreferrer"
+        <a href="#" target="_blank" rel="noopener noreferrer"
           className="flex items-center gap-4 px-5 py-3 rounded-2xl transition-all hover:shadow-md flex-shrink-0 self-start sm:self-auto"
           style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
           <GoogleLogo />
@@ -149,7 +149,7 @@ export default function ReviewsSection() {
               <span className="text-[22px] font-black" style={{ color: 'var(--text-primary)' }}>4.9</span>
               <StarRating count={5} />
             </div>
-            <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>840 Google yorumu</p>
+            <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Google yorumları</p>
           </div>
         </a>
       </div>
@@ -174,18 +174,6 @@ export default function ReviewsSection() {
         ))}
       </div>
 
-      {/* Alt link */}
-      <div className="mt-8 text-center px-4">
-        <a href="https://g.co/kgs/baskiurunleri" target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[12px] font-bold transition-all hover:shadow-md"
-          style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}>
-          <GoogleLogo />
-          Tüm Google yorumlarını gör
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-          </svg>
-        </a>
-      </div>
     </section>
   )
 }
