@@ -3,46 +3,46 @@ import Link from 'next/link'
 
 const sektorler = [
   {
-    title: 'Fuar & Etkinlik',
-    desc: 'Rollup, branda, afiş ve tanıtım ürünleri',
+    title: 'İnşaat Firmaları',
+    desc: 'Toplu konut projeleri için IP ve görüntülü diyafon altyapısı',
     image:
-      'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop',
-    href: '/urunler?q=branda',
+      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop',
+    href: '/katalog/diafon-sistemleri',
   },
   {
-    title: 'Restoran & Cafe',
-    desc: 'Menü, masaüstü ürünleri ve etiket baskıları',
+    title: 'Rezidanslar',
+    desc: 'Çok daireli yapılar için merkezi interkom ve güvenlik',
     image:
-      'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop',
-    href: '/urunler?q=menu',
+      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&auto=format&fit=crop',
+    href: '/katalog/ip-interkom',
   },
   {
-    title: 'Eğitim Sektörü',
-    desc: 'Broşür, katalog ve okul baskı çözümleri',
+    title: 'Villalar',
+    desc: 'Akıllı ev otomasyonu ve görüntülü kapı paneli çözümleri',
     image:
-      'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop',
-    href: '/urunler?q=brosur',
+      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop',
+    href: '/katalog/akilli-ev-sistemleri',
   },
   {
-    title: 'Sağlık Sektörü',
-    desc: 'Tabela, yönlendirme ve kurumsal baskılar',
+    title: 'Oteller',
+    desc: 'Yangın alarm, güvenlik ve interkom sistemleri',
     image:
-      'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop',
-    href: '/urunler?q=tabela',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop',
+    href: '/katalog/yangin-alarm',
   },
   {
-    title: 'Emlak & Gayrimenkul',
-    desc: 'Satılık/kiralık tabela ve vitrin çözümleri',
+    title: 'Eski Binalar',
+    desc: 'Mevcut altyapıya uyumlu Multibus ve APT160 sistemleri',
     image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop',
-    href: '/urunler?q=tabela',
+      'https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1200&auto=format&fit=crop',
+    href: '/katalog/multibus-interkom',
   },
   {
-    title: 'Mağaza & Market',
-    desc: 'Sticker, kampanya ve raf etiketi ürünleri',
+    title: 'Site Yönetimleri',
+    desc: 'Güvenlik konsolu, kamera ve merkezi izleme sistemleri',
     image:
-      'https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=1200&auto=format&fit=crop',
-    href: '/urunler?q=sticker',
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+    href: '/katalog/ip-guvenlik-cihazi',
   },
 ]
 
@@ -51,11 +51,11 @@ export default function Sektorler() {
     <section className="mx-auto max-w-7xl px-4 pb-12 md:px-6 md:pb-14">
       <div className="mb-6 md:mb-8">
         <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#F4821F] md:text-sm">
-          Sektörel Çözümler
+          Çözüm Alanları
         </p>
 
         <h2 className="max-w-[520px] text-[24px] font-black leading-tight text-gray-900 md:text-3xl dark:text-white">
-          Sektörünüze Özel Baskı Ürünleri
+          Her Projeye Uygun Diyafon ve Güvenlik Çözümleri
         </h2>
       </div>
 
