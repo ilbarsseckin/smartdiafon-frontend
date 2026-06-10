@@ -40,6 +40,12 @@ const SLUG_PANEL = 'multibus-kapi-paneli'
 const SLUG_GUVENLIK = 'multibus-guvenlik'
 const SLUG_DIAFONBOX = 'multibus-diafonbox'
 
+/* ---------- IP kategori slug'ları ---------- */
+const SLUG_IP_MONITOR = 'ev-ici-monitor'
+const SLUG_IP_PANEL = 'ip-apartman-kapi-panelleri'
+const SLUG_IP_GUVENLIK = 'ip-guvenlik-cihazi'
+const SLUG_IP_AKSESUAR = 'ip-interkom'
+
 function isGuvenlikKonsolu(name: string) {
   return name.toUpperCase().includes('GUVENLIK KONSOL')
 }
@@ -64,6 +70,32 @@ function paneliSeviye(name: string): number {
   return 1
 }
 
+/* IP monitör seviyesi */
+function ipMonitorSeviye(name: string): number {
+  const n = name.toUpperCase()
+  if (n.includes('10 INC')) return 5
+  if (n.includes('SMART')) return 4
+  if (n.includes('VIP74') || n.includes('VIP75')) return 3
+  if (n.includes('ALARM')) return 2
+  return 1 // STD 7"
+}
+/* IP panel seviyesi */
+function ipPaneliSeviye(name: string): number {
+  const n = name.toUpperCase()
+  if (n.includes('DIP70Y') || n.includes('YÜZ TANIMA') || n.includes('YUZ TANIMA')) return 4
+  if (n.includes('DIP70')) return 3
+  if (n.includes('DIP40')) return 2
+  if (n.includes('DIP01')) return 1
+  return 1
+}
+function isIpMonitor(name: string) {
+  return name.toUpperCase().includes('MONITOR') && name.toUpperCase().startsWith('VIP')
+}
+function isIpPanel(name: string) {
+  const n = name.toUpperCase()
+  return n.startsWith('DIP') && n.includes('KAPI PANELI')
+}
+
 const fmtTl = (n: number) =>
   '₺' + Math.round(n).toLocaleString('tr-TR')
 
@@ -75,8 +107,10 @@ export default function TeklifClient() {
   const [products, setProducts] = useState<ApiProduct[]>([])
   const [loading, setLoading] = useState(true)
 
-  // Adım 1 — altyapı
+  // Adım 1 — altyapı / sistem
   const [altyapi, setAltyapi] = useState<'dt8' | 'cat' | null>(null)
+  // Seçili sistem: dt8 → multibus, cat → ip
+  const sistem: 'multibus' | 'ip' = altyapi === 'cat' ? 'ip' : 'multibus'
 
   // Adım 2 — bina
   const [daire, setDaire] = useState(0)
@@ -99,6 +133,9 @@ export default function TeklifClient() {
 
   // Adım 4 görünüm modu: kendi seçimi mi, otomatik paketler mi
   const [teklifMode, setTeklifMode] = useState<'kendi' | 'otomatik'>('otomatik')
+
+  // Ek aksesuarlar: { productId: adet }
+  const [aksesuarlar, setAksesuarlar] = useState<Record<string, number>>({})
 
   /* ---- Veri çek ---- */
   useEffect(() => {
@@ -129,30 +166,43 @@ export default function TeklifClient() {
     return () => { active = false }
   }, [])
 
-  /* ---- Multibus ürünlerini ayıkla (kategori slug bazlı) ---- */
-  const monitorler = useMemo(
-    () => products.filter(p => {
+  /* ---- Ürünleri ayıkla (sisteme göre) ---- */
+  const monitorler = useMemo(() => {
+    if (sistem === 'ip') {
+      return products.filter(p => p.categorySlug === SLUG_IP_MONITOR && isIpMonitor(p.name))
+        .sort((a, b) => ipMonitorSeviye(a.name) - ipMonitorSeviye(b.name))
+    }
+    return products.filter(p => {
       if (p.categorySlug !== SLUG_MONITOR) return false
       const n = p.name.toUpperCase()
       if (!n.includes('MONITOR')) return false
       if (n.includes('APARAT') || n.includes('KASA') || n.includes('TUTTURMA')) return false
       return true
-    }).sort((a, b) => monitorSeviye(a.name) - monitorSeviye(b.name)),
-    [products]
-  )
-  const paneller = useMemo(
-    () => products.filter(p => {
+    }).sort((a, b) => monitorSeviye(a.name) - monitorSeviye(b.name))
+  }, [products, sistem])
+
+  const paneller = useMemo(() => {
+    if (sistem === 'ip') {
+      return products.filter(p => p.categorySlug === SLUG_IP_PANEL && isIpPanel(p.name))
+        .sort((a, b) => ipPaneliSeviye(a.name) - ipPaneliSeviye(b.name))
+    }
+    return products.filter(p => {
       if (p.categorySlug !== SLUG_PANEL) return false
       const n = p.name.toUpperCase()
       if (!n.includes('KAPI PANELI')) return false
-      // Aksesuarları hariç tut
       if (n.includes('YAGMURLUK') || n.includes('CEVIRME') || n.includes('APARAT') ||
           n.includes('KASA') || n.includes('ISIMLIK') || n.includes('ISIMLI')) return false
       return true
-    }).sort((a, b) => paneliSeviye(a.name) - paneliSeviye(b.name)),
-    [products]
-  )
-  const guvenlik = useMemo(() => products.find(p => p.categorySlug === SLUG_GUVENLIK && isGuvenlikKonsolu(p.name)) || products.find(p => isGuvenlikKonsolu(p.name)), [products])
+    }).sort((a, b) => paneliSeviye(a.name) - paneliSeviye(b.name))
+  }, [products, sistem])
+
+  const guvenlik = useMemo(() => {
+    if (sistem === 'ip') {
+      return products.find(p => p.categorySlug === SLUG_IP_GUVENLIK && p.name.toUpperCase().includes('GUVENLIK MON'))
+    }
+    return products.find(p => p.categorySlug === SLUG_GUVENLIK && isGuvenlikKonsolu(p.name)) || products.find(p => isGuvenlikKonsolu(p.name))
+  }, [products, sistem])
+
   const dbMini = useMemo(() => products.find(p => p.categorySlug === SLUG_DIAFONBOX && p.name.toUpperCase().includes('MINI')), [products])
   const dbMaxi = useMemo(() => products.find(p => p.categorySlug === SLUG_DIAFONBOX && p.name.toUpperCase().includes('MAXI')), [products])
   const gucKaynagiUrun = useMemo(
@@ -160,14 +210,57 @@ export default function TeklifClient() {
     [products]
   )
 
-  // Varsayılan seçimler (yüklendiğinde)
-  useEffect(() => {
-    if (monitorler.length && !monitorId) setMonitorId(monitorler[0].id)
-    if (paneller.length && !panelId) {
-      const mb10 = paneller.find(p => p.name.toUpperCase().includes('MB-10 MULTIBUS RENKLI'))
-      setPanelId(mb10 ? mb10.id : paneller[0].id)
+  /* ---- Ek aksesuarlar (sisteme göre) ---- */
+  const aksesuarListesi = useMemo(() => {
+    if (sistem === 'ip') {
+      // IP aksesuar kategorisi: switch, adaptör, lisans, kasa, konnektör
+      return products.filter(p => p.categorySlug === SLUG_IP_AKSESUAR)
     }
-  }, [monitorler, paneller, monitorId, panelId])
+    // Multibus: kapı paneli aksesuarları (yağmurluk, aparat, kasa) + güç/video
+    return products.filter(p => {
+      const n = p.name.toUpperCase()
+      return p.categorySlug === SLUG_PANEL && (
+        n.includes('YAGMURLUK') || n.includes('CEVIRME') || n.includes('APARAT') || n.includes('KASA')
+      )
+    })
+  }, [products, sistem])
+
+  const aksesuarTotal = useMemo(() => {
+    return Object.entries(aksesuarlar).reduce((s, [id, qty]) => {
+      const p = products.find(x => x.id === id)
+      return s + (p ? p.minPriceUsd * kur * qty : 0)
+    }, 0)
+  }, [aksesuarlar, products, kur])
+
+  function setAksesuarQty(id: string, qty: number) {
+    setAksesuarlar(prev => {
+      const next = { ...prev }
+      if (qty <= 0) delete next[id]
+      else next[id] = qty
+      return next
+    })
+  }
+
+  /* ---- Sisteme göre seviye fonksiyonları (paket üretiminde kullanılır) ---- */
+  const monLvl = sistem === 'ip' ? ipMonitorSeviye : monitorSeviye
+  const panLvl = sistem === 'ip' ? ipPaneliSeviye : paneliSeviye
+
+  // Varsayılan seçimler (sistem veya ürünler değişince)
+  useEffect(() => {
+    if (monitorler.length) {
+      const varMi = monitorler.some(m => m.id === monitorId)
+      if (!varMi) setMonitorId(monitorler[0].id)
+    }
+    if (paneller.length) {
+      const varMi = paneller.some(p => p.id === panelId)
+      if (!varMi) {
+        const tercih = sistem === 'ip'
+          ? paneller.find(p => p.name.toUpperCase().includes('DIP70-CB'))
+          : paneller.find(p => p.name.toUpperCase().includes('MB-10 MULTIBUS RENKLI'))
+        setPanelId(tercih ? tercih.id : paneller[0].id)
+      }
+    }
+  }, [monitorler, paneller, sistem, monitorId, panelId])
 
   /* ---- DiafonBox seç (daireye göre) ---- */
   function pickDiafonBox(): ApiProduct | undefined {
@@ -189,6 +282,11 @@ export default function TeklifClient() {
     }
     if (gucKaynagi > 0 && gucKaynagiUrun)
       items.push({ name: gucKaynagiUrun.name, qty: gucKaynagi, unitUsd: gucKaynagiUrun.minPriceUsd })
+    // Ek aksesuarlar
+    Object.entries(aksesuarlar).forEach(([id, qty]) => {
+      const p = products.find(x => x.id === id)
+      if (p && qty > 0) items.push({ name: p.name, qty, unitUsd: p.minPriceUsd, slug: p.slug, image: p.mainImageUrl, shortDesc: p.shortDesc })
+    })
     return items
   }
 
@@ -196,14 +294,14 @@ export default function TeklifClient() {
   const paketler: Paket[] = useMemo(() => {
     if (!monitorler.length || !paneller.length || daire <= 0) return []
 
-    function paket(monLvl: number, panLvl: number, diafon: boolean, key: Paket['key'], label: string): Paket {
-      const mon = monitorler.find(m => monitorSeviye(m.name) >= monLvl) || monitorler[monitorler.length - 1]
-      const pan = paneller.find(p => paneliSeviye(p.name) >= panLvl) || paneller[paneller.length - 1]
+    function paket(monL: number, panL: number, diafon: boolean, key: Paket['key'], label: string): Paket {
+      const mon = monitorler.find(m => monLvl(m.name) >= monL) || monitorler[monitorler.length - 1]
+      const pan = paneller.find(p => panLvl(p.name) >= panL) || paneller[paneller.length - 1]
       const items: LineItem[] = []
       if (mon) items.push({ name: mon.name, qty: daire, unitUsd: mon.minPriceUsd, slug: mon.slug, image: mon.mainImageUrl, shortDesc: mon.shortDesc })
       if (pan) items.push({ name: pan.name, qty: kapi, unitUsd: pan.minPriceUsd, slug: pan.slug, image: pan.mainImageUrl, shortDesc: pan.shortDesc })
       if (guvenlik) items.push({ name: guvenlik.name, qty: 1, unitUsd: guvenlik.minPriceUsd, slug: guvenlik.slug, image: guvenlik.mainImageUrl, shortDesc: guvenlik.shortDesc })
-      if (diafon) {
+      if (diafon && sistem === 'multibus') {
         const db = pickDiafonBox()
         if (db) items.push({ name: db.name, qty: 1, unitUsd: db.minPriceUsd, slug: db.slug, image: db.mainImageUrl, shortDesc: db.shortDesc })
       }
@@ -212,18 +310,18 @@ export default function TeklifClient() {
     }
 
     return [
-      paket(1, 1, false, 'ekonomik', 'Ekonomik'),
-      { ...paket(3, 2, false, 'standart', 'Standart'), rozet: 'En çok tercih edilen' },
-      paket(4, 3, true, 'premium', 'Premium'),
+      paket(1, 2, false, 'ekonomik', 'Ekonomik'),
+      { ...paket(3, 3, false, 'standart', 'Standart'), rozet: 'En çok tercih edilen' },
+      paket(4, 4, true, 'premium', 'Premium'),
     ]
-  }, [monitorler, paneller, guvenlik, daire, kapi, kur])
+  }, [monitorler, paneller, guvenlik, daire, kapi, kur, sistem])
 
   const seciliItems = hesaplaSecili()
   const seciliTotal = seciliItems.reduce((s, it) => s + it.qty * it.unitUsd * kur, 0)
 
   /* ---- Adım geçişleri ---- */
   const canNext =
-    (step === 1 && altyapi === 'dt8') ||
+    (step === 1 && (altyapi === 'dt8' || altyapi === 'cat')) ||
     (step === 2 && daire > 0 && kapi > 0) ||
     step === 3
 
@@ -283,7 +381,10 @@ export default function TeklifClient() {
       <div className="flex items-start gap-2 p-3 rounded-xl mb-6 text-[13px]"
         style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-secondary)' }}>
         <Info size={16} style={{ color: '#F4821F', flexShrink: 0, marginTop: 2 }} />
-        <span>Bu hesaplama aracı <b>Multibus görüntülü diyafon</b> sistemleri içindir. Mevcut altyapınızın DT8 kablo yapısına uygun olması gerekir.</span>
+        <span>{sistem === 'ip'
+          ? <>Bu hesaplama aracı <b>IP görüntülü interkom</b> sistemleri içindir. Cat5/Cat6 ethernet altyapısı gerektirir.</>
+          : <>Bu hesaplama aracı <b>Multibus görüntülü diyafon</b> sistemleri içindir. Mevcut altyapınızın DT8 kablo yapısına uygun olması gerekir.</>
+        }</span>
       </div>
 
       {/* ===== ADIM 1: Altyapı ===== */}
@@ -314,18 +415,20 @@ export default function TeklifClient() {
             </button>
 
             <button onClick={() => setAltyapi('cat')}
-              className="text-left p-5 rounded-2xl transition-all opacity-60 cursor-not-allowed"
-              style={{ background: 'var(--bg-secondary)', border: '2px solid transparent' }}
-              disabled>
+              className="text-left p-5 rounded-2xl transition-all"
+              style={{
+                background: altyapi === 'cat' ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
+                border: altyapi === 'cat' ? '2px solid #F4821F' : '2px solid transparent',
+              }}>
               <div className="flex items-center gap-2 mb-2">
-                <Cable size={20} style={{ color: 'var(--text-muted)' }} />
+                <Cable size={20} style={{ color: '#F4821F' }} />
                 <span className="font-bold" style={{ color: 'var(--text-primary)' }}>Cat5 / Cat6 (Yeni Bina)</span>
               </div>
               <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
-                IP veya Linux interkom sistemleri. Çok yakında bu araca eklenecek.
+                Ethernet altyapısı. IP tabanlı görüntülü interkom — yüksek çözünürlük, akıllı ev entegrasyonu.
               </p>
               <span className="inline-block mt-3 text-[11px] font-bold px-2 py-1 rounded-md"
-                style={{ background: 'var(--border)', color: 'var(--text-muted)' }}>Yakında</span>
+                style={{ background: '#F4821F', color: '#fff' }}>IP İnterkom</span>
             </button>
           </div>
         </div>
@@ -445,7 +548,9 @@ export default function TeklifClient() {
           {/* Opsiyonlar */}
           <div className="space-y-3">
             <Toggle label="Güvenlik Konsolu" desc="Bina girişinde güvenlik/danışma birimi" checked={guvenlikKonsolu} onChange={setGuvenlikKonsolu} />
-            <Toggle label="DiafonBox (Cebe Bağlantı)" desc="Tüm binanın diyafonunu cep telefonuna taşır" checked={diafonBox} onChange={setDiafonBox} />
+            {sistem === 'multibus' && (
+              <Toggle label="DiafonBox (Cebe Bağlantı)" desc="Tüm binanın diyafonunu cep telefonuna taşır" checked={diafonBox} onChange={setDiafonBox} />
+            )}
           </div>
 
           {/* Şehir */}
@@ -546,6 +651,53 @@ export default function TeklifClient() {
           </div>
           )}
 
+          {/* EK AKSESUARLAR */}
+          {aksesuarListesi.length > 0 && (
+            <div className="rounded-2xl p-5 md:p-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
+              <h3 className="text-[15px] font-black mb-1" style={{ color: 'var(--text-primary)' }}>Ek Aksesuarlar</h3>
+              <p className="text-[12px] mb-4" style={{ color: 'var(--text-muted)' }}>
+                {sistem === 'ip'
+                  ? 'PoE switch, adaptör, lisans gibi ek ürünleri teklifinize ekleyin.'
+                  : 'Yağmurluk, çevirme aparatı, kasa gibi ek ürünleri teklifinize ekleyin.'}
+              </p>
+              <div className="space-y-2">
+                {aksesuarListesi.map(a => {
+                  const qty = aksesuarlar[a.id] || 0
+                  return (
+                    <div key={a.id} className="flex items-center gap-3 py-2"
+                      style={{ borderBottom: '1px solid var(--border)' }}>
+                      <img src={a.mainImageUrl || ''} alt="" className="w-11 h-11 rounded-lg object-cover flex-shrink-0"
+                        style={{ border: '1px solid var(--border)' }} />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[12px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>
+                          {a.name.length > 40 ? a.name.slice(0, 40) + '…' : a.name}
+                        </p>
+                        <p className="text-[11px]" style={{ color: '#F4821F' }}>{fmtTl(a.minPriceUsd * kur)}</p>
+                      </div>
+                      <div className="flex items-center rounded-lg overflow-hidden flex-shrink-0" style={{ border: '1px solid var(--border)' }}>
+                        <button onClick={() => setAksesuarQty(a.id, qty - 1)}
+                          className="px-2.5 py-2" style={{ background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
+                          <Minus size={14} />
+                        </button>
+                        <span className="px-3 text-[13px] font-bold min-w-[36px] text-center" style={{ color: 'var(--text-primary)' }}>{qty}</span>
+                        <button onClick={() => setAksesuarQty(a.id, qty + 1)}
+                          className="px-2.5 py-2" style={{ background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
+                          <Plus size={14} />
+                        </button>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+              {aksesuarTotal > 0 && (
+                <div className="flex items-center justify-between mt-4 pt-3" style={{ borderTop: '2px solid var(--border)' }}>
+                  <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Aksesuar Toplamı</span>
+                  <span className="text-[16px] font-black" style={{ color: '#F4821F' }}>{fmtTl(aksesuarTotal)}</span>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* İstanbul kurulum notu */}
           {sehir.toLowerCase().includes('istanbul') && (
             <div className="flex items-center gap-3 p-4 rounded-2xl"
@@ -632,7 +784,7 @@ export default function TeklifClient() {
       'SMARTDIAFON — PROJE TEKLİFİ',
       `Tarih: ${bugun.toLocaleDateString('tr-TR')}`,
       `Geçerlilik: ${sonGecerlilik.toLocaleDateString('tr-TR')} tarihine kadar`,
-      `Altyapı: Multibus (DT8)`,
+      `Altyapı: ${sistem === 'ip' ? 'IP İnterkom (Cat5/Cat6)' : 'Multibus (DT8)'}`,
       `Daire: ${daire} | Blok: ${blok} | Kapı: ${kapi}`,
       sehir ? `Şehir: ${sehir}` : '',
       '',
