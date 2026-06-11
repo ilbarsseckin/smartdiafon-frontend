@@ -1,7 +1,16 @@
 'use client'
+
 import { useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { Camera, Sparkles, Check, ArrowRight, ShieldCheck } from 'lucide-react'
+import {
+  Camera,
+  Sparkles,
+  Check,
+  ArrowRight,
+  ShieldCheck,
+  Zap,
+  Smartphone,
+} from 'lucide-react'
 
 export default function UyumlulukShowcase() {
   const router = useRouter()
@@ -9,75 +18,198 @@ export default function UyumlulukShowcase() {
 
   const handleFile = (f: File | null) => {
     if (!f) return
+
     const reader = new FileReader()
     reader.onload = () => {
       try {
         sessionStorage.setItem('uyumluluk_foto', reader.result as string)
         sessionStorage.setItem('uyumluluk_foto_ad', f.name)
       } catch {}
+
       router.push('/uyumluluk?from=home')
     }
+
     reader.readAsDataURL(f)
   }
 
   return (
-    <section className="px-4 py-8 md:py-12">
-      <div className="max-w-5xl mx-auto">
-        <div className="relative rounded-2xl overflow-hidden"
-          style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-          {/* ince turuncu ust serit */}
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #F4821F, #e07010)' }} />
+    <section className="px-4 py-10 md:py-16">
+      <div className="max-w-6xl mx-auto">
+        <div
+          className="relative overflow-hidden rounded-[28px] border"
+          style={{
+            background:
+              'linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%)',
+            borderColor: 'var(--border)',
+          }}
+        >
+          <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-orange-500/10 blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-orange-500/10 blur-3xl" />
 
-          <div className="grid md:grid-cols-2 gap-5 md:gap-8 p-5 md:p-8 items-center">
-            {/* Sol: Metin */}
+          <div className="relative grid lg:grid-cols-[1.1fr_0.9fr] gap-8 p-6 md:p-10 items-center">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full mb-3"
-                style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.3)' }}>
-                <Sparkles size={12} style={{ color: '#F4821F' }} />
-                <span className="text-[11px] font-bold" style={{ color: '#F4821F' }}>Yapay Zeka Destekli · Ücretsiz</span>
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
+                style={{
+                  background: 'rgba(244,130,31,0.12)',
+                  border: '1px solid rgba(244,130,31,0.25)',
+                }}
+              >
+                <Sparkles size={14} style={{ color: '#F4821F' }} />
+                <span
+                  className="text-[11px] md:text-xs font-black uppercase tracking-wide"
+                  style={{ color: '#F4821F' }}
+                >
+                  Yapay Zeka Destekli Ücretsiz Analiz
+                </span>
               </div>
 
-              <h2 className="text-[19px] md:text-[26px] font-black tracking-[-0.5px] mb-2 leading-tight"
-                style={{ color: 'var(--text-primary)' }}>
-                DiafonBox ve Akıllı Diafon Uyumluluk Testi
+              <h2
+                className="text-[26px] md:text-[42px] font-black tracking-[-1.4px] leading-[1.05] mb-4"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                Diyafonunuz DiafonBox ile uyumlu mu?
               </h2>
-              <p className="text-[13px] md:text-[14px] mb-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Mevcut diyafonunuzun fotoğrafını yükleyin, yapay zeka markanızı ve sisteminizi analiz etsin.
-                Cihazınızı değiştirmeden çözüm bulun.
+
+              <p
+                className="text-[14px] md:text-[16px] leading-relaxed max-w-xl mb-6"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Mevcut diyafonunuzun fotoğrafını yükleyin. Sisteminiz analiz
+                edilsin, cihazınızı değiştirmeden uygun çözüm önerilsin.
               </p>
 
-              <div className="space-y-1.5">
-                {['Multitek, Audio ve tüm görüntülü sistemler', 'Mevcut cihazınızı değiştirmeden çözüm', 'Anında ürün önerisi'].map(t => (
-                  <div key={t} className="flex items-center gap-2 text-[12px] md:text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-                    <Check size={14} style={{ color: '#F4821F', flexShrink: 0 }} />
-                    {t}
+              <div className="grid sm:grid-cols-3 gap-3 mb-7">
+                {[
+                  {
+                    icon: Smartphone,
+                    title: 'Sistem Analizi',
+                    desc: 'Marka ve model kontrolü',
+                  },
+                  {
+                    icon: Zap,
+                    title: 'Hızlı Sonuç',
+                    desc: 'Anında öneri',
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: 'Güvenli',
+                    desc: 'Sadece analiz için',
+                  },
+                ].map(item => {
+                  const Icon = item.icon
+
+                  return (
+                    <div
+                      key={item.title}
+                      className="rounded-2xl p-4 border"
+                      style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        borderColor: 'var(--border)',
+                      }}
+                    >
+                      <Icon size={20} style={{ color: '#F4821F' }} />
+                      <p
+                        className="font-black text-sm mt-2"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="text-xs mt-1"
+                        style={{ color: 'var(--text-muted)' }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  )
+                })}
+              </div>
+
+              <div className="space-y-2">
+                {[
+                  'Multitek, Audio ve görüntülü sistem desteği',
+                  'Mevcut cihazınızı değiştirmeden çözüm imkanı',
+                  'Uyumlu ürün önerisi ve yönlendirme',
+                ].map(text => (
+                  <div
+                    key={text}
+                    className="flex items-center gap-2 text-sm"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    <Check size={16} style={{ color: '#F4821F' }} />
+                    <span>{text}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Sag: Foto yukleme */}
             <div>
-              <input ref={fileRef} type="file" accept="image/*" className="hidden"
-                onChange={e => handleFile(e.target.files?.[0] || null)} />
-              <button onClick={() => fileRef.current?.click()}
-                className="w-full rounded-xl border-2 border-dashed py-6 md:py-8 px-4 flex flex-col items-center gap-3 transition-all hover:border-[#F4821F]"
-                style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}>
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center"
-                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
-                  <Camera size={24} className="text-white" />
+              <input
+                ref={fileRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={e => handleFile(e.target.files?.[0] || null)}
+              />
+
+              <button
+                onClick={() => fileRef.current?.click()}
+                className="group w-full rounded-[26px] border-2 border-dashed p-5 md:p-7 transition-all hover:scale-[1.01] active:scale-[0.99]"
+                style={{
+                  borderColor: 'rgba(244,130,31,0.45)',
+                  background:
+                    'linear-gradient(180deg, rgba(244,130,31,0.10), rgba(244,130,31,0.03))',
+                }}
+              >
+                <div
+                  className="rounded-2xl p-5 md:p-7 flex flex-col items-center text-center"
+                  style={{ background: 'var(--bg-card)' }}
+                >
+                  <div
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-orange-500/20"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, #F4821F 0%, #e07010 100%)',
+                    }}
+                  >
+                    <Camera size={34} className="text-white" />
+                  </div>
+
+                  <p
+                    className="text-lg md:text-xl font-black mb-1"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Fotoğraf Çek veya Yükle
+                  </p>
+
+                  <p
+                    className="text-xs md:text-sm max-w-xs mb-5"
+                    style={{ color: 'var(--text-muted)' }}
+                  >
+                    Diyafon ekranı ve tuş takımı net görünecek şekilde fotoğraf
+                    seçin.
+                  </p>
+
+                  <span
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-black text-white transition-transform group-hover:translate-x-1"
+                    style={{
+                      background:
+                        'linear-gradient(135deg, #F4821F 0%, #e07010 100%)',
+                    }}
+                  >
+                    Uyumluluğu Kontrol Et
+                    <ArrowRight size={16} />
+                  </span>
                 </div>
-                <div className="text-center">
-                  <p className="text-[14px] md:text-[15px] font-bold" style={{ color: 'var(--text-primary)' }}>Fotoğraf Çek veya Yükle</p>
-                  <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Diyafonunuzun fotoğrafını seçin</p>
-                </div>
-                <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[12px] md:text-[13px] font-bold text-white"
-                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
-                  Uyumluluğu Kontrol Et <ArrowRight size={14} />
-                </span>
               </button>
-              <div className="flex items-center justify-center gap-1.5 mt-3 text-[10px] md:text-[11px]" style={{ color: 'var(--text-muted)' }}>
-                <ShieldCheck size={12} /> Fotoğrafınız yalnızca analiz için kullanılır
+
+              <div
+                className="flex items-center justify-center gap-1.5 mt-4 text-[11px]"
+                style={{ color: 'var(--text-muted)' }}
+              >
+                <ShieldCheck size={13} />
+                Fotoğrafınız yalnızca analiz için kullanılır.
               </div>
             </div>
           </div>
