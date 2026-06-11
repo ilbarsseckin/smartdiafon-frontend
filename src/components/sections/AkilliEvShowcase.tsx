@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Lightbulb, Blinds, Shield, Zap, Droplets, Thermometer } from 'lucide-react'
 
-const IMAGE_URL = 'https://pub-46ebb1b5197b4ba9a2e747d014c3bb3a.r2.dev/mainpic.webp'
+const IMAGE_URL = 'https://cdn.smartdiafon.com.tr/mainpic.webp'
 
 interface Hotspot {
   id: string
