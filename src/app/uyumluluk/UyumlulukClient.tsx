@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -33,6 +33,24 @@ export default function UyumlulukClient() {
   const [sonuc, setSonuc] = useState<AnalizSonuc | null>(null)
   const [oneriUrunler, setOneriUrunler] = useState<any[]>([])
 
+  // Ana sayfadan gelen fotografi yakala
+  useEffect(() => {
+    try {
+      const dataUrl = sessionStorage.getItem('uyumluluk_foto')
+      const ad = sessionStorage.getItem('uyumluluk_foto_ad') || 'foto.jpg'
+      if (dataUrl) {
+        fetch(dataUrl).then(r => r.blob()).then(blob => {
+          const f = new File([blob], ad, { type: blob.type })
+          setFile(f)
+          setPreview(dataUrl)
+          setStep(2)
+        })
+        sessionStorage.removeItem('uyumluluk_foto')
+        sessionStorage.removeItem('uyumluluk_foto_ad')
+      }
+    } catch {}
+  }, [])
+
   const handleFile = (f: File | null) => {
     if (!f) return
     if (f.size > 10 * 1024 * 1024) { toast.error('Fotoğraf 10 MB\'dan küçük olmalı'); return }
@@ -58,7 +76,6 @@ export default function UyumlulukClient() {
       setSonuc(data)
       setStep(3)
 
-      // Onerilen urunleri cek
       if (data.oneriSlug?.length > 0) {
         const urunler = await Promise.all(
           data.oneriSlug.map(slug =>
@@ -94,7 +111,6 @@ export default function UyumlulukClient() {
     <>
       <Navbar />
       <main className="min-h-screen pb-16" style={{ background: 'var(--bg-secondary)' }}>
-        {/* Hero */}
         <div className="px-4 pt-10 pb-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
             style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.25)' }}>
@@ -111,7 +127,6 @@ export default function UyumlulukClient() {
         </div>
 
         <div className="max-w-2xl mx-auto px-4">
-          {/* Adim gostergesi */}
           <div className="flex items-center justify-center gap-2 mb-8">
             {[1, 2, 3].map(n => (
               <div key={n} className="flex items-center gap-2">
@@ -128,15 +143,14 @@ export default function UyumlulukClient() {
             ))}
           </div>
 
-          {/* ADIM 1: Fotograf */}
           {step === 1 && (
             <div className="rounded-2xl p-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <h2 className="text-[18px] font-black mb-1" style={{ color: 'var(--text-primary)' }}>1. Diyafonunuzun Fotoğrafı</h2>
               <p className="text-[13px] mb-5" style={{ color: 'var(--text-muted)' }}>
-                Evinizdeki iç ünitenin (monitör/telefon) net bir fotoğrafını çekin.
+                Evinizdeki iç ünitenin (monitör/telefon) net bir fotoğrafını çekin veya galeriden seçin.
               </p>
 
-              <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden"
+              <input ref={fileRef} type="file" accept="image/*" className="hidden"
                 onChange={e => handleFile(e.target.files?.[0] || null)} />
 
               {!preview ? (
@@ -170,7 +184,6 @@ export default function UyumlulukClient() {
             </div>
           )}
 
-          {/* ADIM 2: Sorular */}
           {step === 2 && (
             <div className="rounded-2xl p-6 space-y-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div>
@@ -205,7 +218,6 @@ export default function UyumlulukClient() {
             </div>
           )}
 
-          {/* ADIM 3: Sonuc */}
           {step === 3 && sonuc && (
             <div className="space-y-4">
               <div className="rounded-2xl p-6 text-center" style={{ background: 'var(--bg-card)', border: `2px solid ${durumRenk}` }}>
@@ -225,7 +237,6 @@ export default function UyumlulukClient() {
                 )}
               </div>
 
-              {/* Onerilen urunler */}
               {oneriUrunler.length > 0 && (
                 <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                   <h3 className="text-[15px] font-black mb-4" style={{ color: 'var(--text-primary)' }}>Size Önerilen Ürünler</h3>
@@ -248,7 +259,6 @@ export default function UyumlulukClient() {
                 </div>
               )}
 
-              {/* Aksiyon butonlari */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link href="/teklif"
                   className="flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl"
@@ -270,7 +280,6 @@ export default function UyumlulukClient() {
             </div>
           )}
 
-          {/* Guven rozeti */}
           <div className="flex items-center justify-center gap-2 mt-6 text-[12px]" style={{ color: 'var(--text-muted)' }}>
             <ShieldCheck size={14} className="text-green-600" />
             Fotoğrafınız yalnızca uyumluluk analizi için kullanılır.
