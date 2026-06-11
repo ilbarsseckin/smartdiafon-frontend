@@ -43,6 +43,9 @@ interface Settings { usd_kur?: string; contact_phone?: string; contact_whatsapp?
 
 const KDV_RATE = 1.20
 
+// Interkom urunlerinde tasarim yukleme yok. Ileride baski urunleri icin true yapilabilir.
+const TASARIM_AKTIF = false
+
 function calculateDeliveryDate(): string {
   const date = new Date()
   let businessDays = 0
@@ -150,14 +153,17 @@ export function UrunDetayClient() {
     design.mode === 'upload' ? design.files.length > 0 :
     design.mode === 'support' ? design.supportNotes.trim().length > 0 : false
 
-  const canOrder = !!selectedTier && missingRequired.length === 0 && designValid
+  // Tasarim aktif degilse siparis sarti degil
+  const canOrder = !!selectedTier && missingRequired.length === 0 && (!TASARIM_AKTIF || designValid)
 
   const handleOrder = () => {
     if (!product || !selectedTier) { toast.error('Lütfen adet seçin'); return }
     if (missingRequired.length > 0) { toast.error(`Lütfen seçin: ${missingRequired.map(a => a.label).join(', ')}`); return }
-    if (!design.mode) { toast.error('Tasarım seçeneği belirleyin'); return }
-    if (design.mode === 'upload' && design.files.length === 0) { toast.error('En az bir tasarım dosyası yükleyin'); return }
-    if (design.mode === 'support' && !design.supportNotes.trim()) { toast.error('Tasarım notlarınızı yazın'); return }
+    if (TASARIM_AKTIF) {
+      if (!design.mode) { toast.error('Tasarım seçeneği belirleyin'); return }
+      if (design.mode === 'upload' && design.files.length === 0) { toast.error('En az bir tasarım dosyası yükleyin'); return }
+      if (design.mode === 'support' && !design.supportNotes.trim()) { toast.error('Tasarım notlarınızı yazın'); return }
+    }
 
     const attributes = Object.entries(selectedAttrs).map(([attrId, optId]) => {
       const attr = product.attributes.find(a => a.attributeId === attrId)
@@ -172,8 +178,8 @@ export function UrunDetayClient() {
       tierId: selectedTier.id, tierQty: selectedTier.qty,
       priceUsd: baseUsd, priceTl: totalTl, kurAtAdd: kur,
       attributes,
-      designFileIds: design.mode === 'upload' ? design.files.map(f => f.id) : [],
-      designSupport: design.mode === 'support' ? { requested: true, notes: design.supportNotes } : undefined,
+      designFileIds: TASARIM_AKTIF && design.mode === 'upload' ? design.files.map(f => f.id) : [],
+      designSupport: TASARIM_AKTIF && design.mode === 'support' ? { requested: true, notes: design.supportNotes } : undefined,
     })
     setAddedModal(true)
   }
@@ -289,7 +295,7 @@ export function UrunDetayClient() {
                     )
                   })}
 
-                {product.tiers.length > 0 && (
+                {product.tiers.length > 0 && product.tiers.length > 1 && (
                   <div>
                     <label className="text-[11px] font-bold uppercase tracking-[1px] mb-1.5 flex items-center gap-1.5"
                       style={{ color: 'var(--text-secondary)' }}>
@@ -320,7 +326,7 @@ export function UrunDetayClient() {
                 <div className="mt-5 p-4 rounded-xl flex items-center justify-between"
                   style={{ background: 'linear-gradient(135deg, rgba(244,130,31,0.08), rgba(244,130,31,0.15))', border: '1px solid rgba(244,130,31,0.2)' }}>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[1px]" style={{ color: '#F4821F' }}>Adet Seçimi</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[1px]" style={{ color: '#F4821F' }}>Birim Fiyat</p>
                     <p className="text-[20px] font-black mt-0.5" style={{ color: 'var(--text-primary)' }}>
                       {selectedTier.qty.toLocaleString('tr-TR')}
                     </p>
@@ -335,9 +341,11 @@ export function UrunDetayClient() {
                 </div>
               )}
 
-              <div className="mt-5">
-                <DesignUploader value={design} onChange={setDesign} />
-              </div>
+              {TASARIM_AKTIF && (
+                <div className="mt-5">
+                  <DesignUploader value={design} onChange={setDesign} />
+                </div>
+              )}
             </div>
 
             {/* Sağ panel */}
@@ -368,10 +376,7 @@ export function UrunDetayClient() {
                   {!canOrder && (
                     <p className="text-[10px] mt-2 text-center" style={{ color: 'var(--text-muted)' }}>
                       {!selectedTier ? 'Adet seçin' :
-                       missingRequired.length > 0 ? 'Tüm seçenekleri belirleyin' :
-                       !design.mode ? 'Tasarım seçeneği belirleyin' :
-                       design.mode === 'upload' && design.files.length === 0 ? 'Tasarım dosyası yükleyin' :
-                       design.mode === 'support' && !design.supportNotes.trim() ? 'Tasarım notları yazın' : ''}
+                       missingRequired.length > 0 ? 'Tüm seçenekleri belirleyin' : ''}
                     </p>
                   )}
                   <div className="mt-3 p-3 rounded-lg flex items-start gap-2" style={{ background: 'rgba(244,130,31,0.08)' }}>
@@ -395,7 +400,7 @@ export function UrunDetayClient() {
                   {[
                     { icon: Shield, text: '256-bit SSL şifrelemeli güvenli ödeme' },
                     { icon: Truck, text: 'Türkiye\'nin her yerine hızlı teslimat' },
-                    { icon: Check, text: 'Memnuniyet garantisi' },
+                    { icon: Check, text: 'Yetkili Multitek satıcısı, orijinal ürün' },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2 text-[11px]" style={{ color: 'var(--text-secondary)' }}>
                       <Icon size={12} className="text-green-600 flex-shrink-0" />
@@ -448,8 +453,8 @@ export function UrunDetayClient() {
             <div className="flex border-b overflow-x-auto scrollbar-hide" style={{ borderColor: 'var(--border)' }}>
               {[
                 { id: 'about' as const, label: 'Ürün Hakkında' },
-                { id: 'notes' as const, label: 'Sipariş Notları' },
-                { id: 'returns' as const, label: 'Görseller ve İade' },
+                { id: 'notes' as const, label: 'Sipariş & Teslimat' },
+                { id: 'returns' as const, label: 'Garanti ve İade' },
                 { id: 'reviews' as const, label: 'Yorumlar' },
               ].map(t => (
                 <button key={t.id} onClick={() => setActiveTab(t.id)}
@@ -466,18 +471,18 @@ export function UrunDetayClient() {
               {activeTab === 'about' && <UrunHakkinda product={product} />}
               {activeTab === 'notes' && (
                 <div className="space-y-2">
-                  <p>• Tasarımınızı bu sayfadan yükleyin veya tasarım desteği isteyin.</p>
-                  <p>• Tasarım onay sürecimiz ortalama 1 iş günüdür.</p>
-                  <p>• Onaylı tasarımlar 2-3 iş günü içerisinde üretilir.</p>
-                  <p>• Üretim sonrası hızlı kargo ile teslimat yapılır.</p>
+                  <p>• Stoktaki ürünler sipariş onayından sonra hızlıca kargoya verilir.</p>
+                  <p>• Kargo süresi bulunduğunuz şehre göre 1-3 iş günü arasında değişir.</p>
+                  <p>• Kurulum ve montaj desteği için teklif sayfamızdan talep oluşturabilirsiniz.</p>
+                  <p>• Toplu/proje siparişleri için bizimle iletişime geçin.</p>
                 </div>
               )}
               {activeTab === 'returns' && (
                 <div className="space-y-2">
-                  <p>• Kişiye özel üretilen ürünlerde iade kabul edilmemektedir.</p>
-                  <p>• Üretim hatası durumunda yenisi ile değiştirilir.</p>
+                  <p>• Tüm ürünlerimiz orijinal ve üretici garantilidir.</p>
+                  <p>• Ürün arızası durumunda garanti şartları kapsamında destek sağlanır.</p>
                   <p>• Kargo hasarı durumunda tutanak tutulmalıdır.</p>
-                  <p>• Müşteri memnuniyeti garantisi vardır.</p>
+                  <p>• Kullanılmamış ürünlerde yasal iade hakkınız saklıdır.</p>
                 </div>
               )}
               {activeTab === 'reviews' && <ProductReviews productSlug={product.slug} />}
@@ -494,7 +499,7 @@ export function UrunDetayClient() {
             ) : null
           })()}
 
-          {/* ✅ Son Baktıkların */}
+          {/* Son Baktıkların */}
           <RecentlyViewedSection currentProductId={product.id} />
 
         </div>

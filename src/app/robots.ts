@@ -6,9 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/', '/hesabim/', '/odeme/', '/sepet/'],
+        disallow: ['/admin/', '/api/', '/hesabim/', '/odeme/', '/sepet/', '/giris', '/kayit'],
       },
     ],
-    sitemap: 'https://baskiurunleri.com/sitemap.xml',
+    sitemap: 'https://smartdiafon.com.tr/sitemap.xml',
+    host: 'https://smartdiafon.com.tr',
   }
 }
