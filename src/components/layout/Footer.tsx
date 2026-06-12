@@ -86,8 +86,7 @@ export default function Footer() {
               {[
                 { href: '/hakkimizda', label: 'Hakkımızda' },
                 { href: '/tarihce', label: 'Tarihçe' },
-                { href: '/bayilik', label: 'Bayimiz Olun' },
-                { href: '/insan-kaynaklari', label: 'İnsan Kaynakları' },
+                { href: '/kurulum-ekibi', label: 'Kurulum Ekibi' },
                 { href: '/blog', label: 'Blog' },
                 { href: '/iletisim', label: 'İletişim' },
               ].map(item => (
