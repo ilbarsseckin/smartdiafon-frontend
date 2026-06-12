@@ -17,6 +17,7 @@ import FloatingCardsSection from '@/components/sections/FloatingCardsSection'
 import AkilliEvShowcase from '@/components/sections/AkilliEvShowcase'
 import HizliTeklif from '@/components/sections/HizliTeklif'
 import Uyumluluk from '@/components/sections/UyumlulukShowcase'
+import FloatingReviewsButton from '@/components/ui/FloatingReviewsButton'
 
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
@@ -82,6 +83,7 @@ export default function Home() {
         <NedenBiz />
         <ReviewsSection />
       </main>
+      <FloatingReviewsButton />
       <Footer />
     </>
   )

@@ -127,7 +127,7 @@ function ReviewCard({ r }: { r: typeof reviews[0] }) {
 
 export default function ReviewsSection() {
   return (
-    <section className="py-16 max-w-7xl mx-auto">
+    <section id="reviews-section" className="py-16 max-w-7xl mx-auto">
 
       {/* Başlık */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4 px-4 sm:px-6">
