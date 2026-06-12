@@ -117,6 +117,42 @@ function KampanyalarInner() {
     setModalOpen(true)
   }
 
+  const openProductModal = async (c: Campaign) => {
+    setProductModalCampaign(c)
+    setProductModalOpen(true)
+    setProductSearch('')
+    try {
+      const [cpRes, prodRes] = await Promise.all([
+        api.get(`/api/admin/campaigns/${c.id}/products`),
+        api.get('/api/catalog/products'),
+      ])
+      setCampaignProducts(cpRes.data.data || [])
+      setAllProducts(prodRes.data.data || [])
+    } catch { toast.error('Yüklenemedi') }
+  }
+
+  const addProduct = async (productId: string) => {
+    if (!productModalCampaign) return
+    setAddingProduct(true)
+    try {
+      await api.post(`/api/admin/campaigns/${productModalCampaign.id}/products`, { productId })
+      const r = await api.get(`/api/admin/campaigns/${productModalCampaign.id}/products`)
+      setCampaignProducts(r.data.data || [])
+      toast.success('Ürün eklendi')
+    } catch (e: any) {
+      toast.error(e.response?.data?.message || 'Hata')
+    } finally { setAddingProduct(false) }
+  }
+
+  const removeProduct = async (productId: string) => {
+    if (!productModalCampaign) return
+    try {
+      await api.delete(`/api/admin/campaigns/${productModalCampaign.id}/products/${productId}`)
+      setCampaignProducts(p => p.filter(cp => cp.productId !== productId))
+      toast.success('Kaldırıldı')
+    } catch { toast.error('Hata') }
+  }
+
   const openEdit = (c: Campaign) => {
     setEditId(c.id)
     setForm({
@@ -253,42 +289,6 @@ function KampanyalarInner() {
     const setMode = isMobile ? setMobileImageMode : setImageMode
     const uploading = isMobile ? uploadingMobileImage : uploadingImage
     const ref = isMobile ? mobileFileInputRef : fileInputRef
-
-    const openProductModal = async (c: Campaign) => {
-    setProductModalCampaign(c)
-    setProductModalOpen(true)
-    setProductSearch('')
-    try {
-      const [cpRes, prodRes] = await Promise.all([
-        api.get(`/api/admin/campaigns/${c.id}/products`),
-        api.get('/api/catalog/products'),
-      ])
-      setCampaignProducts(cpRes.data.data || [])
-      setAllProducts(prodRes.data.data || [])
-    } catch { toast.error('Yüklenemedi') }
-  }
-
-  const addProduct = async (productId: string) => {
-    if (!productModalCampaign) return
-    setAddingProduct(true)
-    try {
-      await api.post(`/api/admin/campaigns/${productModalCampaign.id}/products`, { productId })
-      const r = await api.get(`/api/admin/campaigns/${productModalCampaign.id}/products`)
-      setCampaignProducts(r.data.data || [])
-      toast.success('Ürün eklendi')
-    } catch (e: any) {
-      toast.error(e.response?.data?.message || 'Hata')
-    } finally { setAddingProduct(false) }
-  }
-
-  const removeProduct = async (productId: string) => {
-    if (!productModalCampaign) return
-    try {
-      await api.delete(`/api/admin/campaigns/${productModalCampaign.id}/products/${productId}`)
-      setCampaignProducts(p => p.filter(cp => cp.productId !== productId))
-      toast.success('Kaldırıldı')
-    } catch { toast.error('Hata') }
-  }
 
   return (
       <div>
