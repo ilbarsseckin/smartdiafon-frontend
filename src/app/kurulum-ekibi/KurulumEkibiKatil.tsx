@@ -140,16 +140,21 @@ export default function KurulumEkibiKatil() {
       ) : (
         /* Gönderildi ekranı */
         <div className="rounded-3xl p-8 text-center" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-          <CheckCircle2 size={48} style={{ color: '#10B981' }} className="mx-auto mb-4" />
-          <h2 className="text-xl font-black mb-2" style={{ color: 'var(--text-primary)' }}>Başvurunuz Hazır!</h2>
-          <p className="text-[14px] mb-6 max-w-md mx-auto" style={{ color: 'var(--text-muted)' }}>
-            Son adım: Başvuru bilgilerinizi WhatsApp üzerinden bize iletin. Ekibimiz en kısa sürede sizinle iletişime geçecek.
+          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            style={{ background: 'rgba(16,185,129,0.1)' }}>
+            <CheckCircle2 size={36} style={{ color: '#10B981' }} />
+          </div>
+          <h2 className="text-xl font-black mb-2" style={{ color: 'var(--text-primary)' }}>Başvurunuz Alındı!</h2>
+          <p className="text-[14px] mb-2 max-w-md mx-auto" style={{ color: 'var(--text-muted)' }}>
+            Teşekkürler <strong>{ad}</strong>! Başvurunuz sistemimize kaydedildi.
           </p>
-          <button onClick={handleWhatsapp}
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: '#25D366' }}>
-            <Send size={17} /> WhatsApp ile Gönder
-          </button>
+          <p className="text-[13px] mb-6 max-w-md mx-auto" style={{ color: 'var(--text-muted)' }}>
+            Ekibimiz başvurunuzu inceleyip en kısa sürede <strong>{telefon}</strong> numaranızdan sizinle iletişime geçecek.
+          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-bold"
+            style={{ background: 'rgba(16,185,129,0.1)', color: '#059669' }}>
+            <CheckCircle2 size={14} /> Başvuru kaydedildi
+          </div>
         </div>
       )}
     </div>
