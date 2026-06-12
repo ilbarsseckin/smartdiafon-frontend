@@ -201,4 +201,7 @@ export const posts: BlogPost[] = [
 <p>Herhangi bir sorunla karşılaştığınızda <a href="/iletisim">teknik destek ekibimize</a> ulaşabilirsiniz.</p>
 `,
   }
-]
+] 
+export function getPost(slug: string): BlogPost | undefined { 
+  return posts.find(p => p.slug === slug) 
+} 
