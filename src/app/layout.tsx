@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* WhatsApp Destek Butonu */}
           <a
-            href="https://wa.me/905550000000"
+            href="https://wa.me/905397348688"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-3 rounded-full text-white text-[13px] font-bold shadow-2xl hover:scale-105 transition-all"

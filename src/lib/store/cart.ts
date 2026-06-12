@@ -30,6 +30,7 @@ export interface CatalogCartAttribute {
 }
 
 export interface CatalogCartItem {
+  qty: number
   id: string  // local UUID
   productId: string
   productSlug: string
