@@ -150,7 +150,7 @@ export default function UyumlulukClient() {
                 Evinizdeki iç ünitenin (monitör/telefon) net bir fotoğrafını çekin veya galeriden seçin.
               </p>
 
-              <input ref={fileRef} type="file" accept="image/*" className="hidden"
+              <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden"
                 onChange={e => handleFile(e.target.files?.[0] || null)} />
 
               {!preview ? (
