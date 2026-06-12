@@ -232,7 +232,7 @@ function KampanyalarInner() {
   }
 
   const copyLpUrl = (slug: string) => {
-    const url = `https://baskiurunleri.com/lp/${slug}`
+    const url = `https://smartdiafon.com.tr/lp/${slug}`
     navigator.clipboard.writeText(url)
     toast.success('Link kopyalandı!')
   }
@@ -464,7 +464,7 @@ function KampanyalarInner() {
                 </div>
                 {form.slug && (
                   <p className="text-[11px] mt-1" style={{ color: '#F4821F' }}>
-                    🔗 baskiurunleri.com/lp/{form.slug}
+                    🔗 smartdiafon.com.tr/lp/{form.slug}
                   </p>
                 )}
               </div>
