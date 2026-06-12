@@ -4,8 +4,8 @@ import Footer from '@/components/layout/Footer'
 import { ShieldCheck, AlertCircle, CheckCircle, XCircle, Clock, Phone } from 'lucide-react'
 
 export const metadata = {
-  title: 'İptal ve İade Koşulları | baskıurunleri.com',
-  description: 'baskıurunleri.com iptal, iade ve cayma hakkı koşulları. Kişiye özel üretim ürünlerinde iade politikası.',
+  title: 'İptal ve İade Koşulları | Smartdiafon',
+  description: 'Smartdiafon.com iptal, iade ve cayma hakkı koşulları. Diyafon, interkom ve güvenlik sistemi ürünlerinde iade politikamız.',
 }
 
 const sections = [
@@ -13,9 +13,9 @@ const sections = [
     icon: ShieldCheck,
     color: '#F4821F',
     title: '1. Genel Bilgi',
-    content: `baskıurunleri.com üzerinden satın aldığınız ürünler, Mesafeli Satış Sözleşmesi kapsamında değerlendirilmektedir. Siparişleriniz, tarafınızca onaylanan tasarıma göre özel olarak üretilmektedir.
+    content: `Smartdiafon.com üzerinden satın aldığınız diyafon, interkom, DiafonBox ve güvenlik sistemi ürünleri, Mesafeli Satış Sözleşmesi kapsamında değerlendirilmektedir.
 
-6502 sayılı Tüketicinin Korunması Hakkında Kanun'un 15. maddesi uyarınca; tüketicinin istekleri veya açıkça onun kişisel ihtiyaçları doğrultusunda hazırlanan, niteliği itibarıyla geri gönderilmeye elverişli olmayan ve çabuk bozulma tehlikesi olan ürünlerde cayma hakkı kullanılamaz.`,
+6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği hükümleri çerçevesinde; standart stok ürünlerde 14 günlük cayma hakkınız bulunmaktadır. Kurulum gerektiren veya kişiye özel yapılandırılan ürünlerde bu hak aşağıdaki koşullara tabidir.`,
   },
   {
     icon: XCircle,
@@ -23,25 +23,24 @@ const sections = [
     title: '2. Cayma Hakkı Kullanılamayan Durumlar',
     content: `Aşağıdaki durumlarda cayma hakkı ve iade talepleri kabul edilmez:
 
-• Müşteriye özel tasarım ile üretilen tüm baskı ürünleri (kartvizit, broşür, tabela, bayrak vb.)
-• Müşteri tarafından yüklenen tasarımdan kaynaklanan hatalar (düşük çözünürlük, yanlış yazım, renk tercihi)
-• Sipariş onaylandıktan sonra tasarım değişikliği talepleri
-• Kişisel tercih değişikliği veya fikir değişikliği
-• Ekran rengi ile baskı rengi arasındaki doğal farklılıklar (renk profili farklılıkları)
-• Ürünün kullanılmış, açılmış veya zarar görmüş olması`,
+• Kurulum ve montajı tamamlanmış diyafon, interkom veya güvenlik sistemleri
+• Müşteri talebiyle özel yapılandırılmış ya da programlanmış cihazlar
+• Ambalajı açılmış ve kullanılmış elektronik ürünler (hijyen ve teknik güvenlik gerekçesiyle)
+• Müşteri kaynaklı fiziksel hasar veya yanlış kullanım
+• Yazılım lisansı aktivasyonu tamamlanmış ürünler`,
   },
   {
     icon: CheckCircle,
     color: '#16A34A',
     title: '3. İade Kabul Edilen Durumlar',
-    content: `Aşağıdaki durumlarda ücretsiz yeniden üretim veya iade hakkınız bulunmaktadır:
+    content: `Aşağıdaki durumlarda ücretsiz değişim veya iade hakkınız bulunmaktadır:
 
-• Tarafımızdan kaynaklanan üretim hatası (baskı kayması, renk bozukluğu, hatalı kesim)
-• Sipariş ettiğinizden farklı ürün veya miktar gönderilmesi
+• Tarafımızdan kaynaklanan üretim veya sevkiyat hatası (yanlış ürün, eksik parça)
 • Kargo sırasında meydana gelen fiziksel hasar (kargo firmasından tutanak alınmış olması şartıyla)
-• Yanlış ebatta üretim yapılması
+• Garanti kapsamında arıza (2 yıl içinde)
+• Ürünün ilan edilen teknik özelliklerini karşılamaması
 
-Bu durumlarda iade veya yeniden üretim tamamen ücretsizdir.`,
+Bu durumlarda iade veya değişim tamamen ücretsizdir.`,
   },
   {
     icon: Clock,
@@ -54,36 +53,36 @@ Bu durumlarda iade veya yeniden üretim tamamen ücretsizdir.`,
 3. Sorunu gösteren fotoğraf veya video gönderin
 4. Sipariş numaranızı bildirin
 
-3 iş günü geçtikten sonra yapılan şikayet talepleri değerlendirilemez.
+3 iş günü geçtikten sonra yapılan hasar şikayetleri değerlendirilemez.
+
+Garanti kapsamındaki arızalar için süre, teslim tarihinden itibaren 2 yıldır.
 
 Bize ulaşmak için:
 • WhatsApp: 0552 230 33 33
-• E-posta: destek@baskiurunleri.com
-• Canlı destek: baskiurunleri.com`,
+• E-posta: destek@smartdiafon.com
+• Canlı destek: smartdiafon.com`,
   },
   {
     icon: AlertCircle,
     color: '#F59E0B',
-    title: '5. Tasarım Sorumluluğu',
-    content: `Müşteri olarak yüklediğiniz tasarım dosyasından doğan tüm sorumluluk size aittir:
+    title: '5. Kurulum Hizmeti',
+    content: `Kurulum hizmeti satın alındığında:
 
-• Tasarımın içeriği ve doğruluğu
-• Telif hakkı ve marka ihlalleri
-• Baskıya uygunluk (çözünürlük, renk modu, ebat)
-• Yazım hataları ve içerik yanlışlıkları
-
-Tasarım desteği hizmetimizde ekibimiz öneriler sunar, ancak nihai onay müşteriden alınır. Onaylanan tasarımdan kaynaklanan hatalar iade kapsamı dışındadır.`,
+• Kurulum ekibimiz randevu günü ve saatinde adreste hazır bulunur
+• Kurulum tamamlandıktan sonra hizmet bedeli iade edilmez
+• Randevu iptali en az 24 saat önceden bildirilmelidir; geç iptal durumunda hizmet bedeli kesilir
+• Teknik arızadan kaynaklanan yeniden kurulum ziyareti ücretsizdir`,
   },
   {
     icon: ShieldCheck,
     color: '#6366F1',
-    title: '6. Renk Politikası',
-    content: `Dijital ekranlar ve baskı makineleri farklı renk profillerine (RGB ve CMYK) sahiptir. Bu nedenle:
+    title: '6. Garanti Koşulları',
+    content: `Tüm Multitek ve DiafonBox ürünleri 2 yıl üretici garantisi kapsamındadır.
 
-• Ekranda gördüğünüz renk ile baskı rengi arasında küçük farklılıklar olabilir
-• Bu durum teknik bir gereklilik olup iade gerekçesi sayılmaz
-• Özel renk (Pantone/spot renk) taleplerinizi sipariş notlarına belirtin
-• Renk hassasiyeti gerektiren işler için baskı öncesi renk proofı talep edebilirsiniz`,
+• Garanti; üretim hatalarını, malzeme kusurlarını ve fabrika arızalarını kapsar
+• Fiziksel hasar, nem/su teması, aşırı gerilim ve yetkisiz müdahale garantiyi geçersiz kılar
+• Garanti servisi için ürünü kargolayabilir veya teknik ekibimizden destek talep edebilirsiniz
+• Garanti kapsamı dışındaki onarımlar için ücret teklifi sunulur; onayınız alınmadan işlem yapılmaz`,
   },
 ]
 
@@ -106,7 +105,7 @@ export default function IadeKosullariPage() {
               İptal ve İade Koşulları
             </h1>
             <p className="text-[14px] leading-relaxed max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Siparişleriniz kişiye özel üretildiğinden, aşağıdaki koşulları dikkatlice incelemenizi rica ederiz.
+              Smartdiafon'dan satın aldığınız diyafon, interkom ve güvenlik sistemi ürünlerine ait iade ve garanti koşulları.
             </p>
             <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
               Son güncelleme: Haziran 2026
@@ -116,22 +115,22 @@ export default function IadeKosullariPage() {
           {/* Özet kartlar */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
             <div className="rounded-2xl p-4 text-center"
-              style={{ background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.2)' }}>
-              <XCircle size={24} className="mx-auto mb-2 text-red-600" />
-              <p className="text-[13px] font-bold text-red-700">Cayma Hakkı</p>
-              <p className="text-[11px] mt-1 text-red-600">Özel üretimde geçersiz</p>
-            </div>
-            <div className="rounded-2xl p-4 text-center"
               style={{ background: 'rgba(22,163,74,0.08)', border: '1px solid rgba(22,163,74,0.2)' }}>
               <CheckCircle size={24} className="mx-auto mb-2 text-green-600" />
-              <p className="text-[13px] font-bold text-green-700">Üretim Hatası</p>
-              <p className="text-[11px] mt-1 text-green-600">Ücretsiz yeniden üretim</p>
+              <p className="text-[13px] font-bold text-green-700">14 Gün Cayma</p>
+              <p className="text-[11px] mt-1 text-green-600">Stok ürünlerde geçerli</p>
+            </div>
+            <div className="rounded-2xl p-4 text-center"
+              style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
+              <ShieldCheck size={24} className="mx-auto mb-2" style={{ color: '#6366F1' }} />
+              <p className="text-[13px] font-bold" style={{ color: '#4F46E5' }}>2 Yıl Garanti</p>
+              <p className="text-[11px] mt-1" style={{ color: '#6366F1' }}>Tüm Multitek ürünler</p>
             </div>
             <div className="rounded-2xl p-4 text-center"
               style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.2)' }}>
               <Clock size={24} className="mx-auto mb-2 text-blue-600" />
-              <p className="text-[13px] font-bold text-blue-700">Şikayet Süresi</p>
-              <p className="text-[11px] mt-1 text-blue-600">Teslimattan 3 iş günü</p>
+              <p className="text-[13px] font-bold text-blue-700">3 İş Günü</p>
+              <p className="text-[11px] mt-1 text-blue-600">Hasar bildirimi süresi</p>
             </div>
           </div>
 
@@ -165,7 +164,7 @@ export default function IadeKosullariPage() {
             <Phone size={24} className="mx-auto mb-3 text-white" />
             <h3 className="text-[18px] font-black text-white mb-2">Sorunuz mu var?</h3>
             <p className="text-[13px] text-white/80 mb-4">
-              İade ve şikayet süreçleri için 7/24 WhatsApp destek hattımıza ulaşabilirsiniz.
+              İade ve garanti süreçleri için WhatsApp destek hattımıza ulaşabilirsiniz.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="https://wa.me/905522303333"
