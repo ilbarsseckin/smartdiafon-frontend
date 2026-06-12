@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import WelcomeDialog from '@/components/ui/WelcomeDialog'
 import AnnouncementBar from '@/components/ui/AnnouncementBar'
+import Analytics from '@/components/ui/Analytics'
 export const metadata: Metadata = {
   metadataBase: new URL('https://smartdiafon.com.tr'),
   title: {
@@ -66,10 +67,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style: { borderRadius: '8px', fontSize: '13px' },
           }} />
           <WelcomeDialog />
+          <Analytics />
 
           {/* WhatsApp Destek Butonu */}
           <a
-            href="https://wa.me/905397348688"
+            href="https://wa.me/905550000000"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-3 rounded-full text-white text-[13px] font-bold shadow-2xl hover:scale-105 transition-all"

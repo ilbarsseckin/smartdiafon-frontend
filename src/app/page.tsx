@@ -43,15 +43,35 @@ export const metadata: Metadata = {
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'smartdiafon.com',
+  '@type': ['Organization', 'LocalBusiness'],
+  name: 'Smartdiafon',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
+  image: `${SITE_URL}/og-image.png`,
+  description: 'Multitek diyafon, IP interkom, görüntülü diyafon ve güvenlik sistemleri yetkili satıcısı.',
+  telephone: '+90-539-734-86-88',
+  email: 'destek@smartdiafon.com.tr',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'TR',
+    addressLocality: 'İstanbul',
+  },
   contactPoint: {
     '@type': 'ContactPoint',
+    telephone: '+90-539-734-86-88',
     contactType: 'customer service',
     availableLanguage: 'Turkish',
+    areaServed: 'TR',
   },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  priceRange: '₺₺',
   sameAs: [],
 }
 
