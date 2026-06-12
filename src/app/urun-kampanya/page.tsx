@@ -95,11 +95,11 @@ function UrunKampanyaInner() {
             {/* View toggle */}
             <div style={{ display: 'flex', gap: 4, background: 'var(--bg-secondary)', borderRadius: 8, padding: 3 }}>
               <button onClick={() => setView('grid')}
-                style={{ padding: '6px 8px', borderRadius: 6, border: 'none', cursor: 'pointer', background: view === 'grid' ? '#F4821F' : 'transparent', color: view === 'grid' ? '#fff' : 'var(--text-muted)' }}>
+                style={{ padding: '6px 8px', borderRadius: 6, border: 'none', cursor: 'pointer', background: view === 'grid' ? '#DC2626' : 'transparent', color: view === 'grid' ? '#fff' : 'var(--text-muted)' }}>
                 <LayoutGrid size={15} />
               </button>
               <button onClick={() => setView('list')}
-                style={{ padding: '6px 8px', borderRadius: 6, border: 'none', cursor: 'pointer', background: view === 'list' ? '#F4821F' : 'transparent', color: view === 'list' ? '#fff' : 'var(--text-muted)' }}>
+                style={{ padding: '6px 8px', borderRadius: 6, border: 'none', cursor: 'pointer', background: view === 'list' ? '#DC2626' : 'transparent', color: view === 'list' ? '#fff' : 'var(--text-muted)' }}>
                 <LayoutList size={15} />
               </button>
             </div>
@@ -133,7 +133,7 @@ function UrunKampanyaInner() {
         <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 12, marginBottom: 16 }}
           className="hide-scrollbar">
           <button onClick={() => setActiveCat('all')}
-            style={{ whiteSpace: 'nowrap', padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: activeCat === 'all' ? '#F4821F' : 'var(--bg-card)', color: activeCat === 'all' ? '#fff' : 'var(--text-secondary)', flexShrink: 0 }}>
+            style={{ whiteSpace: 'nowrap', padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: activeCat === 'all' ? '#DC2626' : 'var(--bg-card)', color: activeCat === 'all' ? '#fff' : 'var(--text-secondary)', flexShrink: 0 }}>
             Tümü ({products.length})
           </button>
           {categories.slice(0, 12).map(cat => {
@@ -141,7 +141,7 @@ function UrunKampanyaInner() {
             if (count === 0) return null
             return (
               <button key={cat.id} onClick={() => setActiveCat(cat.slug)}
-                style={{ whiteSpace: 'nowrap', padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: activeCat === cat.slug ? '#F4821F' : 'var(--bg-card)', color: activeCat === cat.slug ? '#fff' : 'var(--text-secondary)', flexShrink: 0 }}>
+                style={{ whiteSpace: 'nowrap', padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: activeCat === cat.slug ? '#DC2626' : 'var(--bg-card)', color: activeCat === cat.slug ? '#fff' : 'var(--text-secondary)', flexShrink: 0 }}>
                 {cat.icon && <span style={{ marginRight: 4 }}>{cat.icon}</span>}{cat.name} ({count})
               </button>
             )
@@ -155,7 +155,7 @@ function UrunKampanyaInner() {
 
         {loading ? (
           <div style={{ display: 'flex', justifyContent: 'center', padding: 60 }}>
-            <Loader2 size={28} color="#F4821F" className="animate-spin" />
+            <Loader2 size={28} color="#DC2626" className="animate-spin" />
           </div>
         ) : filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: 60, color: 'var(--text-muted)' }}>
@@ -217,7 +217,7 @@ function GridCard({ p, kur }: { p: Product; kur: number }) {
               {origPrice && origPrice > price && (
                 <p style={{ color: 'var(--text-muted)', fontSize: 11, textDecoration: 'line-through' }}>₺{origPrice.toLocaleString('tr-TR')}</p>
               )}
-              <p style={{ color: '#F4821F', fontSize: 15, fontWeight: 900 }}>₺{price.toLocaleString('tr-TR')}</p>
+              <p style={{ color: '#DC2626', fontSize: 15, fontWeight: 900 }}>₺{price.toLocaleString('tr-TR')}</p>
             </div>
           ) : (
             <p style={{ color: 'var(--text-muted)', fontSize: 12, fontStyle: 'italic' }}>Fiyat için iletişim</p>
@@ -253,7 +253,7 @@ function ListCard({ p, kur }: { p: Product; kur: number }) {
               <span style={{ background: '#DC2626', color: '#fff', fontSize: 10, fontWeight: 700, padding: '1px 5px', borderRadius: 4 }}>-%{discPct}</span>
             )}
             {price ? (
-              <p style={{ color: '#F4821F', fontSize: 15, fontWeight: 900 }}>₺{price.toLocaleString('tr-TR')}</p>
+              <p style={{ color: '#DC2626', fontSize: 15, fontWeight: 900 }}>₺{price.toLocaleString('tr-TR')}</p>
             ) : (
               <p style={{ color: 'var(--text-muted)', fontSize: 12, fontStyle: 'italic' }}>Fiyat için iletişim</p>
             )}
@@ -269,7 +269,7 @@ export default function UrunKampanyaPage() {
   return (
     <Suspense fallback={
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Loader2 size={28} color="#F4821F" className="animate-spin" />
+        <Loader2 size={28} color="#DC2626" className="animate-spin" />
       </div>
     }>
       <UrunKampanyaInner />

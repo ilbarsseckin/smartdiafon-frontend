@@ -78,7 +78,7 @@ export default function KatalogKategoriPage() {
       <>
         <Navbar />
         <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-          <Loader2 size={32} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={32} className="animate-spin text-[#DC2626]" />
         </main>
       </>
     )
@@ -98,7 +98,7 @@ export default function KatalogKategoriPage() {
               "{slug}" diye bir kategori yok.
             </p>
             <Link href="/"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors">
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#DC2626] hover:bg-[#e07010] transition-colors">
               <ChevronLeft size={14} /> Ana sayfaya dön
             </Link>
           </div>
@@ -202,7 +202,7 @@ export default function KatalogKategoriPage() {
                         )}
                         {!p.badge && discountPct > 0 && (
                           <span className="absolute top-3 left-3 text-[10px] font-black px-2 py-1 rounded text-white"
-                            style={{ background: '#F4821F' }}>
+                            style={{ background: '#DC2626' }}>
                             -%{discountPct}
                           </span>
                         )}
@@ -216,7 +216,7 @@ export default function KatalogKategoriPage() {
                             {p.brandName}
                           </div>
                         )}
-                        <h3 className="text-[14px] font-bold mb-1 leading-tight line-clamp-2 group-hover:text-[#F4821F] transition-colors"
+                        <h3 className="text-[14px] font-bold mb-1 leading-tight line-clamp-2 group-hover:text-[#DC2626] transition-colors"
                           style={{ color: 'var(--text-primary)' }}>
                           {p.name}
                         </h3>
@@ -235,7 +235,7 @@ export default function KatalogKategoriPage() {
                                 </span>
                               )}
                               <span className={`text-[18px] font-black tracking-[-0.5px] ${hasOriginal ? 'text-red-500' : ''}`}
-                                style={!hasOriginal ? { color: '#F4821F' } : {}}>
+                                style={!hasOriginal ? { color: '#DC2626' } : {}}>
                                 ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                               </span>
                             </div>

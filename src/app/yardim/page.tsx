@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 
 const quickCards = [
-  { icon: ShoppingBag, title: 'Sipariş Süreçleri', desc: 'Nasıl sipariş verilir?', color: '#F4821F', href: '/nasil-siparis' },
+  { icon: ShoppingBag, title: 'Sipariş Süreçleri', desc: 'Nasıl sipariş verilir?', color: '#DC2626', href: '/nasil-siparis' },
   { icon: Tag, title: 'Teklif & Fiyat', desc: 'Proje teklifi hesaplama', color: '#D97706', href: '/teklif' },
   { icon: Wrench, title: 'Kurulum & Montaj', desc: 'Montaj ekibi desteği', color: '#16a34a', href: '/kurulum-ekibi' },
   { icon: UserCircle, title: 'Üyelik & Hesap', desc: 'Hesap işlemleri', color: '#2563eb', href: '/hesabim' },
@@ -52,7 +52,7 @@ export default function YardimPage() {
           <div className="max-w-5xl mx-auto px-6 py-12 text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
               style={{ background: 'rgba(244,130,31,0.1)' }}>
-              <HelpCircle size={28} style={{ color: '#F4821F' }} />
+              <HelpCircle size={28} style={{ color: '#DC2626' }} />
             </div>
             <h1 className="text-[28px] sm:text-[36px] font-black tracking-tight mb-3"
               style={{ color: 'var(--text-primary)' }}>
@@ -120,7 +120,7 @@ export default function YardimPage() {
                   </span>
                   <ChevronDown size={16}
                     className={`flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`}
-                    style={{ color: '#F4821F' }} />
+                    style={{ color: '#DC2626' }} />
                 </button>
                 {openFaq === i && (
                   <div className="px-4 pb-4 text-[13px] leading-relaxed"
@@ -139,7 +139,7 @@ export default function YardimPage() {
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3"
                 style={{ background: 'rgba(244,130,31,0.1)' }}>
-                <MessageCircle size={20} style={{ color: '#F4821F' }} />
+                <MessageCircle size={20} style={{ color: '#DC2626' }} />
               </div>
               <h3 className="text-[15px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
                 İletişim Formu
@@ -147,7 +147,7 @@ export default function YardimPage() {
               <p className="text-[12px] mb-3" style={{ color: 'var(--text-secondary)' }}>
                 Sorularınızı bize iletin, en kısa sürede dönüş yapalım.
               </p>
-              <span className="text-[12px] font-bold" style={{ color: '#F4821F' }}>
+              <span className="text-[12px] font-bold" style={{ color: '#DC2626' }}>
                 BİZE YAZIN →
               </span>
             </Link>

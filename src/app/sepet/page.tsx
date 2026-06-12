@@ -274,7 +274,7 @@ export default function SepetPage() {
       <>
         <Navbar />
         <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-          <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={28} className="animate-spin text-[#DC2626]" />
         </main>
         <Footer />
       </>
@@ -291,7 +291,7 @@ export default function SepetPage() {
             <p className="text-[18px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Sepetiniz boş</p>
             <p className="text-[13px] mb-5" style={{ color: 'var(--text-muted)' }}>Alışverişe başlamak için ürünleri inceleyin</p>
             <button onClick={() => router.push('/urunler')}
-              className="bg-[#F4821F] text-white text-[13px] font-bold px-6 py-3 rounded-xl hover:opacity-90">
+              className="bg-[#DC2626] text-white text-[13px] font-bold px-6 py-3 rounded-xl hover:opacity-90">
               Ürünleri İncele
             </button>
           </div>
@@ -338,7 +338,7 @@ export default function SepetPage() {
                             <p className="text-[12px] mt-0.5" style={{ color: 'var(--text-muted)' }}>{item.priceBreakdown}</p>
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
-                            <p className="text-[16px] font-black text-[#F4821F]">
+                            <p className="text-[16px] font-black text-[#DC2626]">
                               ₺{item.totalPrice.toLocaleString('tr-TR', { minimumFractionDigits: 2 })}
                             </p>
                             <button onClick={() => handleRemoveStatic(item.id)} disabled={removingId === item.id}
@@ -391,7 +391,7 @@ export default function SepetPage() {
                                 <div className="flex flex-wrap gap-1 mt-1.5">
                                   {item.attributes.map(a => (
                                     <span key={a.attributeId} className="text-[10px] font-medium px-1.5 py-0.5 rounded-md"
-                                      style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+                                      style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
                                       {a.label}: {a.optionValue}
                                     </span>
                                   ))}
@@ -408,7 +408,7 @@ export default function SepetPage() {
                                   {hasSupport && (
                                     <button onClick={() => setExpandedNotesId(notesExpanded ? null : item.id)}
                                       className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md"
-                                      style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+                                      style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
                                       <Palette size={10} /> Tasarım Desteği {notesExpanded ? '▲' : '▼'}
                                     </button>
                                   )}
@@ -419,7 +419,7 @@ export default function SepetPage() {
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-[15px] font-black text-[#F4821F] flex-shrink-0">
+                                <p className="text-[15px] font-black text-[#DC2626] flex-shrink-0">
                                   ₺{Number(item.priceTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                                 </p>
                               </div>
@@ -444,7 +444,7 @@ export default function SepetPage() {
               {items.length > 0 && (
                 <div className="rounded-2xl p-4" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                   <div className="flex items-center gap-2 mb-3">
-                    <MapPin size={14} style={{ color: '#F4821F' }} />
+                    <MapPin size={14} style={{ color: '#DC2626' }} />
                     <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Teslimat Adresi</p>
                   </div>
                   {addresses.length > 0 ? (
@@ -452,12 +452,12 @@ export default function SepetPage() {
                       {addresses.map(a => (
                         <label key={a.id} className="flex items-start gap-2.5 p-2.5 rounded-xl cursor-pointer"
                           style={{
-                            border: selectedAddr === a.id ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                            border: selectedAddr === a.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                             background: selectedAddr === a.id ? 'rgba(244,130,31,0.05)' : 'var(--bg-secondary)',
                           }}>
                           <input type="radio" name="addr-static" value={a.id}
                             checked={selectedAddr === a.id} onChange={() => setSelectedAddr(a.id)}
-                            className="mt-0.5 accent-[#F4821F]" />
+                            className="mt-0.5 accent-[#DC2626]" />
                           <div>
                             <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>{a.title}</p>
                             <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
@@ -498,7 +498,7 @@ export default function SepetPage() {
                     <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Toplam</p>
                     <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>KDV Dahil</p>
                   </div>
-                  <p className="text-[22px] font-black text-[#F4821F]">
+                  <p className="text-[22px] font-black text-[#DC2626]">
                     ₺{grandTotal.toLocaleString('tr-TR', { minimumFractionDigits: 2 })}
                   </p>
                 </div>
@@ -507,7 +507,7 @@ export default function SepetPage() {
               {catalogItems.length > 0 && (
                 <button onClick={() => router.push('/siparis-olustur')}
                   className="w-full flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-2xl hover:opacity-90"
-                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 6px 14px rgba(244,130,31,0.3)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)', boxShadow: '0 6px 14px rgba(244,130,31,0.3)' }}>
                   <Send size={15} />
                   Siparişi Tamamla
                   <span className="text-[12px] opacity-80">(₺{catalogTotalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })})</span>
@@ -561,7 +561,7 @@ export default function SepetPage() {
                   <div className="rounded-xl p-3"
                     style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)' }}>
                     <div className="flex items-start gap-2">
-                      <KeyRound size={14} className="text-[#F4821F] mt-0.5 flex-shrink-0" />
+                      <KeyRound size={14} className="text-[#DC2626] mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="text-[12px] font-bold">Üye olmadan sipariş veriyorsunuz</p>
                         <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>
@@ -571,7 +571,7 @@ export default function SepetPage() {
                     </div>
                     <button onClick={() => router.push(`/giris?next=${encodeURIComponent('/sepet')}`)}
                       className="mt-2 w-full text-[11px] font-bold py-1.5 rounded-lg hover:opacity-80"
-                      style={{ color: '#F4821F' }}>
+                      style={{ color: '#DC2626' }}>
                       Hesabınız var mı? Giriş yap →
                     </button>
                   </div>
@@ -581,7 +581,7 @@ export default function SepetPage() {
                 <div className="flex items-center justify-between px-4 py-3 rounded-xl"
                   style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
                   <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>{catalogItems.length} ürün · KDV Dahil</p>
-                  <p className="text-[20px] font-black text-[#F4821F]">
+                  <p className="text-[20px] font-black text-[#DC2626]">
                     ₺{catalogTotalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                   </p>
                 </div>
@@ -598,18 +598,18 @@ export default function SepetPage() {
                         <label key={a.id} className="flex items-start gap-2.5 p-3 rounded-xl cursor-pointer"
                           style={{
                             background: selectedSavedAddrId === a.id ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
-                            border: selectedSavedAddrId === a.id ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                            border: selectedSavedAddrId === a.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                           }}>
                           <input type="radio" name="catalog-addr"
                             checked={selectedSavedAddrId === a.id}
                             onChange={() => applySavedAddress(a)}
-                            className="mt-0.5 accent-[#F4821F]" />
+                            className="mt-0.5 accent-[#DC2626]" />
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
                               <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>{a.title}</p>
                               {a.isDefault && (
                                 <span className="text-[9px] px-1.5 py-0.5 rounded font-bold"
-                                  style={{ background: 'rgba(244,130,31,0.15)', color: '#F4821F' }}>Varsayılan</span>
+                                  style={{ background: 'rgba(244,130,31,0.15)', color: '#DC2626' }}>Varsayılan</span>
                               )}
                             </div>
                             <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
@@ -621,8 +621,8 @@ export default function SepetPage() {
                       <button type="button" onClick={handleNewAddress}
                         className="w-full flex items-center justify-center gap-1.5 py-2 text-[11px] font-bold rounded-xl"
                         style={{
-                          border: editMode ? '1.5px solid #F4821F' : '1px dashed var(--border)',
-                          color: editMode ? '#F4821F' : 'var(--text-muted)',
+                          border: editMode ? '1.5px solid #DC2626' : '1px dashed var(--border)',
+                          color: editMode ? '#DC2626' : 'var(--text-muted)',
                           background: editMode ? 'rgba(244,130,31,0.05)' : 'transparent',
                         }}>
                         <Plus size={11} /> Yeni adres ekle
@@ -701,10 +701,10 @@ export default function SepetPage() {
                       <div className="rounded-xl p-3" style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
                         <label className="flex items-start gap-2 cursor-pointer">
                           <input type="checkbox" checked={saveAddressToProfile}
-                            onChange={e => setSaveAddressToProfile(e.target.checked)} className="mt-0.5 accent-[#F4821F]" />
+                            onChange={e => setSaveAddressToProfile(e.target.checked)} className="mt-0.5 accent-[#DC2626]" />
                           <div className="flex-1">
                             <div className="flex items-center gap-1.5">
-                              <Save size={11} className="text-[#F4821F]" />
+                              <Save size={11} className="text-[#DC2626]" />
                               <span className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>Bu adresi profilime kaydet</span>
                             </div>
                           </div>
@@ -730,15 +730,15 @@ export default function SepetPage() {
                 {/* ─── FATURA BİLGİLERİ ─── */}
                 <div className="pt-4" style={{ borderTop: '1px solid var(--border)' }}>
                   <div className="flex items-center gap-2 mb-3">
-                    <Receipt size={14} style={{ color: '#F4821F' }} />
+                    <Receipt size={14} style={{ color: '#DC2626' }} />
                     <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Fatura Bilgileri</p>
                   </div>
 
                   {/* Aynı adres toggle */}
                   <label className="flex items-center gap-2.5 cursor-pointer p-3 rounded-xl mb-3"
-                    style={{ background: 'var(--bg-secondary)', border: `1.5px solid ${sameBillingAddress ? '#F4821F' : 'var(--border)'}` }}>
+                    style={{ background: 'var(--bg-secondary)', border: `1.5px solid ${sameBillingAddress ? '#DC2626' : 'var(--border)'}` }}>
                     <input type="checkbox" checked={sameBillingAddress}
-                      onChange={e => setSameBillingAddress(e.target.checked)} className="accent-[#F4821F]" />
+                      onChange={e => setSameBillingAddress(e.target.checked)} className="accent-[#DC2626]" />
                     <div>
                       <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>
                         Teslimat adresi fatura adresi olarak kullanılsın
@@ -785,11 +785,11 @@ export default function SepetPage() {
 
                   {/* Kurumsal fatura */}
                   <label className="flex items-center gap-2.5 cursor-pointer p-3 rounded-xl"
-                    style={{ background: 'var(--bg-secondary)', border: `1.5px solid ${corporateInvoice ? '#F4821F' : 'var(--border)'}` }}>
+                    style={{ background: 'var(--bg-secondary)', border: `1.5px solid ${corporateInvoice ? '#DC2626' : 'var(--border)'}` }}>
                     <input type="checkbox" checked={corporateInvoice}
-                      onChange={e => setCorporateInvoice(e.target.checked)} className="accent-[#F4821F]" />
+                      onChange={e => setCorporateInvoice(e.target.checked)} className="accent-[#DC2626]" />
                     <div className="flex items-center gap-1.5">
-                      <Building2 size={13} style={{ color: corporateInvoice ? '#F4821F' : 'var(--text-muted)' }} />
+                      <Building2 size={13} style={{ color: corporateInvoice ? '#DC2626' : 'var(--text-muted)' }} />
                       <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>Kurumsal fatura istiyorum (e-fatura)</p>
                     </div>
                   </label>
@@ -854,8 +854,8 @@ export default function SepetPage() {
                   }}>
                     <div className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
                       style={{
-                        background: kurulumIstiyorum ? '#F4821F' : 'var(--bg-card)',
-                        border: kurulumIstiyorum ? '2px solid #F4821F' : '2px solid var(--border)',
+                        background: kurulumIstiyorum ? '#DC2626' : 'var(--bg-card)',
+                        border: kurulumIstiyorum ? '2px solid #DC2626' : '2px solid var(--border)',
                       }}>
                       {kurulumIstiyorum && <Check size={11} className="text-white" />}
                     </div>
@@ -893,13 +893,13 @@ export default function SepetPage() {
                             <label key={inst.id} className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all"
                               style={{
                                 background: selectedInstallerId === inst.id ? 'rgba(244,130,31,0.08)' : 'var(--bg-card)',
-                                border: selectedInstallerId === inst.id ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                                border: selectedInstallerId === inst.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                               }}
                               onClick={() => setSelectedInstallerId(inst.id)}>
                               <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
                                 style={{
-                                  background: selectedInstallerId === inst.id ? '#F4821F' : 'var(--bg-secondary)',
-                                  border: selectedInstallerId === inst.id ? '2px solid #F4821F' : '2px solid var(--border)',
+                                  background: selectedInstallerId === inst.id ? '#DC2626' : 'var(--bg-secondary)',
+                                  border: selectedInstallerId === inst.id ? '2px solid #DC2626' : '2px solid var(--border)',
                                 }}>
                                 {selectedInstallerId === inst.id && <div className="w-2 h-2 rounded-full bg-white" />}
                               </div>
@@ -939,14 +939,14 @@ export default function SepetPage() {
                       <div onClick={() => setTermsAccepted(o => !o)}
                         className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
                         style={{
-                          background: termsAccepted ? '#F4821F' : 'var(--bg-secondary)',
-                          border: termsAccepted ? '2px solid #F4821F' : '2px solid var(--border)',
+                          background: termsAccepted ? '#DC2626' : 'var(--bg-secondary)',
+                          border: termsAccepted ? '2px solid #DC2626' : '2px solid var(--border)',
                         }}>
                         {termsAccepted && <Check size={11} className="text-white" />}
                       </div>
                       <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                         <a href="/iade-kosullari" target="_blank"
-                          className="font-bold underline hover:text-[#F4821F]"
+                          className="font-bold underline hover:text-[#DC2626]"
                           style={{ color: 'var(--text-primary)' }}>
                           İptal ve iade koşullarını
                         </a>
@@ -962,14 +962,14 @@ export default function SepetPage() {
                       <div onClick={() => setMesafeliAccepted(o => !o)}
                         className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
                         style={{
-                          background: mesafeliAccepted ? '#F4821F' : 'var(--bg-secondary)',
-                          border: mesafeliAccepted ? '2px solid #F4821F' : '2px solid var(--border)',
+                          background: mesafeliAccepted ? '#DC2626' : 'var(--bg-secondary)',
+                          border: mesafeliAccepted ? '2px solid #DC2626' : '2px solid var(--border)',
                         }}>
                         {mesafeliAccepted && <Check size={11} className="text-white" />}
                       </div>
                       <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                         <a href="/mesafeli-satis" target="_blank"
-                          className="font-bold underline hover:text-[#F4821F]"
+                          className="font-bold underline hover:text-[#DC2626]"
                           style={{ color: 'var(--text-primary)' }}>
                           Mesafeli Satış Sözleşmesi'ni
                         </a>
@@ -996,7 +996,7 @@ export default function SepetPage() {
                 </button>
                 <button onClick={submitCatalogOrder} disabled={orderSubmitting || !termsAccepted || !mesafeliAccepted}
                   className="flex-1 flex items-center justify-center gap-2 py-3 text-[13px] font-bold text-white rounded-xl disabled:opacity-50"
-                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
                   {orderSubmitting
                     ? <><Loader2 size={14} className="animate-spin" /> Gönderiliyor...</>
                     : <><Send size={14} /> Siparişi Gönder</>}

@@ -54,11 +54,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <Navbar />
       <main className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         {/* Üst bilgi */}
-        <Link href="/blog" className="text-[13px] font-bold mb-6 inline-block transition-colors hover:text-[#F4821F]"
+        <Link href="/blog" className="text-[13px] font-bold mb-6 inline-block transition-colors hover:text-[#DC2626]"
           style={{ color: 'var(--text-muted)' }}>
           ← Tüm Yazılar
         </Link>
-        <span className="text-[11px] font-bold text-[#F4821F] uppercase tracking-[1.5px]">{post.cat}</span>
+        <span className="text-[11px] font-bold text-[#DC2626] uppercase tracking-[1.5px]">{post.cat}</span>
         <h1 className="text-[28px] md:text-[36px] font-black tracking-[-1px] leading-tight mt-2 mb-3"
           style={{ color: 'var(--text-primary)' }}>
           {post.title}
@@ -82,7 +82,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </p>
           <Link href="/teklif"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)' }}>
+            style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
             Hemen Teklif Al →
           </Link>
         </div>
@@ -96,7 +96,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <Link key={p.slug} href={`/blog/${p.slug}`}
                   className="block p-4 rounded-xl transition-all hover:scale-[1.01]"
                   style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-                  <span className="text-[10px] font-bold text-[#F4821F] uppercase">{p.cat}</span>
+                  <span className="text-[10px] font-bold text-[#DC2626] uppercase">{p.cat}</span>
                   <p className="text-[14px] font-bold mt-1" style={{ color: 'var(--text-primary)' }}>{p.title}</p>
                 </Link>
               ))}
@@ -118,7 +118,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         .blog-content p { margin: 0 0 16px; line-height: 1.8; font-size: 15px; }
         .blog-content ul { margin: 0 0 16px; padding-left: 20px; }
         .blog-content li { margin-bottom: 8px; line-height: 1.7; font-size: 15px; }
-        .blog-content a { color: #F4821F; font-weight: 600; text-decoration: underline; }
+        .blog-content a { color: #DC2626; font-weight: 600; text-decoration: underline; }
         .blog-content strong { color: var(--text-primary); }
       `}</style>
     </>

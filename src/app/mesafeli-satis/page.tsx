@@ -18,7 +18,7 @@ export default function MesafeliSatisPage() {
           {/* Başlık */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
               <FileText size={14} />
               Yasal Belge
             </div>
@@ -119,7 +119,7 @@ export default function MesafeliSatisPage() {
               <p>
                 ALICI'ya ait kişisel bilgiler, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında işlenir
                 ve üçüncü şahıslarla paylaşılmaz. Ayrıntılı bilgi için{' '}
-                <Link href="/gizlilik" className="underline hover:text-[#F4821F]">Gizlilik Politikamızı</Link>
+                <Link href="/gizlilik" className="underline hover:text-[#DC2626]">Gizlilik Politikamızı</Link>
                 {' '}inceleyebilirsiniz.
               </p>
             </Section>
@@ -159,7 +159,7 @@ export default function MesafeliSatisPage() {
           {/* İletişim */}
           <div className="mt-8 rounded-2xl p-6 text-center"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-            <Phone size={20} className="mx-auto mb-2" style={{ color: '#F4821F' }} />
+            <Phone size={20} className="mx-auto mb-2" style={{ color: '#DC2626' }} />
             <p className="text-[14px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Sorularınız mı var?</p>
             <p className="text-[12px] mb-3" style={{ color: 'var(--text-muted)' }}>
               Sözleşme hakkında bilgi almak için bize ulaşın.
@@ -167,7 +167,7 @@ export default function MesafeliSatisPage() {
             <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <a href="mailto:info@baskiurunleri.com"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold text-white"
-                style={{ background: '#F4821F' }}>
+                style={{ background: '#DC2626' }}>
                 info@baskiurunleri.com
               </a>
               <Link href="/iletisim"
@@ -192,7 +192,7 @@ function Section({ title, icon: Icon, children }: { title: string; icon: any; ch
   return (
     <div className="rounded-2xl overflow-hidden" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
       <div className="flex items-center gap-3 px-5 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(244,130,31,0.04)' }}>
-        <Icon size={15} style={{ color: '#F4821F', flexShrink: 0 }} />
+        <Icon size={15} style={{ color: '#DC2626', flexShrink: 0 }} />
         <h2 className="text-[13px] font-black" style={{ color: 'var(--text-primary)' }}>{title}</h2>
       </div>
       <div className="px-5 py-4 text-[13px] leading-[1.8]" style={{ color: 'var(--text-secondary)' }}>

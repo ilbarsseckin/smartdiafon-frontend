@@ -21,7 +21,7 @@ export default function FloatingReviewsButton() {
         className="w-5 flex items-center justify-center py-4 rounded-l-lg"
         style={{
           background: 'rgba(244,130,31,0.15)',
-          color: '#F4821F',
+          color: '#DC2626',
           border: '1px solid rgba(244,130,31,0.3)',
           borderRight: 'none',
         }}
@@ -48,7 +48,7 @@ export default function FloatingReviewsButton() {
           onClick={scrollToReviews}
           className="flex flex-col items-center justify-center gap-1.5 py-5 px-2.5"
           style={{
-            background: 'linear-gradient(180deg, #F4821F, #e07010)',
+            background: 'linear-gradient(180deg, #DC2626, #e07010)',
             color: 'white',
             width: 36,
             borderRadius: '8px 0 0 8px',

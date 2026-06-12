@@ -355,7 +355,7 @@ export default function TeklifClient() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-32">
-        <Loader2 className="animate-spin" size={32} style={{ color: '#F4821F' }} />
+        <Loader2 className="animate-spin" size={32} style={{ color: '#DC2626' }} />
       </div>
     )
   }
@@ -384,7 +384,7 @@ export default function TeklifClient() {
             <div className="flex flex-col items-center gap-1">
               <div className="w-9 h-9 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all"
                 style={{
-                  background: step >= n ? '#F4821F' : 'var(--bg-secondary)',
+                  background: step >= n ? '#DC2626' : 'var(--bg-secondary)',
                   color: step >= n ? '#fff' : 'var(--text-muted)',
                   border: step >= n ? 'none' : '1px solid var(--border)',
                 }}>
@@ -397,7 +397,7 @@ export default function TeklifClient() {
             </div>
             {i < 3 && (
               <div className="w-6 md:w-16 h-0.5 rounded-full"
-                style={{ background: step > n ? '#F4821F' : 'var(--border)' }} />
+                style={{ background: step > n ? '#DC2626' : 'var(--border)' }} />
             )}
           </div>
         ))}
@@ -406,7 +406,7 @@ export default function TeklifClient() {
       {/* Bilgi notu */}
       <div className="flex items-start gap-2 p-3 rounded-xl mb-6 text-[13px]"
         style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-secondary)' }}>
-        <Info size={16} style={{ color: '#F4821F', flexShrink: 0, marginTop: 2 }} />
+        <Info size={16} style={{ color: '#DC2626', flexShrink: 0, marginTop: 2 }} />
         <span>{sistem === 'ip'
           ? <>Bu hesaplama aracı <b>IP görüntülü interkom</b> sistemleri içindir. Cat5/Cat6 ethernet altyapısı gerektirir.</>
           : <>Bu hesaplama aracı <b>Multibus görüntülü diyafon</b> sistemleri içindir. Mevcut altyapınızın DT8 kablo yapısına uygun olması gerekir.</>
@@ -416,7 +416,7 @@ export default function TeklifClient() {
       {/* ===== ADIM 1: Altyapı ===== */}
       {step === 1 && (
         <div className="rounded-3xl p-6 md:p-8" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-          <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: '#F4821F' }}>Adım 1</p>
+          <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: '#DC2626' }}>Adım 1</p>
           <h2 className="text-xl font-black mb-1" style={{ color: 'var(--text-primary)' }}>Mevcut Altyapınız</h2>
           <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
             Binanızdaki kablo altyapısına göre uygun sistemi belirleyelim.
@@ -427,34 +427,34 @@ export default function TeklifClient() {
               className="text-left p-5 rounded-2xl transition-all"
               style={{
                 background: altyapi === 'dt8' ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
-                border: altyapi === 'dt8' ? '2px solid #F4821F' : '2px solid transparent',
+                border: altyapi === 'dt8' ? '2px solid #DC2626' : '2px solid transparent',
               }}>
               <div className="flex items-center gap-2 mb-2">
-                <Cable size={20} style={{ color: '#F4821F' }} />
+                <Cable size={20} style={{ color: '#DC2626' }} />
                 <span className="font-bold" style={{ color: 'var(--text-primary)' }}>DT8 Kablo (Mevcut Bina)</span>
               </div>
               <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
                 Eski/mevcut diyafon altyapısı. Multibus görüntülü sistem önerilir.
               </p>
               <span className="inline-block mt-3 text-[11px] font-bold px-2 py-1 rounded-md"
-                style={{ background: '#F4821F', color: '#fff' }}>Multibus</span>
+                style={{ background: '#DC2626', color: '#fff' }}>Multibus</span>
             </button>
 
             <button onClick={() => setAltyapi('cat')}
               className="text-left p-5 rounded-2xl transition-all"
               style={{
                 background: altyapi === 'cat' ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
-                border: altyapi === 'cat' ? '2px solid #F4821F' : '2px solid transparent',
+                border: altyapi === 'cat' ? '2px solid #DC2626' : '2px solid transparent',
               }}>
               <div className="flex items-center gap-2 mb-2">
-                <Cable size={20} style={{ color: '#F4821F' }} />
+                <Cable size={20} style={{ color: '#DC2626' }} />
                 <span className="font-bold" style={{ color: 'var(--text-primary)' }}>Cat5 / Cat6 (Yeni Bina)</span>
               </div>
               <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
                 Ethernet altyapısı. IP tabanlı görüntülü interkom — yüksek çözünürlük, akıllı ev entegrasyonu.
               </p>
               <span className="inline-block mt-3 text-[11px] font-bold px-2 py-1 rounded-md"
-                style={{ background: '#F4821F', color: '#fff' }}>IP İnterkom</span>
+                style={{ background: '#DC2626', color: '#fff' }}>IP İnterkom</span>
             </button>
           </div>
         </div>
@@ -463,7 +463,7 @@ export default function TeklifClient() {
       {/* ===== ADIM 2: Bina ===== */}
       {step === 2 && (
         <div className="rounded-3xl p-6 md:p-8" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-          <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: '#F4821F' }}>Adım 2</p>
+          <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: '#DC2626' }}>Adım 2</p>
           <h2 className="text-xl font-black mb-1" style={{ color: 'var(--text-primary)' }}>Bina Bilgileri</h2>
           <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
             Monitör ve panel adetleri bu bilgilerden otomatik hesaplanır.
@@ -486,7 +486,7 @@ export default function TeklifClient() {
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <button onClick={() => { setTeklifMode('otomatik'); setStep(4) }}
                 className="text-left p-5 rounded-2xl transition-all hover:scale-[1.01]"
-                style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)', color: '#fff' }}>
+                style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)', color: '#fff' }}>
                 <div className="flex items-center gap-2 mb-1">
                   <Zap size={20} />
                   <span className="font-black text-[15px]">Otomatik Teklif Hazırla</span>
@@ -500,7 +500,7 @@ export default function TeklifClient() {
                 className="text-left p-5 rounded-2xl transition-all hover:scale-[1.01]"
                 style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
                 <div className="flex items-center gap-2 mb-1">
-                  <Cpu size={20} style={{ color: '#F4821F' }} />
+                  <Cpu size={20} style={{ color: '#DC2626' }} />
                   <span className="font-black text-[15px]" style={{ color: 'var(--text-primary)' }}>Ürünleri Kendim Seçeceğim</span>
                 </div>
                 <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
@@ -516,7 +516,7 @@ export default function TeklifClient() {
       {step === 3 && (
         <div className="rounded-3xl p-6 md:p-8 space-y-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: '#F4821F' }}>Adım 3</p>
+            <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: '#DC2626' }}>Adım 3</p>
             <h2 className="text-xl font-black mb-1" style={{ color: 'var(--text-primary)' }}>Ürün Seçimi</h2>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
               Model seçin ya da bir sonraki adımda hazır paketlerden birini tercih edin.
@@ -526,7 +526,7 @@ export default function TeklifClient() {
           {/* Monitör */}
           <div>
             <label className="block text-[13px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
-              Daire İçi Monitör <span style={{ color: '#F4821F' }}>({daire} adet)</span>
+              Daire İçi Monitör <span style={{ color: '#DC2626' }}>({daire} adet)</span>
             </label>
             <div className="flex gap-3 items-start">
               <img src={products.find(p => p.id === monitorId)?.mainImageUrl || ''}
@@ -547,7 +547,7 @@ export default function TeklifClient() {
           {/* Kapı paneli */}
           <div>
             <label className="block text-[13px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
-              Kapı Paneli <span style={{ color: '#F4821F' }}>({kapi} adet)</span>
+              Kapı Paneli <span style={{ color: '#DC2626' }}>({kapi} adet)</span>
             </label>
             <div className="flex gap-3 items-start">
               <img src={products.find(p => p.id === panelId)?.mainImageUrl || ''}
@@ -596,7 +596,7 @@ export default function TeklifClient() {
           {/* Sistem + Geçerlilik */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="flex items-center gap-1.5 text-[12px] font-bold py-2 px-4 rounded-full"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
               <Cable size={13} />
               {sistem === 'ip' ? 'IP İnterkom · Cat5/Cat6 Kablo' : 'Multibus · DT8 Kablo'}
             </span>
@@ -614,17 +614,17 @@ export default function TeklifClient() {
               <div key={pk.key} className="rounded-2xl p-5 flex flex-col"
                 style={{
                   background: 'var(--bg-card)',
-                  border: pk.rozet ? '2px solid #F4821F' : '1px solid var(--border)',
+                  border: pk.rozet ? '2px solid #DC2626' : '1px solid var(--border)',
                   position: 'relative',
                 }}>
                 {pk.rozet && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-black whitespace-nowrap"
-                    style={{ background: '#F4821F', color: '#fff' }}>
+                    style={{ background: '#DC2626', color: '#fff' }}>
                     {pk.rozet}
                   </span>
                 )}
                 <h3 className="text-lg font-black mb-1" style={{ color: 'var(--text-primary)' }}>{pk.label}</h3>
-                <p className="text-2xl font-black mb-4" style={{ color: '#F4821F' }}>{fmtTl(pk.totalTl)}</p>
+                <p className="text-2xl font-black mb-4" style={{ color: '#DC2626' }}>{fmtTl(pk.totalTl)}</p>
                 <div className="space-y-3 flex-1 mb-4">
                   {pk.items.map((it, i) => (
                     <a key={i} href={it.slug ? `/urun/${it.slug}` : '#'} target="_blank" rel="noopener noreferrer"
@@ -641,7 +641,7 @@ export default function TeklifClient() {
                             {it.shortDesc.length > 50 ? it.shortDesc.slice(0, 50) + '…' : it.shortDesc}
                           </p>
                         )}
-                        <p className="text-[10px] mt-0.5 font-medium" style={{ color: '#F4821F' }}>
+                        <p className="text-[10px] mt-0.5 font-medium" style={{ color: '#DC2626' }}>
                           Ürünü incele →
                         </p>
                       </div>
@@ -679,7 +679,7 @@ export default function TeklifClient() {
             </div>
             <div className="flex items-center justify-between pt-3" style={{ borderTop: '2px solid var(--border)' }}>
               <span className="text-[15px] font-bold" style={{ color: 'var(--text-primary)' }}>Genel Toplam</span>
-              <span className="text-2xl font-black" style={{ color: '#F4821F' }}>{fmtTl(seciliTotal)}</span>
+              <span className="text-2xl font-black" style={{ color: '#DC2626' }}>{fmtTl(seciliTotal)}</span>
             </div>
             <p className="text-[10px] mt-2" style={{ color: 'var(--text-muted)' }}>KDV hariç. Kurulum/kablaj dahil değildir.</p>
           </div>
@@ -706,7 +706,7 @@ export default function TeklifClient() {
                         <p className="text-[12px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>
                           {a.name.length > 40 ? a.name.slice(0, 40) + '…' : a.name}
                         </p>
-                        <p className="text-[11px]" style={{ color: '#F4821F' }}>{fmtTl(a.minPriceUsd * kur)}</p>
+                        <p className="text-[11px]" style={{ color: '#DC2626' }}>{fmtTl(a.minPriceUsd * kur)}</p>
                       </div>
                       <div className="flex items-center rounded-lg overflow-hidden flex-shrink-0" style={{ border: '1px solid var(--border)' }}>
                         <button onClick={() => setAksesuarQty(a.id, qty - 1)}
@@ -726,7 +726,7 @@ export default function TeklifClient() {
               {aksesuarTotal > 0 && (
                 <div className="flex items-center justify-between mt-4 pt-3" style={{ borderTop: '2px solid var(--border)' }}>
                   <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Aksesuar Toplamı</span>
-                  <span className="text-[16px] font-black" style={{ color: '#F4821F' }}>{fmtTl(aksesuarTotal)}</span>
+                  <span className="text-[16px] font-black" style={{ color: '#DC2626' }}>{fmtTl(aksesuarTotal)}</span>
                 </div>
               )}
             </div>
@@ -766,7 +766,7 @@ export default function TeklifClient() {
               border: kurulumIstiyor ? '1px solid #10B981' : '1px solid var(--border)',
             }}>
             <div className="flex items-center gap-3">
-              <MapPin size={20} style={{ color: kurulumIstiyor ? '#10B981' : '#F4821F' }} />
+              <MapPin size={20} style={{ color: kurulumIstiyor ? '#10B981' : '#DC2626' }} />
               <div>
                 <p className="font-bold text-[14px]" style={{ color: 'var(--text-primary)' }}>Kurulum ve Montaj da İstiyorum</p>
                 <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>Bölgenizdeki yetkili montaj ekibimiz sizinle iletişime geçsin</p>
@@ -782,7 +782,7 @@ export default function TeklifClient() {
           {/* Lead formu */}
           <div className="rounded-2xl p-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <div className="flex items-center gap-2 mb-1">
-              <Zap size={18} style={{ color: '#F4821F' }} />
+              <Zap size={18} style={{ color: '#DC2626' }} />
               <h3 className="font-black text-[15px]" style={{ color: 'var(--text-primary)' }}>Size Özel İskontolu Fiyat Alın</h3>
             </div>
             <p className="text-[13px] mb-4" style={{ color: 'var(--text-muted)' }}>
@@ -833,7 +833,7 @@ export default function TeklifClient() {
           <button onClick={() => canNext && setStep(s => s + 1)}
             disabled={!canNext}
             className="flex items-center gap-1 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02] disabled:opacity-40 disabled:hover:scale-100"
-            style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)' }}>
+            style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
             {step === 3 ? 'Teklifi Oluştur' : 'Devam Et'} <ChevronRight size={18} />
           </button>
         ) : step === 4 ? (
@@ -916,14 +916,14 @@ function Toggle({ label, desc, checked, onChange }: {
       className="w-full flex items-center justify-between p-4 rounded-xl transition-all text-left"
       style={{
         background: checked ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
-        border: checked ? '1px solid #F4821F' : '1px solid var(--border)',
+        border: checked ? '1px solid #DC2626' : '1px solid var(--border)',
       }}>
       <div>
         <p className="font-bold text-[14px]" style={{ color: 'var(--text-primary)' }}>{label}</p>
         <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>{desc}</p>
       </div>
       <div className="w-11 h-6 rounded-full flex-shrink-0 transition-all relative"
-        style={{ background: checked ? '#F4821F' : 'var(--border)' }}>
+        style={{ background: checked ? '#DC2626' : 'var(--border)' }}>
         <div className="w-5 h-5 rounded-full bg-white absolute top-0.5 transition-all"
           style={{ left: checked ? '22px' : '2px' }} />
       </div>

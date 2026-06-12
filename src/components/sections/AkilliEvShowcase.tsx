@@ -67,8 +67,8 @@ export default function AkilliEvShowcase() {
                   style={{ background: 'rgba(244,130,31,0.4)' }} />
                 {/* Buton */}
                 <span className="relative flex items-center justify-center w-11 h-11 rounded-full shadow-lg transition-transform group-hover:scale-110"
-                  style={{ background: isActive ? '#F4821F' : '#ffffff', border: '2px solid #F4821F' }}>
-                  <Icon size={20} style={{ color: isActive ? '#fff' : '#F4821F' }} />
+                  style={{ background: isActive ? '#DC2626' : '#ffffff', border: '2px solid #DC2626' }}>
+                  <Icon size={20} style={{ color: isActive ? '#fff' : '#DC2626' }} />
                 </span>
                 {/* Etiket */}
                 <span className="absolute top-1/2 left-full ml-3 -translate-y-1/2 whitespace-nowrap px-3 py-1.5 rounded-lg text-[12px] font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
@@ -91,7 +91,7 @@ export default function AkilliEvShowcase() {
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <span className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
                 style={{ background: 'rgba(244,130,31,0.1)' }}>
-                <Icon size={17} style={{ color: '#F4821F' }} />
+                <Icon size={17} style={{ color: '#DC2626' }} />
               </span>
               <span className="text-[12px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>
                 {h.label}

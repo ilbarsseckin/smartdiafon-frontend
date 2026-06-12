@@ -232,7 +232,7 @@ export default function SiparisOlusturPage() {
             <Package size={48} className="mx-auto mb-4 opacity-20" style={{ color: 'var(--text-muted)' }} />
             <p className="text-[16px] font-bold mb-4" style={{ color: 'var(--text-primary)' }}>Sepetiniz boş</p>
             <Link href="/katalog" className="px-6 py-3 rounded-xl text-[14px] font-bold text-white"
-              style={{ background: '#F4821F' }}>Ürünlere Göz At</Link>
+              style={{ background: '#DC2626' }}>Ürünlere Göz At</Link>
           </div>
         </main>
         <Footer />
@@ -271,7 +271,7 @@ export default function SiparisOlusturPage() {
                 <div className="rounded-2xl p-4 flex items-center gap-3"
                   style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)' }}>
                   <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-[13px] font-black"
-                    style={{ background: '#F4821F' }}>
+                    style={{ background: '#DC2626' }}>
                     {authUser?.name?.charAt(0).toUpperCase()}
                   </div>
                   <div>
@@ -284,7 +284,7 @@ export default function SiparisOlusturPage() {
                   <p className="text-[13px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Hesabınız var mı?</p>
                   <p className="text-[12px] mb-3" style={{ color: 'var(--text-muted)' }}>Giriş yaparak adreslerinizi kullanın, siparişlerinizi takip edin.</p>
                   <Link href="/giris" className="text-[12px] font-bold px-4 py-2 rounded-lg"
-                    style={{ background: '#F4821F', color: 'white' }}>Giriş Yap</Link>
+                    style={{ background: '#DC2626', color: 'white' }}>Giriş Yap</Link>
                 </div>
               )}
 
@@ -297,12 +297,12 @@ export default function SiparisOlusturPage() {
                         className="flex items-start gap-3 p-3 rounded-xl cursor-pointer transition-all"
                         style={{
                           background: selectedSavedAddrId === addr.id ? 'rgba(244,130,31,0.06)' : 'var(--bg-secondary)',
-                          border: selectedSavedAddrId === addr.id ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                          border: selectedSavedAddrId === addr.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                         }}>
                         <div className="w-4 h-4 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"
                           style={{
-                            background: selectedSavedAddrId === addr.id ? '#F4821F' : 'transparent',
-                            border: selectedSavedAddrId === addr.id ? '2px solid #F4821F' : '2px solid var(--border)',
+                            background: selectedSavedAddrId === addr.id ? '#DC2626' : 'transparent',
+                            border: selectedSavedAddrId === addr.id ? '2px solid #DC2626' : '2px solid var(--border)',
                           }}>
                           {selectedSavedAddrId === addr.id && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
                         </div>
@@ -311,7 +311,7 @@ export default function SiparisOlusturPage() {
                             <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>{addr.title}</p>
                             {addr.isDefault && (
                               <span className="text-[10px] px-1.5 py-0.5 rounded font-bold"
-                                style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>Varsayılan</span>
+                                style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>Varsayılan</span>
                             )}
                           </div>
                           <p className="text-[11px] mt-0.5 truncate" style={{ color: 'var(--text-muted)' }}>
@@ -376,7 +376,7 @@ export default function SiparisOlusturPage() {
                       <label className="flex items-center gap-2 cursor-pointer">
                         <div onClick={() => setSaveAddressToProfile(o => !o)}
                           className="w-4 h-4 rounded flex items-center justify-center"
-                          style={{ background: saveAddressToProfile ? '#F4821F' : 'var(--bg-secondary)', border: saveAddressToProfile ? '2px solid #F4821F' : '2px solid var(--border)' }}>
+                          style={{ background: saveAddressToProfile ? '#DC2626' : 'var(--bg-secondary)', border: saveAddressToProfile ? '2px solid #DC2626' : '2px solid var(--border)' }}>
                           {saveAddressToProfile && <Check size={10} className="text-white" />}
                         </div>
                         <p className="text-[12px]" style={{ color: 'var(--text-secondary)' }}>Bu adresi profilime kaydet</p>
@@ -404,8 +404,8 @@ export default function SiparisOlusturPage() {
                 }}>
                   <div className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
                     style={{
-                      background: kurulumIstiyorum ? '#F4821F' : 'var(--bg-secondary)',
-                      border: kurulumIstiyorum ? '2px solid #F4821F' : '2px solid var(--border)',
+                      background: kurulumIstiyorum ? '#DC2626' : 'var(--bg-secondary)',
+                      border: kurulumIstiyorum ? '2px solid #DC2626' : '2px solid var(--border)',
                     }}>
                     {kurulumIstiyorum && <Check size={11} className="text-white" />}
                   </div>
@@ -456,10 +456,10 @@ export default function SiparisOlusturPage() {
                               className="flex items-center gap-3 p-4 rounded-xl cursor-pointer transition-all"
                               style={{
                                 background: selectedInstallerId === inst.id ? 'rgba(244,130,31,0.06)' : 'var(--bg-secondary)',
-                                border: selectedInstallerId === inst.id ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                                border: selectedInstallerId === inst.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                               }}>
                               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-[15px] flex-shrink-0"
-                                style={{ background: selectedInstallerId === inst.id ? '#F4821F' : '#9CA3AF' }}>
+                                style={{ background: selectedInstallerId === inst.id ? '#DC2626' : '#9CA3AF' }}>
                                 {inst.name.charAt(0)}
                               </div>
                               <div className="flex-1">
@@ -482,7 +482,7 @@ export default function SiparisOlusturPage() {
                                 </div>
                               </div>
                               {selectedInstallerId === inst.id && (
-                                <Check size={16} style={{ color: '#F4821F' }} />
+                                <Check size={16} style={{ color: '#DC2626' }} />
                               )}
                             </label>
                           ))}
@@ -512,7 +512,7 @@ export default function SiparisOlusturPage() {
                 <label className="flex items-center gap-3 cursor-pointer mb-3"
                   onClick={() => setSameBillingAddress(o => !o)}>
                   <div className="w-5 h-5 rounded-md flex items-center justify-center"
-                    style={{ background: sameBillingAddress ? '#F4821F' : 'var(--bg-secondary)', border: sameBillingAddress ? '2px solid #F4821F' : '2px solid var(--border)' }}>
+                    style={{ background: sameBillingAddress ? '#DC2626' : 'var(--bg-secondary)', border: sameBillingAddress ? '2px solid #DC2626' : '2px solid var(--border)' }}>
                     {sameBillingAddress && <Check size={11} className="text-white" />}
                   </div>
                   <p className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>Teslimat adresi fatura adresi olarak kullanılsın</p>
@@ -545,7 +545,7 @@ export default function SiparisOlusturPage() {
 
                 <label className="flex items-center gap-3 cursor-pointer" onClick={() => setCorporateInvoice(o => !o)}>
                   <div className="w-5 h-5 rounded-md flex items-center justify-center"
-                    style={{ background: corporateInvoice ? '#F4821F' : 'var(--bg-secondary)', border: corporateInvoice ? '2px solid #F4821F' : '2px solid var(--border)' }}>
+                    style={{ background: corporateInvoice ? '#DC2626' : 'var(--bg-secondary)', border: corporateInvoice ? '2px solid #DC2626' : '2px solid var(--border)' }}>
                     {corporateInvoice && <Check size={11} className="text-white" />}
                   </div>
                   <div className="flex items-center gap-2">
@@ -617,7 +617,7 @@ export default function SiparisOlusturPage() {
                         <div className="flex-1 min-w-0">
                           <p className="text-[13px] font-bold truncate" style={{ color: 'var(--text-primary)' }}>{item.productName}</p>
                           <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{item.tierQty} adet</p>
-                          <p className="text-[13px] font-black" style={{ color: '#F4821F' }}>
+                          <p className="text-[13px] font-black" style={{ color: '#DC2626' }}>
                             ₺{item.priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                           </p>
                         </div>
@@ -637,7 +637,7 @@ export default function SiparisOlusturPage() {
                     )}
                     <div className="flex justify-between text-[15px] font-black pt-1" style={{ color: 'var(--text-primary)' }}>
                       <span>Toplam</span>
-                      <span style={{ color: '#F4821F' }}>₺{catalogTotalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</span>
+                      <span style={{ color: '#DC2626' }}>₺{catalogTotalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</span>
                     </div>
                     <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>KDV dahil</p>
                   </div>
@@ -646,7 +646,7 @@ export default function SiparisOlusturPage() {
                 <button onClick={handleSubmit}
                   disabled={orderSubmitting || !termsAccepted || !mesafeliAccepted}
                   className="w-full flex items-center justify-center gap-2 py-4 text-[15px] font-black text-white rounded-2xl transition-all disabled:opacity-50"
-                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 6px 20px rgba(244,130,31,0.35)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)', boxShadow: '0 6px 20px rgba(244,130,31,0.35)' }}>
                   {orderSubmitting
                     ? <><Loader2 size={16} className="animate-spin" /> İşleniyor...</>
                     : <><CreditCard size={16} /> Siparişi Onayla & Öde</>}
@@ -669,7 +669,7 @@ function Section({ title, icon: Icon, children }: { title: string; icon: any; ch
   return (
     <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
       <div className="flex items-center gap-2 mb-4" style={{ borderBottom: '1px solid var(--border)', paddingBottom: '12px' }}>
-        <Icon size={16} style={{ color: '#F4821F' }} />
+        <Icon size={16} style={{ color: '#DC2626' }} />
         <h2 className="text-[14px] font-black" style={{ color: 'var(--text-primary)' }}>{title}</h2>
       </div>
       {children}
@@ -702,11 +702,11 @@ function TermsCheck({ accepted, onToggle, href, linkText, rest }: {
       <label className="flex items-start gap-2.5 cursor-pointer">
         <div onClick={onToggle}
           className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
-          style={{ background: accepted ? '#F4821F' : 'var(--bg-secondary)', border: accepted ? '2px solid #F4821F' : '2px solid var(--border)' }}>
+          style={{ background: accepted ? '#DC2626' : 'var(--bg-secondary)', border: accepted ? '2px solid #DC2626' : '2px solid var(--border)' }}>
           {accepted && <Check size={11} className="text-white" />}
         </div>
         <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-          <a href={href} target="_blank" className="font-bold underline hover:text-[#F4821F]"
+          <a href={href} target="_blank" className="font-bold underline hover:text-[#DC2626]"
             style={{ color: 'var(--text-primary)' }}>{linkText}</a>
           {' '}{rest}
         </p>

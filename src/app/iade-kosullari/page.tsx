@@ -11,7 +11,7 @@ export const metadata = {
 const sections = [
   {
     icon: ShieldCheck,
-    color: '#F4821F',
+    color: '#DC2626',
     title: '1. Genel Bilgi',
     content: `Smartdiafon.com üzerinden satın aldığınız diyafon, interkom, DiafonBox ve güvenlik sistemi ürünleri, Mesafeli Satış Sözleşmesi kapsamında değerlendirilmektedir.
 
@@ -96,7 +96,7 @@ export default function IadeKosullariPage() {
           {/* Başlık */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
               <ShieldCheck size={14} />
               Tüketici Hakları
             </div>
@@ -160,7 +160,7 @@ export default function IadeKosullariPage() {
 
           {/* İletişim CTA */}
           <div className="mt-8 rounded-2xl p-6 text-center"
-            style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+            style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
             <Phone size={24} className="mx-auto mb-3 text-white" />
             <h3 className="text-[18px] font-black text-white mb-2">Sorunuz mu var?</h3>
             <p className="text-[13px] text-white/80 mb-4">
@@ -168,7 +168,7 @@ export default function IadeKosullariPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="https://wa.me/905522303333"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold bg-white text-[#F4821F] hover:opacity-90 transition-all">
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold bg-white text-[#DC2626] hover:opacity-90 transition-all">
                 WhatsApp ile Ulaş
               </a>
               <Link href="/iletisim"

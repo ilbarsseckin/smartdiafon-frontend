@@ -55,10 +55,10 @@ export default function UyumlulukShowcase() {
                   border: '1px solid rgba(244,130,31,0.25)',
                 }}
               >
-                <Sparkles size={14} style={{ color: '#F4821F' }} />
+                <Sparkles size={14} style={{ color: '#DC2626' }} />
                 <span
                   className="text-[11px] md:text-xs font-black uppercase tracking-wide"
-                  style={{ color: '#F4821F' }}
+                  style={{ color: '#DC2626' }}
                 >
                   Yapay Zeka Destekli Ücretsiz Analiz
                 </span>
@@ -108,7 +108,7 @@ export default function UyumlulukShowcase() {
                         borderColor: 'var(--border)',
                       }}
                     >
-                      <Icon size={20} style={{ color: '#F4821F' }} />
+                      <Icon size={20} style={{ color: '#DC2626' }} />
                       <p
                         className="font-black text-sm mt-2"
                         style={{ color: 'var(--text-primary)' }}
@@ -137,7 +137,7 @@ export default function UyumlulukShowcase() {
                     className="flex items-center gap-2 text-sm"
                     style={{ color: 'var(--text-secondary)' }}
                   >
-                    <Check size={16} style={{ color: '#F4821F' }} />
+                    <Check size={16} style={{ color: '#DC2626' }} />
                     <span>{text}</span>
                   </div>
                 ))}
@@ -170,7 +170,7 @@ export default function UyumlulukShowcase() {
                     className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-orange-500/20"
                     style={{
                       background:
-                        'linear-gradient(135deg, #F4821F 0%, #F4821F 100%)',
+                        'linear-gradient(135deg, #DC2626 0%, #DC2626 100%)',
                     }}
                   >
                     <Camera size={34} className="text-white" />
@@ -195,7 +195,7 @@ export default function UyumlulukShowcase() {
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-black text-white transition-transform group-hover:translate-x-1"
                     style={{
                       background:
-                        'linear-gradient(135deg, #F4821F 0%, #F4821F 100%)',
+                        'linear-gradient(135deg, #DC2626 0%, #DC2626 100%)',
                     }}
                   >
                     Uyumluluğu Kontrol Et

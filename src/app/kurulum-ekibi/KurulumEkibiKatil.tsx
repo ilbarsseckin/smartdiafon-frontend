@@ -84,7 +84,7 @@ export default function KurulumEkibiKatil() {
       <div className="text-center mb-8">
         <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
           style={{ background: 'rgba(244,130,31,0.12)' }}>
-          <Wrench size={26} style={{ color: '#F4821F' }} />
+          <Wrench size={26} style={{ color: '#DC2626' }} />
         </span>
         <h1 className="text-2xl md:text-3xl font-black tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
           Kurulum ve Montaj Ekibimize Katılın
@@ -141,7 +141,7 @@ export default function KurulumEkibiKatil() {
                   <button key={u} onClick={() => toggleUzmanlik(u)}
                     className="px-3 py-2 rounded-xl text-[12px] font-bold transition-all"
                     style={{
-                      background: sec ? '#F4821F' : 'var(--bg-secondary)',
+                      background: sec ? '#DC2626' : 'var(--bg-secondary)',
                       color: sec ? '#fff' : 'var(--text-secondary)',
                       border: sec ? 'none' : '1px solid var(--border)',
                     }}>
@@ -154,7 +154,7 @@ export default function KurulumEkibiKatil() {
 
           <button onClick={handleGonder} disabled={!gecerli}
             className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.01] disabled:opacity-40 disabled:hover:scale-100"
-            style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)' }}>
+            style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
             <Send size={17} /> Başvuruyu Gönder
           </button>
           <p className="text-[11px] text-center mt-3" style={{ color: 'var(--text-muted)' }}>
