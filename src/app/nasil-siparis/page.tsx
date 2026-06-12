@@ -6,8 +6,8 @@ import Link from 'next/link'
 const steps = [
   {
     number: '01',
-    title: 'Ürünü Seçin & Sepete Ekleyin',
-    desc: 'Ýhtiyacýnýza uygun ürünü seçin. Baský adedi, kaðýt kalýnlýðý, kaplama gibi özellikleri belirleyerek sepetinize ekleyin. Fiyat anýnda güncellenir.',
+    title: 'ï¿½rï¿½nï¿½ Seï¿½in & Sepete Ekleyin',
+    desc: 'ï¿½htiyacï¿½nï¿½za uygun ï¿½rï¿½nï¿½ seï¿½in. Baskï¿½ adedi, kaï¿½ï¿½t kalï¿½nlï¿½ï¿½ï¿½, kaplama gibi ï¿½zellikleri belirleyerek sepetinize ekleyin. Fiyat anï¿½nda gï¿½ncellenir.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(244,130,31,0.1)" />
@@ -17,12 +17,12 @@ const steps = [
       </svg>
     ),
     color: '#DC2626',
-    action: { label: 'Ürünlere Göz At', href: '/urunler' }
+    action: { label: 'ï¿½rï¿½nlere Gï¿½z At', href: '/urunler' }
   },
   {
     number: '02',
-    title: 'Sipariþinizi Tamamlayýn',
-    desc: 'Teslimat adresinizi girin ve ödeme yöntemini seçin. Kredi kartý, banka havalesi / EFT veya BKM Ekspres ile güvenli ödeme yapabilirsiniz.',
+    title: 'Sipariï¿½inizi Tamamlayï¿½n',
+    desc: 'Teslimat adresinizi girin ve ï¿½deme yï¿½ntemini seï¿½in. Kredi kartï¿½, banka havalesi / EFT veya BKM Ekspres ile gï¿½venli ï¿½deme yapabilirsiniz.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(99,102,241,0.1)" />
@@ -36,8 +36,8 @@ const steps = [
   },
   {
     number: '03',
-    title: 'Tasarýmýnýzý Yükleyin',
-    desc: 'Sipariþi verdikten sonra tasarým dosyanýzý yükleyin. Tasarýmýnýz yoksa "Kendi Tasarla" seçeneðiyle kolayca oluþturabilirsiniz. Uzman ekibimiz dosyayý kontrol eder.',
+    title: 'Tasarï¿½mï¿½nï¿½zï¿½ Yï¿½kleyin',
+    desc: 'Sipariï¿½i verdikten sonra tasarï¿½m dosyanï¿½zï¿½ yï¿½kleyin. Tasarï¿½mï¿½nï¿½z yoksa "Kendi Tasarla" seï¿½eneï¿½iyle kolayca oluï¿½turabilirsiniz. Uzman ekibimiz dosyayï¿½ kontrol eder.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(16,185,129,0.1)" />
@@ -46,12 +46,12 @@ const steps = [
       </svg>
     ),
     color: '#10B981',
-    action: { label: 'Tasarým Kýlavuzu', href: '/tasarim-yukleme' }
+    action: { label: 'Tasarï¿½m Kï¿½lavuzu', href: '/tasarim-yukleme' }
   },
   {
     number: '04',
-    title: 'Hýzlý Kargo ile Kapýnýza Gelir',
-    desc: 'Baský tamamlandýktan sonra sipariþiniz anlaþmalý kargo firmamýzla hýzlýca gönderilir. Sipariþ takip numaranýzla kargonuzu anlýk izleyebilirsiniz.',
+    title: 'Hï¿½zlï¿½ Kargo ile Kapï¿½nï¿½za Gelir',
+    desc: 'Baskï¿½ tamamlandï¿½ktan sonra sipariï¿½iniz anlaï¿½malï¿½ kargo firmamï¿½zla hï¿½zlï¿½ca gï¿½nderilir. Sipariï¿½ takip numaranï¿½zla kargonuzu anlï¿½k izleyebilirsiniz.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(14,165,233,0.1)" />
@@ -67,24 +67,24 @@ const steps = [
 
 const faqs = [
   {
-    q: 'Minimum sipariþ adedi nedir?',
-    a: 'Ürüne göre deðiþmekle birlikte çoðu üründe minimum 25-50 adet ile sipariþ verebilirsiniz.'
+    q: 'Minimum sipariï¿½ adedi nedir?',
+    a: 'ï¿½rï¿½ne gï¿½re deï¿½iï¿½mekle birlikte ï¿½oï¿½u ï¿½rï¿½nde minimum 25-50 adet ile sipariï¿½ verebilirsiniz.'
   },
   {
-    q: 'Tasarýmým yoksa ne yapabilirim?',
-    a: 'Sipariþ sonrasý tasarým desteði alabilir, ya da hazýr þablonlarýmýzý kullanarak kendi tasarýmýnýzý oluþturabilirsiniz.'
+    q: 'Tasarï¿½mï¿½m yoksa ne yapabilirim?',
+    a: 'Sipariï¿½ sonrasï¿½ tasarï¿½m desteï¿½i alabilir, ya da hazï¿½r ï¿½ablonlarï¿½mï¿½zï¿½ kullanarak kendi tasarï¿½mï¿½nï¿½zï¿½ oluï¿½turabilirsiniz.'
   },
   {
-    q: 'Ödeme yöntemleri nelerdir?',
-    a: 'Kredi kartý (taksit seçeneðiyle), banka havalesi/EFT ve BKM Ekspres ile ödeme yapabilirsiniz.'
+    q: 'ï¿½deme yï¿½ntemleri nelerdir?',
+    a: 'Kredi kartï¿½ (taksit seï¿½eneï¿½iyle), banka havalesi/EFT ve BKM Ekspres ile ï¿½deme yapabilirsiniz.'
   },
   {
-    q: 'Kargo süresi ne kadar?',
-    a: 'Baský süresi ürüne göre 1-5 iþ günü, kargo ise 1-2 iþ günüdür. Ekspres üretim seçeneði de mevcuttur.'
+    q: 'Kargo sï¿½resi ne kadar?',
+    a: 'Baskï¿½ sï¿½resi ï¿½rï¿½ne gï¿½re 1-5 iï¿½ gï¿½nï¿½, kargo ise 1-2 iï¿½ gï¿½nï¿½dï¿½r. Ekspres ï¿½retim seï¿½eneï¿½i de mevcuttur.'
   },
   {
-    q: 'Sipariþimi iptal edebilir miyim?',
-    a: 'Baský iþlemi baþlamadan önce iptal mümkündür. Tasarým onayýndan sonra iptal kabul edilmemektedir.'
+    q: 'Sipariï¿½imi iptal edebilir miyim?',
+    a: 'Baskï¿½ iï¿½lemi baï¿½lamadan ï¿½nce iptal mï¿½mkï¿½ndï¿½r. Tasarï¿½m onayï¿½ndan sonra iptal kabul edilmemektedir.'
   }
 ]
 
@@ -99,10 +99,10 @@ export default function NasilSiparisPage() {
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Rehber</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
-              Nasýl Sipariþ Verebilirim?
+              Nasï¿½l Sipariï¿½ Verebilirim?
             </h1>
             <p className="text-[16px] max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Baskýurunleri.com'da sipariþ vermek çok kolay. 4 basit adýmda sipariþiniz kapýnýza gelir.
+              Baskï¿½urunleri.com'da sipariï¿½ vermek ï¿½ok kolay. 4 basit adï¿½mda sipariï¿½iniz kapï¿½nï¿½za gelir.
             </p>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function NasilSiparisPage() {
                       <Link href={step.action.href}
                         className="inline-flex items-center gap-1.5 text-[12px] font-bold hover:underline"
                         style={{ color: step.color }}>
-                        {step.action.label} ›
+                        {step.action.label} ï¿½
                       </Link>
                     )}
                   </div>
@@ -162,7 +162,7 @@ export default function NasilSiparisPage() {
         <div style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16">
             <h2 className="text-[24px] font-black tracking-[-0.5px] mb-8" style={{ color: 'var(--text-primary)' }}>
-              Sýk Sorulan Sorular
+              Sï¿½k Sorulan Sorular
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
@@ -183,21 +183,21 @@ export default function NasilSiparisPage() {
         {/* CTA */}
         <div className="max-w-4xl mx-auto px-6 py-16 text-center">
           <h2 className="text-[24px] font-black mb-3" style={{ color: 'var(--text-primary)' }}>
-            Hâlâ sorunuz mu var?
+            Hï¿½lï¿½ sorunuz mu var?
           </h2>
           <p className="text-[14px] mb-6" style={{ color: 'var(--text-secondary)' }}>
-            Uzman ekibimiz size yardýmcý olmaktan mutluluk duyar.
+            Uzman ekibimiz size yardï¿½mcï¿½ olmaktan mutluluk duyar.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <Link href="/iletisim"
               className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
               style={{ background: '#DC2626' }}>
-              Ýletiþime Geç
+              ï¿½letiï¿½ime Geï¿½
             </Link>
             <Link href="/urunler"
               className="px-6 py-3 rounded-xl text-[13px] font-bold"
               style={{ border: '1px solid var(--border)', color: 'var(--text-primary)', background: 'var(--bg-card)' }}>
-              Ürünlere Göz At
+              ï¿½rï¿½nlere Gï¿½z At
             </Link>
           </div>
         </div>

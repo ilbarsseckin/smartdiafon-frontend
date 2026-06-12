@@ -20,10 +20,10 @@ export default function KayitPage() {
       const res = await authApi.register(data)
       const { token, email, name, role } = res.data.data
       setAuth({ id: '', name, email, role }, token)
-      toast.success('Kayýt baþarýlý!')
+      toast.success('Kayï¿½t baï¿½arï¿½lï¿½!')
       router.push('/')
     } catch (err: any) {
-      toast.error(err.response?.data?.message || 'Kayýt baþarýsýz')
+      toast.error(err.response?.data?.message || 'Kayï¿½t baï¿½arï¿½sï¿½z')
     }
   }
 
@@ -37,16 +37,16 @@ export default function KayitPage() {
             </div>
            <Logo className="h-7" />
           </Link>
-          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesap oluþturun</h1>
-          <p className="text-[13px] text-gray-400 mt-1.5">Ücretsiz kayýt, hemen sipariþ verin</p>
+          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesap oluï¿½turun</h1>
+          <p className="text-[13px] text-gray-400 mt-1.5">ï¿½cretsiz kayï¿½t, hemen sipariï¿½ verin</p>
         </div>
 
         <div className="bg-white dark:bg-[#141414] border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {[
-              { key: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yýlmaz', required: true },
+              { key: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yï¿½lmaz', required: true },
               { key: 'email', label: 'E-posta', type: 'email', placeholder: 'ornek@mail.com', required: true },
-              { key: 'password', label: 'Þifre', type: 'password', placeholder: 'En az 6 karakter', required: true, minLength: 6 },
+              { key: 'password', label: 'ï¿½ifre', type: 'password', placeholder: 'En az 6 karakter', required: true, minLength: 6 },
               { key: 'phone', label: 'Telefon (opsiyonel)', type: 'tel', placeholder: '05001234567', required: false },
             ].map(f => (
               <div key={f.key}>
@@ -63,14 +63,14 @@ export default function KayitPage() {
 
             <button type="submit" disabled={isSubmitting}
               className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
-              {isSubmitting ? 'Kayýt olunuyor...' : 'Kayýt ol'}
+              {isSubmitting ? 'Kayï¿½t olunuyor...' : 'Kayï¿½t ol'}
             </button>
           </form>
         </div>
 
         <p className="text-center text-[12px] text-gray-400 mt-4">
-          Zaten hesabýnýz var mý?{' '}
-          <Link href="/giris" className="text-[#DC2626] hover:underline">Giriþ yapýn</Link>
+          Zaten hesabï¿½nï¿½z var mï¿½?{' '}
+          <Link href="/giris" className="text-[#DC2626] hover:underline">Giriï¿½ yapï¿½n</Link>
         </p>
       </div>
     </div>

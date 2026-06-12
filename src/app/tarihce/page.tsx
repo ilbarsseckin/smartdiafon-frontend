@@ -2,12 +2,12 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 
 const milestones = [
-  { year: '2010', title: 'Kuruluþ', desc: "Ýkitelli'de 200 m² ile baþladýk." },
-  { year: '2013', title: 'Ýlk Büyük Makine', desc: 'HP Latex 700W ile büyük format baskýya girdik.' },
-  { year: '2016', title: 'Fabrika Geniþlemesi', desc: '1200 m² yeni fabrikamýza taþýndýk.' },
-  { year: '2019', title: 'Kurumsal Müþteriler', desc: 'Migros ve Efes Pilsen ile uzun vadeli anlaþmalar.' },
-  { year: '2022', title: 'Online Platform', desc: 'baskýurunleri.com online sipariþ platformunu hayata geçirdik.' },
-  { year: '2024', title: 'Bugün', desc: '12.000+ müþteri, 81 ilde teslimat.' },
+  { year: '2010', title: 'Kuruluï¿½', desc: "ï¿½kitelli'de 200 mï¿½ ile baï¿½ladï¿½k." },
+  { year: '2013', title: 'ï¿½lk Bï¿½yï¿½k Makine', desc: 'HP Latex 700W ile bï¿½yï¿½k format baskï¿½ya girdik.' },
+  { year: '2016', title: 'Fabrika Geniï¿½lemesi', desc: '1200 mï¿½ yeni fabrikamï¿½za taï¿½ï¿½ndï¿½k.' },
+  { year: '2019', title: 'Kurumsal Mï¿½ï¿½teriler', desc: 'Migros ve Efes Pilsen ile uzun vadeli anlaï¿½malar.' },
+  { year: '2022', title: 'Online Platform', desc: 'baskï¿½urunleri.com online sipariï¿½ platformunu hayata geï¿½irdik.' },
+  { year: '2024', title: 'Bugï¿½n', desc: '12.000+ mï¿½ï¿½teri, 81 ilde teslimat.' },
 ]
 
 export default function TarihcePage() {
@@ -15,10 +15,10 @@ export default function TarihcePage() {
     <>
       <Navbar />
       <main className="max-w-4xl mx-auto px-6 py-20">
-        <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Tarihçe</p>
+        <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Tarihï¿½e</p>
         <h1 className="text-[40px] font-bold tracking-[-1px] mb-12"
           style={{ color: 'var(--text-primary)', fontFamily: 'Georgia, serif' }}>
-          Yolculuðumuz
+          Yolculuï¿½umuz
         </h1>
         <div className="relative pl-8">
           <div className="absolute left-[7px] top-0 bottom-0 w-[2px]"

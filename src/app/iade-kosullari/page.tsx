@@ -4,8 +4,8 @@ import Footer from '@/components/layout/Footer'
 import { ShieldCheck, AlertCircle, CheckCircle, XCircle, Clock, Phone } from 'lucide-react'
 
 export const metadata = {
-  title: 'Ýptal ve Ýade Koþullarý | Smartdiafon',
-  description: 'Smartdiafon.com iptal, iade ve cayma hakký koþullarý. Diyafon, interkom ve güvenlik sistemi ürünlerinde iade politikamýz.',
+  title: 'ï¿½ptal ve ï¿½ade Koï¿½ullarï¿½ | Smartdiafon',
+  description: 'Smartdiafon.com iptal, iade ve cayma hakkï¿½ koï¿½ullarï¿½. Diyafon, interkom ve gï¿½venlik sistemi ï¿½rï¿½nlerinde iade politikamï¿½z.',
 }
 
 const sections = [
@@ -13,76 +13,76 @@ const sections = [
     icon: ShieldCheck,
     color: '#DC2626',
     title: '1. Genel Bilgi',
-    content: `Smartdiafon.com üzerinden satýn aldýðýnýz diyafon, interkom, DiafonBox ve güvenlik sistemi ürünleri, Mesafeli Satýþ Sözleþmesi kapsamýnda deðerlendirilmektedir.
+    content: `Smartdiafon.com ï¿½zerinden satï¿½n aldï¿½ï¿½ï¿½nï¿½z diyafon, interkom, DiafonBox ve gï¿½venlik sistemi ï¿½rï¿½nleri, Mesafeli Satï¿½ï¿½ Sï¿½zleï¿½mesi kapsamï¿½nda deï¿½erlendirilmektedir.
 
-6502 sayýlý Tüketicinin Korunmasý Hakkýnda Kanun ve Mesafeli Sözleþmeler Yönetmeliði hükümleri çerçevesinde; standart stok ürünlerde 14 günlük cayma hakkýnýz bulunmaktadýr. Kurulum gerektiren veya kiþiye özel yapýlandýrýlan ürünlerde bu hak aþaðýdaki koþullara tabidir.`,
+6502 sayï¿½lï¿½ Tï¿½keticinin Korunmasï¿½ Hakkï¿½nda Kanun ve Mesafeli Sï¿½zleï¿½meler Yï¿½netmeliï¿½i hï¿½kï¿½mleri ï¿½erï¿½evesinde; standart stok ï¿½rï¿½nlerde 14 gï¿½nlï¿½k cayma hakkï¿½nï¿½z bulunmaktadï¿½r. Kurulum gerektiren veya kiï¿½iye ï¿½zel yapï¿½landï¿½rï¿½lan ï¿½rï¿½nlerde bu hak aï¿½aï¿½ï¿½daki koï¿½ullara tabidir.`,
   },
   {
     icon: XCircle,
     color: '#DC2626',
-    title: '2. Cayma Hakký Kullanýlamayan Durumlar',
-    content: `Aþaðýdaki durumlarda cayma hakký ve iade talepleri kabul edilmez:
+    title: '2. Cayma Hakkï¿½ Kullanï¿½lamayan Durumlar',
+    content: `Aï¿½aï¿½ï¿½daki durumlarda cayma hakkï¿½ ve iade talepleri kabul edilmez:
 
-• Kurulum ve montajý tamamlanmýþ diyafon, interkom veya güvenlik sistemleri
-• Müþteri talebiyle özel yapýlandýrýlmýþ ya da programlanmýþ cihazlar
-• Ambalajý açýlmýþ ve kullanýlmýþ elektronik ürünler (hijyen ve teknik güvenlik gerekçesiyle)
-• Müþteri kaynaklý fiziksel hasar veya yanlýþ kullaným
-• Yazýlým lisansý aktivasyonu tamamlanmýþ ürünler`,
+ï¿½ Kurulum ve montajï¿½ tamamlanmï¿½ï¿½ diyafon, interkom veya gï¿½venlik sistemleri
+ï¿½ Mï¿½ï¿½teri talebiyle ï¿½zel yapï¿½landï¿½rï¿½lmï¿½ï¿½ ya da programlanmï¿½ï¿½ cihazlar
+ï¿½ Ambalajï¿½ aï¿½ï¿½lmï¿½ï¿½ ve kullanï¿½lmï¿½ï¿½ elektronik ï¿½rï¿½nler (hijyen ve teknik gï¿½venlik gerekï¿½esiyle)
+ï¿½ Mï¿½ï¿½teri kaynaklï¿½ fiziksel hasar veya yanlï¿½ï¿½ kullanï¿½m
+ï¿½ Yazï¿½lï¿½m lisansï¿½ aktivasyonu tamamlanmï¿½ï¿½ ï¿½rï¿½nler`,
   },
   {
     icon: CheckCircle,
     color: '#16A34A',
-    title: '3. Ýade Kabul Edilen Durumlar',
-    content: `Aþaðýdaki durumlarda ücretsiz deðiþim veya iade hakkýnýz bulunmaktadýr:
+    title: '3. ï¿½ade Kabul Edilen Durumlar',
+    content: `Aï¿½aï¿½ï¿½daki durumlarda ï¿½cretsiz deï¿½iï¿½im veya iade hakkï¿½nï¿½z bulunmaktadï¿½r:
 
-• Tarafýmýzdan kaynaklanan üretim veya sevkiyat hatasý (yanlýþ ürün, eksik parça)
-• Kargo sýrasýnda meydana gelen fiziksel hasar (kargo firmasýndan tutanak alýnmýþ olmasý þartýyla)
-• Garanti kapsamýnda arýza (2 yýl içinde)
-• Ürünün ilan edilen teknik özelliklerini karþýlamamasý
+ï¿½ Tarafï¿½mï¿½zdan kaynaklanan ï¿½retim veya sevkiyat hatasï¿½ (yanlï¿½ï¿½ ï¿½rï¿½n, eksik parï¿½a)
+ï¿½ Kargo sï¿½rasï¿½nda meydana gelen fiziksel hasar (kargo firmasï¿½ndan tutanak alï¿½nmï¿½ï¿½ olmasï¿½ ï¿½artï¿½yla)
+ï¿½ Garanti kapsamï¿½nda arï¿½za (2 yï¿½l iï¿½inde)
+ï¿½ ï¿½rï¿½nï¿½n ilan edilen teknik ï¿½zelliklerini karï¿½ï¿½lamamasï¿½
 
-Bu durumlarda iade veya deðiþim tamamen ücretsizdir.`,
+Bu durumlarda iade veya deï¿½iï¿½im tamamen ï¿½cretsizdir.`,
   },
   {
     icon: Clock,
     color: '#2563EB',
-    title: '4. Þikayet ve Ýade Süreci',
-    content: `Ürününüzü teslim aldýktan sonra:
+    title: '4. ï¿½ikayet ve ï¿½ade Sï¿½reci',
+    content: `ï¿½rï¿½nï¿½nï¿½zï¿½ teslim aldï¿½ktan sonra:
 
-1. Ürünü teslim aldýðýnýz gün kontrol edin
-2. Sorun tespit etmeniz halinde 3 iþ günü içinde bize ulaþýn
-3. Sorunu gösteren fotoðraf veya video gönderin
-4. Sipariþ numaranýzý bildirin
+1. ï¿½rï¿½nï¿½ teslim aldï¿½ï¿½ï¿½nï¿½z gï¿½n kontrol edin
+2. Sorun tespit etmeniz halinde 3 iï¿½ gï¿½nï¿½ iï¿½inde bize ulaï¿½ï¿½n
+3. Sorunu gï¿½steren fotoï¿½raf veya video gï¿½nderin
+4. Sipariï¿½ numaranï¿½zï¿½ bildirin
 
-3 iþ günü geçtikten sonra yapýlan hasar þikayetleri deðerlendirilemez.
+3 iï¿½ gï¿½nï¿½ geï¿½tikten sonra yapï¿½lan hasar ï¿½ikayetleri deï¿½erlendirilemez.
 
-Garanti kapsamýndaki arýzalar için süre, teslim tarihinden itibaren 2 yýldýr.
+Garanti kapsamï¿½ndaki arï¿½zalar iï¿½in sï¿½re, teslim tarihinden itibaren 2 yï¿½ldï¿½r.
 
-Bize ulaþmak için:
-• WhatsApp: 0552 230 33 33
-• E-posta: destek@smartdiafon.com
-• Canlý destek: smartdiafon.com`,
+Bize ulaï¿½mak iï¿½in:
+ï¿½ WhatsApp: 0552 230 33 33
+ï¿½ E-posta: destek@smartdiafon.com
+ï¿½ Canlï¿½ destek: smartdiafon.com`,
   },
   {
     icon: AlertCircle,
     color: '#F59E0B',
     title: '5. Kurulum Hizmeti',
-    content: `Kurulum hizmeti satýn alýndýðýnda:
+    content: `Kurulum hizmeti satï¿½n alï¿½ndï¿½ï¿½ï¿½nda:
 
-• Kurulum ekibimiz randevu günü ve saatinde adreste hazýr bulunur
-• Kurulum tamamlandýktan sonra hizmet bedeli iade edilmez
-• Randevu iptali en az 24 saat önceden bildirilmelidir; geç iptal durumunda hizmet bedeli kesilir
-• Teknik arýzadan kaynaklanan yeniden kurulum ziyareti ücretsizdir`,
+ï¿½ Kurulum ekibimiz randevu gï¿½nï¿½ ve saatinde adreste hazï¿½r bulunur
+ï¿½ Kurulum tamamlandï¿½ktan sonra hizmet bedeli iade edilmez
+ï¿½ Randevu iptali en az 24 saat ï¿½nceden bildirilmelidir; geï¿½ iptal durumunda hizmet bedeli kesilir
+ï¿½ Teknik arï¿½zadan kaynaklanan yeniden kurulum ziyareti ï¿½cretsizdir`,
   },
   {
     icon: ShieldCheck,
     color: '#6366F1',
-    title: '6. Garanti Koþullarý',
-    content: `Tüm Multitek ve DiafonBox ürünleri 2 yýl üretici garantisi kapsamýndadýr.
+    title: '6. Garanti Koï¿½ullarï¿½',
+    content: `Tï¿½m Multitek ve DiafonBox ï¿½rï¿½nleri 2 yï¿½l ï¿½retici garantisi kapsamï¿½ndadï¿½r.
 
-• Garanti; üretim hatalarýný, malzeme kusurlarýný ve fabrika arýzalarýný kapsar
-• Fiziksel hasar, nem/su temasý, aþýrý gerilim ve yetkisiz müdahale garantiyi geçersiz kýlar
-• Garanti servisi için ürünü kargolayabilir veya teknik ekibimizden destek talep edebilirsiniz
-• Garanti kapsamý dýþýndaki onarýmlar için ücret teklifi sunulur; onayýnýz alýnmadan iþlem yapýlmaz`,
+ï¿½ Garanti; ï¿½retim hatalarï¿½nï¿½, malzeme kusurlarï¿½nï¿½ ve fabrika arï¿½zalarï¿½nï¿½ kapsar
+ï¿½ Fiziksel hasar, nem/su temasï¿½, aï¿½ï¿½rï¿½ gerilim ve yetkisiz mï¿½dahale garantiyi geï¿½ersiz kï¿½lar
+ï¿½ Garanti servisi iï¿½in ï¿½rï¿½nï¿½ kargolayabilir veya teknik ekibimizden destek talep edebilirsiniz
+ï¿½ Garanti kapsamï¿½ dï¿½ï¿½ï¿½ndaki onarï¿½mlar iï¿½in ï¿½cret teklifi sunulur; onayï¿½nï¿½z alï¿½nmadan iï¿½lem yapï¿½lmaz`,
   },
 ]
 
@@ -93,48 +93,48 @@ export default function IadeKosullariPage() {
       <main className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-secondary)' }}>
         <div className="max-w-3xl mx-auto">
 
-          {/* Baþlýk */}
+          {/* Baï¿½lï¿½k */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
               style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
               <ShieldCheck size={14} />
-              Tüketici Haklarý
+              Tï¿½ketici Haklarï¿½
             </div>
             <h1 className="text-[28px] sm:text-[36px] font-black tracking-[-1px] mb-3"
               style={{ color: 'var(--text-primary)' }}>
-              Ýptal ve Ýade Koþullarý
+              ï¿½ptal ve ï¿½ade Koï¿½ullarï¿½
             </h1>
             <p className="text-[14px] leading-relaxed max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-              Smartdiafon'dan satýn aldýðýnýz diyafon, interkom ve güvenlik sistemi ürünlerine ait iade ve garanti koþullarý.
+              Smartdiafon'dan satï¿½n aldï¿½ï¿½ï¿½nï¿½z diyafon, interkom ve gï¿½venlik sistemi ï¿½rï¿½nlerine ait iade ve garanti koï¿½ullarï¿½.
             </p>
             <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
-              Son güncelleme: Haziran 2026
+              Son gï¿½ncelleme: Haziran 2026
             </p>
           </div>
 
-          {/* Özet kartlar */}
+          {/* ï¿½zet kartlar */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
             <div className="rounded-2xl p-4 text-center"
               style={{ background: 'rgba(22,163,74,0.08)', border: '1px solid rgba(22,163,74,0.2)' }}>
               <CheckCircle size={24} className="mx-auto mb-2 text-green-600" />
-              <p className="text-[13px] font-bold text-green-700">14 Gün Cayma</p>
-              <p className="text-[11px] mt-1 text-green-600">Stok ürünlerde geçerli</p>
+              <p className="text-[13px] font-bold text-green-700">14 Gï¿½n Cayma</p>
+              <p className="text-[11px] mt-1 text-green-600">Stok ï¿½rï¿½nlerde geï¿½erli</p>
             </div>
             <div className="rounded-2xl p-4 text-center"
               style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
               <ShieldCheck size={24} className="mx-auto mb-2" style={{ color: '#6366F1' }} />
-              <p className="text-[13px] font-bold" style={{ color: '#4F46E5' }}>2 Yýl Garanti</p>
-              <p className="text-[11px] mt-1" style={{ color: '#6366F1' }}>Tüm Multitek ürünler</p>
+              <p className="text-[13px] font-bold" style={{ color: '#4F46E5' }}>2 Yï¿½l Garanti</p>
+              <p className="text-[11px] mt-1" style={{ color: '#6366F1' }}>Tï¿½m Multitek ï¿½rï¿½nler</p>
             </div>
             <div className="rounded-2xl p-4 text-center"
               style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.2)' }}>
               <Clock size={24} className="mx-auto mb-2 text-blue-600" />
-              <p className="text-[13px] font-bold text-blue-700">3 Ýþ Günü</p>
-              <p className="text-[11px] mt-1 text-blue-600">Hasar bildirimi süresi</p>
+              <p className="text-[13px] font-bold text-blue-700">3 ï¿½ï¿½ Gï¿½nï¿½</p>
+              <p className="text-[11px] mt-1 text-blue-600">Hasar bildirimi sï¿½resi</p>
             </div>
           </div>
 
-          {/* Bölümler */}
+          {/* Bï¿½lï¿½mler */}
           <div className="space-y-4">
             {sections.map((s, i) => (
               <div key={i} className="rounded-2xl overflow-hidden"
@@ -158,29 +158,29 @@ export default function IadeKosullariPage() {
             ))}
           </div>
 
-          {/* Ýletiþim CTA */}
+          {/* ï¿½letiï¿½im CTA */}
           <div className="mt-8 rounded-2xl p-6 text-center"
             style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
             <Phone size={24} className="mx-auto mb-3 text-white" />
             <h3 className="text-[18px] font-black text-white mb-2">Sorunuz mu var?</h3>
             <p className="text-[13px] text-white/80 mb-4">
-              Ýade ve garanti süreçleri için WhatsApp destek hattýmýza ulaþabilirsiniz.
+              ï¿½ade ve garanti sï¿½reï¿½leri iï¿½in WhatsApp destek hattï¿½mï¿½za ulaï¿½abilirsiniz.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="https://wa.me/905522303333"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold bg-white text-[#DC2626] hover:opacity-90 transition-all">
-                WhatsApp ile Ulaþ
+                WhatsApp ile Ulaï¿½
               </a>
               <Link href="/iletisim"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold text-white hover:opacity-90 transition-all"
                 style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.3)' }}>
-                Ýletiþim Formu
+                ï¿½letiï¿½im Formu
               </Link>
             </div>
           </div>
 
           <p className="text-center text-[11px] mt-6" style={{ color: 'var(--text-muted)' }}>
-            Bu sayfa 6502 sayýlý Tüketicinin Korunmasý Hakkýnda Kanun ve ilgili yönetmelikler çerçevesinde hazýrlanmýþtýr.
+            Bu sayfa 6502 sayï¿½lï¿½ Tï¿½keticinin Korunmasï¿½ Hakkï¿½nda Kanun ve ilgili yï¿½netmelikler ï¿½erï¿½evesinde hazï¿½rlanmï¿½ï¿½tï¿½r.
           </p>
         </div>
       </main>

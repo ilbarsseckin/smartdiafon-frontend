@@ -14,29 +14,29 @@ export default function TasarimYuklemePage() {
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Rehber</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
-              Tasarým Yükleme ve Onay Süreci
+              Tasarï¿½m Yï¿½kleme ve Onay Sï¿½reci
             </h1>
             <p className="text-[16px] max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Sipariþinizi tamamladýktan sonra tasarýmýnýzý istediðiniz zaman ilgili sipariþ sayfasýndan yükleyebilirsiniz.
-              Tasarýmý yükledikten sonra baský onay süreci baþlayacaktýr.
+              Sipariï¿½inizi tamamladï¿½ktan sonra tasarï¿½mï¿½nï¿½zï¿½ istediï¿½iniz zaman ilgili sipariï¿½ sayfasï¿½ndan yï¿½kleyebilirsiniz.
+              Tasarï¿½mï¿½ yï¿½kledikten sonra baskï¿½ onay sï¿½reci baï¿½layacaktï¿½r.
             </p>
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto px-6 py-16">
 
-          {/* Ýki seçenek */}
+          {/* ï¿½ki seï¿½enek */}
           <div className="text-center mb-10">
             <h2 className="text-[22px] font-black tracking-[-0.5px] mb-2" style={{ color: 'var(--text-primary)' }}>
-              Tasarým yükleme adýmýnda <span style={{ color: '#DC2626' }}>2 seçenek</span> vardýr.
+              Tasarï¿½m yï¿½kleme adï¿½mï¿½nda <span style={{ color: '#DC2626' }}>2 seï¿½enek</span> vardï¿½r.
             </h2>
             <p className="text-[14px]" style={{ color: 'var(--text-secondary)' }}>
-              Tasarýmýnýzý "hýzlý otomasyon kontrolü" ya da "uzman grafiker kontrolü" seçeneklerinden birini seçerek yükleyebilirsiniz.
+              Tasarï¿½mï¿½nï¿½zï¿½ "hï¿½zlï¿½ otomasyon kontrolï¿½" ya da "uzman grafiker kontrolï¿½" seï¿½eneklerinden birini seï¿½erek yï¿½kleyebilirsiniz.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
-            {/* Hýzlý Otomasyon */}
+            {/* Hï¿½zlï¿½ Otomasyon */}
             <div className="rounded-2xl p-8 text-center"
               style={{ background: 'var(--bg-card)', border: '2px solid #DC2626' }}>
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
@@ -49,14 +49,14 @@ export default function TasarimYuklemePage() {
                 </svg>
               </div>
               <h3 className="text-[16px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
-                ? Hýzlý Otomasyon Kontrolü
+                ? Hï¿½zlï¿½ Otomasyon Kontrolï¿½
               </h3>
               <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                15 dakika içinde otomatik kontrol. Grafik konusunda deneyimli kullanýcýlar için ideal.
+                15 dakika iï¿½inde otomatik kontrol. Grafik konusunda deneyimli kullanï¿½cï¿½lar iï¿½in ideal.
               </p>
               <div className="mt-3 text-[11px] font-bold px-3 py-1 rounded-full inline-block"
                 style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
-                Önerilen
+                ï¿½nerilen
               </div>
             </div>
 
@@ -72,29 +72,29 @@ export default function TasarimYuklemePage() {
                 </svg>
               </div>
               <h3 className="text-[16px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
-                ?? Uzman Grafiker Kontrolü
+                ?? Uzman Grafiker Kontrolï¿½
               </h3>
               <p className="text-[13px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Uzman grafiker ekibimiz dosyanýzý inceler ve gerekirse düzeltme önerisinde bulunur.
+                Uzman grafiker ekibimiz dosyanï¿½zï¿½ inceler ve gerekirse dï¿½zeltme ï¿½nerisinde bulunur.
               </p>
             </div>
           </div>
 
-          {/* Hýzlý Otomasyon Detay */}
+          {/* Hï¿½zlï¿½ Otomasyon Detay */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold"
                 style={{ background: '#DC2626' }}>1</div>
               <h2 className="text-[20px] font-black" style={{ color: '#DC2626' }}>
-                Hýzlý Otomasyon Kontrolü
+                Hï¿½zlï¿½ Otomasyon Kontrolï¿½
               </h2>
             </div>
             <p className="text-[13px] mb-4" style={{ color: 'var(--text-secondary)' }}>
-              Baský öncesi grafik konusunda bilgisi olan kullanýcýlara tavsiye edilir. Otomasyon 15 dk içerisinde tarafýnýza dönüþ yapar. Otomasyon 2 farklý þekilde dönüþ yapabilir:
+              Baskï¿½ ï¿½ncesi grafik konusunda bilgisi olan kullanï¿½cï¿½lara tavsiye edilir. Otomasyon 15 dk iï¿½erisinde tarafï¿½nï¿½za dï¿½nï¿½ï¿½ yapar. Otomasyon 2 farklï¿½ ï¿½ekilde dï¿½nï¿½ï¿½ yapabilir:
             </p>
 
             <div className="space-y-4">
-              {/* Onaylý */}
+              {/* Onaylï¿½ */}
               <div className="rounded-xl p-6"
                 style={{ background: 'rgba(16,185,129,0.05)', border: '1px solid rgba(16,185,129,0.2)' }}>
                 <div className="flex items-center gap-2 mb-3">
@@ -103,25 +103,25 @@ export default function TasarimYuklemePage() {
                       <path d="M2 6l3 3 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-[14px] font-bold text-emerald-600">1) Otomasyon Tasarýmý Baskýya Uygun Hale Getirdi.</h3>
+                  <h3 className="text-[14px] font-bold text-emerald-600">1) Otomasyon Tasarï¿½mï¿½ Baskï¿½ya Uygun Hale Getirdi.</h3>
                 </div>
                 <ul className="space-y-1.5 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-500 mt-0.5">•</span>
-                    Tasarýmýnýzý tüm uyarýlarý kontrol ederek baskýya uygun hale getirdi, hemen sipariþ verebilirsiniz.
+                    <span className="text-emerald-500 mt-0.5">ï¿½</span>
+                    Tasarï¿½mï¿½nï¿½zï¿½ tï¿½m uyarï¿½larï¿½ kontrol ederek baskï¿½ya uygun hale getirdi, hemen sipariï¿½ verebilirsiniz.
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-500 mt-0.5">•</span>
-                    Onaylamadan önce tasarýmý grafiker kontrolüne göndermek istemiyorsanýz <strong>"Onaylýyorum"</strong> butonuna týklayarak ilerleyebilirsiniz.
+                    <span className="text-emerald-500 mt-0.5">ï¿½</span>
+                    Onaylamadan ï¿½nce tasarï¿½mï¿½ grafiker kontrolï¿½ne gï¿½ndermek istemiyorsanï¿½z <strong>"Onaylï¿½yorum"</strong> butonuna tï¿½klayarak ilerleyebilirsiniz.
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-500 mt-0.5">•</span>
-                    Tasarýmý onay vermeden, yeni dosya yüklemek veya <strong>"Onaylamýyorum, uzman grafiker kontrolü istiyorum"</strong> seçeneklerinden birini seçerek devam edebilirsiniz.
+                    <span className="text-emerald-500 mt-0.5">ï¿½</span>
+                    Tasarï¿½mï¿½ onay vermeden, yeni dosya yï¿½klemek veya <strong>"Onaylamï¿½yorum, uzman grafiker kontrolï¿½ istiyorum"</strong> seï¿½eneklerinden birini seï¿½erek devam edebilirsiniz.
                   </li>
                 </ul>
               </div>
 
-              {/* Onaysýz */}
+              {/* Onaysï¿½z */}
               <div className="rounded-xl p-6"
                 style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)' }}>
                 <div className="flex items-center gap-2 mb-3">
@@ -130,16 +130,16 @@ export default function TasarimYuklemePage() {
                       <path d="M3 3l6 6M9 3l-6 6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-[14px] font-bold text-red-600">2) Otomasyon Tasarýmýnýzý Baskýya Uygun Hale Getiremedi.</h3>
+                  <h3 className="text-[14px] font-bold text-red-600">2) Otomasyon Tasarï¿½mï¿½nï¿½zï¿½ Baskï¿½ya Uygun Hale Getiremedi.</h3>
                 </div>
                 <ul className="space-y-1.5 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-400 mt-0.5">•</span>
-                    Tasarýmýnýzda çeþitli düzeltmeler yaparak tasarým dosyanýzý tekrar yüklemeniz gerekmektedir.
+                    <span className="text-red-400 mt-0.5">ï¿½</span>
+                    Tasarï¿½mï¿½nï¿½zda ï¿½eï¿½itli dï¿½zeltmeler yaparak tasarï¿½m dosyanï¿½zï¿½ tekrar yï¿½klemeniz gerekmektedir.
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-400 mt-0.5">•</span>
-                    Uzman grafiker kontrolü seçeneðini seçerek uzman grafikerin tarafýnýza dönüþ yapmasýný bekleyebilirsiniz.
+                    <span className="text-red-400 mt-0.5">ï¿½</span>
+                    Uzman grafiker kontrolï¿½ seï¿½eneï¿½ini seï¿½erek uzman grafikerin tarafï¿½nï¿½za dï¿½nï¿½ï¿½ yapmasï¿½nï¿½ bekleyebilirsiniz.
                   </li>
                 </ul>
               </div>
@@ -152,7 +152,7 @@ export default function TasarimYuklemePage() {
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold"
                 style={{ background: '#6366F1' }}>2</div>
               <h2 className="text-[20px] font-black" style={{ color: '#6366F1' }}>
-                Uzman Grafiker Kontrolü
+                Uzman Grafiker Kontrolï¿½
               </h2>
             </div>
 
@@ -161,38 +161,38 @@ export default function TasarimYuklemePage() {
               <ul className="space-y-3 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
                 <li className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-white" style={{ background: '#6366F1' }}>1</span>
-                  Uzman grafiker ekibimiz dosyanýzý inceleyerek baskýya uygunluðunu kontrol eder.
+                  Uzman grafiker ekibimiz dosyanï¿½zï¿½ inceleyerek baskï¿½ya uygunluï¿½unu kontrol eder.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-white" style={{ background: '#6366F1' }}>2</span>
-                  Dosyanýz uygunsa onaylanýr ve baský sürecine alýnýr.
+                  Dosyanï¿½z uygunsa onaylanï¿½r ve baskï¿½ sï¿½recine alï¿½nï¿½r.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-white" style={{ background: '#6366F1' }}>3</span>
-                  Dosyanýzda sorun varsa grafiker tarafýnýza bildirim gönderir ve düzeltme ister.
+                  Dosyanï¿½zda sorun varsa grafiker tarafï¿½nï¿½za bildirim gï¿½nderir ve dï¿½zeltme ister.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-white" style={{ background: '#6366F1' }}>4</span>
-                  Çalýþma saatleri içinde ortalama 2-4 saat içinde dönüþ yapýlýr.
+                  ï¿½alï¿½ï¿½ma saatleri iï¿½inde ortalama 2-4 saat iï¿½inde dï¿½nï¿½ï¿½ yapï¿½lï¿½r.
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Tasarým Ýpuçlarý */}
+          {/* Tasarï¿½m ï¿½puï¿½larï¿½ */}
           <div className="rounded-2xl p-8"
             style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
             <h2 className="text-[18px] font-black mb-4" style={{ color: '#DC2626' }}>
-              ?? Tasarým Hazýrlarken Dikkat Edilmesi Gerekenler
+              ?? Tasarï¿½m Hazï¿½rlarken Dikkat Edilmesi Gerekenler
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                'Dosya formatý: PDF, AI, EPS veya yüksek çözünürlüklü PNG/JPEG',
-                'Çözünürlük en az 300 DPI olmalýdýr',
-                'Yazý tipleri dosyaya gömülü veya outline/contour yapýlmýþ olmalýdýr',
-                'Renk modu CMYK olmalýdýr (RGB deðil)',
-                'Tasarým boyutu ürün boyutuna uygun olmalýdýr',
-                'Kenar boþluklarýna (taþma payý) dikkat edilmelidir',
+                'Dosya formatï¿½: PDF, AI, EPS veya yï¿½ksek ï¿½ï¿½zï¿½nï¿½rlï¿½klï¿½ PNG/JPEG',
+                'ï¿½ï¿½zï¿½nï¿½rlï¿½k en az 300 DPI olmalï¿½dï¿½r',
+                'Yazï¿½ tipleri dosyaya gï¿½mï¿½lï¿½ veya outline/contour yapï¿½lmï¿½ï¿½ olmalï¿½dï¿½r',
+                'Renk modu CMYK olmalï¿½dï¿½r (RGB deï¿½il)',
+                'Tasarï¿½m boyutu ï¿½rï¿½n boyutuna uygun olmalï¿½dï¿½r',
+                'Kenar boï¿½luklarï¿½na (taï¿½ma payï¿½) dikkat edilmelidir',
               ].map((tip, i) => (
                 <div key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
                   <span className="text-[#DC2626] mt-0.5 flex-shrink-0">?</span>
@@ -211,18 +211,18 @@ export default function TasarimYuklemePage() {
               Sorunuz mu var?
             </h2>
             <p className="text-[14px] mb-6" style={{ color: 'var(--text-secondary)' }}>
-              Tasarým konusunda yardýma ihtiyaç duyarsanýz uzman ekibimiz size destek olur.
+              Tasarï¿½m konusunda yardï¿½ma ihtiyaï¿½ duyarsanï¿½z uzman ekibimiz size destek olur.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/iletisim"
                 className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
                 style={{ background: '#DC2626' }}>
-                Ýletiþime Geç
+                ï¿½letiï¿½ime Geï¿½
               </Link>
               <Link href="/nasil-siparis"
                 className="px-6 py-3 rounded-xl text-[13px] font-bold"
                 style={{ border: '1px solid var(--border)', color: 'var(--text-primary)', background: 'var(--bg-card)' }}>
-                Sipariþ Rehberi
+                Sipariï¿½ Rehberi
               </Link>
             </div>
           </div>

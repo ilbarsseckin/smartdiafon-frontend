@@ -20,14 +20,14 @@ export default function GirisPage() {
       const res = await authApi.login(data.email, data.password)
       const { token, email, name, role, id } = res.data.data
       setAuth({ id: id || '', name, email, role }, token)
-      toast.success('Giriþ baþarýlý!')
+      toast.success('Giriï¿½ baï¿½arï¿½lï¿½!')
       if (role === 'ADMIN' || role === 'OPERATOR') {
         router.push('/admin')
       } else {
         router.push('/')
       }
     } catch (err: any) {
-      toast.error(err.response?.data?.message || 'Giriþ baþarýsýz')
+      toast.error(err.response?.data?.message || 'Giriï¿½ baï¿½arï¿½sï¿½z')
     }
   }
 
@@ -41,8 +41,8 @@ export default function GirisPage() {
             </div>
             <Logo className="h-7" />
           </Link>
-          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesabýnýza giriþ yapýn</h1>
-          <p className="text-[13px] text-gray-400 mt-1.5">Sipariþlerinizi takip edin</p>
+          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesabï¿½nï¿½za giriï¿½ yapï¿½n</h1>
+          <p className="text-[13px] text-gray-400 mt-1.5">Sipariï¿½lerinizi takip edin</p>
         </div>
 
         <div className="bg-white dark:bg-[#141414] border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6">
@@ -56,10 +56,10 @@ export default function GirisPage() {
             </div>
 
             <div>
-              <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">Þifre</label>
+              <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">ï¿½ifre</label>
               <div className="relative">
-                <input type={showPass ? 'text' : 'password'} placeholder="••••••••"
-                  {...register('password', { required: 'Þifre zorunlu' })}
+                <input type={showPass ? 'text' : 'password'} placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+                  {...register('password', { required: 'ï¿½ifre zorunlu' })}
                   className="w-full px-3.5 py-2.5 pr-10 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors" />
                 <button type="button" onClick={() => setShowPass(!showPass)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -71,14 +71,14 @@ export default function GirisPage() {
 
             <button type="submit" disabled={isSubmitting}
               className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
-              {isSubmitting ? 'Giriþ yapýlýyor...' : 'Giriþ yap'}
+              {isSubmitting ? 'Giriï¿½ yapï¿½lï¿½yor...' : 'Giriï¿½ yap'}
             </button>
           </form>
         </div>
 
         <p className="text-center text-[12px] text-gray-400 mt-4">
-          Hesabýnýz yok mu?{' '}
-          <Link href="/kayit" className="text-[#DC2626] hover:underline">Kayýt olun</Link>
+          Hesabï¿½nï¿½z yok mu?{' '}
+          <Link href="/kayit" className="text-[#DC2626] hover:underline">Kayï¿½t olun</Link>
         </p>
       </div>
     </div>

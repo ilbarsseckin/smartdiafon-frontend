@@ -4,8 +4,8 @@ import { FileText, ShieldCheck, Package, CreditCard, Truck, Phone } from 'lucide
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Mesafeli Satýþ Sözleþmesi | baskiurunleri.com',
-  description: 'baskiurunleri.com mesafeli satýþ sözleþmesi. 6502 sayýlý Tüketicinin Korunmasý Hakkýnda Kanun kapsamýnda hazýrlanmýþtýr.',
+  title: 'Mesafeli Satï¿½ï¿½ Sï¿½zleï¿½mesi | baskiurunleri.com',
+  description: 'baskiurunleri.com mesafeli satï¿½ï¿½ sï¿½zleï¿½mesi. 6502 sayï¿½lï¿½ Tï¿½keticinin Korunmasï¿½ Hakkï¿½nda Kanun kapsamï¿½nda hazï¿½rlanmï¿½ï¿½tï¿½r.',
 }
 
 export default function MesafeliSatisPage() {
@@ -15,7 +15,7 @@ export default function MesafeliSatisPage() {
       <main className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-secondary)' }}>
         <div className="max-w-3xl mx-auto">
 
-          {/* Baþlýk */}
+          {/* Baï¿½lï¿½k */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
               style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
@@ -24,132 +24,132 @@ export default function MesafeliSatisPage() {
             </div>
             <h1 className="text-[28px] sm:text-[34px] font-black tracking-[-1px] mb-3"
               style={{ color: 'var(--text-primary)' }}>
-              Mesafeli Satýþ Sözleþmesi
+              Mesafeli Satï¿½ï¿½ Sï¿½zleï¿½mesi
             </h1>
             <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
-              6502 sayýlý Tüketicinin Korunmasý Hakkýnda Kanun ve Mesafeli Sözleþmeler Yönetmeliði kapsamýnda hazýrlanmýþtýr.
+              6502 sayï¿½lï¿½ Tï¿½keticinin Korunmasï¿½ Hakkï¿½nda Kanun ve Mesafeli Sï¿½zleï¿½meler Yï¿½netmeliï¿½i kapsamï¿½nda hazï¿½rlanmï¿½ï¿½tï¿½r.
             </p>
-            <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>Son güncelleme: Haziran 2026</p>
+            <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>Son gï¿½ncelleme: Haziran 2026</p>
           </div>
 
           <div className="space-y-4 text-[13px] leading-[1.8]" style={{ color: 'var(--text-secondary)' }}>
 
             {/* Madde 1 */}
-            <Section title="MADDE 1 – TARAFLAR" icon={ShieldCheck}>
+            <Section title="MADDE 1 ï¿½ TARAFLAR" icon={ShieldCheck}>
               <p><strong>SATICI:</strong></p>
-              <p>Ünvaný: baskiurunleri.com</p>
-              <p>Adresi: Ýkitelli Organize Sanayi Bölgesi, Ýstanbul</p>
+              <p>ï¿½nvanï¿½: baskiurunleri.com</p>
+              <p>Adresi: ï¿½kitelli Organize Sanayi Bï¿½lgesi, ï¿½stanbul</p>
               <p>E-posta: info@baskiurunleri.com</p>
               <p>Telefon: +90 212 555 55 55</p>
               <br />
               <p><strong>ALICI:</strong></p>
-              <p>Sipariþ formunda belirtilen ad, adres ve iletiþim bilgilerine sahip kiþi.</p>
+              <p>Sipariï¿½ formunda belirtilen ad, adres ve iletiï¿½im bilgilerine sahip kiï¿½i.</p>
             </Section>
 
             {/* Madde 2 */}
-            <Section title="MADDE 2 – KONU" icon={Package}>
+            <Section title="MADDE 2 ï¿½ KONU" icon={Package}>
               <p>
-                Ýþbu sözleþme, ALICI'nýn SATICI'ya ait baskiurunleri.com internet sitesi üzerinden elektronik ortamda sipariþini
-                verdiði aþaðýda nitelikleri ve satýþ fiyatý belirtilen ürünün satýþý ve teslimi ile ilgili olarak 6502 sayýlý
-                Tüketicinin Korunmasý Hakkýnda Kanun ve Mesafeli Sözleþmelere Dair Yönetmelik hükümleri gereðince taraflarýn
-                hak ve yükümlülüklerini kapsar.
+                ï¿½ï¿½bu sï¿½zleï¿½me, ALICI'nï¿½n SATICI'ya ait baskiurunleri.com internet sitesi ï¿½zerinden elektronik ortamda sipariï¿½ini
+                verdiï¿½i aï¿½aï¿½ï¿½da nitelikleri ve satï¿½ï¿½ fiyatï¿½ belirtilen ï¿½rï¿½nï¿½n satï¿½ï¿½ï¿½ ve teslimi ile ilgili olarak 6502 sayï¿½lï¿½
+                Tï¿½keticinin Korunmasï¿½ Hakkï¿½nda Kanun ve Mesafeli Sï¿½zleï¿½melere Dair Yï¿½netmelik hï¿½kï¿½mleri gereï¿½ince taraflarï¿½n
+                hak ve yï¿½kï¿½mlï¿½lï¿½klerini kapsar.
               </p>
             </Section>
 
             {/* Madde 3 */}
-            <Section title="MADDE 3 – ÜRÜN BÝLGÝLERÝ" icon={Package}>
+            <Section title="MADDE 3 ï¿½ ï¿½Rï¿½N Bï¿½LGï¿½LERï¿½" icon={Package}>
               <p>
-                Sözleþme konusu ürün/ürünler, sipariþ özetinde belirtilen ve ALICI tarafýndan seçilen katalog ürünleridir.
-                Ürünlerin temel özellikleri (tür, miktar, marka/model, renk, ebat vb.) ürün sayfasýnda ve sipariþ özetinde
-                yer almaktadýr. Ürünler, ALICI'nýn yüklediði veya onayladýðý tasarýma göre özel olarak üretilmektedir.
+                Sï¿½zleï¿½me konusu ï¿½rï¿½n/ï¿½rï¿½nler, sipariï¿½ ï¿½zetinde belirtilen ve ALICI tarafï¿½ndan seï¿½ilen katalog ï¿½rï¿½nleridir.
+                ï¿½rï¿½nlerin temel ï¿½zellikleri (tï¿½r, miktar, marka/model, renk, ebat vb.) ï¿½rï¿½n sayfasï¿½nda ve sipariï¿½ ï¿½zetinde
+                yer almaktadï¿½r. ï¿½rï¿½nler, ALICI'nï¿½n yï¿½klediï¿½i veya onayladï¿½ï¿½ï¿½ tasarï¿½ma gï¿½re ï¿½zel olarak ï¿½retilmektedir.
               </p>
             </Section>
 
             {/* Madde 4 */}
-            <Section title="MADDE 4 – SATIÞ FÝYATI VE ÖDEME" icon={CreditCard}>
+            <Section title="MADDE 4 ï¿½ SATIï¿½ Fï¿½YATI VE ï¿½DEME" icon={CreditCard}>
               <p>
-                Ürünün KDV dahil satýþ fiyatý sipariþ özetinde gösterilmektedir. Ödeme; kredi kartý, banka kartý veya
-                diðer elektronik ödeme yöntemleriyle yapýlabilir. Ödeme iþlemi iyzico altyapýsý üzerinden 256-bit SSL
-                þifreleme ile güvenli þekilde gerçekleþtirilir. Kart bilgileri SATICI tarafýndan saklanmaz.
+                ï¿½rï¿½nï¿½n KDV dahil satï¿½ï¿½ fiyatï¿½ sipariï¿½ ï¿½zetinde gï¿½sterilmektedir. ï¿½deme; kredi kartï¿½, banka kartï¿½ veya
+                diï¿½er elektronik ï¿½deme yï¿½ntemleriyle yapï¿½labilir. ï¿½deme iï¿½lemi iyzico altyapï¿½sï¿½ ï¿½zerinden 256-bit SSL
+                ï¿½ifreleme ile gï¿½venli ï¿½ekilde gerï¿½ekleï¿½tirilir. Kart bilgileri SATICI tarafï¿½ndan saklanmaz.
               </p>
               <p className="mt-2">
-                Taksitli alýmlarda ilgili banka taksit koþullarý geçerlidir. Sipariþ toplamý, seçilen taksit sayýsýna
-                bölünerek banka tarafýndan tahsil edilir.
+                Taksitli alï¿½mlarda ilgili banka taksit koï¿½ullarï¿½ geï¿½erlidir. Sipariï¿½ toplamï¿½, seï¿½ilen taksit sayï¿½sï¿½na
+                bï¿½lï¿½nerek banka tarafï¿½ndan tahsil edilir.
               </p>
             </Section>
 
             {/* Madde 5 */}
-            <Section title="MADDE 5 – TESLÝMAT" icon={Truck}>
+            <Section title="MADDE 5 ï¿½ TESLï¿½MAT" icon={Truck}>
               <p>
-                Ürünler, ödeme onayýnýn ardýndan tasarým onay sürecinin tamamlanmasýný takiben üretilir ve kargo firmasý
-                aracýlýðýyla ALICI'nýn belirttiði adrese teslim edilir. Teslimat süresi ortalama 3-7 iþ günüdür;
-                bu süre sipariþ yoðunluðuna ve kargo firmasýna göre deðiþebilir.
+                ï¿½rï¿½nler, ï¿½deme onayï¿½nï¿½n ardï¿½ndan tasarï¿½m onay sï¿½recinin tamamlanmasï¿½nï¿½ takiben ï¿½retilir ve kargo firmasï¿½
+                aracï¿½lï¿½ï¿½ï¿½yla ALICI'nï¿½n belirttiï¿½i adrese teslim edilir. Teslimat sï¿½resi ortalama 3-7 iï¿½ gï¿½nï¿½dï¿½r;
+                bu sï¿½re sipariï¿½ yoï¿½unluï¿½una ve kargo firmasï¿½na gï¿½re deï¿½iï¿½ebilir.
               </p>
               <p className="mt-2">
-                Teslimat adresi ALICI tarafýndan sipariþ formunda beyan edilmiþ olup hatalý veya eksik adres bilgisinden
-                kaynaklanan gecikmeler SATICI'nýn sorumluluðunda deðildir.
+                Teslimat adresi ALICI tarafï¿½ndan sipariï¿½ formunda beyan edilmiï¿½ olup hatalï¿½ veya eksik adres bilgisinden
+                kaynaklanan gecikmeler SATICI'nï¿½n sorumluluï¿½unda deï¿½ildir.
               </p>
             </Section>
 
             {/* Madde 6 */}
-            <Section title="MADDE 6 – CAYMA HAKKI" icon={ShieldCheck}>
+            <Section title="MADDE 6 ï¿½ CAYMA HAKKI" icon={ShieldCheck}>
               <p>
-                6502 sayýlý Kanun'un 15. maddesi ve Mesafeli Sözleþmeler Yönetmeliði'nin 16. maddesi uyarýnca;
-                tüketicinin istekleri veya açýkça onun kiþisel ihtiyaçlarý doðrultusunda hazýrlanan, niteliði
-                itibarýyla geri gönderilmeye elveriþli olmayan ve çabuk bozulma tehlikesi olan mallarda cayma
-                hakký kullanýlamaz.
+                6502 sayï¿½lï¿½ Kanun'un 15. maddesi ve Mesafeli Sï¿½zleï¿½meler Yï¿½netmeliï¿½i'nin 16. maddesi uyarï¿½nca;
+                tï¿½keticinin istekleri veya aï¿½ï¿½kï¿½a onun kiï¿½isel ihtiyaï¿½larï¿½ doï¿½rultusunda hazï¿½rlanan, niteliï¿½i
+                itibarï¿½yla geri gï¿½nderilmeye elveriï¿½li olmayan ve ï¿½abuk bozulma tehlikesi olan mallarda cayma
+                hakkï¿½ kullanï¿½lamaz.
               </p>
               <p className="mt-2">
-                Baskiurunleri.com'da satýlan tüm ürünler, ALICI'nýn saðladýðý veya onayladýðý tasarýma göre
-                özel üretim olduðundan <strong>cayma hakký kullanýlamaz.</strong>
+                Baskiurunleri.com'da satï¿½lan tï¿½m ï¿½rï¿½nler, ALICI'nï¿½n saï¿½ladï¿½ï¿½ï¿½ veya onayladï¿½ï¿½ï¿½ tasarï¿½ma gï¿½re
+                ï¿½zel ï¿½retim olduï¿½undan <strong>cayma hakkï¿½ kullanï¿½lamaz.</strong>
               </p>
               <p className="mt-2">
-                Ancak aþaðýdaki durumlarda ALICI, ürünü teslim aldýðý tarihten itibaren <strong>3 iþ günü</strong> içinde
-                þikâyetini bildirerek yeniden üretim veya iade talep edebilir:
+                Ancak aï¿½aï¿½ï¿½daki durumlarda ALICI, ï¿½rï¿½nï¿½ teslim aldï¿½ï¿½ï¿½ tarihten itibaren <strong>3 iï¿½ gï¿½nï¿½</strong> iï¿½inde
+                ï¿½ikï¿½yetini bildirerek yeniden ï¿½retim veya iade talep edebilir:
               </p>
               <ul className="mt-2 space-y-1 list-disc list-inside">
-                <li>SATICI'dan kaynaklanan üretim veya baský hatasý</li>
-                <li>Sipariþ edilenden farklý ürün gönderilmesi</li>
-                <li>Kargo sýrasýnda oluþan ve tutanakla belgelenen hasar</li>
+                <li>SATICI'dan kaynaklanan ï¿½retim veya baskï¿½ hatasï¿½</li>
+                <li>Sipariï¿½ edilenden farklï¿½ ï¿½rï¿½n gï¿½nderilmesi</li>
+                <li>Kargo sï¿½rasï¿½nda oluï¿½an ve tutanakla belgelenen hasar</li>
               </ul>
             </Section>
 
             {/* Madde 7 */}
-            <Section title="MADDE 7 – GÝZLÝLÝK" icon={ShieldCheck}>
+            <Section title="MADDE 7 ï¿½ Gï¿½ZLï¿½Lï¿½K" icon={ShieldCheck}>
               <p>
-                ALICI'ya ait kiþisel bilgiler, 6698 sayýlý Kiþisel Verilerin Korunmasý Kanunu kapsamýnda iþlenir
-                ve üçüncü þahýslarla paylaþýlmaz. Ayrýntýlý bilgi için{' '}
-                <Link href="/gizlilik" className="underline hover:text-[#DC2626]">Gizlilik Politikamýzý</Link>
+                ALICI'ya ait kiï¿½isel bilgiler, 6698 sayï¿½lï¿½ Kiï¿½isel Verilerin Korunmasï¿½ Kanunu kapsamï¿½nda iï¿½lenir
+                ve ï¿½ï¿½ï¿½ncï¿½ ï¿½ahï¿½slarla paylaï¿½ï¿½lmaz. Ayrï¿½ntï¿½lï¿½ bilgi iï¿½in{' '}
+                <Link href="/gizlilik" className="underline hover:text-[#DC2626]">Gizlilik Politikamï¿½zï¿½</Link>
                 {' '}inceleyebilirsiniz.
               </p>
             </Section>
 
             {/* Madde 8 */}
-            <Section title="MADDE 8 – UYUÞMAZLIKLARIN ÇÖZÜMÜ" icon={ShieldCheck}>
+            <Section title="MADDE 8 ï¿½ UYUï¿½MAZLIKLARIN ï¿½ï¿½Zï¿½Mï¿½" icon={ShieldCheck}>
               <p>
-                Ýþbu sözleþmeden doðabilecek uyuþmazlýklarda, ALICI'nýn ikametgahýndaki veya satýn alma iþleminin
-                yapýldýðý yerdeki Tüketici Hakem Heyetleri ve Tüketici Mahkemeleri yetkilidir. Baþvuru sýnýrlarý
-                her yýl Gümrük ve Ticaret Bakanlýðý tarafýndan güncellenmektedir.
+                ï¿½ï¿½bu sï¿½zleï¿½meden doï¿½abilecek uyuï¿½mazlï¿½klarda, ALICI'nï¿½n ikametgahï¿½ndaki veya satï¿½n alma iï¿½leminin
+                yapï¿½ldï¿½ï¿½ï¿½ yerdeki Tï¿½ketici Hakem Heyetleri ve Tï¿½ketici Mahkemeleri yetkilidir. Baï¿½vuru sï¿½nï¿½rlarï¿½
+                her yï¿½l Gï¿½mrï¿½k ve Ticaret Bakanlï¿½ï¿½ï¿½ tarafï¿½ndan gï¿½ncellenmektedir.
               </p>
             </Section>
 
             {/* Madde 9 */}
-            <Section title="MADDE 9 – YÜRÜRLÜK" icon={ShieldCheck}>
+            <Section title="MADDE 9 ï¿½ Yï¿½Rï¿½RLï¿½K" icon={ShieldCheck}>
               <p>
-                ALICI, sipariþ iþlemini tamamlayarak bu sözleþmeyi okuduðunu, anladýðýný ve tüm hükümlerini
-                kabul ettiðini beyan eder. Sözleþme, sipariþin SATICI tarafýndan onaylanmasýyla yürürlüðe girer.
+                ALICI, sipariï¿½ iï¿½lemini tamamlayarak bu sï¿½zleï¿½meyi okuduï¿½unu, anladï¿½ï¿½ï¿½nï¿½ ve tï¿½m hï¿½kï¿½mlerini
+                kabul ettiï¿½ini beyan eder. Sï¿½zleï¿½me, sipariï¿½in SATICI tarafï¿½ndan onaylanmasï¿½yla yï¿½rï¿½rlï¿½ï¿½e girer.
               </p>
             </Section>
 
           </div>
 
-          {/* Ýletiþim */}
+          {/* ï¿½letiï¿½im */}
           <div className="mt-8 rounded-2xl p-6 text-center"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <Phone size={20} className="mx-auto mb-2" style={{ color: '#DC2626' }} />
-            <p className="text-[14px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Sorularýnýz mý var?</p>
+            <p className="text-[14px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Sorularï¿½nï¿½z mï¿½ var?</p>
             <p className="text-[12px] mb-3" style={{ color: 'var(--text-muted)' }}>
-              Sözleþme hakkýnda bilgi almak için bize ulaþýn.
+              Sï¿½zleï¿½me hakkï¿½nda bilgi almak iï¿½in bize ulaï¿½ï¿½n.
             </p>
             <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <a href="mailto:info@baskiurunleri.com"
@@ -160,13 +160,13 @@ export default function MesafeliSatisPage() {
               <Link href="/iletisim"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold"
                 style={{ background: 'var(--bg-secondary)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}>
-                Ýletiþim Formu
+                ï¿½letiï¿½im Formu
               </Link>
             </div>
           </div>
 
           <p className="text-center text-[11px] mt-6" style={{ color: 'var(--text-muted)' }}>
-            Bu sözleþme 6502 sayýlý Tüketicinin Korunmasý Hakkýnda Kanun ve Mesafeli Sözleþmeler Yönetmeliði kapsamýnda hazýrlanmýþtýr.
+            Bu sï¿½zleï¿½me 6502 sayï¿½lï¿½ Tï¿½keticinin Korunmasï¿½ Hakkï¿½nda Kanun ve Mesafeli Sï¿½zleï¿½meler Yï¿½netmeliï¿½i kapsamï¿½nda hazï¿½rlanmï¿½ï¿½tï¿½r.
           </p>
         </div>
       </main>

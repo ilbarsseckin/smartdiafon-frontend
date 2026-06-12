@@ -6,29 +6,29 @@ import Link from 'next/link'
 const services = [
   {
     icon: '??',
-    title: 'Ücretsiz Tasarým Desteði',
-    desc: 'Sipariþ verdiðinizde uzman grafiker ekibimiz tasarýmýnýzý ücretsiz olarak hazýrlar veya mevcut tasarýmýnýzý baskýya uygun hale getirir.',
+    title: 'ï¿½cretsiz Tasarï¿½m Desteï¿½i',
+    desc: 'Sipariï¿½ verdiï¿½inizde uzman grafiker ekibimiz tasarï¿½mï¿½nï¿½zï¿½ ï¿½cretsiz olarak hazï¿½rlar veya mevcut tasarï¿½mï¿½nï¿½zï¿½ baskï¿½ya uygun hale getirir.',
     color: '#DC2626',
-    badge: 'Ücretsiz'
+    badge: 'ï¿½cretsiz'
   },
   {
     icon: '??',
-    title: 'Tasarým Revizyonu',
-    desc: 'Mevcut tasarýmýnýzda renk, yazý, logo gibi deðiþiklikler yapýlmasýný istiyorsanýz ekibimiz size yardýmcý olur.',
+    title: 'Tasarï¿½m Revizyonu',
+    desc: 'Mevcut tasarï¿½mï¿½nï¿½zda renk, yazï¿½, logo gibi deï¿½iï¿½iklikler yapï¿½lmasï¿½nï¿½ istiyorsanï¿½z ekibimiz size yardï¿½mcï¿½ olur.',
     color: '#6366F1',
     badge: null
   },
   {
     icon: '??',
-    title: 'Baskýya Hazýrlýk',
-    desc: 'Tasarým dosyanýz baskýya uygun deðilse (düþük çözünürlük, yanlýþ renk modu vb.) ekibimiz dosyayý düzenleyerek hazýr hale getirir.',
+    title: 'Baskï¿½ya Hazï¿½rlï¿½k',
+    desc: 'Tasarï¿½m dosyanï¿½z baskï¿½ya uygun deï¿½ilse (dï¿½ï¿½ï¿½k ï¿½ï¿½zï¿½nï¿½rlï¿½k, yanlï¿½ï¿½ renk modu vb.) ekibimiz dosyayï¿½ dï¿½zenleyerek hazï¿½r hale getirir.',
     color: '#10B981',
     badge: null
   },
   {
     icon: '???',
-    title: 'Hazýr Þablon',
-    desc: 'Ürün bazlý hazýr tasarým þablonlarýmýzý kullanarak kýsa sürede kendi tasarýmýnýzý oluþturabilirsiniz.',
+    title: 'Hazï¿½r ï¿½ablon',
+    desc: 'ï¿½rï¿½n bazlï¿½ hazï¿½r tasarï¿½m ï¿½ablonlarï¿½mï¿½zï¿½ kullanarak kï¿½sa sï¿½rede kendi tasarï¿½mï¿½nï¿½zï¿½ oluï¿½turabilirsiniz.',
     color: '#0EA5E9',
     badge: null
   }
@@ -37,18 +37,18 @@ const services = [
 const formats = [
   { name: 'PDF', desc: 'Tercih edilen format', recommended: true },
   { name: 'AI', desc: 'Adobe Illustrator', recommended: true },
-  { name: 'EPS', desc: 'Vektör format', recommended: false },
+  { name: 'EPS', desc: 'Vektï¿½r format', recommended: false },
   { name: 'PSD', desc: 'Adobe Photoshop', recommended: false },
   { name: 'PNG', desc: 'Min. 300 DPI', recommended: false },
   { name: 'JPEG', desc: 'Min. 300 DPI', recommended: false },
 ]
 
 const requirements = [
-  { icon: '???', title: 'Çözünürlük', desc: 'En az 300 DPI (baský kalitesi için)' },
-  { icon: '??', title: 'Renk Modu', desc: 'CMYK (RGB renklerde renk kaymasý olabilir)' },
-  { icon: '??', title: 'Taþma Payý', desc: 'Her kenarda 3mm taþma payý býrakýn' },
-  { icon: '??', title: 'Yazý Tipleri', desc: 'Outline/contour yapýlmýþ veya gömülü olmalý' },
-  { icon: '??', title: 'Boyut', desc: 'Ürünün gerçek baský boyutunda hazýrlanmalý' },
+  { icon: '???', title: 'ï¿½ï¿½zï¿½nï¿½rlï¿½k', desc: 'En az 300 DPI (baskï¿½ kalitesi iï¿½in)' },
+  { icon: '??', title: 'Renk Modu', desc: 'CMYK (RGB renklerde renk kaymasï¿½ olabilir)' },
+  { icon: '??', title: 'Taï¿½ma Payï¿½', desc: 'Her kenarda 3mm taï¿½ma payï¿½ bï¿½rakï¿½n' },
+  { icon: '??', title: 'Yazï¿½ Tipleri', desc: 'Outline/contour yapï¿½lmï¿½ï¿½ veya gï¿½mï¿½lï¿½ olmalï¿½' },
+  { icon: '??', title: 'Boyut', desc: 'ï¿½rï¿½nï¿½n gerï¿½ek baskï¿½ boyutunda hazï¿½rlanmalï¿½' },
   { icon: '??', title: 'Dosya Boyutu', desc: 'Maksimum 500 MB' },
 ]
 
@@ -63,16 +63,16 @@ export default function TasarimDestegPage() {
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Hizmet</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
-              Ücretsiz Tasarým Desteði
+              ï¿½cretsiz Tasarï¿½m Desteï¿½i
             </h1>
             <p className="text-[16px] max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Tasarýmýnýz olmasa da sorun deðil. Uzman grafiker ekibimiz sipariþinizle birlikte 
-              tasarýmýnýzý ücretsiz olarak hazýrlar.
+              Tasarï¿½mï¿½nï¿½z olmasa da sorun deï¿½il. Uzman grafiker ekibimiz sipariï¿½inizle birlikte 
+              tasarï¿½mï¿½nï¿½zï¿½ ï¿½cretsiz olarak hazï¿½rlar.
             </p>
             <Link href="/iletisim"
               className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-xl text-[14px] font-bold text-white"
               style={{ background: '#DC2626' }}>
-              Tasarým Desteði Al ›
+              Tasarï¿½m Desteï¿½i Al ï¿½
             </Link>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function TasarimDestegPage() {
 
           {/* Desteklenen Formatlar */}
           <h2 className="text-[22px] font-black tracking-[-0.5px] mb-6" style={{ color: 'var(--text-primary)' }}>
-            Desteklenen Dosya Formatlarý
+            Desteklenen Dosya Formatlarï¿½
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-16">
             {formats.map((f, i) => (
@@ -129,7 +129,7 @@ export default function TasarimDestegPage() {
                   <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{f.desc}</p>
                 </div>
                 {f.recommended && (
-                  <span className="ml-auto text-[9px] font-bold text-[#DC2626]">? Önerilen</span>
+                  <span className="ml-auto text-[9px] font-bold text-[#DC2626]">? ï¿½nerilen</span>
                 )}
               </div>
             ))}
@@ -137,7 +137,7 @@ export default function TasarimDestegPage() {
 
           {/* Gereksinimler */}
           <h2 className="text-[22px] font-black tracking-[-0.5px] mb-6" style={{ color: 'var(--text-primary)' }}>
-            Tasarým Gereksinimleri
+            Tasarï¿½m Gereksinimleri
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-16">
             {requirements.map((r, i) => (
@@ -152,19 +152,19 @@ export default function TasarimDestegPage() {
             ))}
           </div>
 
-          {/* Süreç */}
+          {/* Sï¿½reï¿½ */}
           <div className="rounded-2xl p-8"
             style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
             <h2 className="text-[18px] font-black mb-6" style={{ color: '#DC2626' }}>
-              Tasarým Desteði Nasýl Ýþler?
+              Tasarï¿½m Desteï¿½i Nasï¿½l ï¿½ï¿½ler?
             </h2>
             <div className="space-y-4">
               {[
-                { step: '1', text: 'Sipariþinizi verin ve ödemeyi tamamlayýn.' },
-                { step: '2', text: 'Tasarým yükleme adýmýnda "Uzman Grafiker Kontrolü" seçeneðini seçin.' },
-                { step: '3', text: 'Nasýl bir tasarým istediðinizi (logo, slogan, renkler) iletiþim alanýna yazýn.' },
-                { step: '4', text: 'Grafiker ekibimiz 2-4 saat içinde tasarým önerisini hazýrlayarak size iletir.' },
-                { step: '5', text: 'Onay verdiðinizde baský sürecine alýnýr.' },
+                { step: '1', text: 'Sipariï¿½inizi verin ve ï¿½demeyi tamamlayï¿½n.' },
+                { step: '2', text: 'Tasarï¿½m yï¿½kleme adï¿½mï¿½nda "Uzman Grafiker Kontrolï¿½" seï¿½eneï¿½ini seï¿½in.' },
+                { step: '3', text: 'Nasï¿½l bir tasarï¿½m istediï¿½inizi (logo, slogan, renkler) iletiï¿½im alanï¿½na yazï¿½n.' },
+                { step: '4', text: 'Grafiker ekibimiz 2-4 saat iï¿½inde tasarï¿½m ï¿½nerisini hazï¿½rlayarak size iletir.' },
+                { step: '5', text: 'Onay verdiï¿½inizde baskï¿½ sï¿½recine alï¿½nï¿½r.' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-[11px] font-bold text-white"
@@ -183,21 +183,21 @@ export default function TasarimDestegPage() {
         <div style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-12 text-center">
             <h2 className="text-[20px] font-black mb-3" style={{ color: 'var(--text-primary)' }}>
-              Hemen sipariþ verin, tasarýmý bize býrakýn.
+              Hemen sipariï¿½ verin, tasarï¿½mï¿½ bize bï¿½rakï¿½n.
             </h2>
             <p className="text-[14px] mb-6" style={{ color: 'var(--text-secondary)' }}>
-              Profesyonel tasarým ekibimiz sizin için çalýþmaya hazýr.
+              Profesyonel tasarï¿½m ekibimiz sizin iï¿½in ï¿½alï¿½ï¿½maya hazï¿½r.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/urunler"
                 className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
                 style={{ background: '#DC2626' }}>
-                Sipariþ Ver
+                Sipariï¿½ Ver
               </Link>
               <Link href="/iletisim"
                 className="px-6 py-3 rounded-xl text-[13px] font-bold"
                 style={{ border: '1px solid var(--border)', color: 'var(--text-primary)', background: 'var(--bg-card)' }}>
-                Ýletiþime Geç
+                ï¿½letiï¿½ime Geï¿½
               </Link>
             </div>
           </div>

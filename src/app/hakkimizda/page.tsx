@@ -4,51 +4,51 @@ import Footer from '@/components/layout/Footer'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Hakkýmýzda | baskýurunleri.com',
-  description: '2010\'dan bu yana Türkiye\'nin önde gelen dijital baský firmalarýndan biri. Ýstanbul Ýkitelli\'deki 1200 m² fabrikamýzda büyük format baskýdan kartvizite geniþ yelpazede hizmet.',
+  title: 'Hakkï¿½mï¿½zda | baskï¿½urunleri.com',
+  description: '2010\'dan bu yana Tï¿½rkiye\'nin ï¿½nde gelen dijital baskï¿½ firmalarï¿½ndan biri. ï¿½stanbul ï¿½kitelli\'deki 1200 mï¿½ fabrikamï¿½zda bï¿½yï¿½k format baskï¿½dan kartvizite geniï¿½ yelpazede hizmet.',
   alternates: { canonical: 'https://baskiurunleri.com/hakkimizda' },
   openGraph: {
-    title: 'Hakkýmýzda | baskýurunleri.com',
-    description: '2010\'dan bu yana Türkiye\'nin önde gelen dijital baský firmalarýndan biri.',
+    title: 'Hakkï¿½mï¿½zda | baskï¿½urunleri.com',
+    description: '2010\'dan bu yana Tï¿½rkiye\'nin ï¿½nde gelen dijital baskï¿½ firmalarï¿½ndan biri.',
     url: 'https://baskiurunleri.com/hakkimizda',
-    siteName: 'baskýurunleri.com',
+    siteName: 'baskï¿½urunleri.com',
     locale: 'tr_TR',
     type: 'website',
   },
 }
 
 const hizmetler = [
-  { baslik: 'Kartvizit Baský', aciklama: 'Standart, kabartmalý, lak veya özel kesim kartvizit seçenekleriyle profesyonel imajýnýzý güçlendirin.' },
-  { baslik: 'Broþür ve El Ýlaný', aciklama: 'Kampanyalarýnýzý ve duyurularýnýzý potansiyel müþterilerinize ulaþtýrmanýn en etkili yolu.' },
-  { baslik: 'Afiþ ve Poster', aciklama: 'Etkinlikleriniz için geniþ formatlý, dikkat çekici ve canlý renklere sahip baský çözümleri.' },
-  { baslik: 'Etiket ve Sticker', aciklama: 'Ürün ambalajlarýnda ve promasyonlarda kullanabileceðiniz, markanýza görsel iken yapýþtýrýcý çözümler.' },
-  { baslik: 'Büyük Format', aciklama: 'Tabela, roll-up, branda ve dijital baský ile dýþ mekân görünürlüðünüzü artýrýn.' },
-  { baslik: 'Kurumsal Dökümanlar', aciklama: 'Antetli kaðýt, diplomat zarf ve sunum dosyalarý ile ofis þikiþinizi tamamlayýn.' },
+  { baslik: 'Kartvizit Baskï¿½', aciklama: 'Standart, kabartmalï¿½, lak veya ï¿½zel kesim kartvizit seï¿½enekleriyle profesyonel imajï¿½nï¿½zï¿½ gï¿½ï¿½lendirin.' },
+  { baslik: 'Broï¿½ï¿½r ve El ï¿½lanï¿½', aciklama: 'Kampanyalarï¿½nï¿½zï¿½ ve duyurularï¿½nï¿½zï¿½ potansiyel mï¿½ï¿½terilerinize ulaï¿½tï¿½rmanï¿½n en etkili yolu.' },
+  { baslik: 'Afiï¿½ ve Poster', aciklama: 'Etkinlikleriniz iï¿½in geniï¿½ formatlï¿½, dikkat ï¿½ekici ve canlï¿½ renklere sahip baskï¿½ ï¿½ï¿½zï¿½mleri.' },
+  { baslik: 'Etiket ve Sticker', aciklama: 'ï¿½rï¿½n ambalajlarï¿½nda ve promasyonlarda kullanabileceï¿½iniz, markanï¿½za gï¿½rsel iken yapï¿½ï¿½tï¿½rï¿½cï¿½ ï¿½ï¿½zï¿½mler.' },
+  { baslik: 'Bï¿½yï¿½k Format', aciklama: 'Tabela, roll-up, branda ve dijital baskï¿½ ile dï¿½ï¿½ mekï¿½n gï¿½rï¿½nï¿½rlï¿½ï¿½ï¿½nï¿½zï¿½ artï¿½rï¿½n.' },
+  { baslik: 'Kurumsal Dï¿½kï¿½manlar', aciklama: 'Antetli kaï¿½ï¿½t, diplomat zarf ve sunum dosyalarï¿½ ile ofis ï¿½ikiï¿½inizi tamamlayï¿½n.' },
 ]
 
 const adimlar = [
   {
     no: '01',
-    baslik: 'Ürün ve Özellik Seçimi',
-    aciklama: 'Ýhtiyacýnýz olan ürünü seçin; kaðýt gramajý, ebat, selefon türü ve baský gibi tüm özellikleri belirleyerek fiyatý anlýk olarak görüntüleyin.',
+    baslik: 'ï¿½rï¿½n ve ï¿½zellik Seï¿½imi',
+    aciklama: 'ï¿½htiyacï¿½nï¿½z olan ï¿½rï¿½nï¿½ seï¿½in; kaï¿½ï¿½t gramajï¿½, ebat, selefon tï¿½rï¿½ ve baskï¿½ gibi tï¿½m ï¿½zellikleri belirleyerek fiyatï¿½ anlï¿½k olarak gï¿½rï¿½ntï¿½leyin.',
   },
   {
     no: '02',
-    baslik: 'Tasarým Yükleme veya Oluþturma',
-    aciklama: 'Hazýr tasarýmýnýzý sisteme yükleyin ya da ücretsiz Online Tasarým Stüdyomuzu kullanarak þablonlardan kendi tasarýmýnýzý dakikalar içinde hazýrlayabilirsiniz.',
+    baslik: 'Tasarï¿½m Yï¿½kleme veya Oluï¿½turma',
+    aciklama: 'Hazï¿½r tasarï¿½mï¿½nï¿½zï¿½ sisteme yï¿½kleyin ya da ï¿½cretsiz Online Tasarï¿½m Stï¿½dyomuzu kullanarak ï¿½ablonlardan kendi tasarï¿½mï¿½nï¿½zï¿½ dakikalar iï¿½inde hazï¿½rlayabilirsiniz.',
   },
   {
     no: '03',
-    baslik: 'Güvenli Ödeme ve Takip',
-    aciklama: 'Sipariþinizi onaylayýn ve güvenli ödeme iþleminizi tamamlayýn. Ürününüz kargoya verilene kadar tüm süreç panelinden adým adým takip edin.',
+    baslik: 'Gï¿½venli ï¿½deme ve Takip',
+    aciklama: 'Sipariï¿½inizi onaylayï¿½n ve gï¿½venli ï¿½deme iï¿½leminizi tamamlayï¿½n. ï¿½rï¿½nï¿½nï¿½z kargoya verilene kadar tï¿½m sï¿½reï¿½ panelinden adï¿½m adï¿½m takip edin.',
   },
 ]
 
 const nedenBiz = [
-  { baslik: 'Yüksek Baský Kalitesi', aciklama: 'Baský makinelerimiz piyasanýn ile canlý renkler ve net detaylar garanti ediyoruz.' },
-  { baslik: 'Hýzlý Teslimat', aciklama: 'Sipariþlerinizi belirlenen sürelerde üretip ve korumakta ambalajlayýp kargoya verilir.' },
-  { baslik: 'Þeffaf Fiyat Politikasý', aciklama: 'Sürpriz ek ücretler olmadan, sipariþ anýnda ne ödeyeceðinizi net olarak bilirsiniz.' },
-  { baslik: 'Güvenli Alýþveriþ', aciklama: '256-bit SSL sertifikasý ile ödeme iþlemleriniz her zaman güvence altýndadýr.' },
+  { baslik: 'Yï¿½ksek Baskï¿½ Kalitesi', aciklama: 'Baskï¿½ makinelerimiz piyasanï¿½n ile canlï¿½ renkler ve net detaylar garanti ediyoruz.' },
+  { baslik: 'Hï¿½zlï¿½ Teslimat', aciklama: 'Sipariï¿½lerinizi belirlenen sï¿½relerde ï¿½retip ve korumakta ambalajlayï¿½p kargoya verilir.' },
+  { baslik: 'ï¿½effaf Fiyat Politikasï¿½', aciklama: 'Sï¿½rpriz ek ï¿½cretler olmadan, sipariï¿½ anï¿½nda ne ï¿½deyeceï¿½inizi net olarak bilirsiniz.' },
+  { baslik: 'Gï¿½venli Alï¿½ï¿½veriï¿½', aciklama: '256-bit SSL sertifikasï¿½ ile ï¿½deme iï¿½lemleriniz her zaman gï¿½vence altï¿½ndadï¿½r.' },
 ]
 
 export default function HakkimizdaPage() {
@@ -61,23 +61,23 @@ export default function HakkimizdaPage() {
         <div style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
             <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-4">
-              baskýurunleri.com Hakkýnda
+              baskï¿½urunleri.com Hakkï¿½nda
             </p>
             <h1 className="text-[36px] md:text-[52px] font-black tracking-[-2px] leading-[1.1] mb-6"
               style={{ color: 'var(--text-primary)' }}>
-              Tüm Baský Ýhtiyaçlarýnýz Ýçin<br />
-              <span className="text-[#DC2626]">Yeni Nesil Matbaa</span> Çözümleri
+              Tï¿½m Baskï¿½ ï¿½htiyaï¿½larï¿½nï¿½z ï¿½ï¿½in<br />
+              <span className="text-[#DC2626]">Yeni Nesil Matbaa</span> ï¿½ï¿½zï¿½mleri
             </h1>
             <p className="text-[16px] leading-[1.8] max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
-              Kurumsal kimliðinizi yansýtan profesyonel materyallerden, kiþisel projelerinize kadar tüm baský süreçlerini tek bir platformda yönetmeye hazýr mýsýnýz? <strong style={{ color: 'var(--text-primary)' }}>baskýurunleri.com</strong>, geliþmiþ online baský teknolojisi ile kartvizit, broþür, afiþ ve etiket gibi yüzlerce ürünü kapýnýza taþýyor.
+              Kurumsal kimliï¿½inizi yansï¿½tan profesyonel materyallerden, kiï¿½isel projelerinize kadar tï¿½m baskï¿½ sï¿½reï¿½lerini tek bir platformda yï¿½netmeye hazï¿½r mï¿½sï¿½nï¿½z? <strong style={{ color: 'var(--text-primary)' }}>baskï¿½urunleri.com</strong>, geliï¿½miï¿½ online baskï¿½ teknolojisi ile kartvizit, broï¿½ï¿½r, afiï¿½ ve etiket gibi yï¿½zlerce ï¿½rï¿½nï¿½ kapï¿½nï¿½za taï¿½ï¿½yor.
             </p>
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
               {[
-                { sayi: '15+', label: 'Yýllýk Deneyim' },
-                { sayi: '50K+', label: 'Mutlu Müþteri' },
-                { sayi: '1200m²', label: 'Üretim Alaný' },
-                { sayi: '48 Sa.', label: 'Hýzlý Teslimat' },
+                { sayi: '15+', label: 'Yï¿½llï¿½k Deneyim' },
+                { sayi: '50K+', label: 'Mutlu Mï¿½ï¿½teri' },
+                { sayi: '1200mï¿½', label: 'ï¿½retim Alanï¿½' },
+                { sayi: '48 Sa.', label: 'Hï¿½zlï¿½ Teslimat' },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl p-4 text-center"
                   style={{ background: 'var(--bg-card)', border: '0.5px solid var(--border)' }}>
@@ -93,10 +93,10 @@ export default function HakkimizdaPage() {
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h2 className="text-[28px] md:text-[36px] font-black tracking-[-1px] mb-2"
             style={{ color: 'var(--text-primary)' }}>
-            Dijital Baský ve Kurumsal Çözümlerimiz Neleri Kapsar?
+            Dijital Baskï¿½ ve Kurumsal ï¿½ï¿½zï¿½mlerimiz Neleri Kapsar?
           </h2>
           <p className="text-[14px] mb-8 leading-[1.7]" style={{ color: 'var(--text-secondary)' }}>
-            Markanýzýn ihtiyaç duyduðu tüm tanýtým materyalleri, yüksek çözünürlüklü dijital baský makinelerimizde, hassas renk yönetimi ile üretilmektedir. baskýurunleri.com olarak sunduðumuz popüler hizmetler:
+            Markanï¿½zï¿½n ihtiyaï¿½ duyduï¿½u tï¿½m tanï¿½tï¿½m materyalleri, yï¿½ksek ï¿½ï¿½zï¿½nï¿½rlï¿½klï¿½ dijital baskï¿½ makinelerimizde, hassas renk yï¿½netimi ile ï¿½retilmektedir. baskï¿½urunleri.com olarak sunduï¿½umuz popï¿½ler hizmetler:
           </p>
           <div className="space-y-3">
             {hizmetler.map((h) => (
@@ -113,15 +113,15 @@ export default function HakkimizdaPage() {
           </div>
         </div>
 
-        {/* Sipariþ adýmlarý */}
+        {/* Sipariï¿½ adï¿½mlarï¿½ */}
         <div style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16">
             <h2 className="text-[28px] md:text-[36px] font-black tracking-[-1px] mb-2"
               style={{ color: 'var(--text-primary)' }}>
-              Online Baský Sipariþi Nasýl Verilir?
+              Online Baskï¿½ Sipariï¿½i Nasï¿½l Verilir?
             </h2>
             <p className="text-[14px] mb-10 leading-[1.7]" style={{ color: 'var(--text-secondary)' }}>
-              Matbaa kapýlarýný aþýndýrmaya gerek kalmadan, oturduðunuz yerden profesyonel baský hizmeti alabilirsiniz. baskýurunleri.com'un kullanýcý dostu arayüzü ile sipariþ süreci sadece 3 adýmda tamamlanýr:
+              Matbaa kapï¿½larï¿½nï¿½ aï¿½ï¿½ndï¿½rmaya gerek kalmadan, oturduï¿½unuz yerden profesyonel baskï¿½ hizmeti alabilirsiniz. baskï¿½urunleri.com'un kullanï¿½cï¿½ dostu arayï¿½zï¿½ ile sipariï¿½ sï¿½reci sadece 3 adï¿½mda tamamlanï¿½r:
             </p>
             <div className="grid md:grid-cols-3 gap-5">
               {adimlar.map((a) => (
@@ -139,14 +139,14 @@ export default function HakkimizdaPage() {
           </div>
         </div>
 
-        {/* Tasarým yok */}
+        {/* Tasarï¿½m yok */}
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h2 className="text-[28px] md:text-[36px] font-black tracking-[-1px] mb-4"
             style={{ color: 'var(--text-primary)' }}>
-            Tasarým Bilgin Yok, Yine de Sipariþ Verebilirsin!
+            Tasarï¿½m Bilgin Yok, Yine de Sipariï¿½ Verebilirsin!
           </h2>
           <p className="text-[14px] leading-[1.8] mb-4" style={{ color: 'var(--text-secondary)' }}>
-            Kesinlikle! baskýurunleri.com, sadece profesyonel tasarýmcýlar için deðil, herkese hitap eder. Web sitemizde yer alan <strong style={{ color: '#DC2626' }}>ücretsiz online tasarým araçlarý</strong> sayesinde, binlerce hazýr þablon arasýndan sektörünüze uygun alaný seçebilir; logo, metin ve görsellerinizi düzenleyebilirsiniz. Ayrýca dilerseniz, uzman grafik ekibimizden profesyonel tasarým desteði talep edebilirsiniz.
+            Kesinlikle! baskï¿½urunleri.com, sadece profesyonel tasarï¿½mcï¿½lar iï¿½in deï¿½il, herkese hitap eder. Web sitemizde yer alan <strong style={{ color: '#DC2626' }}>ï¿½cretsiz online tasarï¿½m araï¿½larï¿½</strong> sayesinde, binlerce hazï¿½r ï¿½ablon arasï¿½ndan sektï¿½rï¿½nï¿½ze uygun alanï¿½ seï¿½ebilir; logo, metin ve gï¿½rsellerinizi dï¿½zenleyebilirsiniz. Ayrï¿½ca dilerseniz, uzman grafik ekibimizden profesyonel tasarï¿½m desteï¿½i talep edebilirsiniz.
           </p>
         </div>
 
@@ -155,10 +155,10 @@ export default function HakkimizdaPage() {
           <div className="max-w-4xl mx-auto px-6 py-16">
             <h2 className="text-[28px] md:text-[36px] font-black tracking-[-1px] mb-2"
               style={{ color: 'var(--text-primary)' }}>
-              Neden baskýurunleri.com'u Tercih Etmelisiniz?
+              Neden baskï¿½urunleri.com'u Tercih Etmelisiniz?
             </h2>
             <p className="text-[14px] mb-8 leading-[1.7]" style={{ color: 'var(--text-secondary)' }}>
-              Türkiye'nin her yerine kargo avantajý ve müþteri memnuniyeti odaklý yaklaþýmýmýzla fark yaratýyoruz.
+              Tï¿½rkiye'nin her yerine kargo avantajï¿½ ve mï¿½ï¿½teri memnuniyeti odaklï¿½ yaklaï¿½ï¿½mï¿½mï¿½zla fark yaratï¿½yoruz.
             </p>
             <div className="space-y-3">
               {nedenBiz.map((n) => (
@@ -176,17 +176,17 @@ export default function HakkimizdaPage() {
           </div>
         </div>
 
-        {/* Kapanýþ CTA */}
+        {/* Kapanï¿½ï¿½ CTA */}
         <div className="max-w-4xl mx-auto px-6 py-16 text-center">
           <div className="rounded-3xl p-10 md:p-14"
             style={{ background: 'var(--bg-card)', border: '0.5px solid var(--border)' }}>
             <p className="text-[14px] leading-[1.8] mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              baskýurunleri.com; kartvizitlerden broþüre, afiþten kurumsal evraklara kadar tüm baský materyal ihtiyaçlarýnýzda, hýz ve kaliteyi bir araya getiren güvenilir çözüm ortaðýnýzdýr.
+              baskï¿½urunleri.com; kartvizitlerden broï¿½ï¿½re, afiï¿½ten kurumsal evraklara kadar tï¿½m baskï¿½ materyal ihtiyaï¿½larï¿½nï¿½zda, hï¿½z ve kaliteyi bir araya getiren gï¿½venilir ï¿½ï¿½zï¿½m ortaï¿½ï¿½nï¿½zdï¿½r.
             </p>
             <Link href="/urunler"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-[14px] text-white transition-colors"
               style={{ background: '#DC2626' }}>
-              Ürünlere Göz At ›
+              ï¿½rï¿½nlere Gï¿½z At ï¿½
             </Link>
           </div>
         </div>
