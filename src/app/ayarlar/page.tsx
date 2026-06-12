@@ -57,7 +57,7 @@ export default function AyarlarPage() {
             <div className="flex items-start gap-3 mb-5">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{ background: 'rgba(244,130,31,0.12)' }}>
-                <DollarSign size={16} className="text-[#DC2626]" />
+                <DollarSign size={16} className="text-[#F4821F]" />
               </div>
               <div>
                 <h2 className="text-[15px] font-bold" style={{ color: 'var(--text-primary)' }}>
@@ -75,7 +75,7 @@ export default function AyarlarPage() {
                   style={{ color: 'var(--text-muted)' }}>Güncel kur</label>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[14px] font-bold"
-                    style={{ color: '#DC2626' }}>$1 =</span>
+                    style={{ color: '#F4821F' }}>$1 =</span>
                   <input type="number" value={kur}
                     onChange={e => setKur(e.target.value)}
                     placeholder="45.00" step="0.01" min="0"
@@ -95,7 +95,7 @@ export default function AyarlarPage() {
               </button>
               <button onClick={handleSave} disabled={saving || loading}
                 className="flex items-center gap-2 text-[13px] font-bold px-6 py-3 rounded-xl transition-colors disabled:opacity-60"
-                style={{ background: '#DC2626', color: 'white' }}>
+                style={{ background: '#F4821F', color: 'white' }}>
                 <Save size={14} />
                 {saving ? 'Kaydediliyor...' : 'Kaydet'}
               </button>

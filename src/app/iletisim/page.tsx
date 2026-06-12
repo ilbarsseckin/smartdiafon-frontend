@@ -60,7 +60,7 @@ export default function IletisimPage() {
         {/* Hero */}
         <div style={{ background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-5xl mx-auto px-6 py-14">
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">İletişim</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">İletişim</p>
             <h1 className="text-[38px] md:text-[48px] font-black tracking-[-2px] leading-tight mb-3"
               style={{ color: 'var(--text-primary)' }}>
               Size nasıl yardımcı olabiliriz?
@@ -106,13 +106,13 @@ export default function IletisimPage() {
                   style={{ background: 'var(--bg-card)', border: '0.5px solid var(--border)' }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ background: 'rgba(244,130,31,0.1)' }}>
-                    <Icon size={17} color="#DC2626" />
+                    <Icon size={17} color="#F4821F" />
                   </div>
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-[1.5px]"
                       style={{ color: 'var(--text-muted)' }}>{label}</p>
                     {href ? (
-                      <a href={href} className="text-[13px] font-semibold hover:text-[#DC2626] transition-colors"
+                      <a href={href} className="text-[13px] font-semibold hover:text-[#F4821F] transition-colors"
                         style={{ color: 'var(--text-primary)' }}>{value}</a>
                     ) : (
                       <p className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>{value}</p>
@@ -158,7 +158,7 @@ export default function IletisimPage() {
                       <input value={form.adSoyad} onChange={e => set('adSoyad', e.target.value)}
                         placeholder="Ahmet Yılmaz"
                         className="w-full px-3 py-2.5 rounded-xl text-[13px] outline-none"
-                        style={{ background: 'var(--bg-secondary)', border: form.adSoyad ? '1.5px solid #DC2626' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
+                        style={{ background: 'var(--bg-secondary)', border: form.adSoyad ? '1.5px solid #F4821F' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
                     </div>
                     <div>
                       <label className="text-[11px] font-bold uppercase tracking-[1px] mb-1.5 block"
@@ -177,7 +177,7 @@ export default function IletisimPage() {
                     <input value={form.email} onChange={e => set('email', e.target.value)}
                       placeholder="ornek@email.com" type="email"
                       className="w-full px-3 py-2.5 rounded-xl text-[13px] outline-none"
-                      style={{ background: 'var(--bg-secondary)', border: form.email ? '1.5px solid #DC2626' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
+                      style={{ background: 'var(--bg-secondary)', border: form.email ? '1.5px solid #F4821F' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
                   </div>
 
                   {/* Konu */}
@@ -199,14 +199,14 @@ export default function IletisimPage() {
                       placeholder="Merhaba, apartmanımız için görüntülü diyafon sistemi teklifi almak istiyorum..."
                       rows={5}
                       className="w-full px-3 py-2.5 rounded-xl text-[13px] outline-none resize-none"
-                      style={{ background: 'var(--bg-secondary)', border: form.mesaj ? '1.5px solid #DC2626' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
+                      style={{ background: 'var(--bg-secondary)', border: form.mesaj ? '1.5px solid #F4821F' : '1px solid var(--border)', color: 'var(--text-primary)' }} />
                   </div>
 
                   {/* Butonlar */}
                   <div className="flex gap-3 pt-1">
                     <button type="submit" disabled={loading}
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold text-white disabled:opacity-60 transition-all"
-                      style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
+                      style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
                       {loading ? <Loader2 size={15} className="animate-spin" /> : <Send size={14} />}
                       {loading ? 'Gönderiliyor...' : 'Mesaj Gönder'}
                     </button>

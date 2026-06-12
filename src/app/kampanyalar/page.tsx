@@ -35,7 +35,7 @@ export default function KampanyalarPage() {
       <Navbar />
       <main className="min-h-[60vh] max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <div className="flex items-center gap-2.5 mb-2">
-          <Megaphone size={26} style={{ color: '#DC2626' }} />
+          <Megaphone size={26} style={{ color: '#F4821F' }} />
           <h1 className="text-[26px] sm:text-[30px] font-bold" style={{ color: 'var(--text-primary)' }}>
             Kampanyalar
           </h1>
@@ -46,7 +46,7 @@ export default function KampanyalarPage() {
 
         {loading ? (
           <div className="flex justify-center py-24">
-            <Loader2 size={30} className="animate-spin" style={{ color: '#DC2626' }} />
+            <Loader2 size={30} className="animate-spin" style={{ color: '#F4821F' }} />
           </div>
         ) : items.length === 0 ? (
           <div className="text-center py-24 rounded-2xl"
@@ -77,14 +77,14 @@ function CampaignCard({ c }: { c: Campaign }) {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         {c.badgeText && (
           <span className="absolute top-3 left-3 text-[12px] font-bold px-2.5 py-1 rounded-lg text-white shadow"
-            style={{ background: c.badgeColor || '#DC2626' }}>
+            style={{ background: c.badgeColor || '#F4821F' }}>
             {c.badgeText}
           </span>
         )}
       </div>
       <div className="p-5">
         {c.label && (
-          <p className="text-[11px] font-bold uppercase tracking-wide mb-1" style={{ color: '#DC2626' }}>
+          <p className="text-[11px] font-bold uppercase tracking-wide mb-1" style={{ color: '#F4821F' }}>
             {c.label}
           </p>
         )}
@@ -98,7 +98,7 @@ function CampaignCard({ c }: { c: Campaign }) {
         )}
         {c.ctaText && (
           <span className="inline-flex items-center gap-1 mt-3 text-[13px] font-semibold"
-            style={{ color: '#DC2626' }}>
+            style={{ color: '#F4821F' }}>
             {c.ctaText} <ArrowRight size={14} />
           </span>
         )}

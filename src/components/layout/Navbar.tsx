@@ -135,7 +135,7 @@ export default function Navbar() {
             <div className="flex items-center gap-5 flex-wrap">
               {topUtility.map(l => (
                 <Link key={l.href} href={l.href}
-                  className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[#DC2626] whitespace-nowrap"
+                  className="flex items-center gap-1 text-[11px] font-medium transition-colors hover:text-[#F4821F] whitespace-nowrap"
                   style={{ color: 'var(--text-secondary)' }}>
                   <l.icon size={11} />
                   {l.label}
@@ -160,7 +160,7 @@ export default function Navbar() {
 
             {/* Masaüstü arama butonu */}
             <button onClick={() => setSearchOpen(true)}
-              className="hidden md:flex flex-1 max-w-[640px] items-center gap-3 px-4 py-3 rounded-xl text-[13px] transition-all hover:border-[#DC2626]"
+              className="hidden md:flex flex-1 max-w-[640px] items-center gap-3 px-4 py-3 rounded-xl text-[13px] transition-all hover:border-[#F4821F]"
               style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-muted)' }}>
               <Search size={14} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
               <span>Ürün, kod veya kategori ara...</span>
@@ -181,7 +181,7 @@ export default function Navbar() {
                 style={{ border: '1px solid var(--border)' }}>
                 <ShoppingCart size={15} style={{ color: 'var(--text-secondary)' }} />
                 {itemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 min-w-[16px] h-[16px] px-1 bg-[#DC2626] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 min-w-[16px] h-[16px] px-1 bg-[#F4821F] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
                     {itemCount}
                   </span>
                 )}
@@ -202,7 +202,7 @@ export default function Navbar() {
                 style={{ border: '1px solid var(--border)', background: 'var(--surface)' }}>
                 {user ? (
                   <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0"
-                    style={{ background: '#DC2626' }}>
+                    style={{ background: '#F4821F' }}>
                     {userInitial}
                   </div>
                 ) : (
@@ -221,10 +221,10 @@ export default function Navbar() {
               <Link href="/favorilerim"
                 className="relative w-11 h-11 rounded-xl flex items-center justify-center"
                 style={{ border: '1px solid var(--border)', background: 'var(--surface)' }}>
-                <Heart size={15} fill={favCount > 0 ? '#DC2626' : 'none'}
-                  style={{ color: favCount > 0 ? '#DC2626' : 'var(--text-secondary)' }} />
+                <Heart size={15} fill={favCount > 0 ? '#F4821F' : 'none'}
+                  style={{ color: favCount > 0 ? '#F4821F' : 'var(--text-secondary)' }} />
                 {favCount > 0 && (
-                  <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 bg-[#DC2626] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 bg-[#F4821F] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                     {favCount}
                   </span>
                 )}
@@ -236,7 +236,7 @@ export default function Navbar() {
                 <div className="relative">
                   <ShoppingCart size={15} style={{ color: 'var(--text-secondary)' }} />
                   {itemCount > 0 && (
-                    <span className="absolute -top-2 -right-2 min-w-[16px] h-[16px] px-1 bg-[#DC2626] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+                    <span className="absolute -top-2 -right-2 min-w-[16px] h-[16px] px-1 bg-[#F4821F] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
                       {itemCount}
                     </span>
                   )}
@@ -265,23 +265,28 @@ export default function Navbar() {
                     className="relative flex items-center gap-1 text-[11.5px] font-bold px-3 py-1.5 rounded-md transition-all whitespace-nowrap"
                     style={{
                       color: isActive ? '#fff' : 'var(--text-primary)',
-                      background: isActive ? '#DC2626' : 'transparent',
+                      background: isActive ? '#F4821F' : 'transparent',
                       boxShadow: isActive ? '0 2px 6px rgba(244,130,31,0.35)' : 'none',
                     }}>
                     <span className="text-[13px]">{k.icon}</span>
                     {k.name}
                     {isActive && (
                       <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-0 h-0"
-                        style={{ borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid #DC2626' }} />
+                        style={{ borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid #F4821F' }} />
                     )}
                   </Link>
                 </div>
               )
             })}
          <div className="flex-1" />
+            <Link href="/kurulum-ekibi"
+              className="flex items-center gap-1.5 text-[11.5px] font-bold px-3.5 py-1.5 rounded-md transition-all whitespace-nowrap"
+              style={{ border: '1.5px solid #F4821F', color: '#F4821F' }}>
+              <span>🔧</span> Kurulum Ekibine Katıl
+            </Link>
             <Link href="/uyumluluk"
               className="flex items-center gap-1.5 text-[11.5px] font-bold px-3.5 py-1.5 rounded-md transition-all whitespace-nowrap text-white"
-              style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)', boxShadow: '0 2px 8px rgba(244,130,31,0.4)' }}>
+              style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 2px 8px rgba(244,130,31,0.4)' }}>
               <span>🔍</span> DiafonBox Uyumluluk Testi
             </Link>
           </div>
@@ -297,7 +302,7 @@ export default function Navbar() {
                 style={{ background: 'var(--bg-secondary)' }}>
                 {user ? (
                   <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-bold"
-                    style={{ background: '#DC2626' }}>
+                    style={{ background: '#F4821F' }}>
                     {userInitial}
                   </div>
                 ) : (
@@ -312,12 +317,12 @@ export default function Navbar() {
                 className="flex items-center justify-between px-3 py-2.5 rounded-xl"
                 style={{ background: 'var(--bg-secondary)' }}>
                 <span className="flex items-center gap-2">
-                  <Heart size={14} fill={favCount > 0 ? '#DC2626' : 'none'}
-                    style={{ color: favCount > 0 ? '#DC2626' : 'var(--text-secondary)' }} />
+                  <Heart size={14} fill={favCount > 0 ? '#F4821F' : 'none'}
+                    style={{ color: favCount > 0 ? '#F4821F' : 'var(--text-secondary)' }} />
                   <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Favorilerim</span>
                 </span>
                 {favCount > 0 && (
-                  <span className="px-2 py-0.5 rounded-full bg-[#DC2626] text-white text-[10px] font-bold">{favCount}</span>
+                  <span className="px-2 py-0.5 rounded-full bg-[#F4821F] text-white text-[10px] font-bold">{favCount}</span>
                 )}
               </Link>
 
@@ -329,7 +334,7 @@ export default function Navbar() {
                   <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Sepetim</span>
                 </span>
                 {itemCount > 0 && (
-                  <span className="px-2 py-0.5 rounded-full bg-[#DC2626] text-white text-[10px] font-bold">{itemCount}</span>
+                  <span className="px-2 py-0.5 rounded-full bg-[#F4821F] text-white text-[10px] font-bold">{itemCount}</span>
                 )}
               </Link>
 
@@ -363,7 +368,7 @@ export default function Navbar() {
               <button onClick={() => { toggle(); setMobileMenu(false) }}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl w-full"
                 style={{ background: 'var(--bg-secondary)' }}>
-                {theme === 'dark' ? <Sun size={14} className="text-[#DC2626]" /> : <Moon size={14} style={{ color: 'var(--text-secondary)' }} />}
+                {theme === 'dark' ? <Sun size={14} className="text-[#F4821F]" /> : <Moon size={14} style={{ color: 'var(--text-secondary)' }} />}
                 <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>
                   {theme === 'dark' ? 'Açık Tema' : 'Koyu Tema'}
                 </span>
@@ -391,7 +396,7 @@ export default function Navbar() {
                       const badge = getBadge(sub.slug)
                       return (
                         <Link key={sub.slug} href={`/katalog/${sub.slug}`} onClick={() => setMegaOpen(null)}
-                          className="flex items-center justify-between py-2.5 text-[14px] font-medium border-b transition-colors hover:text-[#DC2626]"
+                          className="flex items-center justify-between py-2.5 text-[14px] font-medium border-b transition-colors hover:text-[#F4821F]"
                           style={{ color: 'var(--text-primary)', borderColor: 'var(--border)' }}>
                           <span>{sub.name}</span>
                           {badge && (
@@ -405,7 +410,7 @@ export default function Navbar() {
                     })}
                   </div>
                   <Link href={`/katalog/${megaOpen}`} onClick={() => setMegaOpen(null)}
-                    className="inline-flex items-center gap-1.5 mt-5 text-[13px] font-bold transition-colors hover:text-[#DC2626]"
+                    className="inline-flex items-center gap-1.5 mt-5 text-[13px] font-bold transition-colors hover:text-[#F4821F]"
                     style={{ color: 'var(--text-primary)' }}>
                     Tüm Ürünler <ArrowRight size={13} />
                   </Link>
@@ -445,14 +450,14 @@ export default function Navbar() {
                   <div className="grid grid-cols-3 gap-x-6 gap-y-1.5 mb-5">
                     {megaProducts.slice(0, 12).map(p => (
                       <Link key={p.slug} href={`/urun/${p.slug}`} onClick={() => setMegaOpen(null)}
-                        className="text-[13px] py-1 transition-colors hover:text-[#DC2626]"
+                        className="text-[13px] py-1 transition-colors hover:text-[#F4821F]"
                         style={{ color: 'var(--text-secondary)' }}>
                         {p.name}
                       </Link>
                     ))}
                   </div>
                   <Link href={`/katalog/${megaOpen}`} onClick={() => setMegaOpen(null)}
-                    className="inline-flex items-center gap-1.5 text-[13px] font-bold hover:text-[#DC2626]"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-bold hover:text-[#F4821F]"
                     style={{ color: 'var(--text-primary)' }}>
                     Tüm Ürünler <ArrowRight size={13} />
                   </Link>
@@ -467,8 +472,8 @@ export default function Navbar() {
                   Bu kategoride henüz ürün veya alt kategori yok.
                 </p>
                 <Link href={`/katalog/${megaOpen}`} onClick={() => setMegaOpen(null)}
-                  className="inline-flex items-center gap-1.5 mt-3 text-[13px] font-bold hover:text-[#DC2626]"
-                  style={{ color: '#DC2626' }}>
+                  className="inline-flex items-center gap-1.5 mt-3 text-[13px] font-bold hover:text-[#F4821F]"
+                  style={{ color: '#F4821F' }}>
                   Kategori sayfasını ziyaret et <ArrowRight size={13} />
                 </Link>
               </div>

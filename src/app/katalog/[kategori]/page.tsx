@@ -202,7 +202,7 @@ export default function KatalogKategoriPage() {
                         )}
                         {!p.badge && discountPct > 0 && (
                           <span className="absolute top-3 left-3 text-[10px] font-black px-2 py-1 rounded text-white"
-                            style={{ background: '#DC2626' }}>
+                            style={{ background: '#F4821F' }}>
                             -%{discountPct}
                           </span>
                         )}

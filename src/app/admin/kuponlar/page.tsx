@@ -225,7 +225,7 @@ export default function AdminKuponlarPage() {
             <button onClick={openCreate}
               className="flex items-center gap-2 px-4 py-2.5 text-[13px] font-bold text-white rounded-xl transition-all"
               style={{
-                background: 'linear-gradient(135deg, #DC2626, #b91c1c)',
+                background: 'linear-gradient(135deg, #F4821F, #e07010)',
                 boxShadow: '0 4px 12px rgba(244,130,31,0.3)',
               }}>
               <Plus size={15} /> Yeni Kupon
@@ -237,7 +237,7 @@ export default function AdminKuponlarPage() {
             {[
               { label: 'Toplam Kupon', value: stats.total, icon: Tag, color: '#6366F1' },
               { label: 'Aktif', value: stats.active, icon: Power, color: '#10B981' },
-              { label: 'Welcome Kupon', value: stats.welcome, icon: Gift, color: '#DC2626' },
+              { label: 'Welcome Kupon', value: stats.welcome, icon: Gift, color: '#F4821F' },
               { label: 'Toplam Kullanım', value: stats.totalUsage, icon: Users, color: '#EC4899' },
             ].map((s, i) => (
               <div key={i} className="rounded-xl p-4"
@@ -266,7 +266,7 @@ export default function AdminKuponlarPage() {
                 <button key={f.v} onClick={() => setFilter(f.v)}
                   className="px-3 py-2 text-[12px] font-bold rounded-lg transition-all whitespace-nowrap"
                   style={{
-                    background: filter === f.v ? '#DC2626' : 'var(--bg-card)',
+                    background: filter === f.v ? '#F4821F' : 'var(--bg-card)',
                     color: filter === f.v ? '#fff' : 'var(--text-primary)',
                     border: '1px solid var(--border)',
                   }}>
@@ -292,7 +292,7 @@ export default function AdminKuponlarPage() {
           {/* Liste */}
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={32} className="animate-spin text-[#DC2626]" />
+              <Loader2 size={32} className="animate-spin text-[#F4821F]" />
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-16 rounded-xl"
@@ -328,7 +328,7 @@ export default function AdminKuponlarPage() {
                       <div className="flex items-center gap-2 flex-wrap">
                         <button onClick={() => handleCopy(c.code)}
                           className="flex items-center gap-1.5 px-2 py-0.5 rounded text-[13px] font-black tracking-wider transition-colors"
-                          style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                          style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
                           {c.code}
                           {copiedCode === c.code ? <Check size={11} /> : <Copy size={11} className="opacity-60" />}
                         </button>
@@ -587,7 +587,7 @@ export default function AdminKuponlarPage() {
                 <label className="flex items-center gap-2.5 cursor-pointer">
                   <input type="checkbox" checked={form.autoIssueOnFirstVisit}
                     onChange={e => setForm({ ...form, autoIssueOnFirstVisit: e.target.checked })}
-                    className="w-4 h-4 rounded accent-[#DC2626]" />
+                    className="w-4 h-4 rounded accent-[#F4821F]" />
                   <span className="text-[13px] font-medium" style={{ color: 'var(--text-primary)' }}>
                     🎁 İlk ziyarette Welcome Dialog'da göster
                   </span>
@@ -610,7 +610,7 @@ export default function AdminKuponlarPage() {
               <label className="flex items-center gap-2.5 cursor-pointer">
                 <input type="checkbox" checked={form.active}
                   onChange={e => setForm({ ...form, active: e.target.checked })}
-                  className="w-4 h-4 rounded accent-[#DC2626]" />
+                  className="w-4 h-4 rounded accent-[#F4821F]" />
                 <span className="text-[13px] font-medium" style={{ color: 'var(--text-primary)' }}>
                   Kupon aktif
                 </span>
@@ -627,7 +627,7 @@ export default function AdminKuponlarPage() {
               <button onClick={handleSubmit} disabled={submitting}
                 className="px-4 py-2 text-[13px] font-bold text-white rounded-lg transition-all disabled:opacity-50"
                 style={{
-                  background: 'linear-gradient(135deg, #DC2626, #b91c1c)',
+                  background: 'linear-gradient(135deg, #F4821F, #e07010)',
                   boxShadow: '0 4px 12px rgba(244,130,31,0.3)',
                 }}>
                 {submitting ? <Loader2 size={14} className="animate-spin" /> : editing ? 'Güncelle' : 'Oluştur'}

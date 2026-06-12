@@ -7,9 +7,9 @@ import toast from 'react-hot-toast'
 import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight, Upload, X, Star, StarOff, FolderOpen, Check } from 'lucide-react'
 
 const CATEGORIES = ['Zincir Market', 'İçecek & FMCG', 'Restoran', 'Otel & Turizm', 'Etkinlik & Fuar', 'Diğer']
-const COLORS = ['#E31E24','#003087','#E8000D','#F40009','#D62300','#006491','#F26522','#012169','#8A1538','#1B4F72','#DC2626','#1D9E75','#534AB7']
+const COLORS = ['#E31E24','#003087','#E8000D','#F40009','#D62300','#006491','#F26522','#012169','#8A1538','#1B4F72','#F4821F','#1D9E75','#534AB7']
 
-const emptyForm = { name: '', sector: '', category: CATEGORIES[0], description: '', color: '#DC2626', abbr: '', featured: false, active: true, showText: true, displayOrder: 0, logoUrl: '' }
+const emptyForm = { name: '', sector: '', category: CATEGORIES[0], description: '', color: '#F4821F', abbr: '', featured: false, active: true, showText: true, displayOrder: 0, logoUrl: '' }
 // Dosya adından marka adı çıkar: "migros-logo.png" → "Migros"
 const nameFromFile = (filename: string) =>
   filename.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
@@ -51,7 +51,7 @@ const openEdit = (ref: any) => {
     setEditing(ref)
     setForm({
       name: ref.name, sector: ref.sector, category: ref.category,
-      description: ref.description || '', color: ref.color || '#DC2626',
+      description: ref.description || '', color: ref.color || '#F4821F',
       abbr: ref.abbr || '', featured: ref.featured, active: ref.active,
       showText: ref.showText !== false,
       displayOrder: ref.displayOrder || 0, logoUrl: ref.logoUrl || '',
@@ -185,7 +185,7 @@ const handleSave = async () => {
               <input ref={bulkRef} type="file" accept="image/*" multiple className="hidden" onChange={handleBulkSelect} />
 
               <button onClick={openNew}
-                className="flex items-center gap-2 bg-[#DC2626] text-white text-[13px] font-bold px-5 py-2.5 rounded-xl hover:bg-[#b91c1c] transition-colors">
+                className="flex items-center gap-2 bg-[#F4821F] text-white text-[13px] font-bold px-5 py-2.5 rounded-xl hover:bg-[#e07010] transition-colors">
                 <Plus size={15} /> Yeni Referans
               </button>
             </div>
@@ -197,7 +197,7 @@ const handleSave = async () => {
               <button key={cat} onClick={() => setFilterCat(cat)}
                 className="text-[12px] px-3.5 py-1.5 rounded-lg font-semibold transition-all"
                 style={filterCat === cat
-                  ? { background: '#DC2626', color: 'white', border: '1px solid #DC2626' }
+                  ? { background: '#F4821F', color: 'white', border: '1px solid #F4821F' }
                   : { background: 'var(--surface)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}>
                 {cat}
               </button>
@@ -226,9 +226,9 @@ const handleSave = async () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5">
                         <span className="text-[14px] font-bold truncate" style={{ color: 'var(--text-primary)' }}>{ref.name}</span>
-                        {ref.featured && <Star size={11} className="text-[#DC2626] flex-shrink-0" fill="#DC2626" />}
+                        {ref.featured && <Star size={11} className="text-[#F4821F] flex-shrink-0" fill="#F4821F" />}
                       </div>
-                      <span className="text-[11px] text-[#DC2626] font-semibold">{ref.sector}</span>
+                      <span className="text-[11px] text-[#F4821F] font-semibold">{ref.sector}</span>
                     </div>
                   </div>
 
@@ -362,7 +362,7 @@ const handleSave = async () => {
                 <button onClick={() => setForm({ ...form, featured: !form.featured })}
                   className="flex items-center gap-2 text-[12px] font-semibold px-3 py-2.5 rounded-lg transition-all self-end"
                   style={form.featured
-                    ? { background: 'rgba(244,130,31,0.15)', color: '#DC2626', border: '1px solid rgba(244,130,31,0.4)' }
+                    ? { background: 'rgba(244,130,31,0.15)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.4)' }
                     : { background: 'var(--surface)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}>
                   {form.featured ? <Star size={13} fill="currentColor" /> : <StarOff size={13} />} Öne çıkar
                 </button>
@@ -384,7 +384,7 @@ const handleSave = async () => {
               </button>
               <button onClick={handleSave} disabled={saving}
                 className="flex-1 py-3 rounded-xl text-[13px] font-bold text-white disabled:opacity-60"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 {saving ? 'Kaydediliyor...' : (editing ? 'Güncelle' : 'Kaydet')}
               </button>
             </div>
@@ -418,7 +418,7 @@ const handleSave = async () => {
             {/* Progress bar */}
             {bulkSaving && (
               <div className="mb-4 rounded-full overflow-hidden h-2" style={{ background: 'var(--bg-secondary)' }}>
-                <div className="h-full bg-[#DC2626] transition-all duration-300" style={{ width: `${bulkProgress}%` }} />
+                <div className="h-full bg-[#F4821F] transition-all duration-300" style={{ width: `${bulkProgress}%` }} />
               </div>
             )}
 
@@ -466,7 +466,7 @@ const handleSave = async () => {
               </button>
               <button onClick={handleBulkSave} disabled={bulkSaving || !bulkFiles.length}
                 className="flex-1 py-3 rounded-xl text-[13px] font-bold text-white flex items-center justify-center gap-2 disabled:opacity-60"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 <Check size={15} />
                 {bulkSaving ? `Yükleniyor... ${bulkProgress}%` : `${bulkFiles.length} Referansı Ekle`}
               </button>

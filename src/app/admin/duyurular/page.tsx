@@ -32,13 +32,13 @@ const EMPTY_FORM: FormData = {
   message: '',
   subMessage: '',
   couponCode: '',
-  bgColor: '#DC2626',
+  bgColor: '#F4821F',
   textColor: '#FFFFFF',
   endsAt: '',
   active: true,
 }
 
-const PRESET_COLORS = ['#DC2626', '#111111', '#1D4ED8', '#16A34A', '#DC2626', '#7C3AED', '#0891B2', '#DB2777']
+const PRESET_COLORS = ['#F4821F', '#111111', '#1D4ED8', '#16A34A', '#F4821F', '#7C3AED', '#0891B2', '#DB2777']
 
 export default function AdminAnnouncementBarsPage() {
   return (
@@ -138,7 +138,7 @@ function Inner() {
 
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <Megaphone size={20} style={{ color: '#DC2626' }} />
+            <Megaphone size={20} style={{ color: '#F4821F' }} />
             <h1 className="text-[20px] font-bold" style={{ color: 'var(--text-primary)' }}>
               Duyuru Bantları
             </h1>
@@ -146,7 +146,7 @@ function Inner() {
           </div>
           <button onClick={openCreate}
             className="flex items-center gap-1.5 text-[13px] font-semibold px-3.5 py-2 rounded-lg text-white"
-            style={{ background: '#DC2626' }}>
+            style={{ background: '#F4821F' }}>
             <Plus size={15} /> Yeni Bant
           </button>
         </div>
@@ -179,7 +179,7 @@ function Inner() {
 
         {loading ? (
           <div className="flex justify-center py-16">
-            <Loader2 size={24} className="animate-spin text-[#DC2626]" />
+            <Loader2 size={24} className="animate-spin text-[#F4821F]" />
           </div>
         ) : items.length === 0 ? (
           <div className="text-center py-16 rounded-2xl"
@@ -205,7 +205,7 @@ function Inner() {
                     {b.subMessage && <span className="truncate max-w-[120px]">{b.subMessage}</span>}
                     {b.couponCode && (
                       <span className="px-1.5 py-0.5 rounded font-mono"
-                        style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                        style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
                         {b.couponCode}
                       </span>
                     )}
@@ -333,10 +333,10 @@ function Inner() {
                       className="w-9 h-9 rounded-lg cursor-pointer"
                       style={{ border: '1px solid var(--border)' }} />
                     <div className="flex gap-1">
-                      {['#FFFFFF', '#111111', '#DC2626'].map(c => (
+                      {['#FFFFFF', '#111111', '#F4821F'].map(c => (
                         <button key={c} onClick={() => setForm(f => ({ ...f, textColor: c }))}
                           className="w-5 h-5 rounded"
-                          style={{ background: c, border: form.textColor === c ? '2px solid #DC2626' : '1px solid var(--border)' }} />
+                          style={{ background: c, border: form.textColor === c ? '2px solid #F4821F' : '1px solid var(--border)' }} />
                       ))}
                     </div>
                   </div>
@@ -356,7 +356,7 @@ function Inner() {
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" checked={form.active}
                   onChange={e => setForm(f => ({ ...f, active: e.target.checked }))}
-                  className="accent-[#DC2626]" />
+                  className="accent-[#F4821F]" />
                 <span className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>Aktif</span>
               </label>
             </div>
@@ -370,7 +370,7 @@ function Inner() {
               </button>
               <button onClick={handleSave} disabled={saving}
                 className="flex-1 flex items-center justify-center gap-1.5 py-2.5 text-[13px] font-semibold rounded-lg text-white disabled:opacity-60"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 {saving ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />}
                 Kaydet
               </button>

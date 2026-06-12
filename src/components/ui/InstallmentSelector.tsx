@@ -57,7 +57,7 @@ export default function InstallmentSelector({ binNumber, totalTl, selected, onCh
   if (loading) {
     return (
       <div className="flex items-center gap-2 py-3">
-        <Loader2 size={14} className="animate-spin text-[#DC2626]" />
+        <Loader2 size={14} className="animate-spin text-[#F4821F]" />
         <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
           Taksit seçenekleri yükleniyor...
         </span>
@@ -77,8 +77,8 @@ export default function InstallmentSelector({ binNumber, totalTl, selected, onCh
         {bankName && (
           <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg"
             style={{ background: 'rgba(244,130,31,0.1)' }}>
-            <CreditCard size={11} style={{ color: '#DC2626' }} />
-            <span className="text-[10px] font-bold" style={{ color: '#DC2626' }}>
+            <CreditCard size={11} style={{ color: '#F4821F' }} />
+            <span className="text-[10px] font-bold" style={{ color: '#F4821F' }}>
               {bankName}
             </span>
           </div>
@@ -97,10 +97,10 @@ export default function InstallmentSelector({ binNumber, totalTl, selected, onCh
               className="flex items-center justify-between px-3 py-2.5 rounded-xl text-left transition-all"
               style={{
                 background: isSelected ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
-                border: isSelected ? '1.5px solid #DC2626' : '1px solid var(--border)',
+                border: isSelected ? '1.5px solid #F4821F' : '1px solid var(--border)',
               }}>
               <div>
-                <p className="text-[12px] font-bold" style={{ color: isSelected ? '#DC2626' : 'var(--text-primary)' }}>
+                <p className="text-[12px] font-bold" style={{ color: isSelected ? '#F4821F' : 'var(--text-primary)' }}>
                   {row.installment === 1 ? 'Tek Çekim' : `${row.installment} Taksit`}
                 </p>
                 {row.installment > 1 && (
@@ -110,7 +110,7 @@ export default function InstallmentSelector({ binNumber, totalTl, selected, onCh
                 )}
               </div>
               <div className="text-right">
-                <p className="text-[13px] font-black" style={{ color: isSelected ? '#DC2626' : 'var(--text-primary)' }}>
+                <p className="text-[13px] font-black" style={{ color: isSelected ? '#F4821F' : 'var(--text-primary)' }}>
                   ₺{Number(row.monthlyPrice).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                 </p>
                 {row.installment > 1 && (
@@ -118,7 +118,7 @@ export default function InstallmentSelector({ binNumber, totalTl, selected, onCh
                 )}
               </div>
               {isSelected && (
-                <Check size={14} className="ml-2 flex-shrink-0 text-[#DC2626]" />
+                <Check size={14} className="ml-2 flex-shrink-0 text-[#F4821F]" />
               )}
             </button>
           )

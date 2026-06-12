@@ -51,7 +51,7 @@ interface FormData {
 const EMPTY_FORM: FormData = {
   slug: '',
   label: '', title: '', description: '',
-  badgeText: '', badgeColor: '#DC2626',
+  badgeText: '', badgeColor: '#F4821F',
   imageUrl: '', mobileImageUrl: '',
   backgroundColor: '#fef3c7',
   ctaText: '', ctaLink: '',
@@ -60,7 +60,7 @@ const EMPTY_FORM: FormData = {
 }
 
 const PRESET_COLORS = [
-  '#DC2626', '#ef4444', '#16a34a', '#2563eb',
+  '#F4821F', '#ef4444', '#16a34a', '#2563eb',
   '#9333ea', '#db2777', '#0891b2', '#fef3c7',
 ]
 
@@ -119,7 +119,7 @@ function KampanyalarInner() {
       title: c.title || '',
       description: c.description || '',
       badgeText: c.badgeText || '',
-      badgeColor: c.badgeColor || '#DC2626',
+      badgeColor: c.badgeColor || '#F4821F',
       imageUrl: c.imageUrl || '',
       mobileImageUrl: c.mobileImageUrl || '',
       backgroundColor: c.backgroundColor || '#fef3c7',
@@ -260,7 +260,7 @@ function KampanyalarInner() {
             <button key={m} type="button" onClick={() => setMode(m)}
               className="flex-1 text-[11px] py-1.5 rounded-lg font-medium transition-colors"
               style={mode === m
-                ? { background: 'rgba(244,130,31,0.1)', color: '#DC2626', border: '1px solid rgba(244,130,31,0.2)' }
+                ? { background: 'rgba(244,130,31,0.1)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.2)' }
                 : { color: 'var(--text-muted)', border: '1px solid var(--border)' }}>
               {m === 'url' ? <><LinkIcon size={11} className="inline mr-1" />URL</> : <><Upload size={11} className="inline mr-1" />Yükle</>}
             </button>
@@ -297,20 +297,20 @@ function KampanyalarInner() {
       <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <Megaphone size={20} style={{ color: '#DC2626' }} />
+            <Megaphone size={20} style={{ color: '#F4821F' }} />
             <h1 className="text-[20px] font-bold" style={{ color: 'var(--text-primary)' }}>Kampanyalar</h1>
             <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>({items.length})</span>
           </div>
           <button onClick={openCreate}
             className="flex items-center gap-1.5 text-[13px] font-semibold px-3.5 py-2 rounded-lg text-white"
-            style={{ background: '#DC2626' }}>
+            style={{ background: '#F4821F' }}>
             <Plus size={15} /> Yeni Kampanya
           </button>
         </div>
 
         {loading ? (
           <div className="flex justify-center py-20">
-            <Loader2 size={28} className="animate-spin" style={{ color: '#DC2626' }} />
+            <Loader2 size={28} className="animate-spin" style={{ color: '#F4821F' }} />
           </div>
         ) : sorted.length === 0 ? (
           <div className="text-center py-20 rounded-2xl"
@@ -340,7 +340,7 @@ function KampanyalarInner() {
                   {c.imageUrl && <img src={c.imageUrl} alt="" className="w-full h-full object-cover" />}
                   {c.badgeText && (
                     <span className="absolute top-1 left-1 text-[9px] font-bold px-1.5 py-0.5 rounded text-white"
-                      style={{ background: c.badgeColor || '#DC2626' }}>
+                      style={{ background: c.badgeColor || '#F4821F' }}>
                       {c.badgeText}
                     </span>
                   )}
@@ -348,7 +348,7 @@ function KampanyalarInner() {
 
                 <div className="flex-1 min-w-0">
                   {c.label && (
-                    <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: '#DC2626' }}>
+                    <p className="text-[10px] font-bold uppercase tracking-wide" style={{ color: '#F4821F' }}>
                       {c.label}
                     </p>
                   )}
@@ -359,18 +359,18 @@ function KampanyalarInner() {
                   {c.slug ? (
                     <div className="flex items-center gap-2 mt-1">
                       <code className="text-[10px] px-2 py-0.5 rounded font-mono"
-                        style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                        style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
                         /lp/{c.slug}
                       </code>
                       <button onClick={() => copyLpUrl(c.slug!)}
                         title="Linki kopyala"
-                        className="p-0.5 hover:text-[#DC2626] transition-colors"
+                        className="p-0.5 hover:text-[#F4821F] transition-colors"
                         style={{ color: 'var(--text-muted)' }}>
                         <Copy size={11} />
                       </button>
                       <a href={`/lp/${c.slug}`} target="_blank" rel="noopener noreferrer"
                         title="Önizle"
-                        className="p-0.5 hover:text-[#DC2626] transition-colors"
+                        className="p-0.5 hover:text-[#F4821F] transition-colors"
                         style={{ color: 'var(--text-muted)' }}>
                         <ExternalLink size={11} />
                       </a>
@@ -463,7 +463,7 @@ function KampanyalarInner() {
                   />
                 </div>
                 {form.slug && (
-                  <p className="text-[11px] mt-1" style={{ color: '#DC2626' }}>
+                  <p className="text-[11px] mt-1" style={{ color: '#F4821F' }}>
                     🔗 baskiurunleri.com/lp/{form.slug}
                   </p>
                 )}
@@ -536,7 +536,7 @@ function KampanyalarInner() {
               </button>
               <button onClick={handleSave} disabled={saving}
                 className="flex-1 flex items-center justify-center gap-1.5 text-[13px] font-semibold py-2.5 rounded-lg text-white disabled:opacity-60"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 {saving ? <Loader2 size={15} className="animate-spin" /> : <Save size={15} />}
                 Kaydet
               </button>

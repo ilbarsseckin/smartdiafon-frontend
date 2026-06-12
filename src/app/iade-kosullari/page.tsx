@@ -11,7 +11,7 @@ export const metadata = {
 const sections = [
   {
     icon: ShieldCheck,
-    color: '#DC2626',
+    color: '#F4821F',
     title: '1. Genel Bilgi',
     content: `Smartdiafon.com �zerinden sat�n ald���n�z diyafon, interkom, DiafonBox ve g�venlik sistemi �r�nleri, Mesafeli Sat�� S�zle�mesi kapsam�nda de�erlendirilmektedir.
 
@@ -19,7 +19,7 @@ const sections = [
   },
   {
     icon: XCircle,
-    color: '#DC2626',
+    color: '#F4821F',
     title: '2. Cayma Hakk� Kullan�lamayan Durumlar',
     content: `A�a��daki durumlarda cayma hakk� ve iade talepleri kabul edilmez:
 
@@ -96,7 +96,7 @@ export default function IadeKosullariPage() {
           {/* Ba�l�k */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
               <ShieldCheck size={14} />
               T�ketici Haklar�
             </div>
@@ -160,7 +160,7 @@ export default function IadeKosullariPage() {
 
           {/* �leti�im CTA */}
           <div className="mt-8 rounded-2xl p-6 text-center"
-            style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
+            style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
             <Phone size={24} className="mx-auto mb-3 text-white" />
             <h3 className="text-[18px] font-black text-white mb-2">Sorunuz mu var?</h3>
             <p className="text-[13px] text-white/80 mb-4">
@@ -168,7 +168,7 @@ export default function IadeKosullariPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="https://wa.me/905522303333"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold bg-white text-[#DC2626] hover:opacity-90 transition-all">
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-[13px] font-bold bg-white text-[#F4821F] hover:opacity-90 transition-all">
                 WhatsApp ile Ula�
               </a>
               <Link href="/iletisim"

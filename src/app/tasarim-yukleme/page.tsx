@@ -12,7 +12,7 @@ export default function TasarimYuklemePage() {
         {/* Hero */}
         <div style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Rehber</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Rehber</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
               Tasar�m Y�kleme ve Onay S�reci
             </h1>
@@ -28,7 +28,7 @@ export default function TasarimYuklemePage() {
           {/* �ki se�enek */}
           <div className="text-center mb-10">
             <h2 className="text-[22px] font-black tracking-[-0.5px] mb-2" style={{ color: 'var(--text-primary)' }}>
-              Tasar�m y�kleme ad�m�nda <span style={{ color: '#DC2626' }}>2 se�enek</span> vard�r.
+              Tasar�m y�kleme ad�m�nda <span style={{ color: '#F4821F' }}>2 se�enek</span> vard�r.
             </h2>
             <p className="text-[14px]" style={{ color: 'var(--text-secondary)' }}>
               Tasar�m�n�z� "h�zl� otomasyon kontrol�" ya da "uzman grafiker kontrol�" se�eneklerinden birini se�erek y�kleyebilirsiniz.
@@ -38,13 +38,13 @@ export default function TasarimYuklemePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
             {/* H�zl� Otomasyon */}
             <div className="rounded-2xl p-8 text-center"
-              style={{ background: 'var(--bg-card)', border: '2px solid #DC2626' }}>
+              style={{ background: 'var(--bg-card)', border: '2px solid #F4821F' }}>
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
                 style={{ background: 'rgba(244,130,31,0.1)' }}>
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M16 4a12 12 0 100 24A12 12 0 0016 4z" stroke="#DC2626" strokeWidth="1.8"/>
-                  <path d="M11 16l3.5 3.5L21 12" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="24" cy="8" r="4" fill="#DC2626"/>
+                  <path d="M16 4a12 12 0 100 24A12 12 0 0016 4z" stroke="#F4821F" strokeWidth="1.8"/>
+                  <path d="M11 16l3.5 3.5L21 12" stroke="#F4821F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="24" cy="8" r="4" fill="#F4821F"/>
                   <path d="M23 8h2M24 7v2" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
                 </svg>
               </div>
@@ -55,7 +55,7 @@ export default function TasarimYuklemePage() {
                 15 dakika i�inde otomatik kontrol. Grafik konusunda deneyimli kullan�c�lar i�in ideal.
               </p>
               <div className="mt-3 text-[11px] font-bold px-3 py-1 rounded-full inline-block"
-                style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
                 �nerilen
               </div>
             </div>
@@ -84,8 +84,8 @@ export default function TasarimYuklemePage() {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold"
-                style={{ background: '#DC2626' }}>1</div>
-              <h2 className="text-[20px] font-black" style={{ color: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>1</div>
+              <h2 className="text-[20px] font-black" style={{ color: '#F4821F' }}>
                 H�zl� Otomasyon Kontrol�
               </h2>
             </div>
@@ -182,7 +182,7 @@ export default function TasarimYuklemePage() {
           {/* Tasar�m �pu�lar� */}
           <div className="rounded-2xl p-8"
             style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
-            <h2 className="text-[18px] font-black mb-4" style={{ color: '#DC2626' }}>
+            <h2 className="text-[18px] font-black mb-4" style={{ color: '#F4821F' }}>
               ?? Tasar�m Haz�rlarken Dikkat Edilmesi Gerekenler
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -195,7 +195,7 @@ export default function TasarimYuklemePage() {
                 'Kenar bo�luklar�na (ta�ma pay�) dikkat edilmelidir',
               ].map((tip, i) => (
                 <div key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-                  <span className="text-[#DC2626] mt-0.5 flex-shrink-0">?</span>
+                  <span className="text-[#F4821F] mt-0.5 flex-shrink-0">?</span>
                   {tip}
                 </div>
               ))}
@@ -216,7 +216,7 @@ export default function TasarimYuklemePage() {
             <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/iletisim"
                 className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 �leti�ime Ge�
               </Link>
               <Link href="/nasil-siparis"

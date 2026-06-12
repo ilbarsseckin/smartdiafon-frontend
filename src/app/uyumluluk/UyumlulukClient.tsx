@@ -105,7 +105,7 @@ export default function UyumlulukClient() {
   }
 
   const durumRenk = sonuc?.durum === 'uyumlu' ? '#16a34a'
-    : sonuc?.durum === 'yukseltme' ? '#DC2626'
+    : sonuc?.durum === 'yukseltme' ? '#F4821F'
     : sonuc?.durum === 'uzman' ? '#3b82f6' : '#6b7280'
 
   return (
@@ -115,8 +115,8 @@ export default function UyumlulukClient() {
         <div className="px-4 pt-10 pb-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
             style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.25)' }}>
-            <Sparkles size={14} style={{ color: '#DC2626' }} />
-            <span className="text-[12px] font-bold" style={{ color: '#DC2626' }}>Yapay Zeka Destekli</span>
+            <Sparkles size={14} style={{ color: '#F4821F' }} />
+            <span className="text-[12px] font-bold" style={{ color: '#F4821F' }}>Yapay Zeka Destekli</span>
           </div>
           <h1 className="text-[26px] md:text-[34px] font-black tracking-[-1px] mb-3" style={{ color: 'var(--text-primary)' }}>
             Diyafonunuz Uyumlu mu?
@@ -133,13 +133,13 @@ export default function UyumlulukClient() {
               <div key={n} className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold transition-all"
                   style={{
-                    background: step >= n ? '#DC2626' : 'var(--bg-card)',
+                    background: step >= n ? '#F4821F' : 'var(--bg-card)',
                     color: step >= n ? '#fff' : 'var(--text-muted)',
                     border: step >= n ? 'none' : '1px solid var(--border)',
                   }}>
                   {step > n ? <Check size={15} /> : n}
                 </div>
-                {n < 3 && <div className="w-10 h-0.5" style={{ background: step > n ? '#DC2626' : 'var(--border)' }} />}
+                {n < 3 && <div className="w-10 h-0.5" style={{ background: step > n ? '#F4821F' : 'var(--border)' }} />}
               </div>
             ))}
           </div>
@@ -161,16 +161,16 @@ export default function UyumlulukClient() {
               {!preview ? (
                 <div className="flex gap-3">
                   <button onClick={() => fileRef.current?.click()}
-                    className="flex-1 rounded-xl border-2 border-dashed py-8 flex flex-col items-center gap-2 transition-all hover:border-[#DC2626]"
+                    className="flex-1 rounded-xl border-2 border-dashed py-8 flex flex-col items-center gap-2 transition-all hover:border-[#F4821F]"
                     style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}>
                     <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(244,130,31,0.1)' }}>
-                      <Camera size={22} style={{ color: '#DC2626' }} />
+                      <Camera size={22} style={{ color: '#F4821F' }} />
                     </div>
                     <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Kamera</p>
                     <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Fotoğraf çek</p>
                   </button>
                   <button onClick={() => galleryRef.current?.click()}
-                    className="flex-1 rounded-xl border-2 border-dashed py-8 flex flex-col items-center gap-2 transition-all hover:border-[#DC2626]"
+                    className="flex-1 rounded-xl border-2 border-dashed py-8 flex flex-col items-center gap-2 transition-all hover:border-[#F4821F]"
                     style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}>
                     <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(37,99,235,0.1)' }}>
                       <Images size={22} style={{ color: '#2563EB' }} />
@@ -192,7 +192,7 @@ export default function UyumlulukClient() {
 
               <button onClick={() => setStep(2)} disabled={!file}
                 className="w-full mt-5 flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl transition-all disabled:opacity-40"
-                style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
+                style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
                 Devam Et <ArrowRight size={16} />
               </button>
             </div>
@@ -225,7 +225,7 @@ export default function UyumlulukClient() {
                 </button>
                 <button onClick={analizEt} disabled={loading}
                   className="flex-1 flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl transition-all disabled:opacity-60"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
+                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
                   {loading ? <><Loader2 size={16} className="animate-spin" /> Analiz ediliyor...</> : <><Sparkles size={16} /> Uyumluluğu Kontrol Et</>}
                 </button>
               </div>
@@ -246,7 +246,7 @@ export default function UyumlulukClient() {
                 {sonuc.aiAnaliz?.aciklama && !sonuc.aiAnaliz?.aiHata && (
                   <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px]"
                     style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-muted)' }}>
-                    <Sparkles size={11} style={{ color: '#DC2626' }} /> AI gözlemi: {sonuc.aiAnaliz.aciklama}
+                    <Sparkles size={11} style={{ color: '#F4821F' }} /> AI gözlemi: {sonuc.aiAnaliz.aciklama}
                   </div>
                 )}
               </div>
@@ -266,7 +266,7 @@ export default function UyumlulukClient() {
                           <p className="text-[13px] font-bold truncate" style={{ color: 'var(--text-primary)' }}>{u.name}</p>
                           <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>İncele →</p>
                         </div>
-                        <ArrowRight size={16} style={{ color: '#DC2626' }} />
+                        <ArrowRight size={16} style={{ color: '#F4821F' }} />
                       </Link>
                     ))}
                   </div>
@@ -276,7 +276,7 @@ export default function UyumlulukClient() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link href="/teklif"
                   className="flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
+                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
                   Detaylı Teklif Al <ArrowRight size={16} />
                 </Link>
                 <button onClick={waMesaj}
@@ -317,8 +317,8 @@ function SoruBlok({ label, deger, setDeger, secenekler }: {
             className="py-2.5 px-3 text-[13px] font-medium rounded-lg transition-all text-left"
             style={{
               background: deger === val ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)',
-              border: deger === val ? '1.5px solid #DC2626' : '1px solid var(--border)',
-              color: deger === val ? '#DC2626' : 'var(--text-secondary)',
+              border: deger === val ? '1.5px solid #F4821F' : '1px solid var(--border)',
+              color: deger === val ? '#F4821F' : 'var(--text-secondary)',
             }}>
             {txt}
           </button>

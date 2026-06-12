@@ -30,14 +30,14 @@ const STATUS_LABELS: Record<string, { label: string; color: string; bg: string }
   READY:         { label: 'Hazır',         color: '#0891B2', bg: 'rgba(8,145,178,0.1)' },
   SHIPPED:       { label: 'Kargoda',       color: '#059669', bg: 'rgba(16,185,129,0.1)' },
   DELIVERED:     { label: 'Teslim Edildi', color: '#16A34A', bg: 'rgba(22,163,74,0.1)' },
-  CANCELLED:     { label: 'İptal',         color: '#DC2626', bg: 'rgba(239,68,68,0.1)' },
+  CANCELLED:     { label: 'İptal',         color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
 }
 
 const PAYMENT_LABELS: Record<string, { label: string; color: string; bg: string }> = {
   PENDING:    { label: 'Ödeme Beklemede',  color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
   PROCESSING: { label: '3DS Bekliyor',     color: '#D97706', bg: 'rgba(245,158,11,0.1)' },
   PAID:       { label: 'Ödendi',           color: '#16A34A', bg: 'rgba(22,163,74,0.15)' },
-  FAILED:     { label: 'Başarısız',        color: '#DC2626', bg: 'rgba(239,68,68,0.1)' },
+  FAILED:     { label: 'Başarısız',        color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
   REFUNDED:   { label: 'İade Edildi',      color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
 }
 
@@ -94,7 +94,7 @@ export default function AdminCatalogOrdersPage() {
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Package size={18} className="text-[#DC2626]" />
+                <Package size={18} className="text-[#F4821F]" />
                 <h1 className="text-[22px] font-bold tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
                   Katalog Siparişleri
                 </h1>
@@ -113,7 +113,7 @@ export default function AdminCatalogOrdersPage() {
           {/* Stat cards */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
             {[
-              { label: 'Toplam',        value: counts.total,        color: '#DC2626' },
+              { label: 'Toplam',        value: counts.total,        color: '#F4821F' },
               { label: 'Beklemede',     value: counts.pending,      color: '#D97706' },
               { label: 'Üretimde',      value: counts.inProduction, color: '#7C3AED' },
               { label: 'Kargoda',       value: counts.shipped,      color: '#059669' },
@@ -139,7 +139,7 @@ export default function AdminCatalogOrdersPage() {
                   !filter ? 'text-white' : ''
                 }`}
                 style={{
-                  background: !filter ? '#DC2626' : 'var(--bg-card)',
+                  background: !filter ? '#F4821F' : 'var(--bg-card)',
                   color: !filter ? 'white' : 'var(--text-secondary)',
                   border: '1px solid var(--border)',
                 }}>
@@ -170,7 +170,7 @@ export default function AdminCatalogOrdersPage() {
           {/* List */}
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={24} className="animate-spin text-[#DC2626]" />
+              <Loader2 size={24} className="animate-spin text-[#F4821F]" />
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-16 rounded-2xl"
@@ -196,7 +196,7 @@ export default function AdminCatalogOrdersPage() {
                       {/* Sol — sipariş no + müşteri */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
-                          <code className="text-[13px] font-mono font-bold" style={{ color: '#DC2626' }}>
+                          <code className="text-[13px] font-mono font-bold" style={{ color: '#F4821F' }}>
                             {o.orderNumber}
                           </code>
                           <span className="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-[0.5px]"
@@ -240,7 +240,7 @@ export default function AdminCatalogOrdersPage() {
                         <p className="text-[10px] uppercase tracking-[1px]" style={{ color: 'var(--text-muted)' }}>
                           Toplam
                         </p>
-                        <p className="text-[20px] font-black tracking-[-0.5px]" style={{ color: '#DC2626' }}>
+                        <p className="text-[20px] font-black tracking-[-0.5px]" style={{ color: '#F4821F' }}>
                           ₺{Number(o.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                         </p>
                         <p className="text-[10px] mt-1 flex items-center justify-end gap-1"

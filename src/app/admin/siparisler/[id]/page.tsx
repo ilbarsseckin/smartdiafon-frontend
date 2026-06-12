@@ -64,14 +64,14 @@ const STATUS_OPTIONS = [
   { value: 'READY',         label: 'Hazır',         color: '#0891B2', bg: 'rgba(8,145,178,0.1)' },
   { value: 'SHIPPED',       label: 'Kargoda',       color: '#059669', bg: 'rgba(16,185,129,0.1)' },
   { value: 'DELIVERED',     label: 'Teslim Edildi', color: '#16A34A', bg: 'rgba(22,163,74,0.1)' },
-  { value: 'CANCELLED',     label: 'İptal',         color: '#DC2626', bg: 'rgba(239,68,68,0.1)' },
+  { value: 'CANCELLED',     label: 'İptal',         color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
 ]
 
 const PAYMENT_LABELS: Record<string, { label: string; color: string; bg: string }> = {
   PENDING:    { label: 'Ödeme Beklemede', color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
   PROCESSING: { label: '3DS Bekliyor',    color: '#D97706', bg: 'rgba(245,158,11,0.1)' },
   PAID:       { label: 'Ödendi',          color: '#16A34A', bg: 'rgba(22,163,74,0.15)' },
-  FAILED:     { label: 'Başarısız',       color: '#DC2626', bg: 'rgba(239,68,68,0.1)' },
+  FAILED:     { label: 'Başarısız',       color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
   REFUNDED:   { label: 'İade Edildi',     color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
 }
 

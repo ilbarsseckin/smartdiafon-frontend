@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { ArrowRight, Phone, Sparkles } from 'lucide-react'
 
 const HOTSPOTS = [
-  { top: '18%', left: '2%', w: '17%', h: '14%', href: '/urunler?q=bayrak', label: 'Yelken Bayrak', color: '#DC2626' },
-  { top: '18%', left: '80%', w: '17%', h: '14%', href: '/urunler?q=afis', label: 'Avrupa Vinil Afiş', color: '#DC2626' },
-  { top: '54%', left: '2%', w: '17%', h: '14%', href: '/urunler?q=brosur', label: 'Broşür', color: '#DC2626' },
-  { top: '52%', left: '80%', w: '17%', h: '23%', href: '/urunler?q=promosyon', label: 'Promosyon', color: '#DC2626' },
+  { top: '18%', left: '2%', w: '17%', h: '14%', href: '/urunler?q=bayrak', label: 'Yelken Bayrak', color: '#F4821F' },
+  { top: '18%', left: '80%', w: '17%', h: '14%', href: '/urunler?q=afis', label: 'Avrupa Vinil Afiş', color: '#F4821F' },
+  { top: '54%', left: '2%', w: '17%', h: '14%', href: '/urunler?q=brosur', label: 'Broşür', color: '#F4821F' },
+  { top: '52%', left: '80%', w: '17%', h: '23%', href: '/urunler?q=promosyon', label: 'Promosyon', color: '#F4821F' },
   { top: '85%', left: '15%', w: '8%', h: '12%', href: '/urunler?q=afis', label: 'Afiş', color: '#6366F1' },
   { top: '85%', left: '23%', w: '8%', h: '12%', href: '/urunler?q=kartvizit', label: 'Kartvizit', color: '#6366F1' },
   { top: '85%', left: '31%', w: '8%', h: '12%', href: '/urunler?q=brosur', label: 'Broşür', color: '#6366F1' },
@@ -38,7 +38,7 @@ export default function BaskiCozumleri() {
         .hotspot-link:hover .hotspot-dot {
           animation: none;
           transform: scale(1.3);
-          background: #DC2626 !important;
+          background: #F4821F !important;
         }
         .hotspot-label {
           opacity: 0;
@@ -64,7 +64,7 @@ export default function BaskiCozumleri() {
         <div className="mx-auto mb-8 max-w-3xl text-center md:mb-10">
           <div
             className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[11px] font-extrabold uppercase tracking-[1.6px]"
-            style={{ background: 'rgba(244,130,31,0.12)', color: '#DC2626' }}>
+            style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
             <Sparkles size={14} />
             Baskı Ürünleri Dünyası
           </div>
@@ -131,7 +131,7 @@ export default function BaskiCozumleri() {
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
             href="/urunler"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#DC2626] px-6 py-3 text-[13px] font-extrabold text-white shadow-lg transition hover:bg-[#df7117] hover:scale-105">
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#F4821F] px-6 py-3 text-[13px] font-extrabold text-white shadow-lg transition hover:bg-[#df7117] hover:scale-105">
             Tüm Ürünleri İncele
             <ArrowRight size={16} />
           </Link>

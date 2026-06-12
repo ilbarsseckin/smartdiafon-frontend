@@ -16,14 +16,14 @@ export default function MobileBottomBar({ price, kdvDahil, canOrder, onOrder }: 
         <p className="text-[9px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-muted)' }}>
           Toplam {kdvDahil ? '(KDV Dahil)' : '(KDV Hariç)'}
         </p>
-        <p className="text-[18px] font-black tracking-[-0.5px] text-[#DC2626] leading-tight">
+        <p className="text-[18px] font-black tracking-[-0.5px] text-[#F4821F] leading-tight">
           ₺{price.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
         </p>
       </div>
       <button onClick={onOrder} disabled={!canOrder}
         className="flex items-center gap-1.5 px-5 py-3 text-[13px] font-bold text-white rounded-xl transition-all disabled:opacity-50 flex-shrink-0"
         style={{
-          background: canOrder ? 'linear-gradient(135deg, #DC2626, #b91c1c)' : '#9CA3AF',
+          background: canOrder ? 'linear-gradient(135deg, #F4821F, #e07010)' : '#9CA3AF',
           boxShadow: canOrder ? '0 6px 14px rgba(244,130,31,0.3)' : 'none',
         }}>
         <ShoppingCart size={14} />

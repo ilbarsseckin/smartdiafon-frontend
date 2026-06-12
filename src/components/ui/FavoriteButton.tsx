@@ -45,7 +45,7 @@ export default function FavoriteButton({
       style={{
         width: s.box,
         height: s.box,
-        background: fav ? '#DC2626' : 'rgba(255,255,255,0.95)',
+        background: fav ? '#F4821F' : 'rgba(255,255,255,0.95)',
         boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
         color: fav ? 'white' : '#1a1a1a',
       }}>

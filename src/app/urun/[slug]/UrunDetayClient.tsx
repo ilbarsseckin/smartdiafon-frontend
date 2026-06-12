@@ -162,8 +162,8 @@ export function UrunDetayClient() {
     android: { label: 'Android', color: '#16A34A' },
     touchscreen: { label: 'Dokunmatik', color: '#DB2777' },
     rfid: { label: 'RFID', color: '#D97706' },
-    gsm: { label: 'GSM', color: '#DC2626' },
-    '4g': { label: '4G', color: '#DC2626' },
+    gsm: { label: 'GSM', color: '#F4821F' },
+    '4g': { label: '4G', color: '#F4821F' },
     sip: { label: 'SIP', color: '#0891B2' },
     video: { label: 'Video', color: '#7C3AED' },
   }
@@ -433,7 +433,7 @@ export function UrunDetayClient() {
                     <p className="text-[10px] font-bold uppercase tracking-[1.5px]" style={{ color: 'var(--text-muted)' }}>Toplam Fiyat</p>
                     {discountPct > 0 && (
                       <span className="text-[11px] font-black px-2 py-0.5 rounded-full text-white"
-                        style={{ background: '#DC2626' }}>
+                        style={{ background: '#F4821F' }}>
                         -%{discountPct}
                       </span>
                     )}
@@ -628,7 +628,7 @@ export function UrunDetayClient() {
             {selectedTier && (
               <div className="flex items-center justify-between px-3 py-2.5 rounded-xl" style={{ background: 'var(--bg-secondary)' }}>
                 <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>{adet} adet</span>
-                <span className="text-[15px] font-black text-[#F4821F]">₺{totalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</span>
+                <span className="text-[15px] font-black tex   t-[#F4821F]">₺{totalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</span>
               </div>
             )}
             <div className="grid grid-cols-2 gap-2">

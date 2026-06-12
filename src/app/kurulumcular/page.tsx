@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import { Wrench, MapPin, Phone, User, Mail, Building, CheckCircle2, Send } from 'lucide-react'
+import api from '@/lib/api'
+import toast from 'react-hot-toast'
 
 const AVANTAJLAR = [
   { baslik: 'Hazır Müşteri Akışı', aciklama: 'Bölgenizden gelen kurulum taleplerini doğrudan size yönlendiriyoruz.' },
@@ -39,9 +41,22 @@ export default function KurulumEkibiKatil() {
     ].filter(Boolean).join('\n')
   }
 
-  function handleGonder() {
+  async function handleGonder() {
     if (!ad || !telefon || !sehir) return
-    setGonderildi(true)
+    try {
+      await api.post('/api/installers/apply', {
+        name: ad,
+        phone: telefon,
+        email: eposta || null,
+        city: sehir,
+        company: firma || null,
+        experience: deneyim || null,
+        expertise: uzmanlik.join(', ') || null,
+      })
+      setGonderildi(true)
+    } catch {
+      toast.error('Başvuru gönderilemedi, lütfen tekrar deneyin')
+    }
   }
 
   function handleWhatsapp() {

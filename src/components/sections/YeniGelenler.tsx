@@ -48,12 +48,12 @@ function ProductCard({ product }: { product: Product }) {
               <Package size={34} className="opacity-30" style={{ color: 'var(--text-muted)' }} />
             </div>
           )}
-          <span className="absolute left-2 top-2 z-10 rounded-full bg-[#DC2626] px-2 py-0.5 text-[8px] font-black uppercase tracking-[1px] text-white">
+          <span className="absolute left-2 top-2 z-10 rounded-full bg-[#F4821F] px-2 py-0.5 text-[8px] font-black uppercase tracking-[1px] text-white">
             Yeni
           </span>
           {hasPrice && (
             <div className="absolute bottom-2 right-2 z-10 rounded-full bg-white px-2.5 py-1 shadow-md dark:bg-gray-900">
-              <span className="text-[11px] font-black text-[#DC2626]">${price.toFixed(2)}</span>
+              <span className="text-[11px] font-black text-[#F4821F]">${price.toFixed(2)}</span>
             </div>
           )}
         </div>
@@ -65,7 +65,7 @@ function ProductCard({ product }: { product: Product }) {
               {product.categoryName}
             </p>
           )}
-          <h3 className="line-clamp-2 text-[12px] sm:text-[13px] font-bold leading-tight group-hover:text-[#DC2626] transition-colors"
+          <h3 className="line-clamp-2 text-[12px] sm:text-[13px] font-bold leading-tight group-hover:text-[#F4821F] transition-colors"
             style={{ color: 'var(--text-primary)' }}>
             {product.name}
           </h3>
@@ -121,7 +121,7 @@ export default function YeniGelenler() {
         <div className="flex items-center justify-between px-4 sm:px-6 mb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-2"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
               <span className="text-[10px] font-bold uppercase tracking-[2px]">⭐ Yeni Gelenler</span>
             </div>
             <h2 className="text-[22px] sm:text-[28px] font-black tracking-[-1px]"
@@ -150,7 +150,7 @@ export default function YeniGelenler() {
         {/* Yatay kaydırma */}
         {loading ? (
           <div className="flex justify-center py-12">
-            <Loader2 size={24} className="animate-spin text-[#DC2626]" />
+            <Loader2 size={24} className="animate-spin text-[#F4821F]" />
           </div>
         ) : (
           <div className="relative">
@@ -175,7 +175,7 @@ export default function YeniGelenler() {
         <div className="px-4 sm:px-6 mt-2">
           <Link href="/urunler?sort=newest"
             className="inline-flex items-center gap-1.5 text-[12px] font-bold hover:underline"
-            style={{ color: '#DC2626' }}>
+            style={{ color: '#F4821F' }}>
             Tümünü gör →
           </Link>
         </div>

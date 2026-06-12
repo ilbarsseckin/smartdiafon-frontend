@@ -35,7 +35,7 @@ const parseGram = (v: string) => { const m = v.match(/(\d{2,4})\s*g/i); return m
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <h3 className="text-[15px] font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
-      <span style={{ width: 4, height: 16, borderRadius: 2, background: '#DC2626', display: 'inline-block', flexShrink: 0 }} />
+      <span style={{ width: 4, height: 16, borderRadius: 2, background: '#F4821F', display: 'inline-block', flexShrink: 0 }} />
       {children}
     </h3>
   )
@@ -72,7 +72,7 @@ export default function UrunHakkinda({ product }: { product: ProductLike }) {
             const Icon = iconFor(a.attrKey, a.label)
             return (
               <div key={a.attributeId} style={card}>
-                <Icon size={18} style={{ color: '#DC2626' }} />
+                <Icon size={18} style={{ color: '#F4821F' }} />
                 <p className="text-[10px] sm:text-[11px] mt-1.5 mb-0.5" style={{ color: 'var(--text-muted)' }}>{a.label}</p>
                 <p className="text-[12px] sm:text-[13px] font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>{joinVals(a)}</p>
               </div>
@@ -80,7 +80,7 @@ export default function UrunHakkinda({ product }: { product: ProductLike }) {
           })}
           {minQty != null && (
             <div style={card}>
-              <Package size={18} style={{ color: '#DC2626' }} />
+              <Package size={18} style={{ color: '#F4821F' }} />
               <p className="text-[10px] sm:text-[11px] mt-1.5 mb-0.5" style={{ color: 'var(--text-muted)' }}>Minimum adet</p>
               <p className="text-[12px] sm:text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>{minQty.toLocaleString('tr-TR')} adet</p>
             </div>
@@ -92,7 +92,7 @@ export default function UrunHakkinda({ product }: { product: ProductLike }) {
       {product.shortDesc && (
         <div className="flex gap-2.5 items-start rounded-xl p-3 sm:p-4"
           style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.25)' }}>
-          <Sparkles size={16} style={{ color: '#DC2626', flexShrink: 0, marginTop: 2 }} />
+          <Sparkles size={16} style={{ color: '#F4821F', flexShrink: 0, marginTop: 2 }} />
           <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--text-secondary)' }}>
             {product.shortDesc}
           </p>
@@ -116,7 +116,7 @@ export default function UrunHakkinda({ product }: { product: ProductLike }) {
                   const h = g ? 40 + (g / maxG) * 80 : 50 + i * 20
                   return (
                     <div key={o.id} className="flex flex-col items-center flex-shrink-0" style={{ minWidth: 52 }}>
-                      <div style={{ width: 44, height: h, borderRadius: '5px 5px 0 0', background: '#DC2626' }} />
+                      <div style={{ width: 44, height: h, borderRadius: '5px 5px 0 0', background: '#F4821F' }} />
                       <p className="text-[10px] sm:text-[11px] mt-1.5 text-center leading-tight"
                         style={{ color: 'var(--text-secondary)' }}>{o.value}</p>
                     </div>
@@ -140,7 +140,7 @@ export default function UrunHakkinda({ product }: { product: ProductLike }) {
                     flexShrink: 0, width: 18, height: 18, borderRadius: '50%', marginTop: 2,
                     background: 'rgba(244,130,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
-                    <Check size={11} style={{ color: '#DC2626' }} />
+                    <Check size={11} style={{ color: '#F4821F' }} />
                   </span>
                   <span className="text-[12px] sm:text-[13px] leading-snug" style={{ color: 'var(--text-secondary)' }}>{l}</span>
                 </div>

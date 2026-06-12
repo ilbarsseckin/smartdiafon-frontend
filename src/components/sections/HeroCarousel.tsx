@@ -103,7 +103,7 @@ export default function HeroCarousel() {
                 className={[
                   'h-2 rounded-full transition-all duration-300',
                   index === current
-                    ? 'w-9 bg-[#DC2626]'
+                    ? 'w-9 bg-[#F4821F]'
                     : 'w-2.5 bg-white/70 hover:bg-white',
                 ].join(' ')}
               />
@@ -205,7 +205,7 @@ function SlideText({ slide, dark }: { slide: HeroSlide; dark: boolean }) {
       {slide.ctaText && slide.ctaLink && (
         <Link
           href={slide.ctaLink}
-          className="mt-7 inline-flex rounded-full bg-[#DC2626] px-7 py-3 text-sm font-extrabold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-[#b91c1c]"
+          className="mt-7 inline-flex rounded-full bg-[#F4821F] px-7 py-3 text-sm font-extrabold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-[#e07010]"
         >
           {slide.ctaText}
         </Link>

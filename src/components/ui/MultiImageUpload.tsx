@@ -156,10 +156,10 @@ export default function MultiImageUpload({
 
         {canAddMore && (
           <button onClick={() => inputRef.current?.click()} disabled={uploading}
-            className="aspect-square rounded-lg border-2 border-dashed border-black/[0.1] dark:border-white/[0.1] hover:border-[#DC2626] flex flex-col items-center justify-center gap-1 transition-colors disabled:opacity-50"
+            className="aspect-square rounded-lg border-2 border-dashed border-black/[0.1] dark:border-white/[0.1] hover:border-[#F4821F] flex flex-col items-center justify-center gap-1 transition-colors disabled:opacity-50"
             type="button">
             {uploading ? (
-              <Loader2 size={18} className="animate-spin text-[#DC2626]" />
+              <Loader2 size={18} className="animate-spin text-[#F4821F]" />
             ) : (
               <>
                 <Plus size={20} className="text-gray-400" />
@@ -187,7 +187,7 @@ export default function MultiImageUpload({
           />
           <button type="button" onClick={addFromUrl} disabled={!urlInput.trim()}
             className="px-3 py-2 text-[12px] font-semibold rounded-lg text-white disabled:opacity-40 transition-colors"
-            style={{ background: '#DC2626' }}>
+            style={{ background: '#F4821F' }}>
             URL ekle
           </button>
         </div>

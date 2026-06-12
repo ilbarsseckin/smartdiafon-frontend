@@ -113,7 +113,7 @@ export default function SearchOverlay({ open, onClose, categories, allProducts }
         {/* Input */}
         <form onSubmit={handleSubmit} className="flex items-center gap-3 px-4 py-3 flex-shrink-0"
           style={{ borderBottom: '1px solid var(--border)' }}>
-          <Search size={18} style={{ color: '#DC2626', flexShrink: 0 }} />
+          <Search size={18} style={{ color: '#F4821F', flexShrink: 0 }} />
           <input ref={inputRef} value={query} onChange={e => setQuery(e.target.value)}
             placeholder="Ara..."
             className="flex-1 text-[15px] outline-none bg-transparent"
@@ -165,13 +165,13 @@ export default function SearchOverlay({ open, onClose, categories, allProducts }
               {catResults.map(cat => (
                 <Link key={cat.slug} href={`/katalog/${cat.slug}`} onClick={onClose}
                   className="flex items-center justify-between px-2 py-2 rounded-xl text-[13px] font-medium transition-all hover:bg-orange-500/8 group"
-                  style={{ color: query ? '#DC2626' : 'var(--text-secondary)' }}>
+                  style={{ color: query ? '#F4821F' : 'var(--text-secondary)' }}>
                   <span className="flex items-center gap-2">
                     {cat.icon && <span className="text-[14px]">{cat.icon}</span>}
                     {cat.name}
                   </span>
                   <ChevronRight size={13} className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ color: '#DC2626' }} />
+                    style={{ color: '#F4821F' }} />
                 </Link>
               ))}
             </div>
@@ -197,7 +197,7 @@ export default function SearchOverlay({ open, onClose, categories, allProducts }
                           </div>}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[13px] font-bold truncate group-hover:text-[#DC2626] transition-colors"
+                      <p className="text-[13px] font-bold truncate group-hover:text-[#F4821F] transition-colors"
                         style={{ color: 'var(--text-primary)' }}>
                         {p.name}
                       </p>
@@ -207,7 +207,7 @@ export default function SearchOverlay({ open, onClose, categories, allProducts }
                         </p>
                       )}
                       <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                        Kategori <span style={{ color: '#DC2626' }}>{p.categoryName}</span>
+                        Kategori <span style={{ color: '#F4821F' }}>{p.categoryName}</span>
                       </p>
                     </div>
                   </Link>
@@ -217,7 +217,7 @@ export default function SearchOverlay({ open, onClose, categories, allProducts }
               {results.length >= 8 && (
                 <button onClick={() => handleSearch(query)}
                   className="mt-3 w-full py-2 text-[12px] font-bold rounded-xl transition-all hover:opacity-80"
-                  style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                  style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
                   Tüm sonuçları gör →
                 </button>
               )}
@@ -232,7 +232,7 @@ export default function SearchOverlay({ open, onClose, categories, allProducts }
                 "<span style={{ color: 'var(--text-primary)' }}>{query}</span>" için sonuç bulunamadı
               </p>
               <button onClick={() => handleSearch(query)}
-                className="mt-3 text-[12px] font-bold text-[#DC2626] hover:underline">
+                className="mt-3 text-[12px] font-bold text-[#F4821F] hover:underline">
                 Yine de ara →
               </button>
             </div>

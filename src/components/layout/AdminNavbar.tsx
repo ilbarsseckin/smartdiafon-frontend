@@ -5,7 +5,7 @@ import {
   LogOut, LayoutDashboard, Shield, Users, Star,
   Moon, Sun, Settings, ExternalLink, ChevronDown, FolderTree, Tag, Box,
   Home, Image as ImageIcon, ClipboardList, MessageSquare, Gift, Megaphone, Bell,
-  MoreHorizontal,
+  MoreHorizontal, Wrench,
 } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
 import { useState, useEffect, useRef } from 'react'
@@ -31,6 +31,7 @@ const digerLinks = [
   { href: '/admin/roller',       label: 'Roller',       icon: Shield  },
   { href: '/admin/referanslar',  label: 'Referanslar',  icon: Star    },
   { href: '/admin/bayiler',      label: 'Bayiler',      icon: Users   },
+  { href: '/admin/kurulumcular', label: 'Kurulumcular', icon: Wrench  },
   { href: '/admin/ayarlar',      label: 'Ayarlar',      icon: Settings },
 ]
 
@@ -77,7 +78,7 @@ export default function AdminNavbar() {
   const isHome = pathname.startsWith('/admin/anasayfa') || pathname.startsWith('/admin/duyurular') || pathname.startsWith('/admin/kampanyalar')
   const isDiger = digerLinks.some(l => pathname.startsWith(l.href))
 
-  const activeStyle = { background: 'rgba(244,130,31,0.12)', color: '#DC2626', border: '1px solid rgba(244,130,31,0.25)' }
+  const activeStyle = { background: 'rgba(244,130,31,0.12)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.25)' }
   const inactiveStyle = { color: 'var(--text-secondary)', border: '1px solid transparent' }
 
   function DropdownMenu({ items, onClose }: { items: typeof catalogLinks; onClose: () => void }) {
@@ -92,10 +93,10 @@ export default function AdminNavbar() {
               style={{ background: active ? 'rgba(244,130,31,0.06)' : 'transparent', borderBottom: '1px solid var(--border)' }}>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{ background: active ? 'rgba(244,130,31,0.15)' : 'var(--bg-secondary)' }}>
-                <l.icon size={13} style={{ color: active ? '#DC2626' : 'var(--text-muted)' }} />
+                <l.icon size={13} style={{ color: active ? '#F4821F' : 'var(--text-muted)' }} />
               </div>
               <div>
-                <p className="text-[12px] font-bold" style={{ color: active ? '#DC2626' : 'var(--text-primary)' }}>
+                <p className="text-[12px] font-bold" style={{ color: active ? '#F4821F' : 'var(--text-primary)' }}>
                   {l.label}
                 </p>
                 {'desc' in l && (
@@ -121,7 +122,7 @@ export default function AdminNavbar() {
           <Link href="/admin" className="flex items-center gap-2 mr-2 flex-shrink-0">
             <Logo className="h-7" />
             <span className="text-[10px] px-1.5 py-0.5 rounded-md font-black hidden sm:block"
-              style={{ background: 'rgba(244,130,31,0.12)', color: '#DC2626' }}>
+              style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
               Admin
             </span>
           </Link>
@@ -197,18 +198,18 @@ export default function AdminNavbar() {
                 <div className="grid grid-cols-2 gap-1.5">
                   <Link href="/admin" onClick={() => setOpen(null)}
                     className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-[12px] font-medium"
-                    style={{ background: pathname === '/admin' ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)', color: pathname === '/admin' ? '#DC2626' : 'var(--text-secondary)' }}>
+                    style={{ background: pathname === '/admin' ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)', color: pathname === '/admin' ? '#F4821F' : 'var(--text-secondary)' }}>
                     <LayoutDashboard size={14} /> Dashboard
                   </Link>
                   <Link href="/admin/kuponlar" onClick={() => setOpen(null)}
                     className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-[12px] font-medium"
-                    style={{ background: pathname.startsWith('/admin/kuponlar') ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)', color: pathname.startsWith('/admin/kuponlar') ? '#DC2626' : 'var(--text-secondary)' }}>
+                    style={{ background: pathname.startsWith('/admin/kuponlar') ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)', color: pathname.startsWith('/admin/kuponlar') ? '#F4821F' : 'var(--text-secondary)' }}>
                     <Gift size={14} /> Kuponlar
                   </Link>
                   {[...catalogLinks, ...homeLinks, ...digerLinks].map(l => (
                     <Link key={l.href} href={l.href} onClick={() => setOpen(null)}
                       className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-[12px] font-medium"
-                      style={{ background: pathname.startsWith(l.href) ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)', color: pathname.startsWith(l.href) ? '#DC2626' : 'var(--text-secondary)' }}>
+                      style={{ background: pathname.startsWith(l.href) ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)', color: pathname.startsWith(l.href) ? '#F4821F' : 'var(--text-secondary)' }}>
                       <l.icon size={14} /> {l.label}
                     </Link>
                   ))}
@@ -230,7 +231,7 @@ export default function AdminNavbar() {
             <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-medium"
               style={{ background: 'var(--bg-secondary)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}>
               <div className="w-5 h-5 rounded-full flex items-center justify-center text-white text-[9px] font-black"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 {name.charAt(0).toUpperCase()}
               </div>
               {name.split(' ')[0]}
@@ -240,7 +241,7 @@ export default function AdminNavbar() {
           <button onClick={toggle}
             className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
             style={{ border: '1px solid var(--border)', color: 'var(--text-muted)' }}>
-            {theme === 'dark' ? <Sun size={13} className="text-[#DC2626]" /> : <Moon size={13} />}
+            {theme === 'dark' ? <Sun size={13} className="text-[#F4821F]" /> : <Moon size={13} />}
           </button>
 
           <button onClick={handleLogout}

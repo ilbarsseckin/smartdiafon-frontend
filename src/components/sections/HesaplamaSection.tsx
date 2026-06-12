@@ -101,7 +101,7 @@ export default function HesaplamaSection() {
 
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
           <div>
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Fiyat Hesaplama</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Fiyat Hesaplama</p>
             <h2 className="text-[32px] font-bold tracking-[-1px]"
               style={{ color: 'var(--text-primary)', fontFamily: 'Georgia, serif' }}>
               Anlık fiyat hesaplayın
@@ -114,7 +114,7 @@ export default function HesaplamaSection() {
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <span className="text-[11px] font-bold uppercase tracking-[1px]"
               style={{ color: 'var(--text-muted)' }}>USD Kur</span>
-            <span className="text-[14px] font-bold text-[#DC2626]">{kur.toFixed(2)} ₺</span>
+            <span className="text-[14px] font-bold text-[#F4821F]">{kur.toFixed(2)} ₺</span>
           </div>
         </div>
 
@@ -145,7 +145,7 @@ export default function HesaplamaSection() {
                 <span className="text-[10px] uppercase tracking-[1px] font-bold" style={{ color: 'var(--text-muted)' }}>
                   Birim Fiyat
                 </span>
-                <p className="text-[16px] font-bold text-[#DC2626] mt-0.5">
+                <p className="text-[16px] font-bold text-[#F4821F] mt-0.5">
                   {selectedProduct?.basePrice
                     ? `$${Number(selectedProduct.basePrice).toFixed(2)} / m²`
                     : '—'}
@@ -184,7 +184,7 @@ export default function HesaplamaSection() {
           {/* Hesapla + Sonuç */}
           <div className="flex items-center gap-6 flex-wrap">
             <button onClick={hesapla} disabled={calcLoading || !selectedSlug}
-              className="flex items-center gap-2 bg-[#DC2626] text-white text-[14px] font-bold px-10 py-4 rounded-xl hover:bg-[#b91c1c] transition-colors shadow-sm disabled:opacity-50">
+              className="flex items-center gap-2 bg-[#F4821F] text-white text-[14px] font-bold px-10 py-4 rounded-xl hover:bg-[#e07010] transition-colors shadow-sm disabled:opacity-50">
               {calcLoading ? <Loader2 size={16} className="animate-spin" /> : <Calculator size={16} />}
               {calcLoading ? 'HESAPLANIYOR...' : 'HESAPLA'}
             </button>
@@ -203,10 +203,10 @@ export default function HesaplamaSection() {
                     ${sonuc.usd}
                   </p>
                 </div>
-                <div className="px-5 py-4 rounded-xl border-2 border-[#DC2626]/40"
+                <div className="px-5 py-4 rounded-xl border-2 border-[#F4821F]/40"
                   style={{ background: 'rgba(244,130,31,0.06)' }}>
-                  <p className="text-[10px] uppercase tracking-[1px] font-bold text-[#DC2626]">Toplam (₺)</p>
-                  <p className="text-[28px] font-bold mt-1 text-[#DC2626]" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-[10px] uppercase tracking-[1px] font-bold text-[#F4821F]">Toplam (₺)</p>
+                  <p className="text-[28px] font-bold mt-1 text-[#F4821F]" style={{ fontFamily: 'Georgia, serif' }}>
                     ₺{sonuc.tl.toLocaleString('tr-TR')}
                   </p>
                 </div>

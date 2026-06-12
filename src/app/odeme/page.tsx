@@ -229,7 +229,7 @@ function OdemeKatalogContent() {
       <>
         <Navbar />
         <main className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] flex items-center justify-center">
-          <Loader2 size={28} className="animate-spin text-[#DC2626]" />
+          <Loader2 size={28} className="animate-spin text-[#F4821F]" />
         </main>
       </>
     )
@@ -285,7 +285,7 @@ function OdemeKatalogContent() {
                     {order.items.length} katalog ürünü
                   </p>
                 </div>
-                <p className="text-[22px] font-medium text-[#DC2626]">
+                <p className="text-[22px] font-medium text-[#F4821F]">
                   ₺{Number(order.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                 </p>
               </div>
@@ -313,7 +313,7 @@ function OdemeKatalogContent() {
           {/* ─── TASARIM DOSYALARI ─── */}
           <div className="bg-white dark:bg-[#141414] border border-black/[0.07] dark:border-white/[0.07] rounded-2xl p-5 mb-5">
             <div className="flex items-center gap-2 mb-3">
-              <Paperclip size={15} className="text-[#DC2626]" />
+              <Paperclip size={15} className="text-[#F4821F]" />
               <p className="text-[14px] font-medium text-gray-900 dark:text-gray-100">
                 Tasarım Dosyaları {files.length > 0 && <span className="text-gray-400 text-[12px] font-normal">({files.length})</span>}
               </p>
@@ -391,12 +391,12 @@ function OdemeKatalogContent() {
                 flex flex-col items-center justify-center gap-1.5 cursor-pointer
                 rounded-xl border-2 border-dashed transition-colors py-6
                 ${dragOver
-                  ? 'border-[#DC2626] bg-orange-50 dark:bg-orange-500/10'
-                  : 'border-black/[0.1] dark:border-white/[0.1] hover:border-[#DC2626]'}
+                  ? 'border-[#F4821F] bg-orange-50 dark:bg-orange-500/10'
+                  : 'border-black/[0.1] dark:border-white/[0.1] hover:border-[#F4821F]'}
               `}>
               {uploadingCount > 0 ? (
                 <>
-                  <Loader2 size={20} className="animate-spin text-[#DC2626]" />
+                  <Loader2 size={20} className="animate-spin text-[#F4821F]" />
                   <p className="text-[11px] text-gray-500">{uploadingCount} dosya yükleniyor...</p>
                 </>
               ) : (
@@ -432,7 +432,7 @@ function OdemeKatalogContent() {
               <input type="text" placeholder="AD SOYAD"
                 value={card.holderName}
                 onChange={e => setCard(c => ({ ...c, holderName: e.target.value.toUpperCase() }))}
-                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors" />
+                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors" />
               {errors.holderName && <p className="text-[11px] text-red-500 mt-1">{errors.holderName}</p>}
             </div>
 
@@ -443,7 +443,7 @@ function OdemeKatalogContent() {
               <input type="text" inputMode="numeric" placeholder="0000 0000 0000 0000"
                 value={card.number}
                 onChange={e => setCard(c => ({ ...c, number: formatCardNumber(e.target.value) }))}
-                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors tracking-widest font-mono" />
+                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors tracking-widest font-mono" />
               {errors.number && <p className="text-[11px] text-red-500 mt-1">{errors.number}</p>}
             </div>
 
@@ -453,7 +453,7 @@ function OdemeKatalogContent() {
                 <input type="text" inputMode="numeric" placeholder="MM" maxLength={2}
                   value={card.expireMonth}
                   onChange={e => setCard(c => ({ ...c, expireMonth: e.target.value.replace(/\D/g, '') }))}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors text-center" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors text-center" />
                 {errors.expireMonth && <p className="text-[11px] text-red-500 mt-1">{errors.expireMonth}</p>}
               </div>
               <div>
@@ -461,7 +461,7 @@ function OdemeKatalogContent() {
                 <input type="text" inputMode="numeric" placeholder="YY" maxLength={2}
                   value={card.expireYear}
                   onChange={e => setCard(c => ({ ...c, expireYear: e.target.value.replace(/\D/g, '') }))}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors text-center" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors text-center" />
                 {errors.expireYear && <p className="text-[11px] text-red-500 mt-1">{errors.expireYear}</p>}
               </div>
               <div>
@@ -469,7 +469,7 @@ function OdemeKatalogContent() {
                 <input type="password" inputMode="numeric" placeholder="•••" maxLength={4}
                   value={card.cvc}
                   onChange={e => setCard(c => ({ ...c, cvc: e.target.value.replace(/\D/g, '') }))}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors text-center" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors text-center" />
                 {errors.cvc && <p className="text-[11px] text-red-500 mt-1">{errors.cvc}</p>}
               </div>
             </div>
@@ -482,7 +482,7 @@ function OdemeKatalogContent() {
             </div>
 
             <button onClick={handleSubmit} disabled={paymentLoading}
-              className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3.5 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2">
+              className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3.5 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2">
               {paymentLoading
                 ? <><Loader2 size={16} className="animate-spin" /> Ödeme başlatılıyor...</>
                 : order

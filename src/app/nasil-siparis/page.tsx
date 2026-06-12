@@ -11,12 +11,12 @@ const steps = [
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(244,130,31,0.1)" />
-        <path d="M10 13h2l3 12h12l2-8H15" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="17" cy="28" r="1.5" fill="#DC2626"/>
-        <circle cx="25" cy="28" r="1.5" fill="#DC2626"/>
+        <path d="M10 13h2l3 12h12l2-8H15" stroke="#F4821F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="17" cy="28" r="1.5" fill="#F4821F"/>
+        <circle cx="25" cy="28" r="1.5" fill="#F4821F"/>
       </svg>
     ),
-    color: '#DC2626',
+    color: '#F4821F',
     action: { label: '�r�nlere G�z At', href: '/urunler' }
   },
   {
@@ -97,7 +97,7 @@ export default function NasilSiparisPage() {
         {/* Hero */}
         <div className="relative overflow-hidden" style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Rehber</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Rehber</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
               Nas�l Sipari� Verebilirim?
             </h1>
@@ -191,7 +191,7 @@ export default function NasilSiparisPage() {
           <div className="flex gap-3 justify-center flex-wrap">
             <Link href="/iletisim"
               className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
-              style={{ background: '#DC2626' }}>
+              style={{ background: '#F4821F' }}>
               �leti�ime Ge�
             </Link>
             <Link href="/urunler"

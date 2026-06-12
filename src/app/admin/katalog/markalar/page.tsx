@@ -164,7 +164,7 @@ export default function AdminMarkalarPage() {
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Tag size={18} className="text-[#DC2626]" />
+                <Tag size={18} className="text-[#F4821F]" />
                 <h1 className="text-[22px] font-bold tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
                   Marka Yönetimi
                 </h1>
@@ -175,7 +175,7 @@ export default function AdminMarkalarPage() {
             </div>
             <div className="flex gap-2">
               <button onClick={openNew}
-                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#DC2626] text-white hover:bg-[#b91c1c] transition-colors">
+                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#F4821F] text-white hover:bg-[#e07010] transition-colors">
                 <Plus size={14} />
                 Yeni Marka
               </button>
@@ -200,7 +200,7 @@ export default function AdminMarkalarPage() {
 
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={24} className="animate-spin text-[#DC2626]" />
+              <Loader2 size={24} className="animate-spin text-[#F4821F]" />
             </div>
           ) : brands.length === 0 ? (
             <div className="text-center py-16 rounded-2xl"
@@ -214,7 +214,7 @@ export default function AdminMarkalarPage() {
                 Ürün eklerken opsiyonel olarak marka atayabilirsiniz.
               </p>
               <button onClick={openNew}
-                className="text-[12px] font-bold text-[#DC2626] hover:underline">
+                className="text-[12px] font-bold text-[#F4821F] hover:underline">
                 + İlk markayı oluştur
               </button>
             </div>
@@ -265,7 +265,7 @@ export default function AdminMarkalarPage() {
 
                   <div className="flex items-center gap-1.5 flex-shrink-0">
                     <button onClick={() => openEdit(b)} title="Düzenle"
-                      className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#DC2626]"
+                      className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#F4821F]"
                       style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>
                       <Edit2 size={12} />
                     </button>
@@ -373,7 +373,7 @@ export default function AdminMarkalarPage() {
                   İptal
                 </button>
                 <button onClick={handleSave} disabled={saving}
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#DC2626] hover:bg-[#b91c1c] transition-colors disabled:opacity-50">
+                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
                   {saving
                     ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                     : <><Save size={14} /> {editId ? 'Güncelle' : 'Kaydet'}</>}

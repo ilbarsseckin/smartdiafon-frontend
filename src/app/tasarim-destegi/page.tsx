@@ -8,7 +8,7 @@ const services = [
     icon: '??',
     title: '�cretsiz Tasar�m Deste�i',
     desc: 'Sipari� verdi�inizde uzman grafiker ekibimiz tasar�m�n�z� �cretsiz olarak haz�rlar veya mevcut tasar�m�n�z� bask�ya uygun hale getirir.',
-    color: '#DC2626',
+    color: '#F4821F',
     badge: '�cretsiz'
   },
   {
@@ -61,7 +61,7 @@ export default function TasarimDestegPage() {
         {/* Hero */}
         <div style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Hizmet</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Hizmet</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
               �cretsiz Tasar�m Deste�i
             </h1>
@@ -71,7 +71,7 @@ export default function TasarimDestegPage() {
             </p>
             <Link href="/iletisim"
               className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-xl text-[14px] font-bold text-white"
-              style={{ background: '#DC2626' }}>
+              style={{ background: '#F4821F' }}>
               Tasar�m Deste�i Al �
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default function TasarimDestegPage() {
                   <span className="text-[28px]">{s.icon}</span>
                   {s.badge && (
                     <span className="text-[10px] font-bold px-2 py-1 rounded-full"
-                      style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                      style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
                       {s.badge}
                     </span>
                   )}
@@ -120,7 +120,7 @@ export default function TasarimDestegPage() {
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center text-[11px] font-black"
                   style={{
                     background: f.recommended ? 'rgba(244,130,31,0.15)' : 'var(--bg-secondary)',
-                    color: f.recommended ? '#DC2626' : 'var(--text-secondary)'
+                    color: f.recommended ? '#F4821F' : 'var(--text-secondary)'
                   }}>
                   {f.name}
                 </div>
@@ -129,7 +129,7 @@ export default function TasarimDestegPage() {
                   <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{f.desc}</p>
                 </div>
                 {f.recommended && (
-                  <span className="ml-auto text-[9px] font-bold text-[#DC2626]">? �nerilen</span>
+                  <span className="ml-auto text-[9px] font-bold text-[#F4821F]">? �nerilen</span>
                 )}
               </div>
             ))}
@@ -155,7 +155,7 @@ export default function TasarimDestegPage() {
           {/* S�re� */}
           <div className="rounded-2xl p-8"
             style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
-            <h2 className="text-[18px] font-black mb-6" style={{ color: '#DC2626' }}>
+            <h2 className="text-[18px] font-black mb-6" style={{ color: '#F4821F' }}>
               Tasar�m Deste�i Nas�l ��ler?
             </h2>
             <div className="space-y-4">
@@ -168,7 +168,7 @@ export default function TasarimDestegPage() {
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-[11px] font-bold text-white"
-                    style={{ background: '#DC2626' }}>
+                    style={{ background: '#F4821F' }}>
                     {item.step}
                   </div>
                   <p className="text-[13px] pt-0.5" style={{ color: 'var(--text-secondary)' }}>{item.text}</p>
@@ -191,7 +191,7 @@ export default function TasarimDestegPage() {
             <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/urunler"
                 className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
-                style={{ background: '#DC2626' }}>
+                style={{ background: '#F4821F' }}>
                 Sipari� Ver
               </Link>
               <Link href="/iletisim"

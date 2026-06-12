@@ -15,7 +15,7 @@ export default function TarihcePage() {
     <>
       <Navbar />
       <main className="max-w-4xl mx-auto px-6 py-20">
-        <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Tarih�e</p>
+        <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Tarih�e</p>
         <h1 className="text-[40px] font-bold tracking-[-1px] mb-12"
           style={{ color: 'var(--text-primary)', fontFamily: 'Georgia, serif' }}>
           Yolculu�umuz
@@ -25,8 +25,8 @@ export default function TarihcePage() {
             style={{ background: 'var(--border)' }} />
           {milestones.map((m, i) => (
             <div key={i} className="relative mb-10 last:mb-0">
-              <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-[#DC2626] z-10" />
-              <span className="text-[11px] font-bold text-[#DC2626] tracking-[1px]">{m.year}</span>
+              <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-[#F4821F] z-10" />
+              <span className="text-[11px] font-bold text-[#F4821F] tracking-[1px]">{m.year}</span>
               <h3 className="text-[17px] font-bold mt-0.5 mb-1"
                 style={{ color: 'var(--text-primary)', fontFamily: 'Georgia, serif' }}>{m.title}</h3>
               <p className="text-[14px]" style={{ color: 'var(--text-secondary)' }}>{m.desc}</p>

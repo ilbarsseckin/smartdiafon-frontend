@@ -34,7 +34,7 @@ function getBankaRenk(isim: string): string {
   for (const [key, renk] of Object.entries(BANKA_RENK)) {
     if (isim.toLowerCase().includes(key.toLowerCase())) return renk
   }
-  return '#DC2626'
+  return '#F4821F'
 }
 
 function getBankaHarf(isim: string): string {
@@ -93,7 +93,7 @@ export default function TaksitTablosu({ fiyat }: Props) {
           </p>
         </div>
         <span className="text-[10px] px-2 py-1 rounded-full font-bold"
-          style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+          style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
           iyzico güvencesi
         </span>
       </div>

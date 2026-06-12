@@ -17,7 +17,7 @@ const reviews = [
     role: 'Ev sahibi',
     location: 'Ankara',
     initials: 'SD',
-    color: '#DC2626',
+    color: '#F4821F',
     stars: 5,
     time: '1 ay önce',
   },
@@ -132,7 +132,7 @@ export default function ReviewsSection() {
       {/* Başlık */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4 px-4 sm:px-6">
         <div>
-          <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-2">Yorumlar</p>
+          <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-2">Yorumlar</p>
           <h2 className="text-[28px] sm:text-[32px] font-black tracking-[-1px]"
             style={{ color: 'var(--text-primary)' }}>
             Müşteriler anlatıyor
