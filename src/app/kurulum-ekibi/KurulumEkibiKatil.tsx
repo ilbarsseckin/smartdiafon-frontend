@@ -5,6 +5,19 @@ import { Wrench, MapPin, Phone, User, Mail, Building, CheckCircle2, Send } from 
 import api from '@/lib/api'
 import toast from 'react-hot-toast'
 
+const ILLER = [
+  'Adana','Adıyaman','Afyonkarahisar','Ağrı','Amasya','Ankara','Antalya','Artvin',
+  'Aydın','Balıkesir','Bilecik','Bingöl','Bitlis','Bolu','Burdur','Bursa','Çanakkale',
+  'Çankırı','Çorum','Denizli','Diyarbakır','Edirne','Elazığ','Erzincan','Erzurum',
+  'Eskişehir','Gaziantep','Giresun','Gümüşhane','Hakkari','Hatay','Isparta','Mersin',
+  'İstanbul','İzmir','Kars','Kastamonu','Kayseri','Kırklareli','Kırşehir','Kocaeli',
+  'Konya','Kütahya','Malatya','Manisa','Kahramanmaraş','Mardin','Muğla','Muş',
+  'Nevşehir','Niğde','Ordu','Rize','Sakarya','Samsun','Siirt','Sinop','Sivas',
+  'Tekirdağ','Tokat','Trabzon','Tunceli','Şanlıurfa','Uşak','Van','Yozgat','Zonguldak',
+  'Aksaray','Bayburt','Karaman','Kırıkkale','Batman','Şırnak','Bartın','Ardahan',
+  'Iğdır','Yalova','Karabük','Kilis','Osmaniye','Düzce'
+]
+
 const AVANTAJLAR = [
   { baslik: 'Hazır Müşteri Akışı', aciklama: 'Bölgenizden gelen kurulum taleplerini doğrudan size yönlendiriyoruz.' },
   { baslik: 'Esnek Çalışma', aciklama: 'Kendi programınıza göre iş alın, bölgenizde çalışın.' },
@@ -102,7 +115,18 @@ export default function KurulumEkibiKatil() {
             <Field icon={User} label="Ad Soyad *" value={ad} onChange={setAd} placeholder="Adınız Soyadınız" />
             <Field icon={Phone} label="Telefon *" value={telefon} onChange={setTelefon} placeholder="05xx xxx xx xx" type="tel" />
             <Field icon={Mail} label="E-posta" value={eposta} onChange={setEposta} placeholder="ornek@mail.com" type="email" />
-            <Field icon={MapPin} label="Şehir / Bölge *" value={sehir} onChange={setSehir} placeholder="Örn. İstanbul / Kadıköy" />
+            <div>
+              <label className="block text-[13px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Şehir *</label>
+              <div className="relative">
+                <MapPin size={16} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'var(--text-muted)' }} />
+                <select value={sehir} onChange={e => setSehir(e.target.value)}
+                  className="w-full pl-9 pr-3 py-3 rounded-xl text-[14px] appearance-none"
+                  style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: sehir ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+                  <option value="">Şehir seçin *</option>
+                  {ILLER.map(il => <option key={il} value={il}>{il}</option>)}
+                </select>
+              </div>
+            </div>
             <Field icon={Building} label="Firma (varsa)" value={firma} onChange={setFirma} placeholder="Firma adı" />
             <Field icon={Wrench} label="Deneyim (yıl)" value={deneyim} onChange={setDeneyim} placeholder="Örn. 5 yıl" />
           </div>
