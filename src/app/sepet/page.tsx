@@ -73,6 +73,12 @@ export default function SepetPage() {
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [mesafeliAccepted, setMesafeliAccepted] = useState(false)
 
+  // Kurulum seçimi
+  const [kurulumIstiyorum, setKurulumIstiyorum] = useState(false)
+  const [installers, setInstallers] = useState<Array<{id: string; name: string; city: string; rating: number; jobCount: number; expertise?: string}>>([])
+  const [selectedInstallerId, setSelectedInstallerId] = useState('')
+  const [installerLoading, setInstallerLoading] = useState(false)
+
   const hasSavedAddresses = isLoggedIn && addresses.length > 0
   const showFullAddressForm = !hasSavedAddresses || editMode
 
@@ -158,6 +164,16 @@ export default function SepetPage() {
 
   const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim())
 
+  const fetchInstallers = async (city: string) => {
+    if (!city) return
+    setInstallerLoading(true)
+    try {
+      const r = await api.get(`/api/catalog/installers/by-city?city=${encodeURIComponent(city)}`)
+      setInstallers(r.data.data || [])
+    } catch { setInstallers([]) }
+    finally { setInstallerLoading(false) }
+  }
+
   const submitCatalogOrder = async () => {
     if (!orderForm.customerName.trim()) { toast.error('Ad soyad zorunlu'); return }
     if (!orderForm.customerPhone.trim()) { toast.error('Telefon zorunlu'); return }
@@ -189,8 +205,16 @@ export default function SepetPage() {
         designSupport: it.designSupport,
       }))
 
+      // Kurulumcu seçildiyse notlara ekle
+      const installer = installers.find(i => i.id === selectedInstallerId)
+      const installerNote = installer
+        ? `\n[KURULUM] Seçilen kurulumcu: ${installer.name} (${installer.city}) - ID: ${installer.id}`
+        : kurulumIstiyorum ? '\n[KURULUM] Kurulum talep edildi, kurulumcu seçilmedi' : ''
+      const finalNotes = (orderForm.notes || '') + installerNote
+
       const res = await api.post('/api/catalog/orders', {
         ...orderForm,
+        notes: finalNotes,
         items: orderItems,
         sameBillingAddress,
         corporateInvoice,
@@ -818,6 +842,92 @@ export default function SepetPage() {
                     rows={2} placeholder="Acele, hızlı kargo vb."
                     className="w-full px-3.5 py-2.5 text-[13px] rounded-xl outline-none resize-none"
                     style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
+                </div>
+
+                {/* ─── KURULUM HİZMETİ ─── */}
+                <div className="rounded-2xl p-4" style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
+                  <label className="flex items-start gap-3 cursor-pointer" onClick={() => {
+                    const next = !kurulumIstiyorum
+                    setKurulumIstiyorum(next)
+                    setSelectedInstallerId('')
+                    if (next && orderForm.city) fetchInstallers(orderForm.city)
+                  }}>
+                    <div className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
+                      style={{
+                        background: kurulumIstiyorum ? '#F4821F' : 'var(--bg-card)',
+                        border: kurulumIstiyorum ? '2px solid #F4821F' : '2px solid var(--border)',
+                      }}>
+                      {kurulumIstiyorum && <Check size={11} className="text-white" />}
+                    </div>
+                    <div>
+                      <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>
+                        Kurulum hizmeti istiyorum
+                      </p>
+                      <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                        Kurulum ücreti ürün fiyatına dahil değildir. Bina tipi ve altyapı modeline göre değişiklik gösterir.
+                      </p>
+                    </div>
+                  </label>
+
+                  {kurulumIstiyorum && (
+                    <div className="mt-4">
+                      {!orderForm.city ? (
+                        <p className="text-[12px] px-1" style={{ color: '#F59E0B' }}>
+                          ⚠️ Kurulumcu listesi için önce teslimat adresinizde şehir bilgisini doldurun.
+                        </p>
+                      ) : installerLoading ? (
+                        <div className="flex items-center gap-2 text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                          <Loader2 size={14} className="animate-spin" /> Kurulumcular yükleniyor...
+                        </div>
+                      ) : installers.length === 0 ? (
+                        <div className="rounded-xl p-3 text-[12px]" style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.3)', color: '#92400E' }}>
+                          <p className="font-bold mb-1">⚠️ {orderForm.city} için henüz kayıtlı kurulumcu yok</p>
+                          <p>Siparişiniz alınacak, kurulum ekibimiz sizinle iletişime geçecektir.</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <p className="text-[12px] font-bold mb-2" style={{ color: 'var(--text-secondary)' }}>
+                            {orderForm.city} bölgesindeki kurulumcular:
+                          </p>
+                          {installers.map(inst => (
+                            <label key={inst.id} className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all"
+                              style={{
+                                background: selectedInstallerId === inst.id ? 'rgba(244,130,31,0.08)' : 'var(--bg-card)',
+                                border: selectedInstallerId === inst.id ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                              }}
+                              onClick={() => setSelectedInstallerId(inst.id)}>
+                              <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+                                style={{
+                                  background: selectedInstallerId === inst.id ? '#F4821F' : 'var(--bg-secondary)',
+                                  border: selectedInstallerId === inst.id ? '2px solid #F4821F' : '2px solid var(--border)',
+                                }}>
+                                {selectedInstallerId === inst.id && <div className="w-2 h-2 rounded-full bg-white" />}
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>{inst.name}</p>
+                                <div className="flex items-center gap-3 mt-0.5">
+                                  {inst.rating > 0 && (
+                                    <span className="text-[11px] text-amber-500 font-bold">⭐ {Number(inst.rating).toFixed(1)}</span>
+                                  )}
+                                  {inst.jobCount > 0 && (
+                                    <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{inst.jobCount} iş tamamlandı</span>
+                                  )}
+                                  {inst.expertise && (
+                                    <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{inst.expertise.split(',')[0]}</span>
+                                  )}
+                                </div>
+                              </div>
+                            </label>
+                          ))}
+                          {!selectedInstallerId && (
+                            <p className="text-[11px] px-1" style={{ color: 'var(--text-muted)' }}>
+                              Kurulumcu seçmeden devam edebilirsiniz, ekibimiz sizinle iletişime geçecektir.
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {/* ─── ŞARTLAR ONAY KUTUSU ─── */}

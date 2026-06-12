@@ -4,8 +4,8 @@ import { FileText, ShieldCheck, Package, CreditCard, Truck, Phone } from 'lucide
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Mesafeli Sat�� S�zle�mesi | baskiurunleri.com',
-  description: 'baskiurunleri.com mesafeli sat�� s�zle�mesi. 6502 say�l� T�keticinin Korunmas� Hakk�nda Kanun kapsam�nda haz�rlanm��t�r.',
+  title: 'Mesafeli Satış Sözleşmesi | baskiurunleri.com',
+  description: 'baskiurunleri.com mesafeli satış sözleşmesi. 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamında hazırlanmıştır.',
 }
 
 export default function MesafeliSatisPage() {
@@ -15,7 +15,7 @@ export default function MesafeliSatisPage() {
       <main className="min-h-screen py-12 px-4 sm:px-6" style={{ background: 'var(--bg-secondary)' }}>
         <div className="max-w-3xl mx-auto">
 
-          {/* Ba�l�k */}
+          {/* Başlık */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
               style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
@@ -24,132 +24,145 @@ export default function MesafeliSatisPage() {
             </div>
             <h1 className="text-[28px] sm:text-[34px] font-black tracking-[-1px] mb-3"
               style={{ color: 'var(--text-primary)' }}>
-              Mesafeli Sat�� S�zle�mesi
+              Mesafeli Satış Sözleşmesi
             </h1>
             <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
-              6502 say�l� T�keticinin Korunmas� Hakk�nda Kanun ve Mesafeli S�zle�meler Y�netmeli�i kapsam�nda haz�rlanm��t�r.
+              6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamında hazırlanmıştır.
             </p>
-            <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>Son g�ncelleme: Haziran 2026</p>
+            <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>Son güncelleme: Haziran 2026</p>
           </div>
 
           <div className="space-y-4 text-[13px] leading-[1.8]" style={{ color: 'var(--text-secondary)' }}>
 
             {/* Madde 1 */}
-            <Section title="MADDE 1 � TARAFLAR" icon={ShieldCheck}>
+            <Section title="MADDE 1 – TARAFLAR" icon={ShieldCheck}>
               <p><strong>SATICI:</strong></p>
-              <p>�nvan�: baskiurunleri.com</p>
-              <p>Adresi: �kitelli Organize Sanayi B�lgesi, �stanbul</p>
+              <p>Ünvanı: baskiurunleri.com</p>
+              <p>Adresi: İkitelli Organize Sanayi Bölgesi, İstanbul</p>
               <p>E-posta: info@baskiurunleri.com</p>
               <p>Telefon: +90 212 555 55 55</p>
               <br />
               <p><strong>ALICI:</strong></p>
-              <p>Sipari� formunda belirtilen ad, adres ve ileti�im bilgilerine sahip ki�i.</p>
+              <p>Sipariş formunda belirtilen ad, adres ve iletişim bilgilerine sahip kişi.</p>
             </Section>
 
             {/* Madde 2 */}
-            <Section title="MADDE 2 � KONU" icon={Package}>
+            <Section title="MADDE 2 – KONU" icon={Package}>
               <p>
-                ��bu s�zle�me, ALICI'n�n SATICI'ya ait baskiurunleri.com internet sitesi �zerinden elektronik ortamda sipari�ini
-                verdi�i a�a��da nitelikleri ve sat�� fiyat� belirtilen �r�n�n sat��� ve teslimi ile ilgili olarak 6502 say�l�
-                T�keticinin Korunmas� Hakk�nda Kanun ve Mesafeli S�zle�melere Dair Y�netmelik h�k�mleri gere�ince taraflar�n
-                hak ve y�k�ml�l�klerini kapsar.
+                İşbu sözleşme, ALICI'nın SATICI'ya ait baskiurunleri.com internet sitesi üzerinden elektronik ortamda siparişini
+                verdiği aşağıda nitelikleri ve satış fiyatı belirtilen ürünün satışı ve teslimi ile ilgili olarak 6502 sayılı
+                Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmelere Dair Yönetmelik hükümleri gereğince tarafların
+                hak ve yükümlülüklerini kapsar.
               </p>
             </Section>
 
             {/* Madde 3 */}
-            <Section title="MADDE 3 � �R�N B�LG�LER�" icon={Package}>
+            <Section title="MADDE 3 – ÜRÜN BİLGİLERİ" icon={Package}>
               <p>
-                S�zle�me konusu �r�n/�r�nler, sipari� �zetinde belirtilen ve ALICI taraf�ndan se�ilen katalog �r�nleridir.
-                �r�nlerin temel �zellikleri (t�r, miktar, marka/model, renk, ebat vb.) �r�n sayfas�nda ve sipari� �zetinde
-                yer almaktad�r. �r�nler, ALICI'n�n y�kledi�i veya onaylad��� tasar�ma g�re �zel olarak �retilmektedir.
+                Sözleşme konusu ürün/ürünler, sipariş özetinde belirtilen ve ALICI tarafından seçilen katalog ürünleridir.
+                Ürünlerin temel özellikleri (tür, miktar, marka/model, renk, ebat vb.) ürün sayfasında ve sipariş özetinde
+                yer almaktadır. Ürünler, ALICI'nın yüklediği veya onayladığı tasarıma göre özel olarak üretilmektedir.
               </p>
             </Section>
 
             {/* Madde 4 */}
-            <Section title="MADDE 4 � SATI� F�YATI VE �DEME" icon={CreditCard}>
+            <Section title="MADDE 4 – SATIŞ FİYATI VE ÖDEME" icon={CreditCard}>
               <p>
-                �r�n�n KDV dahil sat�� fiyat� sipari� �zetinde g�sterilmektedir. �deme; kredi kart�, banka kart� veya
-                di�er elektronik �deme y�ntemleriyle yap�labilir. �deme i�lemi iyzico altyap�s� �zerinden 256-bit SSL
-                �ifreleme ile g�venli �ekilde ger�ekle�tirilir. Kart bilgileri SATICI taraf�ndan saklanmaz.
+                Ürünün KDV dahil satış fiyatı sipariş özetinde gösterilmektedir. Ödeme; kredi kartı, banka kartı veya
+                diğer elektronik ödeme yöntemleriyle yapılabilir. Ödeme işlemi iyzico altyapısı üzerinden 256-bit SSL
+                şifreleme ile güvenli şekilde gerçekleştirilir. Kart bilgileri SATICI tarafından saklanmaz.
               </p>
               <p className="mt-2">
-                Taksitli al�mlarda ilgili banka taksit ko�ullar� ge�erlidir. Sipari� toplam�, se�ilen taksit say�s�na
-                b�l�nerek banka taraf�ndan tahsil edilir.
+                Taksitli alımlarda ilgili banka taksit koşulları geçerlidir. Sipariş toplamı, seçilen taksit sayısına
+                bölünerek banka tarafından tahsil edilir.
               </p>
             </Section>
 
             {/* Madde 5 */}
-            <Section title="MADDE 5 � TESL�MAT" icon={Truck}>
+            <Section title="MADDE 5 – TESLİMAT" icon={Truck}>
               <p>
-                �r�nler, �deme onay�n�n ard�ndan tasar�m onay s�recinin tamamlanmas�n� takiben �retilir ve kargo firmas�
-                arac�l���yla ALICI'n�n belirtti�i adrese teslim edilir. Teslimat s�resi ortalama 3-7 i� g�n�d�r;
-                bu s�re sipari� yo�unlu�una ve kargo firmas�na g�re de�i�ebilir.
+                Ürünler, ödeme onayının ardından tasarım onay sürecinin tamamlanmasını takiben üretilir ve kargo firması
+                aracılığıyla ALICI'nın belirttiği adrese teslim edilir. Teslimat süresi ortalama 3-7 iş günüdür;
+                bu süre sipariş yoğunluğuna ve kargo firmasına göre değişebilir.
               </p>
               <p className="mt-2">
-                Teslimat adresi ALICI taraf�ndan sipari� formunda beyan edilmi� olup hatal� veya eksik adres bilgisinden
-                kaynaklanan gecikmeler SATICI'n�n sorumlulu�unda de�ildir.
+                Teslimat adresi ALICI tarafından sipariş formunda beyan edilmiş olup hatalı veya eksik adres bilgisinden
+                kaynaklanan gecikmeler SATICI'nın sorumluluğunda değildir.
               </p>
             </Section>
 
             {/* Madde 6 */}
-            <Section title="MADDE 6 � CAYMA HAKKI" icon={ShieldCheck}>
+            <Section title="MADDE 6 – CAYMA HAKKI" icon={ShieldCheck}>
               <p>
-                6502 say�l� Kanun'un 15. maddesi ve Mesafeli S�zle�meler Y�netmeli�i'nin 16. maddesi uyar�nca;
-                t�keticinin istekleri veya a��k�a onun ki�isel ihtiya�lar� do�rultusunda haz�rlanan, niteli�i
-                itibar�yla geri g�nderilmeye elveri�li olmayan ve �abuk bozulma tehlikesi olan mallarda cayma
-                hakk� kullan�lamaz.
+                6502 sayılı Kanun'un 15. maddesi ve Mesafeli Sözleşmeler Yönetmeliği'nin 16. maddesi uyarınca;
+                tüketicinin istekleri veya açıkça onun kişisel ihtiyaçları doğrultusunda hazırlanan, niteliği
+                itibarıyla geri gönderilmeye elverişli olmayan ve çabuk bozulma tehlikesi olan mallarda cayma
+                hakkı kullanılamaz.
               </p>
               <p className="mt-2">
-                Baskiurunleri.com'da sat�lan t�m �r�nler, ALICI'n�n sa�lad��� veya onaylad��� tasar�ma g�re
-                �zel �retim oldu�undan <strong>cayma hakk� kullan�lamaz.</strong>
+                Baskiurunleri.com'da satılan tüm ürünler, ALICI'nın sağladığı veya onayladığı tasarıma göre
+                özel üretim olduğundan <strong>cayma hakkı kullanılamaz.</strong>
               </p>
               <p className="mt-2">
-                Ancak a�a��daki durumlarda ALICI, �r�n� teslim ald��� tarihten itibaren <strong>3 i� g�n�</strong> i�inde
-                �ik�yetini bildirerek yeniden �retim veya iade talep edebilir:
+                Ancak aşağıdaki durumlarda ALICI, ürünü teslim aldığı tarihten itibaren <strong>3 iş günü</strong> içinde
+                şikâyetini bildirerek yeniden üretim veya iade talep edebilir:
               </p>
               <ul className="mt-2 space-y-1 list-disc list-inside">
-                <li>SATICI'dan kaynaklanan �retim veya bask� hatas�</li>
-                <li>Sipari� edilenden farkl� �r�n g�nderilmesi</li>
-                <li>Kargo s�ras�nda olu�an ve tutanakla belgelenen hasar</li>
+                <li>SATICI'dan kaynaklanan üretim veya baskı hatası</li>
+                <li>Sipariş edilenden farklı ürün gönderilmesi</li>
+                <li>Kargo sırasında oluşan ve tutanakla belgelenen hasar</li>
               </ul>
             </Section>
 
             {/* Madde 7 */}
-            <Section title="MADDE 7 � G�ZL�L�K" icon={ShieldCheck}>
+            <Section title="MADDE 7 – GİZLİLİK" icon={ShieldCheck}>
               <p>
-                ALICI'ya ait ki�isel bilgiler, 6698 say�l� Ki�isel Verilerin Korunmas� Kanunu kapsam�nda i�lenir
-                ve ���nc� �ah�slarla payla��lmaz. Ayr�nt�l� bilgi i�in{' '}
-                <Link href="/gizlilik" className="underline hover:text-[#F4821F]">Gizlilik Politikam�z�</Link>
+                ALICI'ya ait kişisel bilgiler, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında işlenir
+                ve üçüncü şahıslarla paylaşılmaz. Ayrıntılı bilgi için{' '}
+                <Link href="/gizlilik" className="underline hover:text-[#F4821F]">Gizlilik Politikamızı</Link>
                 {' '}inceleyebilirsiniz.
               </p>
             </Section>
 
             {/* Madde 8 */}
-            <Section title="MADDE 8 � UYU�MAZLIKLARIN ��Z�M�" icon={ShieldCheck}>
+            <Section title="MADDE 8 – KURULUM HİZMETİ" icon={Truck}>
               <p>
-                ��bu s�zle�meden do�abilecek uyu�mazl�klarda, ALICI'n�n ikametgah�ndaki veya sat�n alma i�leminin
-                yap�ld��� yerdeki T�ketici Hakem Heyetleri ve T�ketici Mahkemeleri yetkilidir. Ba�vuru s�n�rlar�
-                her y�l G�mr�k ve Ticaret Bakanl��� taraf�ndan g�ncellenmektedir.
+                ALICI, sipariş sırasında isteğe bağlı olarak kurulum hizmeti talep edebilir. Kurulum hizmeti aşağıdaki koşullara tabidir:
+              </p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li><strong>Kurulum ücreti ürün bedeline dahil değildir.</strong> Kurulum maliyeti; binanın tipi (konut, apartman, rezidans, ticari), mevcut altyapı durumu ve kurulum kapsamına göre değişiklik gösterir.</li>
+                <li>Kurulum ücreti, kurulum ekibi tarafından yerinde tespit edildikten sonra ALICI'ya bildirilir ve ALICI'nın onayı alınmadan işlem başlatılmaz.</li>
+                <li>Kurulum hizmeti talep eden ALICI, sipariş sırasında bölgesindeki yetkili kurulum ekibini seçebilir veya sistemin yönlendireceği kurulumcu ile çalışmayı kabul eder.</li>
+                <li>Kurulum randevusu ALICI ile mutabık kalınan tarih ve saatte gerçekleştirilir. Randevu iptali en az 24 saat önceden bildirilmelidir.</li>
+                <li>Kurulum hizmeti tamamlandıktan sonra hizmet bedeli iade edilmez.</li>
+              </ul>
+            </Section>
+
+            <Section title="MADDE 9 – UYUŞMAZLIKLARIN ÇÖZÜMÜ" icon={ShieldCheck}>
+              <p>
+                İşbu sözleşmeden doğabilecek uyuşmazlıklarda, ALICI'nın ikametgahındaki veya satın alma işleminin
+                yapıldığı yerdeki Tüketici Hakem Heyetleri ve Tüketici Mahkemeleri yetkilidir. Başvuru sınırları
+                her yıl Gümrük ve Ticaret Bakanlığı tarafından güncellenmektedir.
               </p>
             </Section>
 
             {/* Madde 9 */}
-            <Section title="MADDE 9 � Y�R�RL�K" icon={ShieldCheck}>
+            <Section title="MADDE 9 – YÜRÜRLÜK" icon={ShieldCheck}>
               <p>
-                ALICI, sipari� i�lemini tamamlayarak bu s�zle�meyi okudu�unu, anlad���n� ve t�m h�k�mlerini
-                kabul etti�ini beyan eder. S�zle�me, sipari�in SATICI taraf�ndan onaylanmas�yla y�r�rl��e girer.
+                ALICI, sipariş işlemini tamamlayarak bu sözleşmeyi okuduğunu, anladığını ve tüm hükümlerini
+                kabul ettiğini beyan eder. Sözleşme, siparişin SATICI tarafından onaylanmasıyla yürürlüğe girer.
               </p>
             </Section>
 
           </div>
 
-          {/* �leti�im */}
+          {/* İletişim */}
           <div className="mt-8 rounded-2xl p-6 text-center"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <Phone size={20} className="mx-auto mb-2" style={{ color: '#F4821F' }} />
-            <p className="text-[14px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Sorular�n�z m� var?</p>
+            <p className="text-[14px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Sorularınız mı var?</p>
             <p className="text-[12px] mb-3" style={{ color: 'var(--text-muted)' }}>
-              S�zle�me hakk�nda bilgi almak i�in bize ula��n.
+              Sözleşme hakkında bilgi almak için bize ulaşın.
             </p>
             <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <a href="mailto:info@baskiurunleri.com"
@@ -160,13 +173,13 @@ export default function MesafeliSatisPage() {
               <Link href="/iletisim"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold"
                 style={{ background: 'var(--bg-secondary)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}>
-                �leti�im Formu
+                İletişim Formu
               </Link>
             </div>
           </div>
 
           <p className="text-center text-[11px] mt-6" style={{ color: 'var(--text-muted)' }}>
-            Bu s�zle�me 6502 say�l� T�keticinin Korunmas� Hakk�nda Kanun ve Mesafeli S�zle�meler Y�netmeli�i kapsam�nda haz�rlanm��t�r.
+            Bu sözleşme 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamında hazırlanmıştır.
           </p>
         </div>
       </main>
