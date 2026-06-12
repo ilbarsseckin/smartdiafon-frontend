@@ -149,7 +149,7 @@ export default function KurulumEkibiKatil() {
             Teşekkürler <strong>{ad}</strong>! Başvurunuz sistemimize kaydedildi.
           </p>
           <p className="text-[13px] mb-6 max-w-md mx-auto" style={{ color: 'var(--text-muted)' }}>
-            Ekibimiz başvurunuzu inceleyip en kısa sürede <strong>{telefon}</strong> numaranızdan sizinle iletişime geçecek.
+            Ekibimiz başvurunuzu inceleyip en kısa sürede onaylanıp sisteme dahil edilecektir.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-bold"
             style={{ background: 'rgba(16,185,129,0.1)', color: '#059669' }}>
