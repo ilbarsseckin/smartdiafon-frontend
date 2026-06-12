@@ -111,8 +111,94 @@ export const posts: BlogPost[] = [
 <p>Görüntülü diyafonunuzu akıllı hale getirmek, düşündüğünüzden daha kolay ve ekonomik. Projeniz için <a href="/teklif">hemen teklif alın</a>.</p>
 `,
   },
-]
 
-export function getPost(slug: string): BlogPost | undefined {
-  return posts.find(p => p.slug === slug)
-}
+  ,
+  {
+    slug: 'diafonbox-nedir-nasil-calisir',
+    title: 'DiafonBox Nedir? Eski Diyafonunuzu Akıllı Telefona Bağlayın',
+    date: '2026-06-05',
+    cat: 'Ürün',
+    excerpt: 'DiafonBox, mevcut Multitek diyafon sisteminizi değiştirmeden cep telefonunuzdan kapı açmanızı sağlayan akıllı adaptördür. Nasıl çalışır, hangi sistemlerle uyumludur?',
+    metaTitle: 'DiafonBox Nedir? Diyafonu Akıllı Telefona Bağlama | Smartdiafon',
+    metaDescription: 'DiafonBox ile eski diyafonunuzu değiştirmeden akıllı telefona bağlayın. Kurulum, uyumluluk ve fiyat hakkında her şey.',
+    keywords: ['diafonbox', 'akıllı diyafon', 'diyafonu telefona bağlama', 'multitek diyafon uyumlu', 'apartman kapı sistemi'],
+    content: `
+<p>Apartmanınızda yıllardır kullandığınız diyafon sistemi hâlâ çalışıyor ama siz artık kapıyı telefonsuz açmak ya da dışarıdayken misafirinize kapı açmak istiyorsunuz. İşte tam bu noktada <strong>DiafonBox</strong> devreye giriyor.</p>
+
+<h2>DiafonBox Nedir?</h2>
+<p>DiafonBox, mevcut Multitek diyafon sisteminizin iç ünitesine (monitör veya ahize) bağlanan küçük bir adaptördür. Sistemi değiştirmenize gerek kalmadan diyafonunuzu internete bağlar ve cep telefonunuzdan yönetmenizi sağlar.</p>
+
+<h2>Ne Yapabilirsiniz?</h2>
+<ul>
+<li>Evde olmadığınızda bile kapı zilini cep telefonunuzda görüntülü alabilirsiniz</li>
+<li>Ziyaretçinizi görerek konuşabilir, dilediğinizde kapıyı açabilirsiniz</li>
+<li>Kapıya gelenin fotoğrafı otomatik olarak kaydedilir</li>
+<li>Birden fazla telefona bildirim gönderebilirsiniz</li>
+</ul>
+
+<h2>Hangi Sistemlerle Uyumludur?</h2>
+<p>DiafonBox; Multitek Multibus, Linux ve bazı IP interkom sistemleriyle uyumludur. Sisteminizin uyumlu olup olmadığını <a href="/uyumluluk">uyumluluk test aracımızdan</a> hızlıca öğrenebilirsiniz.</p>
+
+<h2>Kurulum Ne Kadar Sürer?</h2>
+<p>Ortalama 30-45 dakikada tamamlanan kurulum için elektrikçi gerekmez. Mevcut iç üniteye bağlantı yapılır, uygulama kurulur ve sistem çalışmaya başlar. Dilerseniz <a href="/kurulum-ekibi">kurulum ekibimizden</a> randevu alabilirsiniz.</p>
+`,
+  },
+  {
+    slug: 'apartman-kamera-sistemi-secimi',
+    title: 'Apartman Güvenlik Kamerası Seçerken Dikkat Edilmesi Gerekenler',
+    date: '2026-05-28',
+    cat: 'Rehber',
+    excerpt: 'Apartman veya site girişi için doğru güvenlik kamerasını seçmek, yanlış ürünü satın almamak için bilmeniz gerekenler.',
+    metaTitle: 'Apartman Güvenlik Kamerası Seçimi Rehberi 2026 | Smartdiafon',
+    metaDescription: 'Apartman giriş kamerası seçerken çözünürlük, gece görüşü, depolama ve kurulum gibi kriterleri nasıl değerlendirmelisiniz?',
+    keywords: ['apartman kamera', 'güvenlik kamerası', 'ip kamera', 'gece görüşlü kamera', 'apartman güvenlik sistemi'],
+    content: `
+<p>Apartman ya da site güvenliğini artırmak için kamera sistemi kurmak istiyorsunuz, ancak piyasada onlarca model arasından hangisini seçeceğinizi bilmiyorsunuz. Bu rehber, doğru kararı vermenize yardımcı olacak temel kriterleri açıklıyor.</p>
+
+<h2>Çözünürlük</h2>
+<p>Apartman girişi için minimum <strong>2 Megapiksel (Full HD 1080p)</strong> tercih edin. Yüz ve plaka tanıma gerekiyorsa 4MP veya üzeri gereklidir. Çözünürlük ne kadar yüksekse depolama ihtiyacı da o kadar artar.</p>
+
+<h2>Gece Görüşü</h2>
+<p>Infrared (IR) LED'li kameralar karanlıkta siyah-beyaz görüntü verir. Tam renkli gece görüşü için "Color Night Vision" özellikli modellere bakın; bunlar az ışıkta bile renkli görüntü sağlar.</p>
+
+<h2>Montaj Yeri</h2>
+<p>Giriş kapısı üstü, otopark girişi ve ortak alan koridorları öncelikli noktalardır. Her nokta için farklı açı ihtiyacı olabilir; geniş açılı (wide angle) veya varifocal lensli modeller tercih edilmelidir.</p>
+
+<h2>Depolama</h2>
+<p>SD kart, NVR/DVR veya bulut depolama seçeneklerini değerlendirin. Yasal olarak en az 15 günlük kayıt tutulması önerilir.</p>
+
+<h2>Multitek Kamera Çözümleri</h2>
+<p>Multitek'in interkom sistemleriyle entegre çalışan kamera modelleri, tek uygulama üzerinden hem zil hem kamera yönetimine imkân tanır. <a href="/urunler">Ürün kataloğumuzu</a> inceleyebilirsiniz.</p>
+`,
+  },
+  {
+    slug: 'interkom-bakim-ipuclari',
+    title: 'Diyafon ve İnterkom Sisteminizi Uzun Ömürlü Kullanmanın 5 Yolu',
+    date: '2026-05-15',
+    cat: 'Bakım',
+    excerpt: 'Küçük bakım adımlarıyla diyafon ve interkom sisteminizin ömrünü uzatın, arıza riskini azaltın.',
+    metaTitle: 'Diyafon Bakım İpuçları — Sistemi Uzun Ömürlü Kullanın | Smartdiafon',
+    metaDescription: 'Diyafon ve interkom sisteminizin ömrünü uzatacak 5 pratik bakım önerisi. Temizlik, nem, güç kaynağı ve yazılım güncellemeleri.',
+    keywords: ['diyafon bakım', 'interkom bakım', 'diyafon arıza', 'interkom temizlik', 'diyafon ömrü uzatma'],
+    content: `
+<p>Kaliteli bir diyafon veya interkom sistemi yıllarca sorunsuz çalışabilir — eğer düzenli bakım yapılırsa. İşte sisteminizin ömrünü uzatacak 5 pratik öneri.</p>
+
+<h2>1. Düzenli Temizlik</h2>
+<p>Kapı panelinin lens ve hoparlör alanlarını ayda bir yumuşak, kuru bir bezle temizleyin. Nem veya toz birikimi görüntü ve ses kalitesini düşürür. Kimyasal temizleyici kullanmayın.</p>
+
+<h2>2. Nem ve Suya Karşı Koruma</h2>
+<p>Dış mekan panellerinin IP koruma derecesini kontrol edin. Yağmur sularının panel yuvasına dolmaması için çevre drenajını kontrol edin. Rutubet, elektronik devrelerin en büyük düşmanıdır.</p>
+
+<h2>3. Güç Kaynağını Koruyun</h2>
+<p>Voltaj dalgalanmalarına karşı bir UPS veya parafudr (surge protector) kullanın. Özellikle fırtınalı havalarda bu önlem sistemi aşırı voltajdan korur.</p>
+
+<h2>4. Yazılım ve Firmware Güncellemeleri</h2>
+<p>IP veya Linux tabanlı sistemlerde firmware güncellemelerini takip edin. Güncel yazılım hem güvenlik açıklarını kapatır hem de yeni özellikler ekler.</p>
+
+<h2>5. Yıllık Teknik Kontrol</h2>
+<p>Yılda bir kez yetkili teknik servis tarafından kablo bağlantıları, buton kontakları ve kamera odağı kontrol ettirilmelidir. Küçük sorunlar erken yakalanırsa büyük arızaların önüne geçilir.</p>
+
+<p>Herhangi bir sorunla karşılaştığınızda <a href="/iletisim">teknik destek ekibimize</a> ulaşabilirsiniz.</p>
+`,
+  }
+]
