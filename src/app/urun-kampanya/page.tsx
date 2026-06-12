@@ -34,6 +34,7 @@ function UrunKampanyaInner() {
   const sp = useSearchParams()
   const initialCat = sp.get('kategori') || 'all'
   const initialView = (sp.get('gorunum') as 'grid' | 'list') || 'grid'
+  const kampanyaSlug = sp.get('kampanya') || ''
 
   const [categories, setCategories] = useState<Category[]>([])
   const [products, setProducts] = useState<Product[]>([])
@@ -45,9 +46,13 @@ function UrunKampanyaInner() {
   const [sortBy, setSortBy] = useState<'default' | 'price_asc' | 'price_desc'>('default')
 
   useEffect(() => {
+    const productReq = kampanyaSlug
+      ? api.get(`/api/campaigns/${kampanyaSlug}/products`)
+      : api.get('/api/catalog/products')
+
     Promise.all([
       api.get('/api/catalog/categories/flat').catch(() => api.get('/api/catalog/categories/tree')),
-      api.get('/api/catalog/products'),
+      productReq,
       api.get('/api/settings/public'),
     ]).then(([catRes, prodRes, settRes]) => {
       const cats = catRes.data.data || []
@@ -56,7 +61,7 @@ function UrunKampanyaInner() {
       setProducts(prodRes.data.data || [])
       setKur(parseFloat(settRes.data.data?.usd_kur || '45'))
     }).finally(() => setLoading(false))
-  }, [])
+  }, [kampanyaSlug])
 
   function flattenTree(tree: any[]): Category[] {
     const result: Category[] = []

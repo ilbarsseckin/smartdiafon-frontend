@@ -5,7 +5,7 @@ import AdminNavbar from '@/components/layout/AdminNavbar'
 import api from '@/lib/api'
 import toast from 'react-hot-toast'
 import {
-  Plus, Edit2, Trash2, Save, X, Loader2,
+  Plus, Edit2, Trash2, Save, X, Loader2, ShoppingCart, Search, CheckCircle,
   ArrowUp, ArrowDown, Eye, EyeOff, Megaphone, Upload,
   Link as LinkIcon, Monitor, Smartphone, ExternalLink, Copy,
 } from 'lucide-react'
@@ -82,6 +82,12 @@ function KampanyalarInner() {
   const [loading, setLoading] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
   const [editId, setEditId] = useState<string | null>(null)
+  const [productModalOpen, setProductModalOpen] = useState(false)
+  const [productModalCampaign, setProductModalCampaign] = useState<Campaign | null>(null)
+  const [campaignProducts, setCampaignProducts] = useState<any[]>([])
+  const [allProducts, setAllProducts] = useState<any[]>([])
+  const [productSearch, setProductSearch] = useState('')
+  const [addingProduct, setAddingProduct] = useState(false)
   const [form, setForm] = useState<FormData>(EMPTY_FORM)
   const [saving, setSaving] = useState(false)
 
@@ -248,7 +254,43 @@ function KampanyalarInner() {
     const uploading = isMobile ? uploadingMobileImage : uploadingImage
     const ref = isMobile ? mobileFileInputRef : fileInputRef
 
-    return (
+    const openProductModal = async (c: Campaign) => {
+    setProductModalCampaign(c)
+    setProductModalOpen(true)
+    setProductSearch('')
+    try {
+      const [cpRes, prodRes] = await Promise.all([
+        api.get(`/api/admin/campaigns/${c.id}/products`),
+        api.get('/api/catalog/products'),
+      ])
+      setCampaignProducts(cpRes.data.data || [])
+      setAllProducts(prodRes.data.data || [])
+    } catch { toast.error('Yüklenemedi') }
+  }
+
+  const addProduct = async (productId: string) => {
+    if (!productModalCampaign) return
+    setAddingProduct(true)
+    try {
+      await api.post(`/api/admin/campaigns/${productModalCampaign.id}/products`, { productId })
+      const r = await api.get(`/api/admin/campaigns/${productModalCampaign.id}/products`)
+      setCampaignProducts(r.data.data || [])
+      toast.success('Ürün eklendi')
+    } catch (e: any) {
+      toast.error(e.response?.data?.message || 'Hata')
+    } finally { setAddingProduct(false) }
+  }
+
+  const removeProduct = async (productId: string) => {
+    if (!productModalCampaign) return
+    try {
+      await api.delete(`/api/admin/campaigns/${productModalCampaign.id}/products/${productId}`)
+      setCampaignProducts(p => p.filter(cp => cp.productId !== productId))
+      toast.success('Kaldırıldı')
+    } catch { toast.error('Hata') }
+  }
+
+  return (
       <div>
         <label className="flex items-center gap-1.5 text-[12px] font-semibold mb-1.5"
           style={{ color: 'var(--text-secondary)' }}>
@@ -386,6 +428,9 @@ function KampanyalarInner() {
                   <button onClick={() => handleToggle(c)} title={c.active ? 'Pasifleştir' : 'Aktifleştir'}
                     className="p-2 rounded-lg" style={{ color: c.active ? '#16a34a' : 'var(--text-muted)' }}>
                     {c.active ? <Eye size={15} /> : <EyeOff size={15} />}
+                  </button>
+                  <button onClick={() => openProductModal(c)} className="p-2 rounded-lg" title="Ürünleri Yönet" style={{ color: 'var(--text-muted)' }}>
+                    <ShoppingCart size={15} />
                   </button>
                   <button onClick={() => openEdit(c)} className="p-2 rounded-lg" style={{ color: 'var(--text-muted)' }}>
                     <Edit2 size={15} />
@@ -544,6 +589,101 @@ function KampanyalarInner() {
           </div>
         </div>
       )}
+
+      {/* ÜRÜN YÖNETİMİ MODAL */}
+      {productModalOpen && productModalCampaign && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center"
+          style={{ background: 'rgba(0,0,0,0.6)' }}
+          onClick={() => setProductModalOpen(false)}>
+          <div onClick={e => e.stopPropagation()}
+            className="w-full max-w-2xl rounded-2xl max-h-[90vh] overflow-hidden flex flex-col"
+            style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', margin: '0 16px' }}>
+            
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: '1px solid var(--border)' }}>
+              <div>
+                <h3 className="text-[16px] font-bold" style={{ color: 'var(--text-primary)' }}>Kampanya Ürünleri</h3>
+                <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>{productModalCampaign.title}</p>
+              </div>
+              <button onClick={() => setProductModalOpen(false)} style={{ color: 'var(--text-muted)' }}><X size={18} /></button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-5 space-y-4">
+              
+              {/* Kampanyaya ekli ürünler */}
+              <div>
+                <p className="text-[12px] font-bold uppercase tracking-[1px] mb-2" style={{ color: 'var(--text-muted)' }}>
+                  Kampanyada ({campaignProducts.length} ürün)
+                </p>
+                {campaignProducts.length === 0 ? (
+                  <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>Henüz ürün eklenmedi</p>
+                ) : (
+                  <div className="space-y-2">
+                    {campaignProducts.map((cp: any) => (
+                      <div key={cp.productId} className="flex items-center justify-between p-3 rounded-xl"
+                        style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
+                        <span className="text-[13px] font-medium" style={{ color: 'var(--text-primary)' }}>{cp.productName}</span>
+                        <button onClick={() => removeProduct(cp.productId)}
+                          className="text-[12px] px-2 py-1 rounded-lg"
+                          style={{ color: '#DC2626', background: 'rgba(220,38,38,0.1)' }}>
+                          Kaldır
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Ürün arama ve ekleme */}
+              <div>
+                <p className="text-[12px] font-bold uppercase tracking-[1px] mb-2" style={{ color: 'var(--text-muted)' }}>
+                  Ürün Ekle
+                </p>
+                <div className="relative mb-3">
+                  <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-muted)' }} />
+                  <input value={productSearch} onChange={e => setProductSearch(e.target.value)}
+                    placeholder="Ürün ara..."
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl text-[13px]"
+                    style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
+                </div>
+                <div className="space-y-2 max-h-60 overflow-y-auto">
+                  {allProducts
+                    .filter(p => !campaignProducts.find((cp: any) => cp.productId === p.id))
+                    .filter(p => !productSearch || p.name.toLowerCase().includes(productSearch.toLowerCase()))
+                    .slice(0, 20)
+                    .map((p: any) => (
+                      <div key={p.id} className="flex items-center justify-between p-3 rounded-xl"
+                        style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
+                        <div className="flex items-center gap-2 min-w-0">
+                          {p.mainImageUrl && (
+                            <img src={p.mainImageUrl} alt="" className="w-8 h-8 rounded-lg object-cover flex-shrink-0" />
+                          )}
+                          <span className="text-[13px] font-medium truncate" style={{ color: 'var(--text-primary)' }}>{p.name}</span>
+                        </div>
+                        <button onClick={() => addProduct(p.id)} disabled={addingProduct}
+                          className="text-[12px] px-3 py-1 rounded-lg text-white flex-shrink-0 ml-2"
+                          style={{ background: '#F4821F' }}>
+                          Ekle
+                        </button>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
+              {/* Kampanya URL */}
+              {productModalCampaign.slug && (
+                <div className="p-3 rounded-xl" style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)' }}>
+                  <p className="text-[11px] font-bold mb-1" style={{ color: '#F4821F' }}>Kampanya URL</p>
+                  <p className="text-[12px] font-mono" style={{ color: 'var(--text-secondary)' }}>
+                    smartdiafon.com.tr/urun-kampanya?kampanya={productModalCampaign.slug}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   )
 }
