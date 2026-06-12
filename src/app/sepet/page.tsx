@@ -505,7 +505,7 @@ export default function SepetPage() {
               </div>
 
               {catalogItems.length > 0 && (
-                <button onClick={() => setCatalogModalOpen(true)}
+                <button onClick={() => router.push('/siparis-olustur')}
                   className="w-full flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-2xl hover:opacity-90"
                   style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 6px 14px rgba(244,130,31,0.3)' }}>
                   <Send size={15} />
