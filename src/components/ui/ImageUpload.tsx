@@ -127,12 +127,12 @@ export default function ImageUpload({
           ${aspectClass}
           ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
           ${dragOver
-            ? 'border-[#F4821F] bg-orange-50 dark:bg-orange-500/10'
-            : 'border-black/[0.1] dark:border-white/[0.1] hover:border-[#F4821F]'}
+            ? 'border-[#DC2626] bg-orange-50 dark:bg-orange-500/10'
+            : 'border-black/[0.1] dark:border-white/[0.1] hover:border-[#DC2626]'}
         `}>
         {uploading ? (
           <>
-            <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+            <Loader2 size={24} className="animate-spin text-[#DC2626]" />
             <p className="text-[11px] text-gray-400">Yükleniyor...</p>
           </>
         ) : (

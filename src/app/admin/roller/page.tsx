@@ -112,27 +112,27 @@ export default function RollerPage() {
               <p className="text-[13px] text-gray-400 mt-0.5">{roles.length} rol tanımlı · {permissions.length} izin mevcut</p>
             </div>
             <button onClick={() => setShowCreate(true)}
-              className="flex items-center gap-1.5 bg-[#F4821F] text-white text-[12px] font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+              className="flex items-center gap-1.5 bg-[#DC2626] text-white text-[12px] font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
               <Plus size={14} /> Yeni rol
             </button>
           </div>
 
           {/* Yeni rol oluştur */}
           {showCreate && (
-            <div className="bg-white dark:bg-[#141414] border border-[#F4821F] rounded-xl p-5 mb-4">
+            <div className="bg-white dark:bg-[#141414] border border-[#DC2626] rounded-xl p-5 mb-4">
               <p className="text-[14px] font-medium text-gray-900 dark:text-gray-100 mb-4">Yeni rol oluştur</p>
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div>
                   <label className="block text-[11px] font-medium text-gray-500 mb-1.5">Rol adı</label>
                   <input type="text" placeholder="örn. Müşteri Hizmetleri"
                     value={newRole.name} onChange={e => setNewRole({ ...newRole, name: e.target.value })}
-                    className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]" />
+                    className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626]" />
                 </div>
                 <div>
                   <label className="block text-[11px] font-medium text-gray-500 mb-1.5">Açıklama</label>
                   <input type="text" placeholder="Bu rolün görevi..."
                     value={newRole.description} onChange={e => setNewRole({ ...newRole, description: e.target.value })}
-                    className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]" />
+                    className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626]" />
                 </div>
               </div>
 
@@ -145,8 +145,8 @@ export default function RollerPage() {
                       <span className={`text-[10px] font-medium px-2 py-0.5 rounded ${c.bg} ${c.text} mb-1.5 inline-block`}>{cat}</span>
                       <div className="grid grid-cols-3 gap-1.5">
                         {perms.map(p => (
-                          <label key={p.id} className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer border transition-colors ${newRole.permissionIds.has(p.id) ? 'border-[#F4821F] bg-orange-50 dark:bg-orange-500/10' : 'border-black/[0.06] dark:border-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.03]'}`}>
-                            <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors ${newRole.permissionIds.has(p.id) ? 'bg-[#F4821F] border-[#F4821F]' : 'border-gray-300 dark:border-gray-600'}`}>
+                          <label key={p.id} className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer border transition-colors ${newRole.permissionIds.has(p.id) ? 'border-[#DC2626] bg-orange-50 dark:bg-orange-500/10' : 'border-black/[0.06] dark:border-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.03]'}`}>
+                            <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors ${newRole.permissionIds.has(p.id) ? 'bg-[#DC2626] border-[#DC2626]' : 'border-gray-300 dark:border-gray-600'}`}>
                               {newRole.permissionIds.has(p.id) && <Check size={10} className="text-white" />}
                             </div>
                             <input type="checkbox" className="hidden"
@@ -167,7 +167,7 @@ export default function RollerPage() {
                   İptal
                 </button>
                 <button onClick={createRole} disabled={saving}
-                  className="text-[12px] font-medium bg-[#F4821F] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
+                  className="text-[12px] font-medium bg-[#DC2626] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
                   {saving ? 'Oluşturuluyor...' : 'Oluştur'}
                 </button>
               </div>
@@ -189,7 +189,7 @@ export default function RollerPage() {
                   {/* Başlık */}
                   <div className="flex items-center gap-3 p-4">
                     <div className="w-9 h-9 rounded-lg bg-orange-50 dark:bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-                      <Shield size={16} className="text-[#F4821F]" />
+                      <Shield size={16} className="text-[#DC2626]" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
@@ -202,7 +202,7 @@ export default function RollerPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <button onClick={() => { startEdit(role); setExpandedId(role.id) }}
-                        className="w-7 h-7 rounded-lg border border-black/[0.08] dark:border-white/[0.08] flex items-center justify-center text-gray-400 hover:text-[#F4821F] hover:border-[#F4821F] transition-colors">
+                        className="w-7 h-7 rounded-lg border border-black/[0.08] dark:border-white/[0.08] flex items-center justify-center text-gray-400 hover:text-[#DC2626] hover:border-[#DC2626] transition-colors">
                         <Edit2 size={12} />
                       </button>
                       <button onClick={() => handleToggleRole(role.id)}
@@ -229,8 +229,8 @@ export default function RollerPage() {
                                 {perms.map(p => {
                                   const checked = isEditing ? editingPerms.has(p.id) : role.permissions.some(rp => rp.id === p.id)
                                   return (
-                                    <label key={p.id} className={`flex items-center gap-2 p-2 rounded-lg border transition-colors ${isEditing ? 'cursor-pointer' : 'cursor-default'} ${checked ? 'border-[#F4821F] bg-orange-50 dark:bg-orange-500/10' : 'border-black/[0.06] dark:border-white/[0.06]'} ${isEditing && !checked ? 'hover:bg-gray-100 dark:hover:bg-white/[0.04]' : ''}`}>
-                                      <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors ${checked ? 'bg-[#F4821F] border-[#F4821F]' : 'border-gray-300 dark:border-gray-600'}`}>
+                                    <label key={p.id} className={`flex items-center gap-2 p-2 rounded-lg border transition-colors ${isEditing ? 'cursor-pointer' : 'cursor-default'} ${checked ? 'border-[#DC2626] bg-orange-50 dark:bg-orange-500/10' : 'border-black/[0.06] dark:border-white/[0.06]'} ${isEditing && !checked ? 'hover:bg-gray-100 dark:hover:bg-white/[0.04]' : ''}`}>
+                                      <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors ${checked ? 'bg-[#DC2626] border-[#DC2626]' : 'border-gray-300 dark:border-gray-600'}`}>
                                         {checked && <Check size={10} className="text-white" />}
                                       </div>
                                       {isEditing && (
@@ -254,7 +254,7 @@ export default function RollerPage() {
                             İptal
                           </button>
                           <button onClick={() => saveEdit(role.id)} disabled={saving}
-                            className="text-[12px] font-medium bg-[#F4821F] text-white px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
+                            className="text-[12px] font-medium bg-[#DC2626] text-white px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
                             {saving ? 'Kaydediliyor...' : 'Kaydet'}
                           </button>
                         </div>

@@ -137,7 +137,7 @@ export default function AdminUrunlerPage() {
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Package size={18} className="text-[#F4821F]" />
+                <Package size={18} className="text-[#DC2626]" />
                 <h1 className="text-[22px] font-bold tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
                   Ürün Yönetimi
                 </h1>
@@ -148,7 +148,7 @@ export default function AdminUrunlerPage() {
             </div>
             <div className="flex gap-2">
               <Link href="/admin/katalog/urunler/new"
-                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#F4821F] text-white hover:bg-[#e07010] transition-colors">
+                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#DC2626] text-white hover:bg-[#b91c1c] transition-colors">
                 <Plus size={14} />
                 Yeni Ürün
               </Link>
@@ -219,7 +219,7 @@ export default function AdminUrunlerPage() {
           {/* List */}
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={24} className="animate-spin text-[#DC2626]" />
             </div>
           ) : products.length === 0 ? (
             <div className="text-center py-16 rounded-2xl"
@@ -229,19 +229,19 @@ export default function AdminUrunlerPage() {
                 Henüz ürün yok
               </p>
               <p className="text-[12px] mb-4 max-w-md mx-auto" style={{ color: 'var(--text-muted)' }}>
-                Önce <Link href="/admin/katalog/kategoriler" className="text-[#F4821F] hover:underline">kategoriler</Link> ve
-                istersen <Link href="/admin/katalog/markalar" className="text-[#F4821F] hover:underline">markalar</Link> tanımla,
+                Önce <Link href="/admin/katalog/kategoriler" className="text-[#DC2626] hover:underline">kategoriler</Link> ve
+                istersen <Link href="/admin/katalog/markalar" className="text-[#DC2626] hover:underline">markalar</Link> tanımla,
                 sonra ürün eklemeye başla.
               </p>
               <Link href="/admin/katalog/urunler/new"
-                className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#F4821F] hover:underline">
+                className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#DC2626] hover:underline">
                 <Plus size={12} /> İlk ürünü oluştur
               </Link>
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-12 text-[13px]" style={{ color: 'var(--text-muted)' }}>
               Filtreyle eşleşen ürün bulunamadı.
-              <button onClick={clearFilters} className="ml-2 text-[#F4821F] hover:underline">
+              <button onClick={clearFilters} className="ml-2 text-[#DC2626] hover:underline">
                 Filtreleri temizle
               </button>
             </div>
@@ -270,7 +270,7 @@ export default function AdminUrunlerPage() {
                       {/* Top-left badges */}
                       <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
                         {p.featured && (
-                          <span className="w-7 h-7 rounded-full bg-[#F4821F] flex items-center justify-center shadow-md"
+                          <span className="w-7 h-7 rounded-full bg-[#DC2626] flex items-center justify-center shadow-md"
                             title="Öne çıkan">
                             <Star size={12} className="text-white fill-white" />
                           </span>

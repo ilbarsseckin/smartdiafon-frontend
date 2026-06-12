@@ -50,7 +50,7 @@ export default function Sektorler() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-12 md:px-6 md:pb-14">
       <div className="mb-6 md:mb-8">
-        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#F4821F] md:text-sm">
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#DC2626] md:text-sm">
           Çözüm Alanları
         </p>
 

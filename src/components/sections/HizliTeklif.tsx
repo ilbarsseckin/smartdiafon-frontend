@@ -113,9 +113,9 @@ export default function HizliTeklif() {
 
         <div className="flex items-center gap-2 mb-2">
           <span className="flex items-center justify-center w-7 h-7 rounded-lg" style={{ background: 'rgba(244,130,31,0.12)' }}>
-            <Zap size={15} style={{ color: '#F4821F' }} />
+            <Zap size={15} style={{ color: '#DC2626' }} />
           </span>
-          <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: '#F4821F' }}>
+          <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: '#DC2626' }}>
             Hızlı Teklif
           </span>
         </div>
@@ -148,7 +148,7 @@ export default function HizliTeklif() {
             <button onClick={handleHesapla}
               disabled={!daire || parseInt(daire) <= 0}
               className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.01] disabled:opacity-40 disabled:hover:scale-100"
-              style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)' }}>
+              style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
               <Calculator size={18} /> Sistemleri Karşılaştır <ArrowRight size={16} />
             </button>
             <p className="text-[11px] text-center" style={{ color: 'var(--text-muted)' }}>
@@ -161,14 +161,14 @@ export default function HizliTeklif() {
         {loading && (
           <div className="py-4">
             <div className="flex items-center gap-2 mb-3">
-              <Loader2 size={18} className="animate-spin" style={{ color: '#F4821F' }} />
+              <Loader2 size={18} className="animate-spin" style={{ color: '#DC2626' }} />
               <span className="text-[14px] font-bold" style={{ color: 'var(--text-primary)' }}>{aktifMesaj}</span>
             </div>
             <div className="h-2.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-secondary)' }}>
               <div className="h-full rounded-full transition-all duration-300"
-                style={{ width: `${progress}%`, background: 'linear-gradient(90deg,#F4821F,#ff9f47)' }} />
+                style={{ width: `${progress}%`, background: 'linear-gradient(90deg,#DC2626,#ff9f47)' }} />
             </div>
-            <p className="text-right text-[13px] font-black mt-2" style={{ color: '#F4821F' }}>%{progress}</p>
+            <p className="text-right text-[13px] font-black mt-2" style={{ color: '#DC2626' }}>%{progress}</p>
           </div>
         )}
 
@@ -183,16 +183,16 @@ export default function HizliTeklif() {
                   <div key={s.key} className="rounded-2xl p-4 relative"
                     style={{
                       background: 'var(--bg-secondary)',
-                      border: enUcuzMu ? '2px solid #F4821F' : '1px solid var(--border)',
+                      border: enUcuzMu ? '2px solid #DC2626' : '1px solid var(--border)',
                     }}>
                     {enUcuzMu && (
                       <span className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full text-[9px] font-black"
-                        style={{ background: '#F4821F', color: '#fff' }}>
+                        style={{ background: '#DC2626', color: '#fff' }}>
                         EN UYGUN
                       </span>
                     )}
                     <div className="flex items-center gap-2 mb-2">
-                      <Icon size={18} style={{ color: '#F4821F' }} />
+                      <Icon size={18} style={{ color: '#DC2626' }} />
                       <span className="text-[14px] font-black" style={{ color: 'var(--text-primary)' }}>{s.ad}</span>
                     </div>
                     <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded mb-3"
@@ -200,11 +200,11 @@ export default function HizliTeklif() {
                       <Cable size={10} /> {s.kablo}
                     </span>
                     <p className="text-[11px] mb-1" style={{ color: 'var(--text-muted)' }}>Yaklaşık başlangıç</p>
-                    <p className="text-xl font-black mb-3" style={{ color: '#F4821F' }}>{fmtTl(s.fiyat)}</p>
+                    <p className="text-xl font-black mb-3" style={{ color: '#DC2626' }}>{fmtTl(s.fiyat)}</p>
                     <button onClick={() => router.push(`/teklif?daire=${parseInt(daire)}&kapi=${parseInt(kapi)}&sistem=${s.key === 'linux' ? 'linux' : s.key}&auto=1`)}
                       className="w-full flex items-center justify-center gap-1 py-2.5 rounded-lg font-bold text-[12px] transition-all"
                       style={{
-                        background: enUcuzMu ? 'linear-gradient(135deg,#F4821F,#ff9f47)' : 'var(--bg-card)',
+                        background: enUcuzMu ? 'linear-gradient(135deg,#DC2626,#ff9f47)' : 'var(--bg-card)',
                         color: enUcuzMu ? '#fff' : 'var(--text-primary)',
                         border: enUcuzMu ? 'none' : '1px solid var(--border)',
                       }}>
@@ -219,7 +219,7 @@ export default function HizliTeklif() {
                 * Yaklaşık fiyatlar. Detaylı teklif için sistem seçin.
               </p>
               <button onClick={reset}
-                className="text-[12px] font-bold transition-colors hover:text-[#F4821F]"
+                className="text-[12px] font-bold transition-colors hover:text-[#DC2626]"
                 style={{ color: 'var(--text-secondary)' }}>
                 ↺ Yeniden hesapla
               </button>

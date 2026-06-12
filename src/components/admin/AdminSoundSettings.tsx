@@ -78,7 +78,7 @@ export default function AdminSoundSettings() {
       <div className="flex items-center justify-between px-5 py-4"
         style={{ borderBottom: '1px solid var(--border)', background: 'rgba(244,130,31,0.04)' }}>
         <div className="flex items-center gap-2">
-          <Volume2 size={16} style={{ color: '#F4821F' }} />
+          <Volume2 size={16} style={{ color: '#DC2626' }} />
           <h3 className="text-[14px] font-bold" style={{ color: 'var(--text-primary)' }}>
             Yeni Sipariş Ses Bildirimi
           </h3>
@@ -106,7 +106,7 @@ export default function AdminSoundSettings() {
           style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
           <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
             style={{ background: hasCustom ? 'rgba(244,130,31,0.15)' : 'rgba(107,114,128,0.1)' }}>
-            <Music size={16} style={{ color: hasCustom ? '#F4821F' : 'var(--text-muted)' }} />
+            <Music size={16} style={{ color: hasCustom ? '#DC2626' : 'var(--text-muted)' }} />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-[13px] font-bold truncate" style={{ color: 'var(--text-primary)' }}>
@@ -118,7 +118,7 @@ export default function AdminSoundSettings() {
           </div>
           <button onClick={handleTest} disabled={testPlaying}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all"
-            style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.2)' }}>
+            style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626', border: '1px solid rgba(244,130,31,0.2)' }}>
             {testPlaying ? <Check size={13} /> : <Play size={13} />}
             {testPlaying ? 'Çalıyor...' : 'Test'}
           </button>
@@ -132,7 +132,7 @@ export default function AdminSoundSettings() {
           <div className="grid grid-cols-2 gap-2">
             <button onClick={() => fileInputRef.current?.click()} disabled={uploading}
               className="flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-bold transition-all hover:opacity-80"
-              style={{ background: 'linear-gradient(135deg,#F4821F,#e07010)', color: 'white' }}>
+              style={{ background: 'linear-gradient(135deg,#DC2626,#b91c1c)', color: 'white' }}>
               <Upload size={14} />
               {uploading ? 'Yükleniyor...' : 'Ses Yükle'}
             </button>

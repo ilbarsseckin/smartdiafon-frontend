@@ -30,7 +30,7 @@ const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   PENDING:    { label: 'Bekliyor',     color: '#F59E0B' },
   PAID:       { label: 'Ödendi',       color: '#3B82F6' },
   REVIEWING:  { label: 'İncelemede',   color: '#8B5CF6' },
-  PRINTING:   { label: 'Baskıda',      color: '#F4821F' },
+  PRINTING:   { label: 'Baskıda',      color: '#DC2626' },
   SHIPPED:    { label: 'Kargoda',      color: '#06B6D4' },
   COMPLETED:  { label: 'Tamamlandı',   color: '#10B981' },
   CANCELLED:  { label: 'İptal',        color: '#EF4444' },
@@ -80,7 +80,7 @@ export default function AdminDashboard() {
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={28} className="animate-spin text-[#DC2626]" />
             </div>
           ) : error || !stats ? (
             <div className="text-center py-20 rounded-2xl"
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
                   value={tl(stats.monthRevenue)}
                   sub={`${stats.monthOrders} sipariş`}
                   icon={ShoppingBag}
-                  color="#F4821F" />
+                  color="#DC2626" />
                 <KpiCard
                   label="Bekleyen İşlem"
                   value={stats.pendingActionsCount.toString()}
@@ -189,7 +189,7 @@ export default function AdminDashboard() {
                     </p>
                     <Link href="/admin/siparisler"
                       className="text-[11px] font-bold flex items-center gap-1 hover:underline"
-                      style={{ color: '#F4821F' }}>
+                      style={{ color: '#DC2626' }}>
                       Tümü <ArrowUpRight size={11} />
                     </Link>
                   </div>
@@ -249,7 +249,7 @@ export default function AdminDashboard() {
                         <div key={p.slug} className="flex items-center gap-3">
                           <div className="w-7 h-7 rounded-lg flex items-center justify-center text-[11px] font-black flex-shrink-0"
                             style={{
-                              background: i === 0 ? '#F4821F' : 'var(--bg-secondary)',
+                              background: i === 0 ? '#DC2626' : 'var(--bg-secondary)',
                               color: i === 0 ? 'white' : 'var(--text-muted)',
                               border: '1px solid var(--border)'
                             }}>
@@ -319,7 +319,7 @@ function Last7DaysChart({ data }: { data: { date: string; orders: number; revenu
                 style={{
                   height: `${Math.max(h, 4)}%`,
                   background: d.revenue > 0
-                    ? 'linear-gradient(180deg, #F4821F 0%, #F4821F80 100%)'
+                    ? 'linear-gradient(180deg, #DC2626 0%, #DC262680 100%)'
                     : 'var(--bg-secondary)',
                 }} />
             </div>

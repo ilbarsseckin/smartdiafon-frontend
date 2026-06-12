@@ -150,14 +150,14 @@ function OdemeKatalogContent() {
               Siparişiniz alındı, üretim sürecine aktarılıyor.
             </p>
             <p className="text-[13px] mb-6" style={{ color: 'var(--text-muted)' }}>
-              Sipariş no: <code className="font-mono font-bold" style={{ color: '#F4821F' }}>
+              Sipariş no: <code className="font-mono font-bold" style={{ color: '#DC2626' }}>
                 {order.orderNumber}
               </code>
             </p>
             <div className="space-y-3">
               <Link href={`/siparis/${order.orderNumber}`}
                 className="flex items-center justify-center gap-2 w-full py-3 text-[14px] font-bold text-white rounded-xl"
-                style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
                 <Truck size={15} /> Siparişimi Takip Et
               </Link>
               <Link href="/urunler"
@@ -180,7 +180,7 @@ function OdemeKatalogContent() {
       <>
         <Navbar />
         <main className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] flex items-center justify-center">
-          <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={28} className="animate-spin text-[#DC2626]" />
         </main>
       </>
     )
@@ -238,7 +238,7 @@ function OdemeKatalogContent() {
                     {order.items.length} katalog ürünü
                   </p>
                 </div>
-                <p className="text-[22px] font-medium text-[#F4821F]">
+                <p className="text-[22px] font-medium text-[#DC2626]">
                   ₺{Number(order.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                 </p>
               </div>
@@ -280,7 +280,7 @@ function OdemeKatalogContent() {
               <input type="text" placeholder="AD SOYAD"
                 value={card.holderName}
                 onChange={e => setCard(c => ({ ...c, holderName: e.target.value.toUpperCase() }))}
-                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors" />
+                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors" />
               {errors.holderName && <p className="text-[11px] text-red-500 mt-1">{errors.holderName}</p>}
             </div>
 
@@ -291,7 +291,7 @@ function OdemeKatalogContent() {
               <input type="text" inputMode="numeric" placeholder="0000 0000 0000 0000"
                 value={card.number}
                 onChange={e => setCard(c => ({ ...c, number: formatCardNumber(e.target.value) }))}
-                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors tracking-widest font-mono" />
+                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors tracking-widest font-mono" />
               {errors.number && <p className="text-[11px] text-red-500 mt-1">{errors.number}</p>}
             </div>
 
@@ -301,7 +301,7 @@ function OdemeKatalogContent() {
                 <input type="text" inputMode="numeric" placeholder="MM" maxLength={2}
                   value={card.expireMonth}
                   onChange={e => setCard(c => ({ ...c, expireMonth: e.target.value.replace(/\D/g, '') }))}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors text-center" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors text-center" />
                 {errors.expireMonth && <p className="text-[11px] text-red-500 mt-1">{errors.expireMonth}</p>}
               </div>
               <div>
@@ -309,7 +309,7 @@ function OdemeKatalogContent() {
                 <input type="text" inputMode="numeric" placeholder="YY" maxLength={2}
                   value={card.expireYear}
                   onChange={e => setCard(c => ({ ...c, expireYear: e.target.value.replace(/\D/g, '') }))}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors text-center" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors text-center" />
                 {errors.expireYear && <p className="text-[11px] text-red-500 mt-1">{errors.expireYear}</p>}
               </div>
               <div>
@@ -317,7 +317,7 @@ function OdemeKatalogContent() {
                 <input type="password" inputMode="numeric" placeholder="•••" maxLength={4}
                   value={card.cvc}
                   onChange={e => setCard(c => ({ ...c, cvc: e.target.value.replace(/\D/g, '') }))}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors text-center" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors text-center" />
                 {errors.cvc && <p className="text-[11px] text-red-500 mt-1">{errors.cvc}</p>}
               </div>
             </div>
@@ -330,7 +330,7 @@ function OdemeKatalogContent() {
             </div>
 
             <button onClick={handleSubmit} disabled={paymentLoading}
-              className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3.5 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2">
+              className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3.5 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2">
               {paymentLoading
                 ? <><Loader2 size={16} className="animate-spin" /> Ödeme başlatılıyor...</>
                 : order

@@ -106,15 +106,15 @@ export default function BayilikPage() {
         <section className="relative overflow-hidden py-24"
           style={{ background: 'linear-gradient(135deg, #0a0c14 0%, #151b2e 100%)' }}>
           <div className="absolute inset-0 opacity-20"
-            style={{ backgroundImage: 'radial-gradient(circle at 15% 50%, #F4821F 0%, transparent 55%), radial-gradient(circle at 85% 30%, #3B82F6 0%, transparent 55%)' }} />
+            style={{ backgroundImage: 'radial-gradient(circle at 15% 50%, #DC2626 0%, transparent 55%), radial-gradient(circle at 85% 30%, #3B82F6 0%, transparent 55%)' }} />
           <div className="relative max-w-4xl mx-auto px-6 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-[11px] font-bold tracking-[2px] uppercase"
-              style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.25)' }}>
-              <Star size={10} fill="#F4821F" /> Bayi Programı 2025
+              style={{ background: 'rgba(244,130,31,0.12)', color: '#DC2626', border: '1px solid rgba(244,130,31,0.25)' }}>
+              <Star size={10} fill="#DC2626" /> Bayi Programı 2025
             </div>
             <h1 className="text-[56px] font-black text-white leading-[1.05] tracking-[-2.5px] mb-5">
               Bayimiz Olun,<br />
-              <span className="text-[#F4821F]">Birlikte Büyüyelim</span>
+              <span className="text-[#DC2626]">Birlikte Büyüyelim</span>
             </h1>
             <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
               Türkiye'nin önde gelen matbaasının yetkili bayisi olun.
@@ -122,7 +122,7 @@ export default function BayilikPage() {
             </p>
             <div className="flex items-center justify-center gap-4">
               <a href="#basvuru"
-                className="inline-flex items-center gap-2 bg-[#F4821F] text-white font-bold text-[14px] px-8 py-3.5 rounded-xl hover:bg-[#e07010] transition-all hover:scale-105">
+                className="inline-flex items-center gap-2 bg-[#DC2626] text-white font-bold text-[14px] px-8 py-3.5 rounded-xl hover:bg-[#b91c1c] transition-all hover:scale-105">
                 Hemen Başvur <ArrowRight size={15} />
               </a>
               <a href="#iskonto"
@@ -142,7 +142,7 @@ export default function BayilikPage() {
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
                   style={{ background: 'rgba(244,130,31,0.1)' }}>
-                  <a.icon size={20} className="text-[#F4821F]" />
+                  <a.icon size={20} className="text-[#DC2626]" />
                 </div>
                 <p className="text-[14px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>{a.title}</p>
                 <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-muted)' }}>{a.desc}</p>
@@ -180,7 +180,7 @@ export default function BayilikPage() {
                     style={{
                       background: isAktif ? 'rgba(244,130,31,0.06)' : 'var(--bg-card)',
                       borderBottom: i < iskontoCedveli.length - 1 ? '1px solid var(--border)' : 'none',
-                      borderLeft: isAktif ? '3px solid #F4821F' : '3px solid transparent',
+                      borderLeft: isAktif ? '3px solid #DC2626' : '3px solid transparent',
                     }}>
                     <div className="text-[13px] font-medium" style={{ color: 'var(--text-primary)' }}>
                       {s.min.toLocaleString('tr-TR')} ₺
@@ -190,14 +190,14 @@ export default function BayilikPage() {
                       {s.aciklama}
                     </div>
                     <div className="text-center">
-                      <span className="text-[16px] font-black text-[#F4821F]">%{s.oran}</span>
+                      <span className="text-[16px] font-black text-[#DC2626]">%{s.oran}</span>
                     </div>
                     <div className="text-center text-[12px]" style={{ color: 'var(--text-secondary)' }}>
                       {s.vade}
                     </div>
                     <div className="text-right">
                       {isAktif
-                        ? <span className="text-[11px] font-bold text-[#F4821F] flex items-center justify-end gap-1"><Check size={12} /> Seviyeniz</span>
+                        ? <span className="text-[11px] font-bold text-[#DC2626] flex items-center justify-end gap-1"><Check size={12} /> Seviyeniz</span>
                         : <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>—</span>}
                     </div>
                   </div>
@@ -222,7 +222,7 @@ export default function BayilikPage() {
             {adimlar.map((a, i) => (
               <div key={i} className="text-center relative">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-[18px] font-black text-white shadow-lg"
-                  style={{ background: '#F4821F' }}>
+                  style={{ background: '#DC2626' }}>
                   {a.n}
                 </div>
                 <p className="text-[15px] font-bold mb-1.5" style={{ color: 'var(--text-primary)' }}>{a.title}</p>
@@ -255,7 +255,7 @@ export default function BayilikPage() {
                   Başvurunuzu hesabım sayfasından takip edebilirsiniz.
                 </p>
                 <div className="flex items-center justify-center gap-3">
-                  <Link href="/" className="text-[13px] font-medium text-[#F4821F] hover:underline">
+                  <Link href="/" className="text-[13px] font-medium text-[#DC2626] hover:underline">
                     Ana sayfaya dön
                   </Link>
                   <span style={{ color: 'var(--border)' }}>·</span>
@@ -282,7 +282,7 @@ export default function BayilikPage() {
                       </label>
                       <input value={form.companyName} onChange={e => f('companyName', e.target.value)}
                         placeholder="ABC Matbaa Ltd. Şti."
-                        className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#F4821F]/20"
+                        className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#DC2626]/20"
                         style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
                     </div>
                     <div>
@@ -391,9 +391,9 @@ export default function BayilikPage() {
                     {ciro > 0 && aktifSeviye && (
                       <div className="mt-3 flex items-center gap-3 px-4 py-3 rounded-xl"
                         style={{ background: 'rgba(244,130,31,0.08)', border: '1px solid rgba(244,130,31,0.2)' }}>
-                        <Percent size={16} className="text-[#F4821F] flex-shrink-0" />
+                        <Percent size={16} className="text-[#DC2626] flex-shrink-0" />
                         <div>
-                          <p className="text-[13px] font-bold text-[#F4821F]">
+                          <p className="text-[13px] font-bold text-[#DC2626]">
                             %{aktifSeviye.oran} iskonto — {aktifSeviye.aciklama}
                           </p>
                           <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
@@ -428,7 +428,7 @@ export default function BayilikPage() {
                     className="w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors mb-3"
                     style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}>
                     <div className="flex items-center gap-2">
-                      <Shield size={14} className="text-[#F4821F]" />
+                      <Shield size={14} className="text-[#DC2626]" />
                       <span className="text-[13px] font-medium">Bayilik Sözleşmesi ve Şartları</span>
                     </div>
                     {sartlarAcik ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -439,7 +439,7 @@ export default function BayilikPage() {
                       style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-secondary)', maxHeight: 260, overflowY: 'auto' }}>
                       {sartlar.map((s, i) => (
                         <div key={i} className="flex items-start gap-2">
-                          <span className="font-bold text-[#F4821F] flex-shrink-0 mt-0.5">{i + 1}.</span>
+                          <span className="font-bold text-[#DC2626] flex-shrink-0 mt-0.5">{i + 1}.</span>
                           <span>{s}</span>
                         </div>
                       ))}
@@ -453,8 +453,8 @@ export default function BayilikPage() {
                         onClick={() => setSartlarOnaylandi(v => !v)}
                         className="mt-0.5 w-5 h-5 rounded flex items-center justify-center flex-shrink-0 transition-colors cursor-pointer"
                         style={{
-                          background: sartlarOnaylandi ? '#F4821F' : 'var(--bg-secondary)',
-                          border: `2px solid ${sartlarOnaylandi ? '#F4821F' : 'var(--border-strong)'}`,
+                          background: sartlarOnaylandi ? '#DC2626' : 'var(--bg-secondary)',
+                          border: `2px solid ${sartlarOnaylandi ? '#DC2626' : 'var(--border-strong)'}`,
                         }}>
                         {sartlarOnaylandi && <Check size={12} className="text-white" />}
                       </div>
@@ -468,8 +468,8 @@ export default function BayilikPage() {
                         onClick={() => setKvkkOnaylandi(v => !v)}
                         className="mt-0.5 w-5 h-5 rounded flex items-center justify-center flex-shrink-0 transition-colors cursor-pointer"
                         style={{
-                          background: kvkkOnaylandi ? '#F4821F' : 'var(--bg-secondary)',
-                          border: `2px solid ${kvkkOnaylandi ? '#F4821F' : 'var(--border-strong)'}`,
+                          background: kvkkOnaylandi ? '#DC2626' : 'var(--bg-secondary)',
+                          border: `2px solid ${kvkkOnaylandi ? '#DC2626' : 'var(--border-strong)'}`,
                         }}>
                         {kvkkOnaylandi && <Check size={12} className="text-white" />}
                       </div>
@@ -492,7 +492,7 @@ export default function BayilikPage() {
 
                 <button type="submit"
                   disabled={loading || !sartlarOnaylandi || !kvkkOnaylandi}
-                  className="w-full bg-[#F4821F] text-white font-bold text-[14px] py-4 rounded-xl hover:bg-[#e07010] transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                  className="w-full bg-[#DC2626] text-white font-bold text-[14px] py-4 rounded-xl hover:bg-[#b91c1c] transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                   {loading
                     ? <><Loader2 size={16} className="animate-spin" /> Gönderiliyor...</>
                     : <>Başvuruyu Gönder — Onaya Sun <ArrowRight size={15} /></>}

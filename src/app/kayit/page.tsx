@@ -1,4 +1,4 @@
-ï»¿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -20,10 +20,10 @@ export default function KayitPage() {
       const res = await authApi.register(data)
       const { token, email, name, role } = res.data.data
       setAuth({ id: '', name, email, role }, token)
-      toast.success('KayÄ±t baÅŸarÄ±lÄ±!')
+      toast.success('Kayıt başarılı!')
       router.push('/')
     } catch (err: any) {
-      toast.error(err.response?.data?.message || 'KayÄ±t baÅŸarÄ±sÄ±z')
+      toast.error(err.response?.data?.message || 'Kayıt başarısız')
     }
   }
 
@@ -33,20 +33,20 @@ export default function KayitPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-9 h-9 rounded-xl bg-gray-900 dark:bg-gray-100 flex items-center justify-center">
-              <Printer size={18} className="text-[#F4821F]" />
+              <Printer size={18} className="text-[#DC2626]" />
             </div>
            <Logo className="h-7" />
           </Link>
-          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesap oluÅŸturun</h1>
-          <p className="text-[13px] text-gray-400 mt-1.5">Ãœcretsiz kayÄ±t, hemen sipariÅŸ verin</p>
+          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesap oluşturun</h1>
+          <p className="text-[13px] text-gray-400 mt-1.5">Ücretsiz kayıt, hemen sipariş verin</p>
         </div>
 
         <div className="bg-white dark:bg-[#141414] border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {[
-              { key: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet YÄ±lmaz', required: true },
+              { key: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yılmaz', required: true },
               { key: 'email', label: 'E-posta', type: 'email', placeholder: 'ornek@mail.com', required: true },
-              { key: 'password', label: 'Åifre', type: 'password', placeholder: 'En az 6 karakter', required: true, minLength: 6 },
+              { key: 'password', label: 'Şifre', type: 'password', placeholder: 'En az 6 karakter', required: true, minLength: 6 },
               { key: 'phone', label: 'Telefon (opsiyonel)', type: 'tel', placeholder: '05001234567', required: false },
             ].map(f => (
               <div key={f.key}>
@@ -56,21 +56,21 @@ export default function KayitPage() {
                     required: f.required ? `${f.label} zorunlu` : false,
                     ...(f.minLength ? { minLength: { value: f.minLength, message: `En az ${f.minLength} karakter` } } : {})
                   })}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626] transition-colors" />
                 {errors[f.key as keyof Form] && <p className="text-[11px] text-red-500 mt-1">{errors[f.key as keyof Form]?.message as string}</p>}
               </div>
             ))}
 
             <button type="submit" disabled={isSubmitting}
-              className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
-              {isSubmitting ? 'KayÄ±t olunuyor...' : 'KayÄ±t ol'}
+              className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
+              {isSubmitting ? 'Kayıt olunuyor...' : 'Kayıt ol'}
             </button>
           </form>
         </div>
 
         <p className="text-center text-[12px] text-gray-400 mt-4">
-          Zaten hesabÄ±nÄ±z var mÄ±?{' '}
-          <Link href="/giris" className="text-[#F4821F] hover:underline">GiriÅŸ yapÄ±n</Link>
+          Zaten hesabınız var mı?{' '}
+          <Link href="/giris" className="text-[#DC2626] hover:underline">Giriş yapın</Link>
         </p>
       </div>
     </div>

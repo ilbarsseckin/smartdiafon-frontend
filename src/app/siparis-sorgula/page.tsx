@@ -45,7 +45,7 @@ export default function SiparisSorgulaPage() {
           <div className="text-center mb-8">
             <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
               style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.2)' }}>
-              <Package size={28} style={{ color: '#F4821F' }} />
+              <Package size={28} style={{ color: '#DC2626' }} />
             </div>
             <h1 className="text-[26px] font-black tracking-[-0.5px]"
               style={{ color: 'var(--text-primary)' }}>
@@ -79,7 +79,7 @@ export default function SiparisSorgulaPage() {
                     border: error
                       ? '1.5px solid #EF4444'
                       : orderNumber
-                        ? '1.5px solid #F4821F'
+                        ? '1.5px solid #DC2626'
                         : '1px solid var(--border)',
                     color: 'var(--text-primary)',
                   }}
@@ -99,7 +99,7 @@ export default function SiparisSorgulaPage() {
                 type="submit"
                 disabled={!orderNumber.trim() || loading}
                 className="mt-4 w-full flex items-center justify-center gap-2 py-3 text-[14px] font-bold text-white rounded-xl disabled:opacity-50 transition-opacity"
-                style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                style={{ background: 'linear-gradient(135deg, #DC2626, #b91c1c)' }}>
                 {loading
                   ? <Loader2 size={16} className="animate-spin" />
                   : <><Search size={15} /> Sorgula <ArrowRight size={14} /></>
@@ -121,7 +121,7 @@ export default function SiparisSorgulaPage() {
           {/* Üye girişi önerisi */}
           <p className="text-center text-[12px] mt-5" style={{ color: 'var(--text-muted)' }}>
             Üye iseniz{' '}
-            <a href="/hesabim" className="font-bold" style={{ color: '#F4821F' }}>
+            <a href="/hesabim" className="font-bold" style={{ color: '#DC2626' }}>
               hesabınızdan
             </a>
             {' '}tüm siparişlerinizi görebilirsiniz.

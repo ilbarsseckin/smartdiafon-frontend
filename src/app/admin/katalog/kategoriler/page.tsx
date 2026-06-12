@@ -144,17 +144,17 @@ function TreeNode({
         <div className="flex items-center gap-1 flex-shrink-0 opacity-60 group-hover:opacity-100 transition-opacity">
           <Link href={`/admin/katalog/kategoriler/${category.id}/oznitelikler`}
             title="Öznitelikleri yönet"
-            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#F4821F]"
+            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#DC2626]"
             style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>
             <Sliders size={12} />
           </Link>
           <button onClick={() => onAddChild(category)} title="Alt kategori ekle"
-            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#F4821F]"
+            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#DC2626]"
             style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>
             <Plus size={12} />
           </button>
           <button onClick={() => onEdit(category)} title="Düzenle"
-            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#F4821F]"
+            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#DC2626]"
             style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>
             <Edit2 size={12} />
           </button>
@@ -369,7 +369,7 @@ export default function AdminKategorilerPage() {
           <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <FolderTree size={18} className="text-[#F4821F]" />
+                <FolderTree size={18} className="text-[#DC2626]" />
                 <h1 className="text-[22px] font-bold tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
                   Kategori Yönetimi
                 </h1>
@@ -380,7 +380,7 @@ export default function AdminKategorilerPage() {
             </div>
             <div className="flex gap-2">
               <button onClick={openNew}
-                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#F4821F] text-white hover:bg-[#e07010] transition-colors">
+                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#DC2626] text-white hover:bg-[#b91c1c] transition-colors">
                 <Plus size={14} />
                 Yeni Kategori
               </button>
@@ -395,7 +395,7 @@ export default function AdminKategorilerPage() {
           {/* Tree */}
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={24} className="animate-spin text-[#DC2626]" />
             </div>
           ) : tree.length === 0 ? (
             <div className="text-center py-16 rounded-2xl"
@@ -408,7 +408,7 @@ export default function AdminKategorilerPage() {
                 Önce ürünleri gruplayabileceğin kategoriler oluştur (Kartvizit, Kaşe, Sticker vb.). Sonra her birine öznitelik ve ürün eklersin.
               </p>
               <button onClick={openNew}
-                className="text-[12px] font-bold text-[#F4821F] hover:underline">
+                className="text-[12px] font-bold text-[#DC2626] hover:underline">
                 + İlk kategoriyi oluştur
               </button>
             </div>
@@ -544,7 +544,7 @@ export default function AdminKategorilerPage() {
                   İptal
                 </button>
                 <button onClick={handleSave} disabled={saving}
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#DC2626] hover:bg-[#b91c1c] transition-colors disabled:opacity-50">
                   {saving
                     ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                     : <><Save size={14} /> {editId ? 'Güncelle' : 'Kaydet'}</>}

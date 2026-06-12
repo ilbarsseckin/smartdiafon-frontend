@@ -213,7 +213,7 @@ export default function AdminBayilerPage() {
 
             {loading ? (
               <div className="flex justify-center items-center py-16" style={{ background: 'var(--bg-card)' }}>
-                <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+                <Loader2 size={24} className="animate-spin text-[#DC2626]" />
               </div>
             ) : filtered.length === 0 ? (
               <div className="text-center py-14 text-[14px]"
@@ -288,7 +288,7 @@ export default function AdminBayilerPage() {
                             {st.label}
                           </div>
                           {d.status === 'APPROVED' && (
-                            <p className="text-[11px] font-bold text-[#F4821F]">%{d.discountRate} iskonto</p>
+                            <p className="text-[11px] font-bold text-[#DC2626]">%{d.discountRate} iskonto</p>
                           )}
                         </div>
 
@@ -299,7 +299,7 @@ export default function AdminBayilerPage() {
                           style={{
                             background: isExpanded ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)',
                             border: `1px solid ${isExpanded ? 'rgba(244,130,31,0.3)' : 'var(--border)'}`,
-                            color: isExpanded ? '#F4821F' : 'var(--text-muted)'
+                            color: isExpanded ? '#DC2626' : 'var(--text-muted)'
                           }}>
                           {isExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
                         </button>
@@ -324,7 +324,7 @@ export default function AdminBayilerPage() {
                               )}
                               {d.website && (
                                 <a href={d.website} target="_blank" rel="noreferrer"
-                                  className="flex items-center gap-1 text-[11px] text-[#F4821F] mt-1 hover:underline">
+                                  className="flex items-center gap-1 text-[11px] text-[#DC2626] mt-1 hover:underline">
                                   <Globe size={10} /> {d.website}
                                 </a>
                               )}
@@ -356,7 +356,7 @@ export default function AdminBayilerPage() {
                                       className="flex items-center justify-between text-[11px] px-2 py-1 rounded"
                                       style={{
                                         background: seviye.min === s.min ? 'rgba(244,130,31,0.1)' : 'transparent',
-                                        color: seviye.min === s.min ? '#F4821F' : 'var(--text-muted)',
+                                        color: seviye.min === s.min ? '#DC2626' : 'var(--text-muted)',
                                         fontWeight: seviye.min === s.min ? 700 : 400,
                                       }}>
                                       <span>{s.label}</span>
@@ -380,7 +380,7 @@ export default function AdminBayilerPage() {
                                   value={e.discount}
                                   onChange={ev => setEdit(d.id, 'discount', ev.target.value)}
                                   className="flex-1 px-3 py-2 text-[13px] font-bold rounded-lg outline-none"
-                                  style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: '#F4821F' }} />
+                                  style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: '#DC2626' }} />
                                 {/* Hızlı seç */}
                                 <div className="flex gap-1">
                                   {[5, 8, 12, 15, 20].map(v => (
@@ -388,7 +388,7 @@ export default function AdminBayilerPage() {
                                       onClick={() => setEdit(d.id, 'discount', String(v))}
                                       className="w-7 h-9 text-[10px] font-bold rounded transition-colors"
                                       style={{
-                                        background: e.discount === String(v) ? '#F4821F' : 'var(--bg-card)',
+                                        background: e.discount === String(v) ? '#DC2626' : 'var(--bg-card)',
                                         color: e.discount === String(v) ? 'white' : 'var(--text-muted)',
                                         border: '1px solid var(--border)',
                                       }}>
@@ -400,7 +400,7 @@ export default function AdminBayilerPage() {
                               {ciro > 0 && (
                                 <button type="button"
                                   onClick={() => setEdit(d.id, 'discount', String(seviye.oran))}
-                                  className="mt-1.5 text-[10px] text-[#F4821F] hover:underline">
+                                  className="mt-1.5 text-[10px] text-[#DC2626] hover:underline">
                                   Önerilen: %{seviye.oran} ({seviye.label}) uygula
                                 </button>
                               )}
@@ -472,7 +472,7 @@ export default function AdminBayilerPage() {
                               <button onClick={() => save(d)}
                                 disabled={!!actionLoading}
                                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold text-white transition-all hover:scale-105 disabled:opacity-50"
-                                style={{ background: '#F4821F' }}>
+                                style={{ background: '#DC2626' }}>
                                 {actionLoading === d.id + '-save'
                                   ? <Loader2 size={14} className="animate-spin" />
                                   : <Settings2 size={14} />}

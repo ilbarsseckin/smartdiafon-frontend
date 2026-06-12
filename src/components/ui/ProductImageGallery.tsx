@@ -196,7 +196,7 @@ export default function ProductImageGallery({ images, productName, onZoomClick }
               onClick={() => setActiveIdx(i)}
               className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden transition-all"
               style={{
-                border: i === activeIdx ? '2px solid #F4821F' : '2px solid var(--border)',
+                border: i === activeIdx ? '2px solid #DC2626' : '2px solid var(--border)',
                 opacity: i === activeIdx ? 1 : 0.65,
                 background: 'var(--bg-secondary)',
               }}

@@ -14,7 +14,7 @@ export default function FabrikaSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div>
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Fabrika</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">Fabrika</p>
             <h2 className="text-[32px] font-bold tracking-[-1px]"
               style={{ color: 'var(--text-primary)', fontFamily: 'Georgia, serif' }}>
               Fabrikadan kareler
@@ -23,7 +23,7 @@ export default function FabrikaSection() {
               1200 m² üretim alanı, 24 çalışan
             </p>
           </div>
-          <span className="text-[12px] font-semibold text-[#F4821F] cursor-pointer hover:underline">
+          <span className="text-[12px] font-semibold text-[#DC2626] cursor-pointer hover:underline">
             Galeriyi gör →
           </span>
         </div>

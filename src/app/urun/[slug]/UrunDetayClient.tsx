@@ -145,6 +145,35 @@ export function UrunDetayClient() {
   const hasOriginal = product.originalPrice && (selectedTier?.priceUsd || 0) > 0
     && Number(product.originalPrice) > Number(selectedTier?.priceUsd)
   const originalTl = product.originalPrice ? Number(product.originalPrice) * kur * KDV_RATE : 0
+  const discountPct = hasOriginal && selectedTier
+    ? Math.round((1 - Number(selectedTier.priceUsd) / Number(product.originalPrice)) * 100)
+    : 0
+
+  // Attribute key/label'lardan otomatik ozellik badge listesi
+  const ATTR_BADGES: Record<string, { label: string; color: string }> = {
+    wifi: { label: 'WiFi', color: '#2563EB' },
+    wireless: { label: 'WiFi', color: '#2563EB' },
+    'ip ': { label: 'IP', color: '#7C3AED' },
+    poe: { label: 'PoE', color: '#0891B2' },
+    'hd ': { label: 'HD', color: '#16A34A' },
+    '4k': { label: '4K', color: '#16A34A' },
+    fhd: { label: 'FHD', color: '#16A34A' },
+    linux: { label: 'Linux', color: '#374151' },
+    android: { label: 'Android', color: '#16A34A' },
+    touchscreen: { label: 'Dokunmatik', color: '#DB2777' },
+    rfid: { label: 'RFID', color: '#D97706' },
+    gsm: { label: 'GSM', color: '#DC2626' },
+    '4g': { label: '4G', color: '#DC2626' },
+    sip: { label: 'SIP', color: '#0891B2' },
+    video: { label: 'Video', color: '#7C3AED' },
+  }
+  const attrBadges = Array.from(new Set(
+    product.attributes.flatMap(attr => {
+      const key = (attr.attrKey || '').toLowerCase()
+      const lbl = (attr.label || '').toLowerCase()
+      return Object.keys(ATTR_BADGES).filter(k => key.includes(k.trim()) || lbl.includes(k.trim()))
+    })
+  )).slice(0, 5).map(k => ATTR_BADGES[k])
   const deliveryStr = calculateDeliveryDate()
 
   const requiredAttrs = product.attributes.filter(a =>
@@ -263,9 +292,21 @@ export function UrunDetayClient() {
               </h1>
 
               {product.shortDesc && (
-                <p className="text-[13px] mb-5 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-[13px] mb-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {product.shortDesc}
                 </p>
+              )}
+
+              {/* Özellik badge'leri — attribute'lardan otomatik */}
+              {attrBadges.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {attrBadges.map((b, i) => (
+                    <span key={i} className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold"
+                      style={{ background: b.color + '18', color: b.color, border: '1px solid ' + b.color + '40' }}>
+                      {b.label}
+                    </span>
+                  ))}
+                </div>
               )}
 
               <div className="space-y-3">
@@ -388,7 +429,15 @@ export function UrunDetayClient() {
             <div className="lg:col-span-3">
               <div className="lg:sticky lg:top-24 space-y-3">
                 <div className="rounded-2xl p-5" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-                  <p className="text-[10px] font-bold uppercase tracking-[1.5px] mb-1" style={{ color: 'var(--text-muted)' }}>Toplam Fiyat</p>
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-[10px] font-bold uppercase tracking-[1.5px]" style={{ color: 'var(--text-muted)' }}>Toplam Fiyat</p>
+                    {discountPct > 0 && (
+                      <span className="text-[11px] font-black px-2 py-0.5 rounded-full text-white"
+                        style={{ background: '#DC2626' }}>
+                        -%{discountPct}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>KDV Dahil</p>
                   <div className="my-3">
                     {hasOriginal && (

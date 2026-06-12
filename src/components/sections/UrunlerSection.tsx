@@ -66,7 +66,7 @@ function ProductCard({ p, kur }: { p: Product; kur: number }) {
           <div className="text-[9px] uppercase tracking-[1px] mb-0.5" style={{ color: 'var(--text-muted)' }}>
             {p.categoryName}
           </div>
-          <h3 className="text-[12px] sm:text-[13px] font-bold leading-tight line-clamp-2 group-hover:text-[#F4821F] transition-colors mb-2"
+          <h3 className="text-[12px] sm:text-[13px] font-bold leading-tight line-clamp-2 group-hover:text-[#DC2626] transition-colors mb-2"
             style={{ color: 'var(--text-primary)' }}>
             {p.name}
           </h3>
@@ -79,7 +79,7 @@ function ProductCard({ p, kur }: { p: Product; kur: number }) {
                   </span>
                 )}
                 <span className={`text-[15px] sm:text-[17px] font-black tracking-[-0.5px] ${hasOriginal ? 'text-red-500' : ''}`}
-                  style={!hasOriginal ? { color: '#F4821F' } : {}}>
+                  style={!hasOriginal ? { color: '#DC2626' } : {}}>
                   ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                 </span>
               </div>
@@ -138,7 +138,7 @@ export default function EnCokSatan() {
         <div className="flex items-center justify-between px-4 sm:px-6 mb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-2"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
               <Sparkles size={12} />
               <span className="text-[10px] font-bold uppercase tracking-[2px]">Öne Çıkan</span>
             </div>
@@ -198,7 +198,7 @@ export default function EnCokSatan() {
         <div className="px-4 sm:px-6 mt-2">
           <Link href="/urunler"
             className="inline-flex items-center gap-1.5 text-[12px] font-bold hover:underline"
-            style={{ color: '#F4821F' }}>
+            style={{ color: '#DC2626' }}>
             Tüm ürünleri gör →
           </Link>
         </div>

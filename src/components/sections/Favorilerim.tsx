@@ -48,12 +48,12 @@ function ProductCard({ product }: { product: Product }) {
             <p className="text-[9px] uppercase tracking-[1px] font-bold mb-0.5"
               style={{ color: 'var(--text-muted)' }}>{product.categoryName}</p>
           )}
-          <h3 className="text-[12px] sm:text-[13px] font-bold leading-tight line-clamp-2 group-hover:text-[#F4821F] transition-colors"
+          <h3 className="text-[12px] sm:text-[13px] font-bold leading-tight line-clamp-2 group-hover:text-[#DC2626] transition-colors"
             style={{ color: 'var(--text-primary)' }}>{product.name}</h3>
           {product.startingPriceUsd != null && (
             <div className="flex items-baseline gap-1 mt-2">
               <span className="text-[9px]" style={{ color: 'var(--text-muted)' }}>başlangıç</span>
-              <span className="text-[14px] font-black text-[#F4821F]">
+              <span className="text-[14px] font-black text-[#DC2626]">
                 ${Number(product.startingPriceUsd).toFixed(2)}
               </span>
             </div>
@@ -106,8 +106,8 @@ export default function Favorilerim() {
         <div className="flex items-center justify-between px-4 sm:px-6 mb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-2"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
-              <Heart size={11} fill="#F4821F" />
+              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+              <Heart size={11} fill="#DC2626" />
               <span className="text-[10px] font-bold uppercase tracking-[2px]">Favorilerim</span>
             </div>
             <h2 className="text-[22px] sm:text-[28px] font-black tracking-[-1px]"
@@ -136,7 +136,7 @@ export default function Favorilerim() {
         {/* Yatay kaydırma */}
         {loading ? (
           <div className="flex justify-center py-10">
-            <Loader2 size={20} className="animate-spin text-[#F4821F]" />
+            <Loader2 size={20} className="animate-spin text-[#DC2626]" />
           </div>
         ) : (
           <div className="relative">
@@ -161,7 +161,7 @@ export default function Favorilerim() {
           <div className="px-4 sm:px-6 mt-2">
             <Link href="/favorilerim"
               className="inline-flex items-center gap-1.5 text-[12px] font-bold hover:underline"
-              style={{ color: '#F4821F' }}>
+              style={{ color: '#DC2626' }}>
               Tümünü gör →
             </Link>
           </div>

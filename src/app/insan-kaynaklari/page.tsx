@@ -13,7 +13,7 @@ export default function InsanKaynaklariPage() {
     <>
       <Navbar />
       <main className="max-w-4xl mx-auto px-6 py-20">
-        <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">İnsan Kaynakları</p>
+        <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#DC2626] mb-3">İnsan Kaynakları</p>
         <h1 className="text-[40px] font-bold tracking-[-1px] mb-4"
           style={{ color: 'var(--text-primary)', fontFamily: 'Georgia, serif' }}>
           Ekibimize katılın
@@ -30,7 +30,7 @@ export default function InsanKaynaklariPage() {
                 <p className="text-[12px] mt-0.5" style={{ color: 'var(--text-muted)' }}>{p.dept} · {p.type}</p>
               </div>
               <a href={`mailto:ik@baskiurunleri.com?subject=${p.title} Başvurusu`}
-                className="text-[12px] font-bold bg-[#F4821F] text-white px-5 py-2.5 rounded-xl hover:bg-[#e07010] transition-colors">
+                className="text-[12px] font-bold bg-[#DC2626] text-white px-5 py-2.5 rounded-xl hover:bg-[#b91c1c] transition-colors">
                 Başvur
               </a>
             </div>

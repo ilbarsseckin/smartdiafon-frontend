@@ -31,7 +31,7 @@ function FailedContent() {
             {orderId && (
               <button
                 onClick={() => router.push(`/odeme?siparisId=${orderId}`)}
-                className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-xl hover:opacity-90 transition-opacity"
+                className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3 rounded-xl hover:opacity-90 transition-opacity"
               >
                 Tekrar dene
               </button>

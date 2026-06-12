@@ -157,6 +157,9 @@ export default function KatalogKategoriPage() {
                 const priceTl = p.minPriceUsd ? Number(p.minPriceUsd) * kur : 0
                 const hasOriginal = p.originalPrice && p.minPriceUsd
                   && Number(p.originalPrice) > Number(p.minPriceUsd)
+                const discountPct = hasOriginal
+                  ? Math.round((1 - Number(p.minPriceUsd) / Number(p.originalPrice)) * 100)
+                  : 0
                 return (
                   <Link key={p.id} href={`/urun/${p.slug}`}
                     className="group block">
@@ -195,6 +198,12 @@ export default function KatalogKategoriPage() {
                               boxShadow: '0 2px 8px rgba(239,68,68,0.4)',
                             }}>
                             ⚡ {p.badge}
+                          </span>
+                        )}
+                        {!p.badge && discountPct > 0 && (
+                          <span className="absolute top-3 left-3 text-[10px] font-black px-2 py-1 rounded text-white"
+                            style={{ background: '#DC2626' }}>
+                            -%{discountPct}
                           </span>
                         )}
                       </div>

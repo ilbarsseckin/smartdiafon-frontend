@@ -27,14 +27,14 @@ const badges = [
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-        <path d="M5 16h14v-8H5v8zM19 16h4l-2-6h-2v6z" stroke="#F4821F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="9" cy="19" r="2" stroke="#F4821F" strokeWidth="1.5"/>
-        <circle cx="20" cy="19" r="2" stroke="#F4821F" strokeWidth="1.5"/>
+        <path d="M5 16h14v-8H5v8zM19 16h4l-2-6h-2v6z" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="9" cy="19" r="2" stroke="#DC2626" strokeWidth="1.5"/>
+        <circle cx="20" cy="19" r="2" stroke="#DC2626" strokeWidth="1.5"/>
       </svg>
     ),
     title: 'Hızlı Kargo',
     desc: 'Türkiye geneli teslimat',
-    color: '#F4821F',
+    color: '#DC2626',
   },
   {
     icon: (

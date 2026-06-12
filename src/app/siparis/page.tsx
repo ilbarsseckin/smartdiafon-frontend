@@ -124,7 +124,7 @@ const handleStep1 = async (data: Form) => {
               <div key={i} className="flex items-center gap-2">
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-medium transition-colors ${
                   i < step ? 'bg-emerald-500 text-white' :
-                  i === step ? 'bg-[#F4821F] text-white' :
+                  i === step ? 'bg-[#DC2626] text-white' :
                   'bg-black/[0.08] dark:bg-white/[0.08] text-gray-400'
                 }`}>
                   {i < step ? <Check size={12} /> : i + 1}
@@ -152,7 +152,7 @@ const handleStep1 = async (data: Form) => {
                   </label>
                   <select
                     {...register('productSlug', { required: true })}
-                    className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]"
+                    className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626]"
                   >
                     <option value="">Seçiniz...</option>
                     {products.map(p => (
@@ -172,7 +172,7 @@ const handleStep1 = async (data: Form) => {
                         type="number"
                         placeholder="100"
                         {...register('widthCm', { required: true, min: 1 })}
-                        className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]"
+                        className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626]"
                       />
                     </div>
                     <div>
@@ -183,7 +183,7 @@ const handleStep1 = async (data: Form) => {
                         type="number"
                         placeholder="50"
                         {...register('heightCm', { required: true, min: 1 })}
-                        className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]"
+                        className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626]"
                       />
                     </div>
                   </div>
@@ -198,7 +198,7 @@ const handleStep1 = async (data: Form) => {
                     type="number"
                     min="1"
                     {...register('quantity', { required: true, min: 1 })}
-                    className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]"
+                    className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#DC2626]"
                   />
                 </div>
 
@@ -219,7 +219,7 @@ const handleStep1 = async (data: Form) => {
                     <p className="text-[13px] text-gray-700 dark:text-gray-300 mb-1">
                       {price.priceBreakdown}
                     </p>
-                    <div className="text-[22px] font-medium text-[#F4821F] tracking-[-0.4px]">
+                    <div className="text-[22px] font-medium text-[#DC2626] tracking-[-0.4px]">
                       ₺{Number(price.totalPrice).toLocaleString('tr-TR', { minimumFractionDigits: 2 })}
                     </div>
                   </div>
@@ -227,7 +227,7 @@ const handleStep1 = async (data: Form) => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+                  className="w-full bg-[#DC2626] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                 >
                   {submitting ? 'Ekleniyor...' : 'Devam et →'}
                 </button>
@@ -244,7 +244,7 @@ const handleStep1 = async (data: Form) => {
                   <p className="text-[12px] text-gray-400 mb-4">
                     PDF, AI, EPS formatları kabul edilir. Maksimum 100 MB.
                   </p>
-                  <label className="block border-2 border-dashed border-black/[0.1] dark:border-white/[0.1] rounded-xl p-8 text-center cursor-pointer hover:border-[#F4821F] transition-colors">
+                  <label className="block border-2 border-dashed border-black/[0.1] dark:border-white/[0.1] rounded-xl p-8 text-center cursor-pointer hover:border-[#DC2626] transition-colors">
                     <Upload size={28} className="mx-auto mb-3 text-gray-300" />
                     <p className="text-[13px] font-medium text-gray-700 dark:text-gray-300 mb-1">
                       {file ? file.name : 'Dosyayı sürükle veya tıkla'}
@@ -269,7 +269,7 @@ const handleStep1 = async (data: Form) => {
                   <button
                     onClick={handleUpload}
                     disabled={uploadLoading || !file}
-                    className="flex-1 bg-[#F4821F] text-white text-[13px] font-medium py-2.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+                    className="flex-1 bg-[#DC2626] text-white text-[13px] font-medium py-2.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
                   >
                     {uploadLoading ? 'Yükleniyor...' : 'Yükle ve devam et →'}
                   </button>
@@ -303,7 +303,7 @@ const handleStep1 = async (data: Form) => {
                   </button>
                   <button
                     onClick={() => router.push('/sepet')}
-                    className="flex-1 bg-[#F4821F] text-white text-[13px] font-medium py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+                    className="flex-1 bg-[#DC2626] text-white text-[13px] font-medium py-2.5 rounded-lg hover:opacity-90 transition-opacity"
                   >
                     Sepete git →
                   </button>

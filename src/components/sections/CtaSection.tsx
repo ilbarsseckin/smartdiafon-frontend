@@ -4,7 +4,7 @@ import { ArrowRight, Phone } from 'lucide-react'
 export default function CtaSection() {
   return (
     <section className="px-4 md:px-6 pb-20 max-w-7xl mx-auto">
-      <div className="relative rounded-3xl overflow-hidden bg-[#F4821F] px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="relative rounded-3xl overflow-hidden bg-[#DC2626] px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="absolute inset-0 opacity-[0.08]"
           style={{
             backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)',
@@ -29,7 +29,7 @@ export default function CtaSection() {
             <span className="sm:hidden">Ara</span>
           </Link>
           <Link href="/urunler"
-            className="flex-1 md:flex-none group flex items-center justify-center gap-2 bg-white text-[#F4821F] text-[13px] font-bold px-5 py-3 rounded-xl hover:opacity-95 transition-opacity">
+            className="flex-1 md:flex-none group flex items-center justify-center gap-2 bg-white text-[#DC2626] text-[13px] font-bold px-5 py-3 rounded-xl hover:opacity-95 transition-opacity">
             Sipariş ver
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>

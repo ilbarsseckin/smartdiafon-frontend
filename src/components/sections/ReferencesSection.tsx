@@ -28,7 +28,7 @@ function LogoOrAvatar({ item: r, size, mode = 'square' }: {
 
   return (
     <div className="rounded-2xl flex items-center justify-center text-white font-black flex-shrink-0"
-      style={{ width: size, height: size, background: r.color || '#F4821F', fontSize: size * 0.32 }}>
+      style={{ width: size, height: size, background: r.color || '#DC2626', fontSize: size * 0.32 }}>
       {r.abbr || r.name.slice(0, 2).toUpperCase()}
     </div>
   )
@@ -101,7 +101,7 @@ export default function ReferencesSection() {
         {/* Alt link */}
         <div className="mt-8 flex justify-end">
           <a href="/iletisim"
-            className="flex items-center gap-2 text-[13px] font-bold text-[#F4821F] hover:gap-3 transition-all duration-200">
+            className="flex items-center gap-2 text-[13px] font-bold text-[#DC2626] hover:gap-3 transition-all duration-200">
             Siz de referanslarımız arasına katılın <ArrowRight size={14} />
           </a>
         </div>

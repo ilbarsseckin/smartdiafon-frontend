@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
             <Link href="/urunler"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white transition-all hover:scale-[1.02]"
-              style={{ background: 'linear-gradient(135deg,#F4821F,#ff9f47)' }}>
+              style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
               Ürünleri İncele
               <ArrowRight size={18} />
             </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                 <a key={i} href="#"
                   className="w-11 h-11 rounded-xl flex items-center justify-center transition-all hover:scale-105"
                   style={{ border: '1px solid var(--border)', background: 'var(--surface)' }}>
-                  <Icon size={18} color="#F4821F" />
+                  <Icon size={18} color="#DC2626" />
                 </a>
               ))}
             </div>
@@ -68,7 +68,7 @@ export default function Footer() {
               ].map(item => (
                 <li key={item.label}>
                   <Link href={`/katalog/${item.slug}`}
-                    className="text-sm transition-all hover:text-[#F4821F]"
+                    className="text-sm transition-all hover:text-[#DC2626]"
                     style={{ color: 'var(--text-muted)' }}>
                     {item.label}
                   </Link>
@@ -93,7 +93,7 @@ export default function Footer() {
               ].map(item => (
                 <li key={item.href}>
                   <Link href={item.href}
-                    className="text-sm transition-all hover:text-[#F4821F]"
+                    className="text-sm transition-all hover:text-[#DC2626]"
                     style={{ color: 'var(--text-muted)' }}>
                     {item.label}
                   </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
               ].map(item => (
                 <li key={item.href}>
                   <Link href={item.href}
-                    className="text-sm transition-all hover:text-[#F4821F]"
+                    className="text-sm transition-all hover:text-[#DC2626]"
                     style={{ color: 'var(--text-muted)' }}>
                     {item.label}
                   </Link>
@@ -138,11 +138,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <Phone size={18} />
-                <a href="tel:+902125555555" className="hover:text-[#F4821F]">+90 212 555 55 55</a>
+                <a href="tel:+902125555555" className="hover:text-[#DC2626]">+90 212 555 55 55</a>
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <Mail size={18} />
-                <a href="mailto:info@smartdiafon.com.tr" className="hover:text-[#F4821F]">
+                <a href="mailto:info@smartdiafon.com.tr" className="hover:text-[#DC2626]">
                   info@smartdiafon.com.tr
                 </a>
               </li>
@@ -157,16 +157,16 @@ export default function Footer() {
             © 2026 smartdiafon.com — Tüm hakları saklıdır.
           </span>
           <div className="flex flex-wrap justify-center gap-5">
-            <Link href="/iade-kosullari" className="text-xs hover:text-[#F4821F]" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/iade-kosullari" className="text-xs hover:text-[#DC2626]" style={{ color: 'var(--text-muted)' }}>
               İptal ve İade
             </Link>
-            <Link href="/gizlilik" className="text-xs hover:text-[#F4821F]" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/gizlilik" className="text-xs hover:text-[#DC2626]" style={{ color: 'var(--text-muted)' }}>
               Gizlilik Politikası
             </Link>
-            <Link href="/kullanim-sartlari" className="text-xs hover:text-[#F4821F]" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/kullanim-sartlari" className="text-xs hover:text-[#DC2626]" style={{ color: 'var(--text-muted)' }}>
               Kullanım Şartları
             </Link>
-            <Link href="/kvkk" className="text-xs hover:text-[#F4821F]" style={{ color: 'var(--text-muted)' }}>
+            <Link href="/kvkk" className="text-xs hover:text-[#DC2626]" style={{ color: 'var(--text-muted)' }}>
               KVKK
             </Link>
           </div>

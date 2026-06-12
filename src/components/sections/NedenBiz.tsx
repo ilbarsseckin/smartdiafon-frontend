@@ -9,7 +9,7 @@ interface USP {
 }
 
 const USPS: USP[] = [
-  { icon: Zap,             title: '48 Saatte Kapında',      desc: 'Onay sonrası hızlı üretim ve kargo. Acil işlerde 24 saat içinde teslim.',         color: '#F4821F' },
+  { icon: Zap,             title: '48 Saatte Kapında',      desc: 'Onay sonrası hızlı üretim ve kargo. Acil işlerde 24 saat içinde teslim.',         color: '#DC2626' },
   { icon: Sparkles,        title: 'Yüksek Kalite Baskı',    desc: 'Profesyonel makineler, premium kağıt, renk hassasiyeti.',                          color: '#8B5CF6' },
   { icon: CreditCard,      title: 'Güvenli Online Ödeme',   desc: 'Iyzico altyapısı, 3D Secure. Tüm kartlar ve havale ile ödeme.',                    color: '#16A34A' },
   { icon: Truck,           title: 'Türkiye\'nin Her Yerine', desc: 'Anlaşmalı kargo. 500₺ üstü siparişlerde kargo ücretsiz.',                          color: '#2563EB' },
@@ -41,7 +41,7 @@ export default function NedenBiz() {
         {/* Başlık */}
         <div className="text-center mb-10 md:mb-14">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] md:text-[11px] font-bold tracking-[1.5px] uppercase mb-3"
-            style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
+            style={{ background: 'rgba(244,130,31,0.12)', color: '#DC2626' }}>
             <ShieldCheck size={12} />
             NEDEN BİZ
           </span>

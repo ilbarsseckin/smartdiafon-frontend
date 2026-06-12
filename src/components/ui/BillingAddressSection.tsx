@@ -67,7 +67,7 @@ export default function BillingAddressSection({
 
       {/* Başlık */}
       <div className="flex items-center gap-2 mb-3">
-        <Receipt size={14} style={{ color: '#F4821F' }} />
+        <Receipt size={14} style={{ color: '#DC2626' }} />
         <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Fatura Bilgileri</p>
       </div>
 
@@ -76,7 +76,7 @@ export default function BillingAddressSection({
         style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
         <input type="checkbox" checked={sameBilling}
           onChange={e => onSameBillingChange(e.target.checked)}
-          className="accent-[#F4821F]" />
+          className="accent-[#DC2626]" />
         <div>
           <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>
             Teslimat adresi fatura adresi olarak kullanılsın
@@ -131,9 +131,9 @@ export default function BillingAddressSection({
         style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
         <input type="checkbox" checked={corporate}
           onChange={e => onCorporateChange(e.target.checked)}
-          className="accent-[#F4821F]" />
+          className="accent-[#DC2626]" />
         <div className="flex items-center gap-1.5">
-          <Building2 size={13} style={{ color: corporate ? '#F4821F' : 'var(--text-muted)' }} />
+          <Building2 size={13} style={{ color: corporate ? '#DC2626' : 'var(--text-muted)' }} />
           <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>
             Kurumsal fatura istiyorum
           </p>

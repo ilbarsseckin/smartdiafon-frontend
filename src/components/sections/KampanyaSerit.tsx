@@ -34,7 +34,7 @@ export default function KampanyaSerit() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 my-8 md:my-10">
       <div className="flex items-center gap-2 mb-4">
-        <Megaphone size={18} className="text-[#F4821F]" />
+        <Megaphone size={18} className="text-[#DC2626]" />
         <h2 className="text-[18px] sm:text-[22px] font-bold" style={{ color: 'var(--text-primary)' }}>
           Kampanyalar
         </h2>
@@ -79,7 +79,7 @@ function CampaignCard({ campaign }: { campaign: Campaign }) {
         {campaign.badgeText && (
           <span
             className="absolute top-3 left-3 text-[11px] font-bold px-3 py-1 rounded-full text-white shadow"
-            style={{ background: campaign.badgeColor || '#F4821F' }}
+            style={{ background: campaign.badgeColor || '#DC2626' }}
           >
             {campaign.badgeText}
           </span>
@@ -89,7 +89,7 @@ function CampaignCard({ campaign }: { campaign: Campaign }) {
       {/* İçerik */}
       <div className="p-4">
         {campaign.label && (
-          <p className="text-[10px] font-bold uppercase tracking-[1.5px] mb-1 text-[#F4821F]">
+          <p className="text-[10px] font-bold uppercase tracking-[1.5px] mb-1 text-[#DC2626]">
             {campaign.label}
           </p>
         )}
