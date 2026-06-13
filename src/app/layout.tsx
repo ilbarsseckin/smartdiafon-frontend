@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     siteName: 'Smartdiafon.com',
     title: 'Smartdiafon — Multitek Diyafon, İnterkom ve Güvenlik Sistemleri',
     description: 'Multitek diyafon, IP interkom, görüntülü interkom, yangın alarm ve güvenlik sistemleri. Yetkili satıcı, hızlı teslimat.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Smartdiafon.com' }],
+    images: [{ url: 'https://cdn.smartdiafon.com.tr/org-image.png', width: 1200, height: 630, alt: 'Smartdiafon.com' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Smartdiafon — Multitek Diyafon ve İnterkom Sistemleri',
     description: 'Multitek diyafon, IP interkom, yangın alarm ve güvenlik sistemleri.',
-    images: ['/og-image.png'],
+    images: ['https://cdn.smartdiafon.com.tr/org-image.png'],
   },
   robots: {
     index: true,

@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     siteName: 'smartdiafon.com',
     locale: 'tr_TR',
     type: 'website',
+    images: [{ url: 'https://cdn.smartdiafon.com.tr/org-image.png', width: 1200, height: 630, alt: 'Smartdiafon' }],
   },
   twitter: {
     card: 'summary_large_image',
