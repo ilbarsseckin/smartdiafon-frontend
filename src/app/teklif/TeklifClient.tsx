@@ -133,6 +133,8 @@ export default function TeklifClient() {
   const [adSoyad, setAdSoyad] = useState('')
   const [telefon, setTelefon] = useState('')
   const [eposta, setEposta] = useState('')
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
 
   // Adım 4 görünüm modu: kendi seçimi mi, otomatik paketler mi
   const [teklifMode, setTeklifMode] = useState<'kendi' | 'otomatik'>('otomatik')
@@ -847,15 +849,11 @@ export default function TeklifClient() {
                 style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
             </div>
             <div className="flex flex-wrap gap-3">
-              <button onClick={handleWhatsapp}
-                className="flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02]"
-                style={{ background: '#25D366' }}>
-                <MessageCircle size={18} /> WhatsApp ile Gönder
-              </button>
-              <button onClick={handleEposta}
-                className="flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-[14px] transition-all"
-                style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}>
-                <Mail size={18} /> E-posta ile Gönder
+              <button onClick={handleSendQuote} disabled={sending || sent}
+                className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02] disabled:opacity-60"
+                style={{ background: sent ? '#10B981' : 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+                {sending ? <Loader2 size={18} className="animate-spin" /> : sent ? <Check size={18} /> : <Zap size={18} />}
+                {sent ? 'Teklifiniz Alındı!' : sending ? 'Gönderiliyor...' : 'Teklifi Gönder'}
               </button>
               <button onClick={handlePrint}
                 className="flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-[14px] transition-all"
@@ -863,6 +861,11 @@ export default function TeklifClient() {
                 <Download size={18} /> PDF / Yazdır
               </button>
             </div>
+            {sent && (
+              <p className="text-[13px] mt-3 flex items-center gap-1.5" style={{ color: '#10B981' }}>
+                <Check size={15} /> Teklifiniz bize ulaştı. En kısa sürede sizinle iletişime geçeceğiz.
+              </p>
+            )}
           </div>
         </div>
       )}
@@ -915,14 +918,40 @@ export default function TeklifClient() {
     return lines.join('\n')
   }
 
-  function handleWhatsapp() {
-    const text = encodeURIComponent(buildSummaryText())
-    window.open(`https://wa.me/905550000000?text=${text}`, '_blank')
-  }
-  function handleEposta() {
-    const subject = encodeURIComponent('Smartdiafon Proje Teklifi')
-    const body = encodeURIComponent(buildSummaryText())
-    window.location.href = `mailto:info@smartdiafon.com.tr?subject=${subject}&body=${body}`
+  async function handleSendQuote() {
+    if (!adSoyad || !telefon) {
+      alert('Lütfen ad ve telefon bilgilerinizi girin.')
+      return
+    }
+    setSending(true)
+    try {
+      const aktifPaket = teklifMode === 'otomatik'
+        ? (paketler.find(p => p.rozet)?.label || 'Standart')
+        : 'Kendi Seçimi'
+      const products = teklifMode === 'kendi' ? seciliItems : (paketler.find(p => p.rozet)?.items || [])
+      const total = teklifMode === 'kendi' ? seciliTotal : (paketler.find(p => p.rozet)?.totalTl || 0)
+
+      await api.post('/api/quote-requests', {
+        name: adSoyad,
+        phone: telefon,
+        email: eposta || null,
+        city: sehir || null,
+        systemType: sistem,
+        infrastructure: altyapi,
+        apartmentCount: daire,
+        doorCount: kapi,
+        packageName: aktifPaket,
+        withDiafonBox: diafonBox,
+        wantInstallation: kurulumIstiyor,
+        productsJson: JSON.stringify(products.map(it => ({ name: it.name, qty: it.qty }))),
+        totalTl: total,
+      })
+      setSent(true)
+    } catch {
+      alert('Bir hata oluştu, lütfen tekrar deneyin.')
+    } finally {
+      setSending(false)
+    }
   }
   function handlePrint() {
     window.print()

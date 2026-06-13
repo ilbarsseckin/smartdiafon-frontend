@@ -302,6 +302,27 @@ export default function Navbar() {
           <div className="md:hidden absolute top-full left-0 right-0 shadow-lg z-50"
             style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border)' }}>
             <div className="p-4 space-y-3 max-h-[70vh] overflow-y-auto">
+              {/* Ana CTA butonları */}
+              <div className="space-y-2">
+                <Link href="/teklif" onClick={() => setMobileMenu(false)}
+                  className="flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl font-bold text-[13px] text-white"
+                  style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                  <span>✨</span> Ücretsiz Teklif Al
+                </Link>
+                <div className="grid grid-cols-2 gap-2">
+                  <Link href="/kurulum-ekibi" onClick={() => setMobileMenu(false)}
+                    className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl font-bold text-[12px]"
+                    style={{ border: '1.5px solid #F4821F', color: '#F4821F' }}>
+                    <span>🔧</span> Kurulum Ekibi
+                  </Link>
+                  <Link href="/uyumluluk" onClick={() => setMobileMenu(false)}
+                    className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl font-bold text-[12px] text-white"
+                    style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                    <span>🔍</span> Uyumluluk Testi
+                  </Link>
+                </div>
+              </div>
+
               <Link href="/hesabim" onClick={() => setMobileMenu(false)}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl"
                 style={{ background: 'var(--bg-secondary)' }}>
