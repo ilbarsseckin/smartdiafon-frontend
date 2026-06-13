@@ -5,7 +5,7 @@ import api from '@/lib/api'
 import {
   Cable, Building2, Cpu, FileText, ChevronRight, ChevronLeft,
   Check, Star, Phone, Mail, Download, MessageCircle, Loader2,
-  Plus, Minus, Info, MapPin, Zap
+  Plus, Minus, Info, MapPin, Zap, Smartphone
 } from 'lucide-react'
 
 /* ---------- Tipler ---------- */
@@ -39,6 +39,7 @@ const SLUG_MONITOR = 'multibus-ev-ici-monitor'
 const SLUG_PANEL = 'multibus-kapi-paneli'
 const SLUG_GUVENLIK = 'multibus-guvenlik'
 const SLUG_DIAFONBOX = 'multibus-diafonbox'
+const SLUG_AKILLI_DIAFON = 'multibus-akilli-diafon'
 
 /* ---------- IP kategori slug'ları ---------- */
 const SLUG_IP_MONITOR = 'ev-ici-monitor'
@@ -287,6 +288,10 @@ export default function TeklifClient() {
   }, [monitorler, paneller, sistem, monitorId, panelId])
 
   /* ---- DiafonBox seç (daireye göre) ---- */
+  const akilliDiafon = useMemo(() =>
+    products.find(p => p.categorySlug === SLUG_AKILLI_DIAFON),
+  [products])
+
   function pickDiafonBox(): ApiProduct | undefined {
     if (daire <= 30) return dbMini
     return dbMaxi || dbMini
@@ -320,17 +325,27 @@ export default function TeklifClient() {
   const paketler: Paket[] = useMemo(() => {
     if (!monitorler.length || !paneller.length || daire <= 0) return []
 
-    function paket(monL: number, panL: number, diafon: boolean, key: Paket['key'], label: string): Paket {
-      const mon = monitorler.find(m => monLvl(m.name) >= monL) || monitorler[monitorler.length - 1]
+    function paket(monL: number, panL: number, akilli: boolean, key: Paket['key'], label: string): Paket {
       const pan = paneller.find(p => panLvl(p.name) >= panL) || paneller[paneller.length - 1]
       const items: LineItem[] = []
-      if (mon) items.push({ name: mon.name, qty: daire, unitUsd: mon.minPriceUsd, slug: mon.slug, image: mon.mainImageUrl, shortDesc: mon.shortDesc })
+
+      // Premium (akilli=true) ve multibus ise: iç monitör yerine Akıllı Diafon
+      if (akilli && sistem === 'multibus' && akilliDiafon) {
+        items.push({ name: akilliDiafon.name, qty: daire, unitUsd: akilliDiafon.minPriceUsd, slug: akilliDiafon.slug, image: akilliDiafon.mainImageUrl, shortDesc: akilliDiafon.shortDesc })
+      } else {
+        const mon = monitorler.find(m => monLvl(m.name) >= monL) || monitorler[monitorler.length - 1]
+        if (mon) items.push({ name: mon.name, qty: daire, unitUsd: mon.minPriceUsd, slug: mon.slug, image: mon.mainImageUrl, shortDesc: mon.shortDesc })
+      }
+
       if (pan) items.push({ name: pan.name, qty: kapi, unitUsd: pan.minPriceUsd, slug: pan.slug, image: pan.mainImageUrl, shortDesc: pan.shortDesc })
       if (guvenlik) items.push({ name: guvenlik.name, qty: 1, unitUsd: guvenlik.minPriceUsd, slug: guvenlik.slug, image: guvenlik.mainImageUrl, shortDesc: guvenlik.shortDesc })
-      if (diafon && sistem === 'multibus') {
+
+      // DiafonBox artık opsiyonel — kullanıcı checkbox ile ekler
+      if (diafonBox && sistem === 'multibus') {
         const db = pickDiafonBox()
         if (db) items.push({ name: db.name, qty: 1, unitUsd: db.minPriceUsd, slug: db.slug, image: db.mainImageUrl, shortDesc: db.shortDesc })
       }
+
       const totalTl = items.reduce((s, it) => s + it.qty * it.unitUsd * kur, 0)
       return { key, label, items, totalTl }
     }
@@ -340,7 +355,7 @@ export default function TeklifClient() {
       { ...paket(3, 3, false, 'standart', 'Standart'), rozet: 'En çok tercih edilen' },
       paket(4, 4, true, 'premium', 'Premium'),
     ]
-  }, [monitorler, paneller, guvenlik, daire, kapi, kur, sistem])
+  }, [monitorler, paneller, guvenlik, daire, kapi, kur, sistem, akilliDiafon, diafonBox])
 
   const seciliItems = hesaplaSecili()
   const seciliTotal = seciliItems.reduce((s, it) => s + it.qty * it.unitUsd * kur, 0)
@@ -364,11 +379,19 @@ export default function TeklifClient() {
     <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-12 overflow-x-hidden">
       {/* Başlık */}
       <div className="text-center mb-8">
-        <h1 className="text-2xl md:text-3xl font-black tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
-          Proje Teklif Hesaplama
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-3"
+          style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.25)' }}>
+          <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: '#DC2626' }}>ÜCRETSİZ · 2 DAKİKA</span>
+        </div>
+        <h1 className="text-2xl md:text-[32px] font-black tracking-[-0.5px] leading-tight" style={{ color: 'var(--text-primary)' }}>
+          Elektrikçi Elektrikçi Dolaşma
         </h1>
-        <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>
-          Birkaç adımda projenize özel diyafon sistemi teklifi alın
+        <p className="text-base md:text-lg font-bold mt-1" style={{ color: '#DC2626' }}>
+          Ürünü de ustası da tek yerden, kapına gelsin
+        </p>
+        <p className="text-sm mt-3 max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+          Görüntüsüz diyafonunuzu görüntülüye çevirin. Projenize özel teklifi hemen alın,
+          şehrinizdeki puanlı montaj ekibiyle eşleşin.
         </p>
       </div>
 
@@ -606,6 +629,30 @@ export default function TeklifClient() {
               Bu teklif 7 gün geçerlidir.
             </span>
           </div>
+
+          {/* DiafonBox opsiyonel — sadece Multibus/DT8 */}
+          {sistem === 'multibus' && (
+            <label className="flex items-center gap-3 p-4 rounded-2xl cursor-pointer max-w-2xl mx-auto"
+              style={{
+                background: diafonBox ? 'rgba(244,130,31,0.08)' : 'var(--bg-card)',
+                border: diafonBox ? '2px solid #DC2626' : '1px solid var(--border)',
+              }}>
+              <input type="checkbox" checked={diafonBox} onChange={e => setDiafonBox(e.target.checked)} style={{ display: 'none' }} />
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ background: 'rgba(244,130,31,0.12)' }}>
+                <Smartphone size={20} style={{ color: '#DC2626' }} />
+              </div>
+              <div className="flex-1">
+                <p className="text-[14px] font-bold" style={{ color: 'var(--text-primary)' }}>
+                  DiafonBox ekle <span style={{ fontSize: 11, fontWeight: 600, color: '#DC2626' }}>(opsiyonel)</span>
+                </p>
+                <p className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+                  Apartmana 1 adet — kapı zili çalınca telefonunuza görüntülü arama gelir, uzaktan kapı açın
+                </p>
+              </div>
+              {diafonBox && <Check size={20} style={{ color: '#DC2626', flexShrink: 0 }} />}
+            </label>
+          )}
 
           {/* OTOMATİK — 3 Paket */}
           {teklifMode === 'otomatik' && (
