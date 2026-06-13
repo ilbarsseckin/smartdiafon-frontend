@@ -279,7 +279,7 @@ export default function Navbar() {
               )
             })}
          <div className="flex-1" />
-            <Link href="/sihirbaz"
+            <Link href="/teklif"
               className="flex items-center gap-1.5 text-[11.5px] font-bold px-3.5 py-1.5 rounded-md transition-all whitespace-nowrap text-white"
               style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 2px 8px rgba(244,130,31,0.4)' }}>
               <span>✨</span> Ücretsiz Teklif Al

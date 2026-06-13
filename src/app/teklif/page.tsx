@@ -4,8 +4,9 @@ import Footer from '@/components/layout/Footer'
 import TeklifClient from './TeklifClient'
 
 export const metadata: Metadata = {
-  title: 'Proje Teklif Hesaplama — Multibus Diyafon Sistemi',
-  description: 'Binanız için Multibus görüntülü diyafon sistemi teklifini birkaç adımda hesaplayın. Daire ve kapı sayısına göre otomatik fiyat, hazır paketler.',
+  title: 'Ücretsiz Diyafon Teklifi — Görüntülü Diyafon Fiyat Hesaplama | Smartdiafon',
+  description: 'Görüntüsüz diyafonunuzu görüntülüye çevirin. Elektrikçi dolaşmadan ürünü ve montaj ekibini tek yerden bulun. 2 dakikada ücretsiz teklif alın.',
+  keywords: ['görüntülü diyafon teklifi', 'diyafon fiyat hesaplama', 'diyafon montaj', 'görüntüsüz diyafonu görüntülüye çevirme', 'apartman diyafon teklifi'],
 }
 
 export default function TeklifPage() {
