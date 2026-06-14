@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { UrunDetayClient } from './UrunDetayClient'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://baskiurunleri.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartdiafon.com.tr'
 
 interface Props {
   params: { slug: string }
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!product) {
     return {
-      title: 'Ürün Bulunamadı | baskıurunleri.com',
+      title: 'Ürün Bulunamadı | smartdiafon.com.tr',
       robots: { index: false },
     }
   }
@@ -59,10 +59,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const minTier = product.tiers?.sort((a, b) => a.priceUsd - b.priceUsd)[0]
   const priceTl = minTier ? Math.round(minTier.priceUsd * kur * 1.2) : null // KDV dahil
 
-  const title = `${product.name} | baskıurunleri.com`
+  const title = `${product.name} | smartdiafon.com.tr`
   const description = product.shortDesc
-    ? `${product.shortDesc}${priceTl ? ` ₺${priceTl.toLocaleString('tr-TR')}'den başlayan fiyatlarla.` : ''} Hızlı teslimat, kaliteli baskı.`
-    : `${product.name} — ${product.categoryName} kategorisinde profesyonel baskı çözümleri. Türkiye'nin hızlı online matbaası.`
+    ? `${product.shortDesc}${priceTl ? ` ₺${priceTl.toLocaleString('tr-TR')}'den başlayan fiyatlarla.` : ''} Hızlı teslimat, orijinal ürün.`
+    : `${product.name} — ${product.categoryName} kategorisinde güvenilir çözümler. Multitek yetkili satıcı, hızlı teslimat.`
 
   const ogImage = product.images?.[0]?.url
 
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: canonical,
-      siteName: 'baskıurunleri.com',
+      siteName: 'smartdiafon.com.tr',
       locale: 'tr_TR',
       type: 'website',
       ...(ogImage && {
@@ -126,7 +126,7 @@ export default async function UrunDetayPage({ params }: Props) {
           availability: 'https://schema.org/InStock',
           seller: {
             '@type': 'Organization',
-            name: 'baskıurunleri.com',
+            name: 'smartdiafon.com.tr',
           },
         },
       }),

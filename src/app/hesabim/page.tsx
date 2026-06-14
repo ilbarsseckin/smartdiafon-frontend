@@ -36,7 +36,7 @@ const statusMap: Record<string, { label: string; color: string }> = {
   PENDING: { label: 'Ödeme Bekleniyor', color: 'text-gray-500' },
   PAID: { label: 'Ödendi', color: 'text-blue-600' },
   REVIEWING: { label: 'İncelemede', color: 'text-amber-600' },
-  PRINTING: { label: 'Baskıda', color: 'text-purple-600' },
+  PRINTING: { label: 'Hazırlanıyor', color: 'text-purple-600' },
   SHIPPED: { label: 'Kargoda', color: 'text-blue-600' },
   COMPLETED: { label: 'Tamamlandı', color: 'text-emerald-600' },
   CANCELLED: { label: 'İptal', color: 'text-red-500' },

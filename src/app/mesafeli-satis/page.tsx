@@ -4,8 +4,8 @@ import { FileText, ShieldCheck, Package, CreditCard, Truck, Phone } from 'lucide
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Mesafeli Satış Sözleşmesi | baskiurunleri.com',
-  description: 'baskiurunleri.com mesafeli satış sözleşmesi. 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamında hazırlanmıştır.',
+  title: 'Mesafeli Satış Sözleşmesi | smartdiafon.com.tr',
+  description: 'smartdiafon.com.tr mesafeli satış sözleşmesi. 6502 sayılı Tüketicinin Korunması Hakkında Kanun kapsamında hazırlanmıştır.',
 }
 
 export default function MesafeliSatisPage() {
@@ -37,9 +37,9 @@ export default function MesafeliSatisPage() {
             {/* Madde 1 */}
             <Section title="MADDE 1 – TARAFLAR" icon={ShieldCheck}>
               <p><strong>SATICI:</strong></p>
-              <p>Ünvanı: baskiurunleri.com</p>
+              <p>Ünvanı: smartdiafon.com.tr</p>
               <p>Adresi: İkitelli Organize Sanayi Bölgesi, İstanbul</p>
-              <p>E-posta: info@baskiurunleri.com</p>
+              <p>E-posta: info@smartdiafon.com.tr</p>
               <p>Telefon: +90 539 734 86 88</p>
               <br />
               <p><strong>ALICI:</strong></p>
@@ -49,7 +49,7 @@ export default function MesafeliSatisPage() {
             {/* Madde 2 */}
             <Section title="MADDE 2 – KONU" icon={Package}>
               <p>
-                İşbu sözleşme, ALICI'nın SATICI'ya ait baskiurunleri.com internet sitesi üzerinden elektronik ortamda siparişini
+                İşbu sözleşme, ALICI'nın SATICI'ya ait smartdiafon.com.tr internet sitesi üzerinden elektronik ortamda siparişini
                 verdiği aşağıda nitelikleri ve satış fiyatı belirtilen ürünün satışı ve teslimi ile ilgili olarak 6502 sayılı
                 Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmelere Dair Yönetmelik hükümleri gereğince tarafların
                 hak ve yükümlülüklerini kapsar.
@@ -165,10 +165,10 @@ export default function MesafeliSatisPage() {
               Sözleşme hakkında bilgi almak için bize ulaşın.
             </p>
             <div className="flex flex-col sm:flex-row gap-2 justify-center">
-              <a href="mailto:info@baskiurunleri.com"
+              <a href="mailto:info@smartdiafon.com.tr"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold text-white"
                 style={{ background: '#DC2626' }}>
-                info@baskiurunleri.com
+                info@smartdiafon.com.tr
               </a>
               <Link href="/iletisim"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold"

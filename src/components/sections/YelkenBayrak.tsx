@@ -106,7 +106,7 @@ function YelkenSVG() {
             strokeWidth="3"
             strokeLinejoin="round"
           >
-            baskiurunleri.com
+            smartdiafon.com.tr
           </text>
 
           <text

@@ -169,7 +169,7 @@ export default function AyarlarPage() {
                 </label>
                 <input value={adminEmails}
                   onChange={e => setAdminEmails(e.target.value)}
-                  placeholder="admin@baskiurunleri.com, info@baskiurunleri.com"
+                  placeholder="admin@smartdiafon.com.tr, info@smartdiafon.com.tr"
                   className="w-full px-4 py-3 rounded-xl text-[13px] outline-none"
                   style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
                 <p className="text-[11px] mt-1" style={{ color: 'var(--text-muted)' }}>
