@@ -93,7 +93,6 @@ export default function Home() {
         <ReferencesSection />
         <GuvenRozetleri />
         <KampanyaSerit />
-        <HizliTeklif />
         <Uyumluluk />
         <Favorilerim />
         <UrunlerSection />
