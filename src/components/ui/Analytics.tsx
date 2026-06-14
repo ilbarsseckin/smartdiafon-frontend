@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { getConsent } from './CookieConsent'
 
 // ─── ID'leri buraya yaz ───────────────────────────
-const GA_ID  = 'G-XXXXXXXXXX'   // Google Analytics 4 Measurement ID
-const PIX_ID = 'XXXXXXXXXXXXXXXXX' // Meta Pixel ID
+const GA_ID  = 'G-W2644FWRYV'   // Google Analytics 4 Measurement ID
+const PIX_ID = '818393120534107' // Meta Pixel ID
 // ─────────────────────────────────────────────────
 
 export default function Analytics() {

@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import {
   Camera,
+  Images,
   Sparkles,
   Check,
   ArrowRight,
@@ -15,6 +16,7 @@ import {
 export default function UyumlulukShowcase() {
   const router = useRouter()
   const fileRef = useRef<HTMLInputElement>(null)
+  const galleryRef = useRef<HTMLInputElement>(null)
 
   const handleFile = (f: File | null) => {
     if (!f) return
@@ -149,6 +151,14 @@ export default function UyumlulukShowcase() {
                 ref={fileRef}
                 type="file"
                 accept="image/*"
+                capture="environment"
+                className="hidden"
+                onChange={e => handleFile(e.target.files?.[0] || null)}
+              />
+              <input
+                ref={galleryRef}
+                type="file"
+                accept="image/*"
                 className="hidden"
                 onChange={e => handleFile(e.target.files?.[0] || null)}
               />
@@ -180,15 +190,14 @@ export default function UyumlulukShowcase() {
                     className="text-lg md:text-xl font-black mb-1"
                     style={{ color: 'var(--text-primary)' }}
                   >
-                    Fotoğraf Çek veya Yükle
+                    Fotoğrafını Çek
                   </p>
 
                   <p
                     className="text-xs md:text-sm max-w-xs mb-5"
                     style={{ color: 'var(--text-muted)' }}
                   >
-                    Diyafon ekranı ve tuş takımı net görünecek şekilde fotoğraf
-                    seçin.
+                    Diyafon ekranı ve tuş takımı net görünecek şekilde çekin.
                   </p>
 
                   <span
@@ -202,6 +211,18 @@ export default function UyumlulukShowcase() {
                     <ArrowRight size={16} />
                   </span>
                 </div>
+              </button>
+
+              {/* Galeriden seç alternatifi */}
+              <button
+                onClick={() => galleryRef.current?.click()}
+                className="w-full mt-3 flex items-center justify-center gap-2 py-3 rounded-xl border transition-all hover:border-[#DC2626]"
+                style={{ borderColor: 'var(--border)', background: 'var(--bg-card)' }}
+              >
+                <Images size={17} style={{ color: '#2563EB' }} />
+                <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>
+                  Galeriden Seç
+                </span>
               </button>
 
               <div

@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import {
   LogOut, LayoutDashboard, Shield, Users, Star,
   Moon, Sun, Settings, ExternalLink, ChevronDown, FolderTree, Tag, Box,
-  Home, Image as ImageIcon, ClipboardList, MessageSquare, Gift, Megaphone, Bell,
+  Home, Image as ImageIcon, ClipboardList, MessageSquare, Gift, Megaphone, Bell, FileText,
   MoreHorizontal, Wrench,
 } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
@@ -14,6 +14,7 @@ import Logo from '@/components/ui/Logo'
 
 const catalogLinks = [
   { href: '/admin/katalog/siparisler',  label: 'Siparişler',  icon: ClipboardList, desc: 'Gelen siparişler' },
+  { href: '/admin/teklifler',           label: 'Teklif Talepleri', icon: FileText,  desc: 'Gelen teklif talepleri' },
   { href: '/admin/katalog/urunler',     label: 'Ürünler',     icon: Box,           desc: 'Katalog ürünleri' },
   { href: '/admin/katalog/kategoriler', label: 'Kategoriler', icon: FolderTree,    desc: 'Hiyerarşik kategoriler' },
   { href: '/admin/katalog/markalar',    label: 'Markalar',    icon: Tag,           desc: 'Marka tanımları' },
