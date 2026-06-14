@@ -946,6 +946,15 @@ export default function TeklifClient() {
         productsJson: JSON.stringify(products.map(it => ({ name: it.name, qty: it.qty }))),
         totalTl: total,
       })
+      // Google Ads / GA4 dönüşüm olayı
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'generate_lead', {
+          event_category: 'teklif',
+          event_label: aktifPaket,
+          value: total,
+          currency: 'TRY',
+        })
+      }
       setSent(true)
     } catch {
       alert('Bir hata oluştu, lütfen tekrar deneyin.')
