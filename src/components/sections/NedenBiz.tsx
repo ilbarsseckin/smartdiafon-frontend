@@ -10,11 +10,11 @@ interface USP {
 
 const USPS: USP[] = [
   { icon: Zap,             title: '48 Saatte Kapında',      desc: 'Onay sonrası hızlı üretim ve kargo. Acil işlerde 24 saat içinde teslim.',         color: '#F4821F' },
-  { icon: Sparkles,        title: 'Yüksek Kalite Baskı',    desc: 'Profesyonel makineler, premium kağıt, renk hassasiyeti.',                          color: '#8B5CF6' },
+  { icon: Sparkles,        title: 'Orijinal Ürün Garantisi',    desc: 'Multitek ve güvenilir markaların orijinal, faturalı ürünleri.',                          color: '#8B5CF6' },
   { icon: CreditCard,      title: 'Güvenli Online Ödeme',   desc: 'Iyzico altyapısı, 3D Secure. Tüm kartlar ve havale ile ödeme.',                    color: '#16A34A' },
   { icon: Truck,           title: 'Türkiye\'nin Her Yerine', desc: 'Anlaşmalı kargo. 500₺ üstü siparişlerde kargo ücretsiz.',                          color: '#2563EB' },
   { icon: HeadphonesIcon,  title: '7/24 WhatsApp Destek',   desc: 'Sorunda anında yanıt. Tasarım yardımı ve teknik destek.',                          color: '#0891B2' },
-  { icon: ShieldCheck,     title: 'Memnuniyet Garantisi',   desc: 'Baskı hatasında ücretsiz yeniden baskı veya tam para iadesi.',                     color: '#F4821F' },
+  { icon: ShieldCheck,     title: 'Memnuniyet Garantisi',   desc: 'Sorunlu üründe ücretsiz değişim veya tam para iadesi.',                     color: '#F4821F' },
 ]
 
 const doubled = [...USPS, ...USPS]
@@ -50,7 +50,7 @@ export default function NedenBiz() {
             Binlerce işletmenin tercihi
           </h2>
           <p className="text-[13px] md:text-[15px] mt-2" style={{ color: 'var(--text-muted)' }}>
-            Online matbaada aradığınız her şey tek bir adreste
+            Diyafon ve güvenlik sistemlerinde aradığınız her şey tek adreste
           </p>
         </div>
       </div>
