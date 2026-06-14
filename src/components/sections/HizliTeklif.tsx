@@ -120,7 +120,7 @@ export default function HizliTeklif() {
   const [daire, setDaire] = useState('')
   const [kapi, setKapi] = useState('1')
   const [kur, setKur] = useState(45)
-  const [products, setProducts] = useState<<ApiProduct[]>([])
+  const [products, setProducts] = useState<ApiProduct[]>([])
   const [loading, setLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [sonuc, setSonuc] = useState<HesapSonucu[] | null>(null)
