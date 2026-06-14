@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
+import api from '@/lib/api'
 import { 
   Building2, 
   DoorOpen, 
@@ -131,16 +132,12 @@ export default function HizliTeklif() {
     const fetchData = async () => {
       try {
         const [settingsRes, productsRes] = await Promise.all([
-          fetch('/api/settings/public'),
-          fetch('/api/catalog/products?size=500'),
+          api.get('/api/settings/public'),
+          api.get('/api/catalog/products?size=500'),
         ])
 
-        if (!settingsRes.ok || !productsRes.ok) {
-          throw new Error('Veri alınamadı')
-        }
-
-        const settingsData = await settingsRes.json()
-        const productsData = await productsRes.json()
+        const settingsData = settingsRes.data
+        const productsData = productsRes.data
 
         const k = parseFloat(settingsData?.data?.usd_kur || '45')
         setKur(isNaN(k) ? 45 : k)
