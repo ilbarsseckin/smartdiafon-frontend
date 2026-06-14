@@ -20,10 +20,10 @@ export default function KayitPage() {
       const res = await authApi.register(data)
       const { token, email, name, role } = res.data.data
       setAuth({ id: '', name, email, role }, token)
-      toast.success('Kay�t ba�ar�l�!')
+      toast.success('Kayıt başarılı!')
       router.push('/')
     } catch (err: any) {
-      toast.error(err.response?.data?.message || 'Kay�t ba�ar�s�z')
+      toast.error(err.response?.data?.message || 'Kayıt başarısız')
     }
   }
 
@@ -37,16 +37,16 @@ export default function KayitPage() {
             </div>
            <Logo className="h-7" />
           </Link>
-          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesap olu�turun</h1>
-          <p className="text-[13px] text-gray-400 mt-1.5">�cretsiz kay�t, hemen sipari� verin</p>
+          <h1 className="text-[22px] font-medium tracking-[-0.5px] text-gray-900 dark:text-gray-100">Hesap oluşturun</h1>
+          <p className="text-[13px] text-gray-400 mt-1.5">Ücretsiz kayıt, hemen sipariş verin</p>
         </div>
 
         <div className="bg-white dark:bg-[#141414] border border-black/[0.08] dark:border-white/[0.08] rounded-2xl p-6">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {[
-              { key: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Y�lmaz', required: true },
+              { key: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yılmaz', required: true },
               { key: 'email', label: 'E-posta', type: 'email', placeholder: 'ornek@mail.com', required: true },
-              { key: 'password', label: '�ifre', type: 'password', placeholder: 'En az 6 karakter', required: true, minLength: 6 },
+              { key: 'password', label: 'Şifre', type: 'password', placeholder: 'En az 6 karakter', required: true, minLength: 6 },
               { key: 'phone', label: 'Telefon (opsiyonel)', type: 'tel', placeholder: '05001234567', required: false },
             ].map(f => (
               <div key={f.key}>
@@ -63,14 +63,14 @@ export default function KayitPage() {
 
             <button type="submit" disabled={isSubmitting}
               className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
-              {isSubmitting ? 'Kay�t olunuyor...' : 'Kay�t ol'}
+              {isSubmitting ? 'Kayıt olunuyor...' : 'Kayıt ol'}
             </button>
           </form>
         </div>
 
         <p className="text-center text-[12px] text-gray-400 mt-4">
-          Zaten hesab�n�z var m�?{' '}
-          <Link href="/giris" className="text-[#F4821F] hover:underline">Giri� yap�n</Link>
+          Zaten hesabınız var mı?{' '}
+          <Link href="/giris" className="text-[#F4821F] hover:underline">Giriş yapın</Link>
         </p>
       </div>
     </div>
