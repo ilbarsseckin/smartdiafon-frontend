@@ -6,8 +6,8 @@ import Link from 'next/link'
 const steps = [
   {
     number: '01',
-    title: '�r�n� Se�in & Sepete Ekleyin',
-    desc: '�htiyac�n�za uygun �r�n� se�in. Bask� adedi, ka��t kal�nl���, kaplama gibi �zellikleri belirleyerek sepetinize ekleyin. Fiyat an�nda g�ncellenir.',
+    title: 'Ürününüzü Seçin & Sepete Ekleyin',
+    desc: 'İhtiyacınıza uygun görüntülü diyafon, kapı paneli veya monitörü seçin. Emin değilseniz ücretsiz Teklif Hazırlayıcı ile binanıza özel paketi 2 dakikada oluşturun.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(244,130,31,0.1)" />
@@ -17,41 +17,41 @@ const steps = [
       </svg>
     ),
     color: '#F4821F',
-    action: { label: '�r�nlere G�z At', href: '/urunler' }
+    action: { label: 'Teklif Hazırla', href: '/teklif' }
   },
   {
     number: '02',
-    title: 'Sipari�inizi Tamamlay�n',
-    desc: 'Teslimat adresinizi girin ve �deme y�ntemini se�in. Kredi kart�, banka havalesi / EFT veya BKM Ekspres ile g�venli �deme yapabilirsiniz.',
+    title: 'Kurulum İsteyin (Opsiyonel)',
+    desc: 'Montaj da istiyorsanız, satın alma sırasında "Kurulum istiyorum" seçeneğini işaretleyin. Şehrinizdeki puanlı montaj ekiplerini görür, dilediğinizi seçersiniz. Elektrikçi aramakla uğraşmazsınız.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(99,102,241,0.1)" />
-        <rect x="11" y="15" width="18" height="12" rx="2" stroke="#6366F1" strokeWidth="1.8"/>
-        <path d="M11 19h18" stroke="#6366F1" strokeWidth="1.8"/>
-        <path d="M15 23h4" stroke="#6366F1" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M16 14l-4 4 3 3 4-4M22 20l4 4-3 3-4-4" stroke="#6366F1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="20" cy="20" r="2" stroke="#6366F1" strokeWidth="1.5"/>
       </svg>
     ),
     color: '#6366F1',
-    action: null
+    action: { label: 'Kurulum Ekibini Gör', href: '/kurulum-ekibi' }
   },
   {
     number: '03',
-    title: 'Tasar�m�n�z� Y�kleyin',
-    desc: 'Sipari�i verdikten sonra tasar�m dosyan�z� y�kleyin. Tasar�m�n�z yoksa "Kendi Tasarla" se�ene�iyle kolayca olu�turabilirsiniz. Uzman ekibimiz dosyay� kontrol eder.',
+    title: 'Siparişinizi Tamamlayın',
+    desc: 'Teslimat adresinizi girin ve ödeme yönteminizi seçin. Kredi kartı, banka havalesi / EFT ile güvenli ödeme yapabilirsiniz. Ödeme tamamlanınca siparişiniz hazırlanır.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(16,185,129,0.1)" />
-        <path d="M20 26V16M20 16l-4 4M20 16l4 4" stroke="#10B981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M13 28h14" stroke="#10B981" strokeWidth="1.8" strokeLinecap="round"/>
+        <rect x="11" y="15" width="18" height="12" rx="2" stroke="#10B981" strokeWidth="1.8"/>
+        <path d="M11 19h18" stroke="#10B981" strokeWidth="1.8"/>
+        <path d="M15 23h4" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
     color: '#10B981',
-    action: { label: 'Tasar�m K�lavuzu', href: '/tasarim-yukleme' }
+    action: null
   },
   {
     number: '04',
-    title: 'H�zl� Kargo ile Kap�n�za Gelir',
-    desc: 'Bask� tamamland�ktan sonra sipari�iniz anla�mal� kargo firmam�zla h�zl�ca g�nderilir. Sipari� takip numaran�zla kargonuzu anl�k izleyebilirsiniz.',
+    title: 'Ürün Kapınıza, Montajcı Devreye Girer',
+    desc: 'Siparişiniz anlaşmalı kargo ile hızlıca gönderilir. Kurulum seçtiyseniz, ödeme sonrası seçtiğiniz montaj ekibine bilgi gider ve sizinle iletişime geçer. Ürün de ustası da tek yerden.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="20" fill="rgba(14,165,233,0.1)" />
@@ -67,24 +67,28 @@ const steps = [
 
 const faqs = [
   {
-    q: 'Minimum sipari� adedi nedir?',
-    a: '�r�ne g�re de�i�mekle birlikte �o�u �r�nde minimum 25-50 adet ile sipari� verebilirsiniz.'
+    q: 'Hangi ürünü alacağımı bilmiyorum, ne yapmalıyım?',
+    a: 'Ücretsiz Teklif Hazırlayıcı aracımızı kullanın. Binanızın altyapısı, daire ve kapı sayısına göre size en uygun sistemi ve tahmini fiyatı saniyeler içinde öneriyoruz. Emin değilseniz WhatsApp hattımızdan da danışabilirsiniz.'
   },
   {
-    q: 'Tasar�m�m yoksa ne yapabilirim?',
-    a: 'Sipari� sonras� tasar�m deste�i alabilir, ya da haz�r �ablonlar�m�z� kullanarak kendi tasar�m�n�z� olu�turabilirsiniz.'
+    q: 'Görüntüsüz diyafonumu görüntülüye çevirebilir miyim?',
+    a: 'Evet. Türkiye\'deki çoğu binada bulunan DT8 altyapısını değiştirmeden, mevcut sisteminizi görüntülü diyafona çevirebilirsiniz. Teklif Hazırlayıcı\'da "Görüntüsüz → Görüntülü" seçeneğini kullanın.'
   },
   {
-    q: '�deme y�ntemleri nelerdir?',
-    a: 'Kredi kart� (taksit se�ene�iyle), banka havalesi/EFT ve BKM Ekspres ile �deme yapabilirsiniz.'
+    q: 'Montajı kim yapacak?',
+    a: 'Satın alma sırasında kurulum isterseniz, şehrinizdeki puanlı montaj ekiplerini gösteririz. Dilediğinizi seçersiniz, ödeme sonrası size ulaşır. Montaj ücreti doğrudan usta ile aranızdadır; Smartdiafon ürün satışı dışında bir ücret almaz.'
   },
   {
-    q: 'Kargo s�resi ne kadar?',
-    a: 'Bask� s�resi �r�ne g�re 1-5 i� g�n�, kargo ise 1-2 i� g�n�d�r. Ekspres �retim se�ene�i de mevcuttur.'
+    q: 'Ödeme yöntemleri nelerdir?',
+    a: 'Kredi kartı (taksit seçeneğiyle) ve banka havalesi / EFT ile güvenli ödeme yapabilirsiniz.'
   },
   {
-    q: 'Sipari�imi iptal edebilir miyim?',
-    a: 'Bask� i�lemi ba�lamadan �nce iptal m�mk�nd�r. Tasar�m onay�ndan sonra iptal kabul edilmemektedir.'
+    q: 'Kargo süresi ne kadar?',
+    a: 'Stoktaki ürünler genellikle 1-3 iş günü içinde kargoya verilir, kargo teslimatı 1-2 iş günü sürer.'
+  },
+  {
+    q: 'Siparişimi iptal edebilir miyim?',
+    a: 'Ürün kargoya verilmeden önce iptal mümkündür. İade ve cayma haklarınız için İade Koşulları sayfamızı inceleyebilirsiniz.'
   }
 ]
 
@@ -99,10 +103,10 @@ export default function NasilSiparisPage() {
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Rehber</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
-              Nas�l Sipari� Verebilirim?
+              Nasıl Sipariş Verebilirim?
             </h1>
             <p className="text-[16px] max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Bask�urunleri.com'da sipari� vermek �ok kolay. 4 basit ad�mda sipari�iniz kap�n�za gelir.
+              Ürünü de ustası da tek yerden. Elektrikçi elektrikçi dolaşmadan, 4 basit adımda diyafonunuz kapınıza gelir.
             </p>
           </div>
         </div>
@@ -140,7 +144,7 @@ export default function NasilSiparisPage() {
                       <Link href={step.action.href}
                         className="inline-flex items-center gap-1.5 text-[12px] font-bold hover:underline"
                         style={{ color: step.color }}>
-                        {step.action.label} �
+                        {step.action.label} →
                       </Link>
                     )}
                   </div>
@@ -162,7 +166,7 @@ export default function NasilSiparisPage() {
         <div style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16">
             <h2 className="text-[24px] font-black tracking-[-0.5px] mb-8" style={{ color: 'var(--text-primary)' }}>
-              S�k Sorulan Sorular
+              Sık Sorulan Sorular
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
@@ -183,21 +187,21 @@ export default function NasilSiparisPage() {
         {/* CTA */}
         <div className="max-w-4xl mx-auto px-6 py-16 text-center">
           <h2 className="text-[24px] font-black mb-3" style={{ color: 'var(--text-primary)' }}>
-            H�l� sorunuz mu var?
+            Hâlâ sorunuz mu var?
           </h2>
           <p className="text-[14px] mb-6" style={{ color: 'var(--text-secondary)' }}>
-            Uzman ekibimiz size yard�mc� olmaktan mutluluk duyar.
+            Uzman ekibimiz size yardımcı olmaktan mutluluk duyar.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <Link href="/iletisim"
               className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
               style={{ background: '#F4821F' }}>
-              �leti�ime Ge�
+              İletişime Geç
             </Link>
-            <Link href="/urunler"
+            <Link href="/teklif"
               className="px-6 py-3 rounded-xl text-[13px] font-bold"
               style={{ border: '1px solid var(--border)', color: 'var(--text-primary)', background: 'var(--bg-card)' }}>
-              �r�nlere G�z At
+              Ücretsiz Teklif Al
             </Link>
           </div>
         </div>
