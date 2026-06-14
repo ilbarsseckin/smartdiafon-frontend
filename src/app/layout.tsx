@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import WelcomeDialog from '@/components/ui/WelcomeDialog'
 import AnnouncementBar from '@/components/ui/AnnouncementBar'
 import Analytics from '@/components/ui/Analytics'
+import CookieConsent from '@/components/ui/CookieConsent'
 export const metadata: Metadata = {
   metadataBase: new URL('https://smartdiafon.com.tr'),
   title: {
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }} />
           <WelcomeDialog />
           <Analytics />
+          <CookieConsent />
 
           {/* WhatsApp Destek Butonu */}
           <a

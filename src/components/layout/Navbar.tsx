@@ -47,9 +47,6 @@ const topUtility = [
 
 const kurumsal = [
   { href: '/hakkimizda',       label: 'Hakkımızda' },
-  { href: '/tarihce',          label: 'Tarihçe' },
-  { href: '/insan-kaynaklari', label: 'İnsan Kaynakları' },
-  { href: '/bayilik',          label: 'Bayimiz Olun' },
 ]
 
 function getBadge(slug: string): { label: string; bg: string; color: string } | null {
