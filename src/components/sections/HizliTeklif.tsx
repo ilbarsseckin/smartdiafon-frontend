@@ -197,7 +197,6 @@ export default function HizliTeklif() {
         setProgress(100)
         clearInterval(timer)
         
-        // Hesaplama tamamlandıktan sonra sonucu göster
         setTimeout(() => {
           const hesap = SISTEMLER.map(s => {
             const mon = enUcuz(s.monSlug, s.monFilter)
