@@ -152,7 +152,7 @@ export default function YardimPage() {
               </span>
             </Link>
 
-            <a href="https://wa.me/905550000000" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/905397348688" target="_blank" rel="noopener noreferrer"
               className="rounded-2xl p-6 transition-all hover:shadow-lg"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3"

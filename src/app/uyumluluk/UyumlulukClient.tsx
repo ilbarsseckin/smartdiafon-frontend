@@ -10,7 +10,7 @@ import {
   Sparkles, ShieldCheck, Phone, RotateCcw, Info,
 } from 'lucide-react'
 
-const WHATSAPP = '905550000000' // TODO: gercek numara
+const WHATSAPP = '905397348688' // TODO: gercek numara
 
 interface AnalizSonuc {
   durum: string

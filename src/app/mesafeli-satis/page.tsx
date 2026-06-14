@@ -40,7 +40,7 @@ export default function MesafeliSatisPage() {
               <p>Ünvanı: baskiurunleri.com</p>
               <p>Adresi: İkitelli Organize Sanayi Bölgesi, İstanbul</p>
               <p>E-posta: info@baskiurunleri.com</p>
-              <p>Telefon: +90 212 555 55 55</p>
+              <p>Telefon: +90 539 734 86 88</p>
               <br />
               <p><strong>ALICI:</strong></p>
               <p>Sipariş formunda belirtilen ad, adres ve iletişim bilgilerine sahip kişi.</p>

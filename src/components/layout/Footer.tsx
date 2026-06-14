@@ -136,7 +136,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <Phone size={18} />
-                <a href="tel:+902125555555" className="hover:text-[#DC2626]">+90 212 555 55 55</a>
+                <a href="tel:+905397348688" className="hover:text-[#DC2626]">+90 539 734 86 88</a>
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'var(--text-muted)' }}>
                 <Mail size={18} />

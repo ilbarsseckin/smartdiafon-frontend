@@ -60,7 +60,7 @@ export default function KurulumEkibiKatil() {
   }
 
   function handleWhatsapp() {
-    window.open(`https://wa.me/905550000000?text=${encodeURIComponent(buildText())}`, '_blank')
+    window.open(`https://wa.me/905397348688?text=${encodeURIComponent(buildText())}`, '_blank')
   }
 
   const gecerli = ad && telefon && sehir
