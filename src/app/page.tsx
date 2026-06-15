@@ -51,7 +51,7 @@ const organizationJsonLd = {
   image: `${SITE_URL}/og-image.png`,
   description: 'Multitek diyafon, IP interkom, görüntülü diyafon ve güvenlik sistemleri yetkili satıcısı.',
   telephone: '+90-539-734-86-88',
-  email: 'destek@smartdiafon.com.tr',
+  email: 'info@smartdiafon.com.tr',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'TR',
