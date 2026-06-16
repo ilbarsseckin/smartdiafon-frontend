@@ -217,23 +217,26 @@ export default function KatalogKategoriClient() {
                           </p>
                         )}
 
-                        {p.minPriceUsd ? (
-                          <div className="pt-3" style={{ borderTop: '1px solid var(--border)' }}>
-                            <div className="flex items-baseline gap-1.5 flex-wrap">
-                              {hasOriginal && (
-                                <span className="text-[10px] line-through" style={{ color: 'var(--text-muted)' }}>
-                                  ₺{(Number(p.originalPrice) * kur).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
-                                </span>
-                              )}
-                              <span className={`text-[18px] font-black tracking-[-0.5px] ${hasOriginal ? 'text-red-500' : ''}`}
-                                style={!hasOriginal ? { color: '#F4821F' } : {}}>
-                                ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
-                              </span>
-                            </div>
-                            <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                              {p.minPriceQty} adet'ten başlayan
-                            </p>
-                          </div>
+                 {p.minPriceUsd ? (
+  <div className="pt-3" style={{ borderTop: '1px solid var(--border)' }}>
+    <div className="flex items-baseline gap-1.5 flex-wrap">
+      {hasOriginal && (
+        <span className="text-[10px] line-through" style={{ color: 'var(--text-muted)' }}>
+          ₺{(Number(p.originalPrice) * kur).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+        </span>
+      )}
+      <span className={`text-[18px] font-black tracking-[-0.5px] ${hasOriginal ? 'text-red-500' : ''}`}
+        style={!hasOriginal ? { color: '#F4821F' } : {}}>
+        ₺{(priceTl * 1.20).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+      </span>
+    </div>
+    <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+      KDV Dahil
+    </p>
+    <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
+      KDV Hariç: ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+    </p>
+  </div>
                         ) : (
                           <div className="pt-3 text-[11px] italic"
                             style={{ color: 'var(--text-muted)', borderTop: '1px solid var(--border)' }}>
