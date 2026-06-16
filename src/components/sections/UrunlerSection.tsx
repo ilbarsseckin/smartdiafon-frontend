@@ -24,6 +24,7 @@ interface Product {
 
 function ProductCard({ p, kur }: { p: Product; kur: number }) {
   const priceTl = p.minPriceUsd ? Number(p.minPriceUsd) * kur : 0
+  const priceTlKdvDahil = priceTl * 1.20
   const hasOriginal = p.originalPrice && p.minPriceUsd && Number(p.originalPrice) > Number(p.minPriceUsd)
 
   return (
@@ -80,10 +81,14 @@ function ProductCard({ p, kur }: { p: Product; kur: number }) {
                 )}
                 <span className={`text-[15px] sm:text-[17px] font-black tracking-[-0.5px] ${hasOriginal ? 'text-red-500' : ''}`}
                   style={!hasOriginal ? { color: '#F4821F' } : {}}>
-                  ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+                  ₺{priceTlKdvDahil.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                 </span>
               </div>
-              <p className="text-[9px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-[9px] mt-0.5" style={{ color: 'var(--text-muted)' }}>KDV Dahil</p>
+              <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>
+                KDV Hariç: ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+              </p>
+              <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>
                 {p.minPriceQty} adet'ten
               </p>
             </div>
@@ -178,16 +183,13 @@ export default function EnCokSatan() {
                 <ProductCard p={p} kur={kur} />
               </div>
             ))}
-            {/* Sağda boşluk */}
             <div className="flex-shrink-0 w-4" />
           </div>
 
-          {/* Solda gölge */}
           {canScrollLeft && (
             <div className="absolute left-0 top-0 bottom-4 w-12 pointer-events-none hidden sm:block"
               style={{ background: 'linear-gradient(to right, var(--bg-secondary), transparent)' }} />
           )}
-          {/* Sağda gölge */}
           {canScrollRight && (
             <div className="absolute right-0 top-0 bottom-4 w-12 pointer-events-none hidden sm:block"
               style={{ background: 'linear-gradient(to left, var(--bg-secondary), transparent)' }} />

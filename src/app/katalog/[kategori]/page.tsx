@@ -57,7 +57,6 @@ export default function KatalogKategoriPage() {
       })
       .then(([prodRes, settRes]) => {
         const prods: Product[] = prodRes.data.data || []
-        // Tek ürünlü kategori → araya liste girmeden doğrudan ürün detayına git
         if (prods.length === 1) {
           setRedirecting(true)
           router.replace(`/urun/${prods[0].slug}`)
@@ -155,6 +154,7 @@ export default function KatalogKategoriPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {products.map(p => {
                 const priceTl = p.minPriceUsd ? Number(p.minPriceUsd) * kur : 0
+                const priceTlKdvDahil = priceTl * 1.20
                 const hasOriginal = p.originalPrice && p.minPriceUsd
                   && Number(p.originalPrice) > Number(p.minPriceUsd)
                 const discountPct = hasOriginal
@@ -166,10 +166,8 @@ export default function KatalogKategoriPage() {
                     <div className="rounded-2xl overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 relative"
                       style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
 
-                      {/* ❤️ Favori butonu — sağ üst köşe */}
                       <FavoriteButton productId={p.id} productName={p.name} size="sm" absolute />
 
-                      {/* Resim (hover swap) */}
                       <div className="aspect-square relative overflow-hidden"
                         style={{ background: 'linear-gradient(135deg, #f3f4f6, #e5e7eb)' }}>
                         {p.mainImageUrl ? (
@@ -236,10 +234,16 @@ export default function KatalogKategoriPage() {
                               )}
                               <span className={`text-[18px] font-black tracking-[-0.5px] ${hasOriginal ? 'text-red-500' : ''}`}
                                 style={!hasOriginal ? { color: '#DC2626' } : {}}>
-                                ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+                                ₺{priceTlKdvDahil.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                               </span>
                             </div>
                             <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                              KDV Dahil
+                            </p>
+                            <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
+                              KDV Hariç: ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+                            </p>
+                            <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
                               {p.minPriceQty} adet'ten başlayan
                             </p>
                           </div>

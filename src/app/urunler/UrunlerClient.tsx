@@ -91,8 +91,6 @@ function UrunlerInner() {
   }, [products, activeCat, search, priceMin, priceMax, onlyFeatured, onlyDiscount, kur])
 
   const mainCategories = useMemo(() => {
-    // parentId'si listede olmayan kategoriler kök sayılır
-    // Eğer hepsi parentId'li ise tüm kategorileri göster
     const ids = new Set(categories.map(c => c.id))
     const roots = categories.filter(c => !c.parentId || !ids.has(c.parentId))
     return roots.length > 0 ? roots : categories
@@ -335,6 +333,7 @@ function ProductCard({ product, kur }: { product: Product; kur: number }) {
   const [hovered, setHovered] = useState(false)
   const img = (hovered && product.hoverImageUrl) ? product.hoverImageUrl : product.mainImageUrl
   const priceTl = product.minPriceUsd ? Number(product.minPriceUsd) * kur : 0
+  const priceTlKdvDahil = priceTl * 1.20
   const hasOriginal = product.originalPrice && product.minPriceUsd
     && Number(product.originalPrice) > Number(product.minPriceUsd)
 
@@ -385,7 +384,11 @@ function ProductCard({ product, kur }: { product: Product; kur: number }) {
                 </p>
               )}
               <p className="text-[14px] font-black tracking-[-0.5px]" style={{ color: '#F4821F' }}>
-                ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+                ₺{priceTlKdvDahil.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
+              </p>
+              <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>KDV Dahil</p>
+              <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>
+                KDV Hariç: ₺{priceTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
               </p>
               <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>
                 {product.minPriceQty} adet'ten başlayan
