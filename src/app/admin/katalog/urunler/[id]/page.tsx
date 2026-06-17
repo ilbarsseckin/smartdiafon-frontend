@@ -25,7 +25,7 @@ interface ProductImage { url: string; altText: string; sortOrder: number }
 const EMPTY_FORM = {
   slug: '', name: '', shortDesc: '', longDesc: '',
   categoryId: '', brandId: '',
-  featured: false, badge: '', originalPrice: 0,
+  featured: false, badge: '', originalPrice: 0, couponExempt: false,
   active: true, sortOrder: 0,
 }
 
@@ -83,6 +83,7 @@ export default function ProductEditPage() {
           categoryId: p.categoryId || '',
           brandId: p.brandId || '',
           featured: p.featured || false,
+          couponExempt: p.couponExempt || false,
           badge: p.badge || '',
           originalPrice: Number(p.originalPrice || 0),
           active: p.active !== false,
@@ -191,6 +192,7 @@ export default function ProductEditPage() {
       categoryId: form.categoryId,
       brandId: form.brandId || null,
       featured: form.featured,
+      couponExempt: form.couponExempt,
       badge: form.badge.trim() || null,
       originalPrice: form.originalPrice || null,
       active: form.active,
@@ -219,7 +221,7 @@ export default function ProductEditPage() {
       <AdminGuard>
         <AdminNavbar />
         <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-          <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={24} className="animate-spin text-[#E63946]" />
         </main>
       </AdminGuard>
     )
@@ -264,7 +266,7 @@ export default function ProductEditPage() {
               </div>
             </div>
             <button onClick={handleSave} disabled={saving}
-              className="flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+              className="flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors disabled:opacity-50">
               {saving
                 ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                 : <><Save size={14} /> {isNew ? 'Oluştur' : 'Güncelle'}</>}
@@ -277,7 +279,7 @@ export default function ProductEditPage() {
             <div className="rounded-2xl p-6"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-5">
-                <Package size={16} className="text-[#F4821F]" />
+                <Package size={16} className="text-[#E63946]" />
                 <h2 className="text-[14px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                   Temel Bilgiler
                 </h2>
@@ -367,7 +369,7 @@ export default function ProductEditPage() {
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-2">
-                    <Sliders size={16} className="text-[#F4821F]" />
+                    <Sliders size={16} className="text-[#E63946]" />
                     <h2 className="text-[14px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                       Öznitelikler
                     </h2>
@@ -375,7 +377,7 @@ export default function ProductEditPage() {
                   {selectedCategory && (
                     <Link href={`/admin/katalog/kategoriler/${selectedCategory.id}/oznitelikler`}
                       target="_blank"
-                      className="text-[11px] font-semibold text-[#F4821F] hover:underline">
+                      className="text-[11px] font-semibold text-[#E63946] hover:underline">
                       Öznitelikleri yönet →
                     </Link>
                   )}
@@ -383,7 +385,7 @@ export default function ProductEditPage() {
 
                 {attrsLoading ? (
                   <div className="flex justify-center py-8">
-                    <Loader2 size={20} className="animate-spin text-[#F4821F]" />
+                    <Loader2 size={20} className="animate-spin text-[#E63946]" />
                   </div>
                 ) : attributes.length === 0 ? (
                   <div className="text-center py-8 text-[12px]" style={{ color: 'var(--text-muted)' }}>
@@ -392,7 +394,7 @@ export default function ProductEditPage() {
                     {selectedCategory && (
                       <p className="mt-2">
                         <Link href={`/admin/katalog/kategoriler/${selectedCategory.id}/oznitelikler`}
-                          className="text-[#F4821F] hover:underline">
+                          className="text-[#E63946] hover:underline">
                           {selectedCategory.name} için öznitelik tanımla →
                         </Link>
                       </p>
@@ -432,7 +434,7 @@ export default function ProductEditPage() {
                                     onClick={() => toggleOption(attr.id, opt.id)}
                                     className="flex items-center gap-2 text-[12px] font-semibold px-3 py-2 rounded-lg transition-all"
                                     style={sel
-                                      ? { background: 'rgba(244,130,31,0.1)', color: '#F4821F', border: '2px solid #F4821F' }
+                                      ? { background: 'rgba(230,57,70,0.1)', color: '#E63946', border: '2px solid #E63946' }
                                       : { background: 'var(--bg-secondary)', color: 'var(--text-secondary)', border: '2px solid var(--border)' }}>
                                     {opt.colorHex && (
                                       <span className="w-3.5 h-3.5 rounded-full"
@@ -455,7 +457,7 @@ export default function ProductEditPage() {
                 )}
 
                 <div className="mt-5 p-3 rounded-lg text-[11px]"
-                  style={{ background: 'rgba(244,130,31,0.05)', color: 'var(--text-secondary)' }}>
+                  style={{ background: 'rgba(230,57,70,0.05)', color: 'var(--text-secondary)' }}>
                   💡 Bu üründe <strong>hangi seçeneklerin geçerli</strong> olduğunu işaretle.
                   Müşteri detay sayfasında sadece seçtiğin seçeneklerden tercih yapabilecek.
                 </div>
@@ -467,14 +469,14 @@ export default function ProductEditPage() {
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2">
-                  <DollarSign size={16} className="text-[#F4821F]" />
+                  <DollarSign size={16} className="text-[#E63946]" />
                   <h2 className="text-[14px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                     Fiyat Baremleri (USD)
                   </h2>
                 </div>
                 <button onClick={addTier}
                   className="flex items-center gap-1.5 text-[11px] font-semibold py-1.5 px-3 rounded-lg hover:bg-orange-500/5"
-                  style={{ color: '#F4821F', border: '1px dashed rgba(244,130,31,0.4)' }}>
+                  style={{ color: '#E63946', border: '1px dashed rgba(230,57,70,0.4)' }}>
                   <Plus size={12} /> Barem ekle
                 </button>
               </div>
@@ -505,7 +507,7 @@ export default function ProductEditPage() {
                         className="px-3 py-2 text-[13px] rounded-lg outline-none"
                         style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
                       <div className="px-3 py-2 text-[13px] font-bold rounded-lg"
-                        style={{ background: 'var(--bg-secondary)', color: '#F4821F', border: '1px solid var(--border)' }}>
+                        style={{ background: 'var(--bg-secondary)', color: '#E63946', border: '1px solid var(--border)' }}>
                         ₺{((t.priceUsd || 0) * kur).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                       </div>
                       <button onClick={() => removeTier(i)}
@@ -527,7 +529,7 @@ export default function ProductEditPage() {
             <div className="rounded-2xl p-6"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-5">
-                <ImageIcon size={16} className="text-[#F4821F]" />
+                <ImageIcon size={16} className="text-[#E63946]" />
                 <h2 className="text-[14px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                   Resimler
                 </h2>
@@ -557,7 +559,7 @@ export default function ProductEditPage() {
             <div className="rounded-2xl p-6"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-5">
-                <Star size={16} className="text-[#F4821F]" />
+                <Star size={16} className="text-[#E63946]" />
                 <h2 className="text-[14px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                   Kampanya & Sıralama
                 </h2>
@@ -571,7 +573,7 @@ export default function ProductEditPage() {
                     onClick={() => setForm(f => ({ ...f, featured: !f.featured }))}
                     className="w-full flex items-center justify-center gap-2 text-[12px] font-semibold py-2.5 rounded-lg transition-all"
                     style={form.featured
-                      ? { background: 'rgba(244,130,31,0.15)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.4)' }
+                      ? { background: 'rgba(230,57,70,0.15)', color: '#E63946', border: '1px solid rgba(230,57,70,0.4)' }
                       : { background: 'var(--bg-secondary)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}>
                     {form.featured ? '⭐ Öne çıkan' : '☆ Normal'}
                   </button>
@@ -619,6 +621,18 @@ export default function ProductEditPage() {
                     {form.active ? '● Aktif' : '○ Pasif'}
                   </button>
                 </div>
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-[1px] mb-2"
+                    style={{ color: 'var(--text-muted)' }}>Kupon Muaf (Paket)</label>
+                  <button type="button"
+                    onClick={() => setForm(f => ({ ...f, couponExempt: !f.couponExempt }))}
+                    className="w-full flex items-center justify-center gap-2 text-[12px] font-semibold py-2.5 rounded-lg transition-all"
+                    style={form.couponExempt
+                      ? { background: 'rgba(230,57,70,0.15)', color: '#E63946', border: '1px solid rgba(230,57,70,0.4)' }
+                      : { background: 'var(--bg-secondary)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}>
+                    {form.couponExempt ? '🔒 Kupon Geçmez' : '🔓 Kupon Geçerli'}
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -630,7 +644,7 @@ export default function ProductEditPage() {
                 İptal
               </button>
               <button onClick={handleSave} disabled={saving}
-                className="flex items-center gap-2 px-6 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+                className="flex items-center gap-2 px-6 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors disabled:opacity-50">
                 {saving
                   ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                   : <><Save size={14} /> {isNew ? 'Oluştur' : 'Güncelle'}</>}

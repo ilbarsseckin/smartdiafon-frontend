@@ -57,6 +57,8 @@ export const metadata: Metadata = {
   },
 }
 
+import ChatAsistan from '@/components/ui/ChatAsistan'
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr" suppressHydrationWarning>
@@ -70,13 +72,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <WelcomeDialog />
           <Analytics />
           <CookieConsent />
+          <ChatAsistan />
 
           {/* WhatsApp Destek Butonu */}
           <a
             href="https://wa.me/905397348688"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-3 rounded-full text-white text-[13px] font-bold shadow-2xl hover:scale-105 transition-all"
+            className="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full text-white text-[13px] font-bold shadow-2xl hover:scale-105 transition-all"
             style={{ background: '#25D366', boxShadow: '0 4px 20px rgba(37,211,102,0.4)' }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">

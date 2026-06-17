@@ -51,7 +51,7 @@ export default function YardimPage() {
         <div style={{ background: 'var(--bg-primary)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-5xl mx-auto px-6 py-12 text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
-              style={{ background: 'rgba(244,130,31,0.1)' }}>
+              style={{ background: 'rgba(230,57,70,0.1)' }}>
               <HelpCircle size={28} style={{ color: '#DC2626' }} />
             </div>
             <h1 className="text-[28px] sm:text-[36px] font-black tracking-tight mb-3"
@@ -138,7 +138,7 @@ export default function YardimPage() {
               className="rounded-2xl p-6 transition-all hover:shadow-lg"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3"
-                style={{ background: 'rgba(244,130,31,0.1)' }}>
+                style={{ background: 'rgba(230,57,70,0.1)' }}>
                 <MessageCircle size={20} style={{ color: '#DC2626' }} />
               </div>
               <h3 className="text-[15px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>

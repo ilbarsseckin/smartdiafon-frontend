@@ -30,14 +30,14 @@ const STATUS_LABELS: Record<string, { label: string; color: string; bg: string }
   READY:         { label: 'Hazır',         color: '#0891B2', bg: 'rgba(8,145,178,0.1)' },
   SHIPPED:       { label: 'Kargoda',       color: '#059669', bg: 'rgba(16,185,129,0.1)' },
   DELIVERED:     { label: 'Teslim Edildi', color: '#16A34A', bg: 'rgba(22,163,74,0.1)' },
-  CANCELLED:     { label: 'İptal',         color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
+  CANCELLED:     { label: 'İptal',         color: '#E63946', bg: 'rgba(239,68,68,0.1)' },
 }
 
 const PAYMENT_LABELS: Record<string, { label: string; color: string; bg: string }> = {
   PENDING:    { label: 'Ödeme Beklemede', color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
   PROCESSING: { label: '3DS Bekliyor',    color: '#D97706', bg: 'rgba(245,158,11,0.1)' },
   PAID:       { label: 'Ödendi',          color: '#16A34A', bg: 'rgba(22,163,74,0.15)' },
-  FAILED:     { label: 'Başarısız',       color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
+  FAILED:     { label: 'Başarısız',       color: '#E63946', bg: 'rgba(239,68,68,0.1)' },
   REFUNDED:   { label: 'İade Edildi',     color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
 }
 
@@ -103,7 +103,7 @@ export default function AdminCatalogOrdersPage() {
           setTimeout(() => setNewOrderFlash(false), 3000)
           toast.success(`🔔 ${diff} yeni sipariş geldi!`, {
             duration: 5000,
-            style: { background: '#F4821F', color: 'white', fontWeight: '700' },
+            style: { background: '#E63946', color: 'white', fontWeight: '700' },
           })
         }
         prevCountRef.current = data.length
@@ -165,9 +165,9 @@ export default function AdminCatalogOrdersPage() {
           <div className="flex items-center justify-between mb-4 sm:mb-6">
             <div>
               <div className="flex items-center gap-2 mb-0.5">
-                <Package size={16} className="text-[#F4821F]" />
-                <h1 className={`text-[18px] sm:text-[22px] font-bold tracking-[-0.5px] transition-colors ${newOrderFlash ? 'text-[#F4821F]' : ''}`}
-                  style={{ color: newOrderFlash ? '#F4821F' : 'var(--text-primary)' }}>
+                <Package size={16} className="text-[#E63946]" />
+                <h1 className={`text-[18px] sm:text-[22px] font-bold tracking-[-0.5px] transition-colors ${newOrderFlash ? 'text-[#E63946]' : ''}`}
+                  style={{ color: newOrderFlash ? '#E63946' : 'var(--text-primary)' }}>
                   Katalog Siparişleri
                 </h1>
                 {newOrderFlash && (
@@ -186,8 +186,8 @@ export default function AdminCatalogOrdersPage() {
                 className="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
                 style={{
                   border: '1px solid var(--border)',
-                  background: soundEnabled ? 'rgba(244,130,31,0.1)' : 'var(--bg-card)',
-                  color: soundEnabled ? '#F4821F' : 'var(--text-muted)',
+                  background: soundEnabled ? 'rgba(230,57,70,0.1)' : 'var(--bg-card)',
+                  color: soundEnabled ? '#E63946' : 'var(--text-muted)',
                 }}>
                 {soundEnabled ? <Volume2 size={14} /> : <BellOff size={14} />}
               </button>
@@ -204,7 +204,7 @@ export default function AdminCatalogOrdersPage() {
           {/* Stat kartları */}
           <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3 mb-4">
             {[
-              { label: 'Toplam',    value: counts.total,        color: '#F4821F' },
+              { label: 'Toplam',    value: counts.total,        color: '#E63946' },
               { label: 'Bekleyen', value: counts.pending,      color: '#D97706' },
               { label: 'Üretimde', value: counts.inProduction, color: '#7C3AED' },
               { label: 'Kargoda',  value: counts.shipped,      color: '#059669' },
@@ -230,7 +230,7 @@ export default function AdminCatalogOrdersPage() {
             <div className="relative sm:hidden">
               <button onClick={() => setFilterOpen(o => !o)}
                 className="flex items-center gap-1.5 px-3 py-2.5 text-[12px] font-medium rounded-lg whitespace-nowrap"
-                style={{ background: filter ? '#F4821F' : 'var(--bg-card)', color: filter ? 'white' : 'var(--text-secondary)', border: '1px solid var(--border)' }}>
+                style={{ background: filter ? '#E63946' : 'var(--bg-card)', color: filter ? 'white' : 'var(--text-secondary)', border: '1px solid var(--border)' }}>
                 {activeFilterLabel}
                 <ChevronDown size={12} className={filterOpen ? 'rotate-180' : ''} />
               </button>
@@ -239,7 +239,7 @@ export default function AdminCatalogOrdersPage() {
                   style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                   <button onClick={() => { setFilter(''); setFilterOpen(false) }}
                     className="w-full text-left px-3 py-2.5 text-[12px] font-medium"
-                    style={{ color: !filter ? '#F4821F' : 'var(--text-secondary)', background: !filter ? 'rgba(244,130,31,0.08)' : 'transparent' }}>
+                    style={{ color: !filter ? '#E63946' : 'var(--text-secondary)', background: !filter ? 'rgba(230,57,70,0.08)' : 'transparent' }}>
                     Tümü
                   </button>
                   {Object.entries(STATUS_LABELS).map(([key, info]) => (
@@ -258,7 +258,7 @@ export default function AdminCatalogOrdersPage() {
           <div className="hidden sm:flex gap-1 flex-wrap mb-4">
             <button onClick={() => setFilter('')}
               className="px-3 py-1.5 text-[12px] font-medium rounded-lg"
-              style={{ background: !filter ? '#F4821F' : 'var(--bg-card)', color: !filter ? 'white' : 'var(--text-secondary)', border: '1px solid var(--border)' }}>
+              style={{ background: !filter ? '#E63946' : 'var(--bg-card)', color: !filter ? 'white' : 'var(--text-secondary)', border: '1px solid var(--border)' }}>
               Hepsi
             </button>
             {Object.entries(STATUS_LABELS).map(([key, info]) => (
@@ -273,7 +273,7 @@ export default function AdminCatalogOrdersPage() {
           {/* Liste */}
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={24} className="animate-spin text-[#E63946]" />
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-16 rounded-2xl"
@@ -296,7 +296,7 @@ export default function AdminCatalogOrdersPage() {
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-1.5 mb-1 flex-wrap">
-                          <code className="text-[12px] sm:text-[13px] font-mono font-bold" style={{ color: '#F4821F' }}>
+                          <code className="text-[12px] sm:text-[13px] font-mono font-bold" style={{ color: '#E63946' }}>
                             {o.orderNumber}
                           </code>
                           <span className="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full font-bold uppercase"
@@ -323,7 +323,7 @@ export default function AdminCatalogOrdersPage() {
                         </div>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <p className="text-[18px] sm:text-[20px] font-black tracking-[-0.5px]" style={{ color: '#F4821F' }}>
+                        <p className="text-[18px] sm:text-[20px] font-black tracking-[-0.5px]" style={{ color: '#E63946' }}>
                           ₺{Number(o.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                         </p>
                         <p className="text-[9px] sm:text-[10px] mt-0.5 flex items-center justify-end gap-1" style={{ color: 'var(--text-muted)' }}>

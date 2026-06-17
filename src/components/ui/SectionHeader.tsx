@@ -49,7 +49,7 @@ export default function SectionHeader({
       <div className={centered ? '' : 'flex-1 min-w-0'}>
         {badge && (
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] md:text-[11px] font-bold tracking-[1.5px] uppercase mb-3"
-            style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
+            style={{ background: 'rgba(230,57,70,0.12)', color: '#E63946' }}>
             <Icon size={12} />
             {badge}
           </span>
@@ -68,7 +68,7 @@ export default function SectionHeader({
 
       {seeAllHref && !centered && (
         <Link href={seeAllHref}
-          className="text-[12px] font-bold text-[#F4821F] hover:underline whitespace-nowrap">
+          className="text-[12px] font-bold text-[#E63946] hover:underline whitespace-nowrap">
           {seeAllText} →
         </Link>
       )}
@@ -76,7 +76,7 @@ export default function SectionHeader({
       {seeAllHref && centered && (
         <div className="mt-3">
           <Link href={seeAllHref}
-            className="text-[12px] font-bold text-[#F4821F] hover:underline">
+            className="text-[12px] font-bold text-[#E63946] hover:underline">
             {seeAllText} →
           </Link>
         </div>

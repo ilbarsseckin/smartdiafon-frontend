@@ -37,7 +37,7 @@ export default function GirisPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-9 h-9 rounded-xl bg-gray-900 dark:bg-gray-100 flex items-center justify-center">
-              <Printer size={18} className="text-[#F4821F]" />
+              <Printer size={18} className="text-[#E63946]" />
             </div>
             <Logo className="h-7" />
           </Link>
@@ -51,7 +51,7 @@ export default function GirisPage() {
               <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">E-posta</label>
               <input type="email" placeholder="ornek@mail.com"
                 {...register('email', { required: 'E-posta zorunlu' })}
-                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors" />
+                className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946] transition-colors" />
               {errors.email && <p className="text-[11px] text-red-500 mt-1">{errors.email.message}</p>}
             </div>
 
@@ -60,7 +60,7 @@ export default function GirisPage() {
               <div className="relative">
                 <input type={showPass ? 'text' : 'password'} placeholder="••••••••"
                   {...register('password', { required: 'Şifre zorunlu' })}
-                  className="w-full px-3.5 py-2.5 pr-10 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors" />
+                  className="w-full px-3.5 py-2.5 pr-10 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946] transition-colors" />
                 <button type="button" onClick={() => setShowPass(!showPass)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                   {showPass ? <EyeOff size={15} /> : <Eye size={15} />}
@@ -70,7 +70,7 @@ export default function GirisPage() {
             </div>
 
             <button type="submit" disabled={isSubmitting}
-              className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
+              className="w-full bg-[#E63946] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
               {isSubmitting ? 'Giriş yapılıyor...' : 'Giriş yap'}
             </button>
           </form>
@@ -78,7 +78,7 @@ export default function GirisPage() {
 
         <p className="text-center text-[12px] text-gray-400 mt-4">
           Hesabınız yok mu?{' '}
-          <Link href="/kayit" className="text-[#F4821F] hover:underline">Kayıt olun</Link>
+          <Link href="/kayit" className="text-[#E63946] hover:underline">Kayıt olun</Link>
         </p>
       </div>
     </div>

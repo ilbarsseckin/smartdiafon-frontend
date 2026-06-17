@@ -110,7 +110,7 @@ export default function LandingPage() {
       <>
         <Navbar />
         <div className="min-h-screen flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full border-2 border-[#F4821F] border-t-transparent animate-spin" />
+          <div className="w-8 h-8 rounded-full border-2 border-[#E63946] border-t-transparent animate-spin" />
         </div>
       </>
     )
@@ -119,7 +119,7 @@ export default function LandingPage() {
   if (!campaign) return null
 
   const sections = parseLandingContent(campaign.landingContent || '')
-  const accentColor = campaign.badgeColor || '#F4821F'
+  const accentColor = campaign.badgeColor || '#E63946'
   const ctaLink = campaign.ctaLink || '/urunler'
   const ctaText = campaign.ctaText || 'Hemen Sipariş Ver'
 

@@ -71,7 +71,7 @@ const CARDS: CardData[] = [
     },
     bodyStyle: { color: '#fff' },
     tagStyle:   { color: 'rgba(255,255,255,.5)' },
-    priceStyle: { color: '#FF5E00' },
+    priceStyle: { color: '#E63946' },
   },
   {
     id: 2,
@@ -88,7 +88,7 @@ const CARDS: CardData[] = [
       height: 165,
       bottom: 10,
       right: 10,
-      background: '#FF5E00',
+      background: '#E63946',
     },
     bodyStyle:  { color: '#000' },
     tagStyle:   { color: 'rgba(0,0,0,.55)' },
@@ -115,8 +115,8 @@ const CARDS: CardData[] = [
     },
     bodyStyle:  { color: '#fff' },
     tagStyle:   { color: 'rgba(255,255,255,.45)' },
-    titleStyle: { color: '#FF5E00' },
-    priceStyle: { color: '#FF5E00' },
+    titleStyle: { color: '#E63946' },
+    priceStyle: { color: '#E63946' },
   },
 ]
 
@@ -203,7 +203,7 @@ function HeroCard({ card }: { card: CardData }) {
             </div>
           </div>
           {card.extra && (
-            <span style={{ fontSize: 11, color: '#FF5E00' }}>{card.extra}</span>
+            <span style={{ fontSize: 11, color: '#E63946' }}>{card.extra}</span>
           )}
         </div>
       </div>
@@ -261,7 +261,7 @@ export default function FloatingCardsSection() {
               fontWeight: 700,
               letterSpacing: '3px',
               textTransform: 'uppercase',
-              color: '#FF5E00',
+              color: '#E63946',
               background: 'rgba(255,94,0,.1)',
               border: '1px solid rgba(255,94,0,.25)',
               borderRadius: 6,
@@ -285,7 +285,7 @@ export default function FloatingCardsSection() {
           >
             Kaliteli Baskı
             <br />
-            <span style={{ color: '#FF5E00' }}>Uygun Fiyat</span>
+            <span style={{ color: '#E63946' }}>Uygun Fiyat</span>
           </h2>
 
           {/* Alt yazı */}
@@ -314,7 +314,7 @@ export default function FloatingCardsSection() {
                 textTransform: 'uppercase',
                 padding: '12px 28px',
                 borderRadius: 10,
-                background: '#FF5E00',
+                background: '#E63946',
                 color: '#fff',
                 textDecoration: 'none',
                 transition: 'opacity .2s',
@@ -340,7 +340,7 @@ export default function FloatingCardsSection() {
                 textDecoration: 'none',
                 transition: 'border-color .2s',
               }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = '#FF5E00')}
+              onMouseEnter={e => (e.currentTarget.style.borderColor = '#E63946')}
               onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border, #ddd)')}
             >
               Teklif Al

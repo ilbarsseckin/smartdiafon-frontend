@@ -391,7 +391,7 @@ export default function SepetPage() {
                                 <div className="flex flex-wrap gap-1 mt-1.5">
                                   {item.attributes.map(a => (
                                     <span key={a.attributeId} className="text-[10px] font-medium px-1.5 py-0.5 rounded-md"
-                                      style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                                      style={{ background: 'rgba(230,57,70,0.1)', color: '#DC2626' }}>
                                       {a.label}: {a.optionValue}
                                     </span>
                                   ))}
@@ -408,7 +408,7 @@ export default function SepetPage() {
                                   {hasSupport && (
                                     <button onClick={() => setExpandedNotesId(notesExpanded ? null : item.id)}
                                       className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md"
-                                      style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                                      style={{ background: 'rgba(230,57,70,0.1)', color: '#DC2626' }}>
                                       <Palette size={10} /> Tasarım Desteği {notesExpanded ? '▲' : '▼'}
                                     </button>
                                   )}
@@ -453,7 +453,7 @@ export default function SepetPage() {
                         <label key={a.id} className="flex items-start gap-2.5 p-2.5 rounded-xl cursor-pointer"
                           style={{
                             border: selectedAddr === a.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
-                            background: selectedAddr === a.id ? 'rgba(244,130,31,0.05)' : 'var(--bg-secondary)',
+                            background: selectedAddr === a.id ? 'rgba(230,57,70,0.05)' : 'var(--bg-secondary)',
                           }}>
                           <input type="radio" name="addr-static" value={a.id}
                             checked={selectedAddr === a.id} onChange={() => setSelectedAddr(a.id)}
@@ -507,7 +507,7 @@ export default function SepetPage() {
               {catalogItems.length > 0 && (
                 <button onClick={() => router.push('/siparis-olustur')}
                   className="w-full flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-2xl hover:opacity-90"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)', boxShadow: '0 6px 14px rgba(244,130,31,0.3)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)', boxShadow: '0 6px 14px rgba(230,57,70,0.3)' }}>
                   <Send size={15} />
                   Siparişi Tamamla
                   <span className="text-[12px] opacity-80">(₺{catalogTotalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })})</span>
@@ -559,7 +559,7 @@ export default function SepetPage() {
                   </div>
                 ) : (
                   <div className="rounded-xl p-3"
-                    style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)' }}>
+                    style={{ background: 'rgba(230,57,70,0.06)', border: '1px solid rgba(230,57,70,0.2)' }}>
                     <div className="flex items-start gap-2">
                       <KeyRound size={14} className="text-[#DC2626] mt-0.5 flex-shrink-0" />
                       <div>
@@ -597,7 +597,7 @@ export default function SepetPage() {
                       {addresses.map(a => (
                         <label key={a.id} className="flex items-start gap-2.5 p-3 rounded-xl cursor-pointer"
                           style={{
-                            background: selectedSavedAddrId === a.id ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
+                            background: selectedSavedAddrId === a.id ? 'rgba(230,57,70,0.08)' : 'var(--bg-secondary)',
                             border: selectedSavedAddrId === a.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                           }}>
                           <input type="radio" name="catalog-addr"
@@ -609,7 +609,7 @@ export default function SepetPage() {
                               <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>{a.title}</p>
                               {a.isDefault && (
                                 <span className="text-[9px] px-1.5 py-0.5 rounded font-bold"
-                                  style={{ background: 'rgba(244,130,31,0.15)', color: '#DC2626' }}>Varsayılan</span>
+                                  style={{ background: 'rgba(230,57,70,0.15)', color: '#DC2626' }}>Varsayılan</span>
                               )}
                             </div>
                             <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
@@ -623,7 +623,7 @@ export default function SepetPage() {
                         style={{
                           border: editMode ? '1.5px solid #DC2626' : '1px dashed var(--border)',
                           color: editMode ? '#DC2626' : 'var(--text-muted)',
-                          background: editMode ? 'rgba(244,130,31,0.05)' : 'transparent',
+                          background: editMode ? 'rgba(230,57,70,0.05)' : 'transparent',
                         }}>
                         <Plus size={11} /> Yeni adres ekle
                       </button>
@@ -698,7 +698,7 @@ export default function SepetPage() {
                     </div>
 
                     {isLoggedIn && (
-                      <div className="rounded-xl p-3" style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
+                      <div className="rounded-xl p-3" style={{ background: 'rgba(230,57,70,0.04)', border: '1px solid rgba(230,57,70,0.2)' }}>
                         <label className="flex items-start gap-2 cursor-pointer">
                           <input type="checkbox" checked={saveAddressToProfile}
                             onChange={e => setSaveAddressToProfile(e.target.checked)} className="mt-0.5 accent-[#DC2626]" />
@@ -826,7 +826,7 @@ export default function SepetPage() {
                             style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
                         </div>
                       </div>
-                      <p className="text-[11px] p-2.5 rounded-lg" style={{ background: 'rgba(244,130,31,0.06)', color: 'var(--text-secondary)' }}>
+                      <p className="text-[11px] p-2.5 rounded-lg" style={{ background: 'rgba(230,57,70,0.06)', color: 'var(--text-secondary)' }}>
                         ℹ️ Kurumsal faturanız sipariş tesliminden sonra e-posta ile iletilecektir.
                       </p>
                     </div>
@@ -892,7 +892,7 @@ export default function SepetPage() {
                           {installers.map(inst => (
                             <label key={inst.id} className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all"
                               style={{
-                                background: selectedInstallerId === inst.id ? 'rgba(244,130,31,0.08)' : 'var(--bg-card)',
+                                background: selectedInstallerId === inst.id ? 'rgba(230,57,70,0.08)' : 'var(--bg-card)',
                                 border: selectedInstallerId === inst.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                               }}
                               onClick={() => setSelectedInstallerId(inst.id)}>
@@ -934,7 +934,7 @@ export default function SepetPage() {
                 <div className="space-y-2">
                   {/* İade koşulları */}
                   <div className="rounded-xl p-3"
-                    style={{ background: 'rgba(244,130,31,0.05)', border: `1px solid ${termsAccepted ? 'rgba(244,130,31,0.4)' : 'rgba(244,130,31,0.15)'}` }}>
+                    style={{ background: 'rgba(230,57,70,0.05)', border: `1px solid ${termsAccepted ? 'rgba(230,57,70,0.4)' : 'rgba(230,57,70,0.15)'}` }}>
                     <label className="flex items-start gap-2.5 cursor-pointer">
                       <div onClick={() => setTermsAccepted(o => !o)}
                         className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
@@ -957,7 +957,7 @@ export default function SepetPage() {
 
                   {/* Mesafeli satış sözleşmesi */}
                   <div className="rounded-xl p-3"
-                    style={{ background: 'rgba(244,130,31,0.05)', border: `1px solid ${mesafeliAccepted ? 'rgba(244,130,31,0.4)' : 'rgba(244,130,31,0.15)'}` }}>
+                    style={{ background: 'rgba(230,57,70,0.05)', border: `1px solid ${mesafeliAccepted ? 'rgba(230,57,70,0.4)' : 'rgba(230,57,70,0.15)'}` }}>
                     <label className="flex items-start gap-2.5 cursor-pointer">
                       <div onClick={() => setMesafeliAccepted(o => !o)}
                         className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
@@ -996,7 +996,7 @@ export default function SepetPage() {
                 </button>
                 <button onClick={submitCatalogOrder} disabled={orderSubmitting || !termsAccepted || !mesafeliAccepted}
                   className="flex-1 flex items-center justify-center gap-2 py-3 text-[13px] font-bold text-white rounded-xl disabled:opacity-50"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)' }}>
                   {orderSubmitting
                     ? <><Loader2 size={14} className="animate-spin" /> Gönderiliyor...</>
                     : <><Send size={14} /> Siparişi Gönder</>}

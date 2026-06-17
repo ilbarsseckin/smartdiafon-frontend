@@ -254,18 +254,18 @@ function HeroAdminInner() {
     return (
       <div className="rounded-xl p-4"
         style={{
-          background: isMobile ? 'rgba(244,130,31,0.03)' : 'var(--bg-secondary)',
-          border: isMobile ? '1px dashed rgba(244,130,31,0.3)' : '1px solid var(--border)',
+          background: isMobile ? 'rgba(230,57,70,0.03)' : 'var(--bg-secondary)',
+          border: isMobile ? '1px dashed rgba(230,57,70,0.3)' : '1px solid var(--border)',
         }}>
         <div className="flex items-center gap-2 mb-2">
-          <Icon size={14} className="text-[#F4821F]" />
+          <Icon size={14} className="text-[#E63946]" />
           <label className="text-[11px] font-bold uppercase tracking-[1px]"
             style={{ color: 'var(--text-primary)' }}>
             {titleText}
           </label>
           {isMobile && (
             <span className="text-[9px] px-1.5 py-0.5 rounded font-bold"
-              style={{ background: 'rgba(244,130,31,0.15)', color: '#F4821F' }}>
+              style={{ background: 'rgba(230,57,70,0.15)', color: '#E63946' }}>
               Opsiyonel
             </span>
           )}
@@ -279,7 +279,7 @@ function HeroAdminInner() {
           <button type="button" onClick={() => setMode('url')}
             className="flex items-center justify-center gap-1.5 px-3 py-2 text-[12px] font-bold rounded-lg transition-all"
             style={mode === 'url'
-              ? { background: 'rgba(244,130,31,0.1)', color: '#F4821F', border: '1.5px solid #F4821F' }
+              ? { background: 'rgba(230,57,70,0.1)', color: '#E63946', border: '1.5px solid #E63946' }
               : { background: 'var(--bg-card)', color: 'var(--text-muted)', border: '1.5px solid var(--border)' }}>
             <LinkIcon size={12} />
             URL ile
@@ -287,7 +287,7 @@ function HeroAdminInner() {
           <button type="button" onClick={() => setMode('upload')}
             className="flex items-center justify-center gap-1.5 px-3 py-2 text-[12px] font-bold rounded-lg transition-all"
             style={mode === 'upload'
-              ? { background: 'rgba(244,130,31,0.1)', color: '#F4821F', border: '1.5px solid #F4821F' }
+              ? { background: 'rgba(230,57,70,0.1)', color: '#E63946', border: '1.5px solid #E63946' }
               : { background: 'var(--bg-card)', color: 'var(--text-muted)', border: '1.5px solid var(--border)' }}>
             <Upload size={12} />
             Dosya Yükle
@@ -316,7 +316,7 @@ function HeroAdminInner() {
               }}>
               {uploading ? (
                 <>
-                  <Loader2 size={20} className="animate-spin text-[#F4821F]" />
+                  <Loader2 size={20} className="animate-spin text-[#E63946]" />
                   <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
                     Yükleniyor...
                   </p>
@@ -376,7 +376,7 @@ function HeroAdminInner() {
             <div>
               <h1 className="text-[24px] font-black tracking-[-0.5px] flex items-center gap-2"
                 style={{ color: 'var(--text-primary)' }}>
-                <Sparkles size={20} className="text-[#F4821F]" />
+                <Sparkles size={20} className="text-[#E63946]" />
                 Hero Slider
               </h1>
               <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>
@@ -384,14 +384,14 @@ function HeroAdminInner() {
               </p>
             </div>
             <button onClick={openCreate}
-              className="flex items-center gap-1.5 px-4 py-2 text-[12px] font-bold rounded-lg bg-[#F4821F] text-white hover:bg-[#e07010] transition-colors">
+              className="flex items-center gap-1.5 px-4 py-2 text-[12px] font-bold rounded-lg bg-[#E63946] text-white hover:bg-[#C1272D] transition-colors">
               <Plus size={13} /> Yeni Slide
             </button>
           </div>
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={28} className="animate-spin text-[#E63946]" />
             </div>
           ) : slides.length === 0 ? (
             <div className="text-center py-20 rounded-2xl"
@@ -401,7 +401,7 @@ function HeroAdminInner() {
                 Henüz hero slide yok
               </p>
               <button onClick={openCreate}
-                className="text-[12px] font-bold text-[#F4821F] hover:underline">
+                className="text-[12px] font-bold text-[#E63946] hover:underline">
                 İlk slide'ı oluştur →
               </button>
             </div>
@@ -440,7 +440,7 @@ function HeroAdminInner() {
                     {/* Mobile image varsa indicator */}
                     {s.mobileImageUrl && (
                       <span className="absolute bottom-1 right-1 w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ background: '#F4821F' }}
+                        style={{ background: '#E63946' }}
                         title="Ayrı mobil görseli var">
                       <Smartphone size={10} className="text-white" />
                       </span>
@@ -450,7 +450,7 @@ function HeroAdminInner() {
                   <div className="flex-1 p-4 min-w-0">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       {s.label && (
-                        <span className="text-[10px] font-black px-1.5 py-0.5 rounded text-white bg-[#F4821F]">
+                        <span className="text-[10px] font-black px-1.5 py-0.5 rounded text-white bg-[#E63946]">
                           {s.label}
                         </span>
                       )}
@@ -569,7 +569,7 @@ function HeroAdminInner() {
                       className="w-8 h-8 rounded-lg transition-transform hover:scale-110"
                       style={{
                         background: c,
-                        border: form.backgroundColor === c ? '2px solid #F4821F' : '2px solid var(--border)',
+                        border: form.backgroundColor === c ? '2px solid #E63946' : '2px solid var(--border)',
                       }} />
                   ))}
                   <input value={form.backgroundColor}
@@ -669,7 +669,7 @@ function HeroAdminInner() {
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" checked={form.active}
                   onChange={e => setForm({ ...form, active: e.target.checked })}
-                  className="w-4 h-4 accent-[#F4821F]" />
+                  className="w-4 h-4 accent-[#E63946]" />
                 <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>
                   Aktif
                 </span>
@@ -687,7 +687,7 @@ function HeroAdminInner() {
                 İptal
               </button>
               <button onClick={handleSave} disabled={saving}
-                className="flex items-center gap-1.5 px-4 py-2 text-[12px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+                className="flex items-center gap-1.5 px-4 py-2 text-[12px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors disabled:opacity-50">
                 {saving ? <Loader2 size={13} className="animate-spin" /> : <Save size={13} />}
                 {editId ? 'Güncelle' : 'Oluştur'}
               </button>

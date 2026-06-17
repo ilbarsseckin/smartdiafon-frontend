@@ -364,7 +364,7 @@ function UrunlerContent() {
 
               {loading ? (
                 <div className="flex justify-center py-16">
-                  <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+                  <Loader2 size={24} className="animate-spin text-[#E63946]" />
                 </div>
               ) : filtered.length === 0 ? (
                 <div className="text-center py-14 text-[14px]" style={{ color: 'var(--text-muted)' }}>
@@ -409,7 +409,7 @@ function UrunlerContent() {
                               <div className="relative">
                                 {p.featured && (
                                   <span className="absolute -top-1 -left-1 z-10">
-                                    <Star size={12} className="text-[#F4821F] fill-[#F4821F]" />
+                                    <Star size={12} className="text-[#E63946] fill-[#E63946]" />
                                   </span>
                                 )}
                                 {p.imageUrl
@@ -466,7 +466,7 @@ function UrunlerContent() {
 
                               <div className="flex items-center justify-end gap-1.5">
                                 <button onClick={() => handleEdit(p)} title="Düzenle"
-                                  className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#F4821F]"
+                                  className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:text-[#E63946]"
                                   style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>
                                   <Edit2 size={12} />
                                 </button>
@@ -507,7 +507,7 @@ function UrunlerContent() {
                     {editId ? 'Ürünü Düzenle' : 'Yeni Ürün Ekle'}
                   </p>
                   {editId && (
-                    <button onClick={resetForm} className="text-[11px] text-[#F4821F] hover:underline">
+                    <button onClick={resetForm} className="text-[11px] text-[#E63946] hover:underline">
                       Yeni ürüne geç
                     </button>
                   )}
@@ -524,9 +524,9 @@ function UrunlerContent() {
                         <button key={k.slug} type="button" onClick={() => setKategori(k.slug)}
                           className="flex items-center gap-1.5 text-[12px] px-3 py-1.5 rounded-lg border transition-colors"
                           style={{
-                            background: form.kategoriSlug === k.slug ? '#F4821F' : 'var(--bg-secondary)',
+                            background: form.kategoriSlug === k.slug ? '#E63946' : 'var(--bg-secondary)',
                             color: form.kategoriSlug === k.slug ? 'white' : 'var(--text-secondary)',
-                            borderColor: form.kategoriSlug === k.slug ? '#F4821F' : 'var(--border)',
+                            borderColor: form.kategoriSlug === k.slug ? '#E63946' : 'var(--border)',
                             fontWeight: form.kategoriSlug === k.slug ? 600 : 400,
                           }}>
                           {k.icon} {k.label}
@@ -678,7 +678,7 @@ function UrunlerContent() {
                             }
                           })}
                           className="text-[12px] py-2 px-3 rounded-lg hover:bg-orange-500/5"
-                          style={{ color: '#F4821F', border: '1px dashed var(--border)' }}>
+                          style={{ color: '#E63946', border: '1px dashed var(--border)' }}>
                           + Barem ekle
                         </button>
                       </div>
@@ -698,7 +698,7 @@ function UrunlerContent() {
                       <button type="button" onClick={() => setForm(f => ({ ...f, featured: !f.featured }))}
                         className="w-full flex items-center justify-center gap-2 text-[12px] font-semibold px-3 py-2.5 rounded-lg transition-all"
                         style={form.featured
-                          ? { background: 'rgba(244,130,31,0.15)', color: '#F4821F', border: '1px solid rgba(244,130,31,0.4)' }
+                          ? { background: 'rgba(230,57,70,0.15)', color: '#E63946', border: '1px solid rgba(230,57,70,0.4)' }
                           : { background: 'var(--bg-secondary)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}>
                         {form.featured ? '⭐ Öne çıkan' : '☆ Normal'}
                       </button>
@@ -767,7 +767,7 @@ function UrunlerContent() {
                   </button>
                   <button onClick={handleSave} disabled={formLoading}
                     className="flex items-center gap-2 px-6 py-2.5 text-[13px] font-bold text-white rounded-lg transition-colors disabled:opacity-50"
-                    style={{ background: '#F4821F' }}>
+                    style={{ background: '#E63946' }}>
                     {formLoading
                       ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                       : <><Save size={14} /> {editId ? 'Güncelle' : 'Kaydet'}</>}
@@ -806,7 +806,7 @@ function UrunlerContent() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     {['urun_adi', 'kategori', 'liste_fiyati'].map(c => (
                       <code key={c} className="text-[11px] px-2 py-0.5 rounded"
-                        style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: '#F4821F' }}>
+                        style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', color: '#E63946' }}>
                         {c}
                       </code>
                     ))}
@@ -828,10 +828,10 @@ function UrunlerContent() {
                 </div>
 
                 <label className={`block border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-colors ${
-                  importing ? 'border-[#F4821F]' : 'hover:border-[#F4821F]'}`}
-                  style={{ borderColor: importing ? '#F4821F' : 'var(--border-strong)' }}>
+                  importing ? 'border-[#E63946]' : 'hover:border-[#E63946]'}`}
+                  style={{ borderColor: importing ? '#E63946' : 'var(--border-strong)' }}>
                   {importing
-                    ? <Loader2 size={28} className="mx-auto mb-3 animate-spin text-[#F4821F]" />
+                    ? <Loader2 size={28} className="mx-auto mb-3 animate-spin text-[#E63946]" />
                     : <Upload size={28} className="mx-auto mb-3" style={{ color: 'var(--text-muted)' }} />}
                   <p className="text-[14px] font-medium mb-1" style={{ color: 'var(--text-primary)' }}>
                     {importing ? 'Import ediliyor...' : 'Dosyayı sürükle veya tıkla'}
@@ -928,7 +928,7 @@ function UrunlerContent() {
                 </div>
 
                 <div className="p-3 rounded-xl text-[12px]"
-                  style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)', color: '#F4821F' }}>
+                  style={{ background: 'rgba(230,57,70,0.06)', border: '1px solid rgba(230,57,70,0.2)', color: '#E63946' }}>
                   {bulkType === 'PERCENT_INCREASE' && `${bulkKat ? KATEGORILER.find(k=>k.slug===bulkKat)?.label+' ürünleri' : 'Tüm ürünler'} %${bulkValue} zamlanacak`}
                   {bulkType === 'PERCENT_DECREASE' && `${bulkKat ? KATEGORILER.find(k=>k.slug===bulkKat)?.label+' ürünleri' : 'Tüm ürünler'} %${bulkValue} indirilecek`}
                   {bulkType === 'FIXED_INCREASE'   && `${bulkKat ? KATEGORILER.find(k=>k.slug===bulkKat)?.label+' ürünleri' : 'Tüm ürünler'} fiyatlarına $${bulkValue} eklenecek`}
@@ -937,7 +937,7 @@ function UrunlerContent() {
 
                 <button onClick={handleBulk} disabled={bulkLoading}
                   className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold text-white transition-colors disabled:opacity-50"
-                  style={{ background: '#F4821F' }}>
+                  style={{ background: '#E63946' }}>
                   {bulkLoading
                     ? <><Loader2 size={14} className="animate-spin" /> Güncelleniyor...</>
                     : <><TrendingUp size={14} /> Fiyatları Güncelle</>}

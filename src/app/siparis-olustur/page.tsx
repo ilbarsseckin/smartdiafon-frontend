@@ -280,7 +280,7 @@ export default function SiparisOlusturPage() {
                   </div>
                 </div>
               ) : (
-                <div className="rounded-2xl p-4" style={{ background: 'rgba(244,130,31,0.05)', border: '1px solid rgba(244,130,31,0.2)' }}>
+                <div className="rounded-2xl p-4" style={{ background: 'rgba(230,57,70,0.05)', border: '1px solid rgba(230,57,70,0.2)' }}>
                   <p className="text-[13px] font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Hesabınız var mı?</p>
                   <p className="text-[12px] mb-3" style={{ color: 'var(--text-muted)' }}>Giriş yaparak adreslerinizi kullanın, siparişlerinizi takip edin.</p>
                   <Link href="/giris" className="text-[12px] font-bold px-4 py-2 rounded-lg"
@@ -296,7 +296,7 @@ export default function SiparisOlusturPage() {
                       <label key={addr.id} onClick={() => applySavedAddress(addr)}
                         className="flex items-start gap-3 p-3 rounded-xl cursor-pointer transition-all"
                         style={{
-                          background: selectedSavedAddrId === addr.id ? 'rgba(244,130,31,0.06)' : 'var(--bg-secondary)',
+                          background: selectedSavedAddrId === addr.id ? 'rgba(230,57,70,0.06)' : 'var(--bg-secondary)',
                           border: selectedSavedAddrId === addr.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                         }}>
                         <div className="w-4 h-4 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"
@@ -311,7 +311,7 @@ export default function SiparisOlusturPage() {
                             <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>{addr.title}</p>
                             {addr.isDefault && (
                               <span className="text-[10px] px-1.5 py-0.5 rounded font-bold"
-                                style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>Varsayılan</span>
+                                style={{ background: 'rgba(230,57,70,0.1)', color: '#DC2626' }}>Varsayılan</span>
                             )}
                           </div>
                           <p className="text-[11px] mt-0.5 truncate" style={{ color: 'var(--text-muted)' }}>
@@ -455,7 +455,7 @@ export default function SiparisOlusturPage() {
                             <label key={inst.id} onClick={() => setSelectedInstallerId(inst.id === selectedInstallerId ? '' : inst.id)}
                               className="flex items-center gap-3 p-4 rounded-xl cursor-pointer transition-all"
                               style={{
-                                background: selectedInstallerId === inst.id ? 'rgba(244,130,31,0.06)' : 'var(--bg-secondary)',
+                                background: selectedInstallerId === inst.id ? 'rgba(230,57,70,0.06)' : 'var(--bg-secondary)',
                                 border: selectedInstallerId === inst.id ? '1.5px solid #DC2626' : '1px solid var(--border)',
                               }}>
                               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-[15px] flex-shrink-0"
@@ -646,7 +646,7 @@ export default function SiparisOlusturPage() {
                 <button onClick={handleSubmit}
                   disabled={orderSubmitting || !termsAccepted || !mesafeliAccepted}
                   className="w-full flex items-center justify-center gap-2 py-4 text-[15px] font-black text-white rounded-2xl transition-all disabled:opacity-50"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)', boxShadow: '0 6px 20px rgba(244,130,31,0.35)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)', boxShadow: '0 6px 20px rgba(230,57,70,0.35)' }}>
                   {orderSubmitting
                     ? <><Loader2 size={16} className="animate-spin" /> İşleniyor...</>
                     : <><CreditCard size={16} /> Siparişi Onayla & Öde</>}
@@ -698,7 +698,7 @@ function TermsCheck({ accepted, onToggle, href, linkText, rest }: {
 }) {
   return (
     <div className="rounded-xl p-3"
-      style={{ background: 'rgba(244,130,31,0.04)', border: `1px solid ${accepted ? 'rgba(244,130,31,0.35)' : 'rgba(244,130,31,0.12)'}` }}>
+      style={{ background: 'rgba(230,57,70,0.04)', border: `1px solid ${accepted ? 'rgba(230,57,70,0.35)' : 'rgba(230,57,70,0.12)'}` }}>
       <label className="flex items-start gap-2.5 cursor-pointer">
         <div onClick={onToggle}
           className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"

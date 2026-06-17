@@ -224,7 +224,7 @@ export default function CategoryAttributesPage() {
               </button>
               <div>
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <Sliders size={18} className="text-[#F4821F]" />
+                  <Sliders size={18} className="text-[#E63946]" />
                   <h1 className="text-[20px] font-bold tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
                     Öznitelikler
                   </h1>
@@ -246,7 +246,7 @@ export default function CategoryAttributesPage() {
 
             <div className="flex gap-2">
               <button onClick={openNewAttr}
-                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#F4821F] text-white hover:bg-[#e07010] transition-colors">
+                className="flex items-center gap-1.5 text-[13px] font-bold px-4 py-2 rounded-lg bg-[#E63946] text-white hover:bg-[#C1272D] transition-colors">
                 <Plus size={14} /> Yeni Öznitelik
               </button>
               <button onClick={load}
@@ -259,7 +259,7 @@ export default function CategoryAttributesPage() {
 
           {loading ? (
             <div className="flex justify-center py-16">
-              <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={24} className="animate-spin text-[#E63946]" />
             </div>
           ) : attributes.length === 0 ? (
             <div className="text-center py-16 rounded-2xl"
@@ -272,7 +272,7 @@ export default function CategoryAttributesPage() {
                 Bu kategorideki ürünlerin sahip olabileceği özellikleri (ebat, renk, kağıt vb.) burada tanımlarsın.
               </p>
               <button onClick={openNewAttr}
-                className="text-[12px] font-bold text-[#F4821F] hover:underline">
+                className="text-[12px] font-bold text-[#E63946] hover:underline">
                 + İlk özniteliği ekle
               </button>
             </div>
@@ -290,7 +290,7 @@ export default function CategoryAttributesPage() {
                       style={{ borderBottom: '1px solid var(--border)' }}>
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg flex items-center justify-center"
-                          style={{ background: 'rgba(244,130,31,0.08)', color: '#F4821F' }}>
+                          style={{ background: 'rgba(230,57,70,0.08)', color: '#E63946' }}>
                           <Icon size={16} />
                         </div>
                         <div>
@@ -317,7 +317,7 @@ export default function CategoryAttributesPage() {
 
                       <div className="flex items-center gap-1.5">
                         <button onClick={() => openEditAttr(attr)} title="Düzenle"
-                          className="w-7 h-7 rounded-lg flex items-center justify-center hover:text-[#F4821F]"
+                          className="w-7 h-7 rounded-lg flex items-center justify-center hover:text-[#E63946]"
                           style={{ border: '1px solid var(--border)', background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>
                           <Edit2 size={12} />
                         </button>
@@ -346,7 +346,7 @@ export default function CategoryAttributesPage() {
                                 </span>
                                 {opt.priceModifier && opt.priceModifier !== 1 ? (
                                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded"
-                                    style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
+                                    style={{ background: 'rgba(230,57,70,0.12)', color: '#E63946' }}>
                                     x{Number(opt.priceModifier).toFixed(2)}
                                   </span>
                                 ) : (
@@ -356,7 +356,7 @@ export default function CategoryAttributesPage() {
                                   </span>
                                 )}
                                 <button onClick={() => openEditOpt(attr, opt)} title="Düzenle"
-                                  className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity text-[#F4821F]">
+                                  className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity text-[#E63946]">
                                   <Edit2 size={11} />
                                 </button>
                                 <button onClick={() => deleteOpt(opt)} disabled={deletingId === opt.id} title="Sil"
@@ -373,7 +373,7 @@ export default function CategoryAttributesPage() {
                         )}
                         <button onClick={() => openNewOpt(attr)}
                           className="flex items-center gap-1.5 text-[11px] font-semibold py-1.5 px-3 rounded-lg hover:bg-orange-500/5 transition-colors"
-                          style={{ color: '#F4821F', border: '1px dashed rgba(244,130,31,0.4)' }}>
+                          style={{ color: '#E63946', border: '1px dashed rgba(230,57,70,0.4)' }}>
                           <Plus size={12} /> Seçenek ekle
                         </button>
                       </div>
@@ -446,13 +446,13 @@ export default function CategoryAttributesPage() {
                           onClick={() => setAttrForm(f => ({ ...f, inputType: t.val }))}
                           className="flex items-start gap-2 text-left p-3 rounded-lg transition-all"
                           style={sel
-                            ? { background: 'rgba(244,130,31,0.08)', border: '2px solid #F4821F' }
+                            ? { background: 'rgba(230,57,70,0.08)', border: '2px solid #E63946' }
                             : { background: 'var(--bg-secondary)', border: '2px solid var(--border)' }}>
                           <Icon size={14}
-                            style={{ color: sel ? '#F4821F' : 'var(--text-muted)', marginTop: 2 }} />
+                            style={{ color: sel ? '#E63946' : 'var(--text-muted)', marginTop: 2 }} />
                           <div className="flex-1 min-w-0">
                             <p className="text-[12px] font-bold mb-0.5"
-                              style={{ color: sel ? '#F4821F' : 'var(--text-primary)' }}>
+                              style={{ color: sel ? '#E63946' : 'var(--text-primary)' }}>
                               {t.label}
                             </p>
                             <p className="text-[10px] leading-tight" style={{ color: 'var(--text-muted)' }}>
@@ -496,7 +496,7 @@ export default function CategoryAttributesPage() {
                   İptal
                 </button>
                 <button onClick={saveAttr} disabled={savingAttr}
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors disabled:opacity-50">
                   {savingAttr
                     ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                     : <><Save size={14} /> {editingAttrId ? 'Güncelle' : 'Kaydet'}</>}
@@ -582,12 +582,12 @@ export default function CategoryAttributesPage() {
                     onChange={e => setOptForm(f => ({ ...f, priceModifier: parseFloat(e.target.value) || 1 }))}
                     className="w-full px-3.5 py-2.5 text-[13px] rounded-lg outline-none font-mono"
                     style={{
-                      background: optForm.priceModifier !== 1 ? 'rgba(244,130,31,0.06)' : 'var(--bg-secondary)',
-                      border: optForm.priceModifier !== 1 ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                      background: optForm.priceModifier !== 1 ? 'rgba(230,57,70,0.06)' : 'var(--bg-secondary)',
+                      border: optForm.priceModifier !== 1 ? '1.5px solid #E63946' : '1px solid var(--border)',
                       color: 'var(--text-primary)',
                     }} />
                   {optForm.priceModifier !== 1 && (
-                    <p className="text-[11px] mt-1 font-semibold" style={{ color: '#F4821F' }}>
+                    <p className="text-[11px] mt-1 font-semibold" style={{ color: '#E63946' }}>
                       Baz fiyata göre {optForm.priceModifier > 1
                         ? `+%${((optForm.priceModifier - 1) * 100).toFixed(0)} daha pahalı`
                         : `-%${((1 - optForm.priceModifier) * 100).toFixed(0)} daha ucuz`}
@@ -603,7 +603,7 @@ export default function CategoryAttributesPage() {
                   İptal
                 </button>
                 <button onClick={saveOpt} disabled={savingOpt}
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors disabled:opacity-50">
                   {savingOpt
                     ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                     : <><Save size={14} /> {editingOpt ? 'Güncelle' : 'Kaydet'}</>}

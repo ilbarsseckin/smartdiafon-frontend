@@ -98,7 +98,7 @@ export default function SiparisTakipPage() {
     <>
       <Navbar />
       <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-        <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+        <Loader2 size={28} className="animate-spin text-[#E63946]" />
       </main>
     </>
   )
@@ -115,7 +115,7 @@ export default function SiparisTakipPage() {
           </p>
           <Link href="/"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-xl"
-            style={{ background: '#F4821F' }}>
+            style={{ background: '#E63946' }}>
             <ChevronLeft size={14} /> Ana sayfaya dön
           </Link>
         </div>
@@ -148,7 +148,7 @@ export default function SiparisTakipPage() {
               Sipariş Takibi
             </h1>
             <div className="flex items-center gap-2 mt-1">
-              <code className="text-[15px] font-mono font-bold" style={{ color: '#F4821F' }}>
+              <code className="text-[15px] font-mono font-bold" style={{ color: '#E63946' }}>
                 {order.orderNumber}
               </code>
               <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
@@ -250,14 +250,14 @@ export default function SiparisTakipPage() {
                           isDone ? 'text-white' : ''
                         }`}
                           style={{
-                            background: isDone ? '#F4821F' : 'var(--bg-secondary)',
-                            border: isCurrent ? '2px solid #F4821F' : isDone ? 'none' : '1.5px solid var(--border)',
+                            background: isDone ? '#E63946' : 'var(--bg-secondary)',
+                            border: isCurrent ? '2px solid #E63946' : isDone ? 'none' : '1.5px solid var(--border)',
                           }}>
                           <Icon size={14} style={{ color: isDone ? 'white' : 'var(--text-muted)' }} />
                         </div>
                         {!isLast && (
                           <div className="w-0.5 h-8 mt-1"
-                            style={{ background: isDone && currentIdx > i ? '#F4821F' : 'var(--border)' }} />
+                            style={{ background: isDone && currentIdx > i ? '#E63946' : 'var(--border)' }} />
                         )}
                       </div>
 
@@ -268,7 +268,7 @@ export default function SiparisTakipPage() {
                           {step.label}
                           {isCurrent && (
                             <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full font-bold"
-                              style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
+                              style={{ background: 'rgba(230,57,70,0.12)', color: '#E63946' }}>
                               Şu an
                             </span>
                           )}
@@ -306,7 +306,7 @@ export default function SiparisTakipPage() {
                       {item.tierQty.toLocaleString('tr-TR')} adet
                     </p>
                   </div>
-                  <p className="text-[14px] font-bold flex-shrink-0" style={{ color: '#F4821F' }}>
+                  <p className="text-[14px] font-bold flex-shrink-0" style={{ color: '#E63946' }}>
                     {formatTl(item.priceTl)}
                   </p>
                 </div>
@@ -318,7 +318,7 @@ export default function SiparisTakipPage() {
               <p className="text-[13px] font-bold" style={{ color: 'var(--text-secondary)' }}>
                 Toplam (KDV Dahil)
               </p>
-              <p className="text-[20px] font-black" style={{ color: '#F4821F' }}>
+              <p className="text-[20px] font-black" style={{ color: '#E63946' }}>
                 {formatTl(order.totalTl)}
               </p>
             </div>
@@ -328,7 +328,7 @@ export default function SiparisTakipPage() {
           <div className="rounded-2xl p-5"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <div className="flex items-center gap-2 mb-3">
-              <MapPin size={14} className="text-[#F4821F]" />
+              <MapPin size={14} className="text-[#E63946]" />
               <p className="text-[11px] font-bold uppercase tracking-[1.5px]"
                 style={{ color: 'var(--text-muted)' }}>Teslimat Bilgileri</p>
             </div>

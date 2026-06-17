@@ -36,7 +36,7 @@ function SuccessContent() {
             {orderId && (
               <button
                 onClick={() => router.push(`/hesabim/siparisler/${orderId}`)}
-                className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-xl hover:opacity-90 transition-opacity"
+                className="w-full bg-[#E63946] text-white text-[14px] font-medium py-3 rounded-xl hover:opacity-90 transition-opacity"
               >
                 Siparişimi görüntüle
               </button>

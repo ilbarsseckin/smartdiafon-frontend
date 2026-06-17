@@ -382,7 +382,7 @@ export default function TeklifClient() {
       {/* Başlık */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-3"
-          style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.25)' }}>
+          style={{ background: 'rgba(230,57,70,0.1)', border: '1px solid rgba(230,57,70,0.25)' }}>
           <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, color: '#DC2626' }}>ÜCRETSİZ · 2 DAKİKA</span>
         </div>
         <h1 className="text-2xl md:text-[32px] font-black tracking-[-0.5px] leading-tight" style={{ color: 'var(--text-primary)' }}>
@@ -430,7 +430,7 @@ export default function TeklifClient() {
 
       {/* Bilgi notu */}
       <div className="flex items-start gap-2 p-3 rounded-xl mb-6 text-[13px]"
-        style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-secondary)' }}>
+        style={{ background: 'rgba(230,57,70,0.08)', color: 'var(--text-secondary)' }}>
         <Info size={16} style={{ color: '#DC2626', flexShrink: 0, marginTop: 2 }} />
         <span>{sistem === 'ip'
           ? <>Bu hesaplama aracı <b>IP görüntülü interkom</b> sistemleri içindir. Cat5/Cat6 ethernet altyapısı gerektirir.</>
@@ -451,7 +451,7 @@ export default function TeklifClient() {
             <button onClick={() => setAltyapi('dt8')}
               className="text-left p-5 rounded-2xl transition-all"
               style={{
-                background: altyapi === 'dt8' ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
+                background: altyapi === 'dt8' ? 'rgba(230,57,70,0.08)' : 'var(--bg-secondary)',
                 border: altyapi === 'dt8' ? '2px solid #DC2626' : '2px solid transparent',
               }}>
               <div className="flex items-center gap-2 mb-2">
@@ -468,7 +468,7 @@ export default function TeklifClient() {
             <button onClick={() => setAltyapi('cat')}
               className="text-left p-5 rounded-2xl transition-all"
               style={{
-                background: altyapi === 'cat' ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
+                background: altyapi === 'cat' ? 'rgba(230,57,70,0.08)' : 'var(--bg-secondary)',
                 border: altyapi === 'cat' ? '2px solid #DC2626' : '2px solid transparent',
               }}>
               <div className="flex items-center gap-2 mb-2">
@@ -511,7 +511,7 @@ export default function TeklifClient() {
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <button onClick={() => { setTeklifMode('otomatik'); setStep(4) }}
                 className="text-left p-5 rounded-2xl transition-all hover:scale-[1.01]"
-                style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)', color: '#fff' }}>
+                style={{ background: 'linear-gradient(135deg,#DC2626,#F08080)', color: '#fff' }}>
                 <div className="flex items-center gap-2 mb-1">
                   <Zap size={20} />
                   <span className="font-black text-[15px]">Otomatik Teklif Hazırla</span>
@@ -621,7 +621,7 @@ export default function TeklifClient() {
           {/* Sistem + Geçerlilik */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="flex items-center gap-1.5 text-[12px] font-bold py-2 px-4 rounded-full"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+              style={{ background: 'rgba(230,57,70,0.1)', color: '#DC2626' }}>
               <Cable size={13} />
               {sistem === 'ip' ? 'IP İnterkom · Cat5/Cat6 Kablo' : 'Multibus · DT8 Kablo'}
             </span>
@@ -636,12 +636,12 @@ export default function TeklifClient() {
           {sistem === 'multibus' && (
             <label className="flex items-center gap-3 p-4 rounded-2xl cursor-pointer max-w-2xl mx-auto"
               style={{
-                background: diafonBox ? 'rgba(244,130,31,0.08)' : 'var(--bg-card)',
+                background: diafonBox ? 'rgba(230,57,70,0.08)' : 'var(--bg-card)',
                 border: diafonBox ? '2px solid #DC2626' : '1px solid var(--border)',
               }}>
               <input type="checkbox" checked={diafonBox} onChange={e => setDiafonBox(e.target.checked)} style={{ display: 'none' }} />
               <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: 'rgba(244,130,31,0.12)' }}>
+                style={{ background: 'rgba(230,57,70,0.12)' }}>
                 <Smartphone size={20} style={{ color: '#DC2626' }} />
               </div>
               <div className="flex-1">
@@ -851,7 +851,7 @@ export default function TeklifClient() {
             <div className="flex flex-wrap gap-3">
               <button onClick={handleSendQuote} disabled={sending || sent}
                 className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02] disabled:opacity-60"
-                style={{ background: sent ? '#10B981' : 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+                style={{ background: sent ? '#10B981' : 'linear-gradient(135deg,#DC2626,#F08080)' }}>
                 {sending ? <Loader2 size={18} className="animate-spin" /> : sent ? <Check size={18} /> : <Zap size={18} />}
                 {sent ? 'Teklifiniz Alındı!' : sending ? 'Gönderiliyor...' : 'Teklifi Gönder'}
               </button>
@@ -883,7 +883,7 @@ export default function TeklifClient() {
           <button onClick={() => canNext && setStep(s => s + 1)}
             disabled={!canNext}
             className="flex items-center gap-1 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02] disabled:opacity-40 disabled:hover:scale-100"
-            style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+            style={{ background: 'linear-gradient(135deg,#DC2626,#F08080)' }}>
             {step === 3 ? 'Teklifi Oluştur' : 'Devam Et'} <ChevronRight size={18} />
           </button>
         ) : step === 4 ? (
@@ -1000,7 +1000,7 @@ function Toggle({ label, desc, checked, onChange }: {
     <button onClick={() => onChange(!checked)}
       className="w-full flex items-center justify-between p-4 rounded-xl transition-all text-left"
       style={{
-        background: checked ? 'rgba(244,130,31,0.08)' : 'var(--bg-secondary)',
+        background: checked ? 'rgba(230,57,70,0.08)' : 'var(--bg-secondary)',
         border: checked ? '1px solid #DC2626' : '1px solid var(--border)',
       }}>
       <div>

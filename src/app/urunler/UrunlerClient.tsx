@@ -142,7 +142,7 @@ function UrunlerInner() {
           <button onClick={() => setActiveCat('all')}
             className="w-full flex items-center justify-between px-3 py-2 text-[12px] rounded-lg transition-colors"
             style={activeCat === 'all'
-              ? { background: 'rgba(244,130,31,0.1)', color: '#F4821F', fontWeight: 700 }
+              ? { background: 'rgba(230,57,70,0.1)', color: '#E63946', fontWeight: 700 }
               : { color: 'var(--text-secondary)' }}>
             <span>Tümü</span>
             <span className="text-[10px] opacity-60">{products.length}</span>
@@ -153,7 +153,7 @@ function UrunlerInner() {
               <button key={c.id} onClick={() => setActiveCat(c.slug)}
                 className="w-full flex items-center justify-between px-3 py-2 text-[12px] rounded-lg transition-colors"
                 style={activeCat === c.slug
-                  ? { background: 'rgba(244,130,31,0.1)', color: '#F4821F', fontWeight: 700 }
+                  ? { background: 'rgba(230,57,70,0.1)', color: '#E63946', fontWeight: 700 }
                   : { color: 'var(--text-secondary)' }}>
                 <span className="flex items-center gap-1.5 truncate">
                   {c.icon && <span className="text-[14px]">{c.icon}</span>}
@@ -195,7 +195,7 @@ function UrunlerInner() {
           <label className="flex items-center gap-2.5 cursor-pointer px-3 py-2 rounded-lg hover:bg-orange-500/5 transition-colors">
             <input type="checkbox" checked={onlyFeatured}
               onChange={e => setOnlyFeatured(e.target.checked)}
-              className="w-4 h-4 accent-[#F4821F] cursor-pointer" />
+              className="w-4 h-4 accent-[#E63946] cursor-pointer" />
             <span className="text-[12px]" style={{ color: 'var(--text-secondary)' }}>
               ⭐ Öne çıkan ürünler
             </span>
@@ -203,7 +203,7 @@ function UrunlerInner() {
           <label className="flex items-center gap-2.5 cursor-pointer px-3 py-2 rounded-lg hover:bg-orange-500/5 transition-colors">
             <input type="checkbox" checked={onlyDiscount}
               onChange={e => setOnlyDiscount(e.target.checked)}
-              className="w-4 h-4 accent-[#F4821F] cursor-pointer" />
+              className="w-4 h-4 accent-[#E63946] cursor-pointer" />
             <span className="text-[12px]" style={{ color: 'var(--text-secondary)' }}>
               🏷️ İndirimli ürünler
             </span>
@@ -253,7 +253,7 @@ function UrunlerInner() {
               </span>
               {activeFilterCount > 0 && (
                 <span className="px-2 py-0.5 text-[10px] font-black text-white rounded-full"
-                  style={{ background: '#F4821F' }}>
+                  style={{ background: '#E63946' }}>
                   {activeFilterCount}
                 </span>
               )}
@@ -272,7 +272,7 @@ function UrunlerInner() {
             <div>
               {loading ? (
                 <div className="py-20 flex items-center justify-center">
-                  <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+                  <Loader2 size={28} className="animate-spin text-[#E63946]" />
                 </div>
               ) : filtered.length === 0 ? (
                 <div className="py-20 text-center rounded-xl"
@@ -286,7 +286,7 @@ function UrunlerInner() {
                   {activeFilterCount > 0 && (
                     <button onClick={clearFilters}
                       className="px-4 py-2 text-[12px] font-bold text-white rounded-lg"
-                      style={{ background: '#F4821F' }}>
+                      style={{ background: '#E63946' }}>
                       Filtreleri Temizle
                     </button>
                   )}
@@ -383,7 +383,7 @@ function ProductCard({ product, kur }: { product: Product; kur: number }) {
                   ₺{(Number(product.originalPrice) * kur).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                 </p>
               )}
-              <p className="text-[14px] font-black tracking-[-0.5px]" style={{ color: '#F4821F' }}>
+              <p className="text-[14px] font-black tracking-[-0.5px]" style={{ color: '#E63946' }}>
                 ₺{priceTlKdvDahil.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
               </p>
               <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>KDV Dahil</p>
@@ -394,7 +394,7 @@ function ProductCard({ product, kur }: { product: Product; kur: number }) {
                 {product.minPriceQty} adet'ten başlayan
               </p>
             </div>
-            <ArrowRight size={14} className="text-[#F4821F] opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ArrowRight size={14} className="text-[#E63946] opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
         ) : (
           <p className="text-[11px] italic" style={{ color: 'var(--text-muted)' }}>Fiyat soruşturun</p>
@@ -408,7 +408,7 @@ export default function UrunlerClient() {
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-        <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+        <Loader2 size={28} className="animate-spin text-[#E63946]" />
       </div>
     }>
       <UrunlerInner />

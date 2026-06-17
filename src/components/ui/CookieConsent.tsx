@@ -45,7 +45,7 @@ export default function CookieConsent() {
         <span className="text-xl flex-shrink-0">🍪</span>
         <p className="flex-1 text-[13px] leading-[1.6]" style={{ color: 'var(--text-secondary)' }}>
           Deneyiminizi iyileştirmek için çerezler kullanıyoruz.{' '}
-          <Link href="/gizlilik" className="underline hover:text-[#F4821F]">
+          <Link href="/gizlilik" className="underline hover:text-[#E63946]">
             Gizlilik Politikası
           </Link>
         </p>
@@ -57,7 +57,7 @@ export default function CookieConsent() {
           </button>
           <button onClick={accept}
             className="flex-1 sm:flex-none px-5 py-2 rounded-lg text-[12px] font-bold text-white"
-            style={{ background: '#F4821F' }}>
+            style={{ background: '#E63946' }}>
             Kabul Et
           </button>
         </div>

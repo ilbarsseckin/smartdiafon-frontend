@@ -64,14 +64,14 @@ const STATUS_OPTIONS = [
   { value: 'READY',         label: 'Hazır',         color: '#0891B2', bg: 'rgba(8,145,178,0.1)' },
   { value: 'SHIPPED',       label: 'Kargoda',       color: '#059669', bg: 'rgba(16,185,129,0.1)' },
   { value: 'DELIVERED',     label: 'Teslim Edildi', color: '#16A34A', bg: 'rgba(22,163,74,0.1)' },
-  { value: 'CANCELLED',     label: 'İptal',         color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
+  { value: 'CANCELLED',     label: 'İptal',         color: '#E63946', bg: 'rgba(239,68,68,0.1)' },
 ]
 
 const PAYMENT_LABELS: Record<string, { label: string; color: string; bg: string }> = {
   PENDING:    { label: 'Ödeme Beklemede', color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
   PROCESSING: { label: '3DS Bekliyor',    color: '#D97706', bg: 'rgba(245,158,11,0.1)' },
   PAID:       { label: 'Ödendi',          color: '#16A34A', bg: 'rgba(22,163,74,0.15)' },
-  FAILED:     { label: 'Başarısız',       color: '#F4821F', bg: 'rgba(239,68,68,0.1)' },
+  FAILED:     { label: 'Başarısız',       color: '#E63946', bg: 'rgba(239,68,68,0.1)' },
   REFUNDED:   { label: 'İade Edildi',     color: '#6B7280', bg: 'rgba(107,114,128,0.1)' },
 }
 
@@ -197,7 +197,7 @@ export default function AdminCatalogOrderDetailPage() {
       <AdminGuard>
         <AdminNavbar />
         <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-          <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={28} className="animate-spin text-[#E63946]" />
         </main>
       </AdminGuard>
     )
@@ -212,7 +212,7 @@ export default function AdminCatalogOrderDetailPage() {
             <AlertTriangle size={32} className="mx-auto mb-3 opacity-30 text-red-500" />
             <p className="text-[14px]" style={{ color: 'var(--text-secondary)' }}>Sipariş bulunamadı</p>
             <Link href="/admin/katalog/siparisler"
-              className="inline-block mt-4 text-[12px] font-bold text-[#F4821F] hover:underline">
+              className="inline-block mt-4 text-[12px] font-bold text-[#E63946] hover:underline">
               ← Sipariş listesine dön
             </Link>
           </div>
@@ -240,7 +240,7 @@ export default function AdminCatalogOrderDetailPage() {
               </button>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <code className="text-[16px] font-mono font-bold" style={{ color: '#F4821F' }}>
+                  <code className="text-[16px] font-mono font-bold" style={{ color: '#E63946' }}>
                     {order.orderNumber}
                   </code>
                   <span className="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-[0.5px]"
@@ -295,7 +295,7 @@ export default function AdminCatalogOrderDetailPage() {
                   {s.label}
                 </button>
               ))}
-              {updatingStatus && <Loader2 size={14} className="animate-spin text-[#F4821F]" />}
+              {updatingStatus && <Loader2 size={14} className="animate-spin text-[#E63946]" />}
             </div>
           </div>
 
@@ -340,7 +340,7 @@ export default function AdminCatalogOrderDetailPage() {
             <div className="rounded-xl p-4"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-3">
-                <User size={14} className="text-[#F4821F]" />
+                <User size={14} className="text-[#E63946]" />
                 <h3 className="text-[13px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                   Müşteri Bilgileri
                 </h3>
@@ -351,12 +351,12 @@ export default function AdminCatalogOrderDetailPage() {
                 </p>
                 <p className="flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
                   <Phone size={12} className="opacity-60" />
-                  <a href={`tel:${order.customerPhone}`} className="hover:text-[#F4821F]">{order.customerPhone}</a>
+                  <a href={`tel:${order.customerPhone}`} className="hover:text-[#E63946]">{order.customerPhone}</a>
                 </p>
                 {order.customerEmail && (
                   <p className="flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
                     <Mail size={12} className="opacity-60" />
-                    <a href={`mailto:${order.customerEmail}`} className="hover:text-[#F4821F]">{order.customerEmail}</a>
+                    <a href={`mailto:${order.customerEmail}`} className="hover:text-[#E63946]">{order.customerEmail}</a>
                   </p>
                 )}
                 {(order.address || order.city) && (
@@ -383,7 +383,7 @@ export default function AdminCatalogOrderDetailPage() {
             <div className="rounded-xl p-4"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-3">
-                <CreditCard size={14} className="text-[#F4821F]" />
+                <CreditCard size={14} className="text-[#E63946]" />
                 <h3 className="text-[13px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                   Ödeme
                 </h3>
@@ -403,7 +403,7 @@ export default function AdminCatalogOrderDetailPage() {
                 )}
                 <div className="flex justify-between pt-2 mt-2" style={{ borderTop: '1px solid var(--border)' }}>
                   <span className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Toplam</span>
-                  <span className="text-[20px] font-black tracking-[-0.5px]" style={{ color: '#F4821F' }}>
+                  <span className="text-[20px] font-black tracking-[-0.5px]" style={{ color: '#E63946' }}>
                     ₺{Number(order.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 2 })}
                   </span>
                 </div>
@@ -420,7 +420,7 @@ export default function AdminCatalogOrderDetailPage() {
           <div className="rounded-xl p-4 mb-5"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <div className="flex items-center gap-2 mb-3">
-              <Package size={14} className="text-[#F4821F]" />
+              <Package size={14} className="text-[#E63946]" />
               <h3 className="text-[13px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                 Sipariş Kalemleri ({order.items.length})
               </h3>
@@ -462,7 +462,7 @@ export default function AdminCatalogOrderDetailPage() {
                     )}
                   </div>
                   <div className="text-right">
-                    <p className="text-[15px] font-black" style={{ color: '#F4821F' }}>
+                    <p className="text-[15px] font-black" style={{ color: '#E63946' }}>
                       ₺{Number(item.priceTl).toLocaleString('tr-TR', { maximumFractionDigits: 2 })}
                     </p>
                   </div>
@@ -475,7 +475,7 @@ export default function AdminCatalogOrderDetailPage() {
           <div className="rounded-xl p-4"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <div className="flex items-center gap-2 mb-3">
-              <FileText size={14} className="text-[#F4821F]" />
+              <FileText size={14} className="text-[#E63946]" />
               <h3 className="text-[13px] font-bold uppercase tracking-[1px]" style={{ color: 'var(--text-primary)' }}>
                 Tasarım Dosyaları ({files.length})
               </h3>
@@ -543,14 +543,14 @@ export default function AdminCatalogOrderDetailPage() {
                         {(isImage || isPdf) && (
                           <button onClick={() => handlePreview(f)}
                             title="Önizle"
-                            className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-[#F4821F]"
+                            className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-[#E63946]"
                             style={{ border: '1px solid var(--border)', background: 'var(--bg-card)', color: 'var(--text-muted)' }}>
                             <ImageIcon size={12} />
                           </button>
                         )}
                         <button onClick={() => handleDownload(f)} disabled={downloadingId === f.id}
                           title="İndir"
-                          className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-[#F4821F]"
+                          className="w-8 h-8 rounded-lg flex items-center justify-center hover:text-[#E63946]"
                           style={{ border: '1px solid var(--border)', background: 'var(--bg-card)', color: 'var(--text-muted)' }}>
                           {downloadingId === f.id ? <Loader2 size={12} className="animate-spin" /> : <Download size={12} />}
                         </button>

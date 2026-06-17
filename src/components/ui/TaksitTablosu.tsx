@@ -22,11 +22,11 @@ const BANKA_RENK: Record<string, string> = {
   'Yapı Kredi':    '#00529B',
   'Halkbank':      '#009639',
   'Vakıfbank':     '#FDB913',
-  'Finansbank':    '#FF6600',
-  'QNB':           '#FF6600',
+  'Finansbank':    '#E63946',
+  'QNB':           '#E63946',
   'Denizbank':     '#003DA5',
   'TEB':           '#0066B3',
-  'ING':           '#FF6200',
+  'ING':           '#E63946',
   'HSBC':          '#DB0011',
 }
 
@@ -34,7 +34,7 @@ function getBankaRenk(isim: string): string {
   for (const [key, renk] of Object.entries(BANKA_RENK)) {
     if (isim.toLowerCase().includes(key.toLowerCase())) return renk
   }
-  return '#F4821F'
+  return '#E63946'
 }
 
 function getBankaHarf(isim: string): string {
@@ -93,7 +93,7 @@ export default function TaksitTablosu({ fiyat }: Props) {
           </p>
         </div>
         <span className="text-[10px] px-2 py-1 rounded-full font-bold"
-          style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+          style={{ background: 'rgba(230,57,70,0.1)', color: '#E63946' }}>
           iyzico güvencesi
         </span>
       </div>

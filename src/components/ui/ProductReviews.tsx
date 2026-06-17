@@ -95,7 +95,7 @@ export default function ProductReviews({ productSlug }: Props) {
   if (loading) {
     return (
       <div className="py-12 flex items-center justify-center">
-        <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+        <Loader2 size={24} className="animate-spin text-[#E63946]" />
       </div>
     )
   }
@@ -144,7 +144,7 @@ export default function ProductReviews({ productSlug }: Props) {
                 <div className="flex-1 h-2 rounded-full overflow-hidden"
                   style={{ background: 'var(--border)' }}>
                   <div className="h-full rounded-full transition-all"
-                    style={{ width: `${pct}%`, background: '#F4821F' }} />
+                    style={{ width: `${pct}%`, background: '#E63946' }} />
                 </div>
                 <span className="w-8 text-right tabular-nums" style={{ color: 'var(--text-muted)' }}>
                   {count}
@@ -158,10 +158,10 @@ export default function ProductReviews({ productSlug }: Props) {
       {/* Eligibility durumu */}
       {!isAuthenticated && (
         <div className="p-4 rounded-xl flex items-center gap-3"
-          style={{ background: 'rgba(244,130,31,0.08)', border: '1px solid rgba(244,130,31,0.2)' }}>
-          <AlertCircle size={18} className="text-[#F4821F] flex-shrink-0" />
+          style={{ background: 'rgba(230,57,70,0.08)', border: '1px solid rgba(230,57,70,0.2)' }}>
+          <AlertCircle size={18} className="text-[#E63946] flex-shrink-0" />
           <p className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>
-            Yorum yapabilmek için <a href="/giris" className="text-[#F4821F] font-bold underline">giriş yapmanız</a> gerekiyor.
+            Yorum yapabilmek için <a href="/giris" className="text-[#E63946] font-bold underline">giriş yapmanız</a> gerekiyor.
           </p>
         </div>
       )}
@@ -193,8 +193,8 @@ export default function ProductReviews({ productSlug }: Props) {
         <button onClick={() => setShowForm(true)}
           className="flex items-center gap-2 px-5 py-3 text-[13px] font-bold text-white rounded-xl transition-all"
           style={{
-            background: 'linear-gradient(135deg, #F4821F, #e07010)',
-            boxShadow: '0 4px 12px rgba(244,130,31,0.25)',
+            background: 'linear-gradient(135deg, #E63946, #C1272D)',
+            boxShadow: '0 4px 12px rgba(230,57,70,0.25)',
           }}>
           <MessageSquare size={14} />
           Bu ürüne yorum yap
@@ -263,7 +263,7 @@ export default function ProductReviews({ productSlug }: Props) {
             style={{ background: 'var(--bg-secondary)' }}>
             <button onClick={() => setFormAnonymous(!formAnonymous)}
               className="relative w-10 h-5 rounded-full transition-colors flex-shrink-0 mt-0.5"
-              style={{ background: formAnonymous ? '#F4821F' : 'var(--border)' }}>
+              style={{ background: formAnonymous ? '#E63946' : 'var(--border)' }}>
               <div className="absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform shadow"
                 style={{ transform: formAnonymous ? 'translateX(22px)' : 'translateX(2px)' }} />
             </button>
@@ -290,7 +290,7 @@ export default function ProductReviews({ productSlug }: Props) {
             <button onClick={handleSubmit}
               disabled={submitting || formRating < 1 || formComment.trim().length < 10}
               className="flex-1 flex items-center justify-center gap-2 px-4 py-2 text-[12px] font-bold text-white rounded-lg transition-all disabled:opacity-50"
-              style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+              style={{ background: 'linear-gradient(135deg, #E63946, #C1272D)' }}>
               {submitting ? <Loader2 size={14} className="animate-spin"/> : <Send size={14}/>}
               {submitting ? 'Gönderiliyor...' : 'Yorumu Gönder'}
             </button>
@@ -319,7 +319,7 @@ export default function ProductReviews({ productSlug }: Props) {
               <div className="flex items-start justify-between gap-3 mb-2">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-bold text-white flex-shrink-0"
-                    style={{ background: r.anonymous ? '#6B7280' : 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                    style={{ background: r.anonymous ? '#6B7280' : 'linear-gradient(135deg, #E63946, #C1272D)' }}>
                     {r.anonymous ? <EyeOff size={13}/> : r.displayName.charAt(0).toUpperCase()}
                   </div>
                   <div>

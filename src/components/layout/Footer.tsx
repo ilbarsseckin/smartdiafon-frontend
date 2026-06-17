@@ -10,8 +10,8 @@ export default function Footer() {
         {/* CTA */}
         <div className="mb-10 md:mb-14 p-6 md:p-8 rounded-3xl"
           style={{
-            background: 'linear-gradient(135deg, rgba(244,130,31,.12), rgba(244,130,31,.03))',
-            border: '1px solid rgba(244,130,31,.15)',
+            background: 'linear-gradient(135deg, rgba(230,57,70,.12), rgba(230,57,70,.03))',
+            border: '1px solid rgba(230,57,70,.15)',
           }}>
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div>
@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
             <Link href="/urunler"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white transition-all hover:scale-[1.02]"
-              style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+              style={{ background: 'linear-gradient(135deg,#DC2626,#F08080)' }}>
               Ürünleri İncele
               <ArrowRight size={18} />
             </Link>

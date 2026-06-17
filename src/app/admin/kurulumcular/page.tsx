@@ -79,10 +79,10 @@ function Inner() {
       <main className="min-h-screen p-6" style={{ background: 'var(--bg-secondary)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <Wrench size={22} style={{ color: '#F4821F' }} />
+            <Wrench size={22} style={{ color: '#E63946' }} />
             <h1 className="text-[22px] font-black" style={{ color: 'var(--text-primary)' }}>Kurulum Ekibi</h1>
             <span className="ml-auto text-[13px] px-3 py-1 rounded-full font-bold"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
+              style={{ background: 'rgba(230,57,70,0.1)', color: '#E63946' }}>
               {active.length} aktif · {pending.length} bekleyen
             </span>
           </div>
@@ -139,7 +139,7 @@ function InstallerCard({ inst, expanded, setExpanded, ratingInputs, setRatingInp
     <div className="rounded-2xl overflow-hidden" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
       <div className="flex items-center gap-3 px-5 py-4">
         <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-[15px] text-white flex-shrink-0"
-          style={{ background: inst.active ? '#F4821F' : '#9CA3AF' }}>
+          style={{ background: inst.active ? '#E63946' : '#9CA3AF' }}>
           {inst.name[0].toUpperCase()}
         </div>
         <div className="flex-1 min-w-0">
@@ -208,7 +208,7 @@ function InstallerCard({ inst, expanded, setExpanded, ratingInputs, setRatingInp
               <div className="flex items-end">
                 <button onClick={() => onSaveRating(inst.id)}
                   className="w-full py-2 rounded-lg text-[13px] font-bold text-white"
-                  style={{ background: '#F4821F' }}>
+                  style={{ background: '#E63946' }}>
                   Kaydet
                 </button>
               </div>

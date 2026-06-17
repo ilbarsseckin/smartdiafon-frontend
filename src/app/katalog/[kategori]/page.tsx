@@ -97,7 +97,7 @@ export default function KatalogKategoriPage() {
               "{slug}" diye bir kategori yok.
             </p>
             <Link href="/"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#DC2626] hover:bg-[#e07010] transition-colors">
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#DC2626] hover:bg-[#C1272D] transition-colors">
               <ChevronLeft size={14} /> Ana sayfaya dön
             </Link>
           </div>

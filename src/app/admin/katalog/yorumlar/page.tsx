@@ -95,8 +95,8 @@ function YorumlarPageInner() {
 
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-            style={{ background: 'rgba(244,130,31,0.1)' }}>
-            <MessageSquare size={18} className="text-[#F4821F]" />
+            style={{ background: 'rgba(230,57,70,0.1)' }}>
+            <MessageSquare size={18} className="text-[#E63946]" />
           </div>
           <div>
             <h1 className="text-[20px] font-black tracking-[-0.5px]"
@@ -156,14 +156,14 @@ function YorumlarPageInner() {
             <StatCard label="Beklemede"  value={counts.pending}  color="#F59E0B" />
             <StatCard label="Ortalama Puan"
               value={(reviews.reduce((s, r) => s + r.rating, 0) / Math.max(reviews.length, 1)).toFixed(1)}
-              color="#F4821F" suffix={<Star size={16} className="text-yellow-400 fill-yellow-400" />} />
+              color="#E63946" suffix={<Star size={16} className="text-yellow-400 fill-yellow-400" />} />
           </div>
         )}
 
         {/* Liste */}
         {loading ? (
           <div className="py-20 flex items-center justify-center">
-            <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+            <Loader2 size={28} className="animate-spin text-[#E63946]" />
           </div>
         ) : filtered.length === 0 ? (
           <div className="py-20 text-center rounded-2xl"
@@ -185,7 +185,7 @@ function YorumlarPageInner() {
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0"
-                      style={{ background: r.anonymous ? '#6B7280' : 'linear-gradient(135deg, #F4821F, #e07010)' }}>
+                      style={{ background: r.anonymous ? '#6B7280' : 'linear-gradient(135deg, #E63946, #C1272D)' }}>
                       {r.anonymous ? <EyeOff size={14} /> : r.displayName.charAt(0).toUpperCase()}
                     </div>
                     <div className="min-w-0">

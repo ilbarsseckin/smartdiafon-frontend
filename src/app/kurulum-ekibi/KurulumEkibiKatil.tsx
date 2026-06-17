@@ -83,7 +83,7 @@ export default function KurulumEkibiKatil() {
       {/* Başlık */}
       <div className="text-center mb-8">
         <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
-          style={{ background: 'rgba(244,130,31,0.12)' }}>
+          style={{ background: 'rgba(230,57,70,0.12)' }}>
           <Wrench size={26} style={{ color: '#DC2626' }} />
         </span>
         <h1 className="text-2xl md:text-3xl font-black tracking-[-0.5px]" style={{ color: 'var(--text-primary)' }}>
@@ -154,7 +154,7 @@ export default function KurulumEkibiKatil() {
 
           <button onClick={handleGonder} disabled={!gecerli}
             className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.01] disabled:opacity-40 disabled:hover:scale-100"
-            style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+            style={{ background: 'linear-gradient(135deg,#DC2626,#F08080)' }}>
             <Send size={17} /> Başvuruyu Gönder
           </button>
           <p className="text-[11px] text-center mt-3" style={{ color: 'var(--text-muted)' }}>

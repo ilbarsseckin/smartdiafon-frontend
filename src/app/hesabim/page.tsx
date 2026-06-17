@@ -233,14 +233,14 @@ export default function HesabimPage() {
             <button onClick={() => setActiveTab('catalog_orders')}
               className="flex items-center gap-2 px-5 py-3 text-[13px] font-bold transition-colors -mb-px"
               style={{
-                color: activeTab === 'catalog_orders' ? '#F4821F' : 'var(--text-muted)',
-                borderBottom: activeTab === 'catalog_orders' ? '2px solid #F4821F' : '2px solid transparent',
+                color: activeTab === 'catalog_orders' ? '#E63946' : 'var(--text-muted)',
+                borderBottom: activeTab === 'catalog_orders' ? '2px solid #E63946' : '2px solid transparent',
               }}>
               <Truck size={14} /> Siparişlerim
               {catalogOrders.length > 0 && (
                 <span className="text-[10px] px-1.5 py-0.5 rounded-full"
                   style={{
-                    background: activeTab === 'catalog_orders' ? '#F4821F' : 'var(--border)',
+                    background: activeTab === 'catalog_orders' ? '#E63946' : 'var(--border)',
                     color: activeTab === 'catalog_orders' ? 'white' : 'var(--text-muted)',
                   }}>
                   {catalogOrders.length}
@@ -250,14 +250,14 @@ export default function HesabimPage() {
             <button onClick={() => setActiveTab('addresses')}
               className="flex items-center gap-2 px-5 py-3 text-[13px] font-bold transition-colors -mb-px"
               style={{
-                color: activeTab === 'addresses' ? '#F4821F' : 'var(--text-muted)',
-                borderBottom: activeTab === 'addresses' ? '2px solid #F4821F' : '2px solid transparent',
+                color: activeTab === 'addresses' ? '#E63946' : 'var(--text-muted)',
+                borderBottom: activeTab === 'addresses' ? '2px solid #E63946' : '2px solid transparent',
               }}>
               <MapPin size={14} /> Adreslerim
               {addresses.length > 0 && (
                 <span className="text-[10px] px-1.5 py-0.5 rounded-full"
                   style={{
-                    background: activeTab === 'addresses' ? '#F4821F' : 'var(--border)',
+                    background: activeTab === 'addresses' ? '#E63946' : 'var(--border)',
                     color: activeTab === 'addresses' ? 'white' : 'var(--text-muted)',
                   }}>
                   {addresses.length}
@@ -288,7 +288,7 @@ export default function HesabimPage() {
                   onClick={() => trackingSearch.trim() && router.push(`/siparis/${trackingSearch.trim()}`)}
                   disabled={!trackingSearch.trim()}
                   className="px-4 py-2 text-[12px] font-bold text-white rounded-lg disabled:opacity-40 flex items-center gap-1.5"
-                  style={{ background: '#F4821F' }}>
+                  style={{ background: '#E63946' }}>
                   <Search size={13} /> Takip Et
                 </button>
               </div>
@@ -305,7 +305,7 @@ export default function HesabimPage() {
                   style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                   <Package size={32} className="mx-auto mb-3 opacity-20" style={{ color: 'var(--text-muted)' }} />
                   <p className="text-[14px]" style={{ color: 'var(--text-secondary)' }}>Henüz sipariş yok</p>
-                  <Link href="/urunler" className="inline-block mt-3 text-[12px] font-bold text-[#F4821F] hover:underline">
+                  <Link href="/urunler" className="inline-block mt-3 text-[12px] font-bold text-[#E63946] hover:underline">
                     Ürünlere göz at →
                   </Link>
                 </div>
@@ -319,7 +319,7 @@ export default function HesabimPage() {
                       READY:         { label: 'Hazır',          color: '#0891B2', bg: 'rgba(8,145,178,0.1)'  },
                       SHIPPED:       { label: 'Kargoda',        color: '#059669', bg: 'rgba(16,185,129,0.1)' },
                       DELIVERED:     { label: 'Teslim Edildi',  color: '#16A34A', bg: 'rgba(22,163,74,0.1)'  },
-                      CANCELLED:     { label: 'İptal',          color: '#F4821F', bg: 'rgba(239,68,68,0.1)'  },
+                      CANCELLED:     { label: 'İptal',          color: '#E63946', bg: 'rgba(239,68,68,0.1)'  },
                     }
                     const st = statusColors[o.status] || statusColors.PENDING
                     return (
@@ -329,7 +329,7 @@ export default function HesabimPage() {
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1 flex-wrap">
-                              <code className="text-[13px] font-mono font-bold" style={{ color: '#F4821F' }}>
+                              <code className="text-[13px] font-mono font-bold" style={{ color: '#E63946' }}>
                                 {o.orderNumber}
                               </code>
                               <span className="text-[10px] px-2 py-0.5 rounded-full font-bold"
@@ -365,7 +365,7 @@ export default function HesabimPage() {
                             )}
                           </div>
                           <div className="text-right flex-shrink-0">
-                            <p className="text-[18px] font-black" style={{ color: '#F4821F' }}>
+                            <p className="text-[18px] font-black" style={{ color: '#E63946' }}>
                               ₺{Number(o.totalTl).toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                             </p>
                             <Link
@@ -397,7 +397,7 @@ export default function HesabimPage() {
                 <div className="bg-white dark:bg-[#141414] border border-black/[0.07] dark:border-white/[0.07] rounded-xl p-10 text-center">
                   <Package size={32} className="mx-auto mb-3 text-gray-200 dark:text-gray-700" />
                   <p className="text-[14px] text-gray-500">Henüz sipariş yok</p>
-                  <Link href="/" className="inline-block mt-3 text-[12px] text-[#F4821F] hover:underline">
+                  <Link href="/" className="inline-block mt-3 text-[12px] text-[#E63946] hover:underline">
                     İlk siparişini ver →
                   </Link>
                 </div>
@@ -407,7 +407,7 @@ export default function HesabimPage() {
                     const s = statusMap[o.status] || { label: o.status, color: 'text-gray-500' }
                     return (
                       <Link key={o.id} href={`/hesabim/siparisler/${o.id}`}
-                        className="block bg-white dark:bg-[#141414] border border-black/[0.07] dark:border-white/[0.07] rounded-xl p-4 hover:border-[#F4821F] transition-colors">
+                        className="block bg-white dark:bg-[#141414] border border-black/[0.07] dark:border-white/[0.07] rounded-xl p-4 hover:border-[#E63946] transition-colors">
                         <div className="flex items-center justify-between">
                           <div>
                             <p className="text-[13px] font-medium text-gray-900 dark:text-gray-100">
@@ -440,7 +440,7 @@ export default function HesabimPage() {
                   Kayıtlı teslimat adresleriniz
                 </p>
                 <button onClick={openAddModal}
-                  className="flex items-center gap-1.5 px-4 py-2 text-[12px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors">
+                  className="flex items-center gap-1.5 px-4 py-2 text-[12px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors">
                   <Plus size={13} /> Yeni Adres
                 </button>
               </div>
@@ -456,7 +456,7 @@ export default function HesabimPage() {
                   <MapPin size={32} className="mx-auto mb-3 text-gray-200 dark:text-gray-700" />
                   <p className="text-[14px] text-gray-500 mb-4">Henüz kayıtlı adres yok</p>
                   <button onClick={openAddModal}
-                    className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[12px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors">
+                    className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[12px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors">
                     <Plus size={13} /> İlk Adresimi Ekle
                   </button>
                 </div>
@@ -465,13 +465,13 @@ export default function HesabimPage() {
                   {addresses.map(a => (
                     <div key={a.id}
                       className="bg-white dark:bg-[#141414] rounded-xl p-4 transition-colors"
-                      style={{ border: a.isDefault ? '1.5px solid #F4821F' : '1px solid var(--border)' }}>
+                      style={{ border: a.isDefault ? '1.5px solid #E63946' : '1px solid var(--border)' }}>
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2">
                           <p className="text-[14px] font-bold">{a.title}</p>
                           {a.isDefault && (
                             <span className="text-[9px] px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5"
-                              style={{ background: 'rgba(244,130,31,0.15)', color: '#F4821F' }}>
+                              style={{ background: 'rgba(230,57,70,0.15)', color: '#E63946' }}>
                               <Star size={9} /> Varsayılan
                             </span>
                           )}
@@ -492,7 +492,7 @@ export default function HesabimPage() {
                         {!a.isDefault && (
                           <button onClick={() => setDefault(a)}
                             className="flex items-center gap-1 text-[11px] font-bold transition-colors hover:underline"
-                            style={{ color: '#F4821F' }}>
+                            style={{ color: '#E63946' }}>
                             <Star size={10} /> Varsayılan yap
                           </button>
                         )}
@@ -601,14 +601,14 @@ export default function HesabimPage() {
                   </div>
                 </div>
                 <div className="rounded-lg p-3"
-                  style={{ background: 'rgba(244,130,31,0.04)', border: '1px solid rgba(244,130,31,0.2)' }}>
+                  style={{ background: 'rgba(230,57,70,0.04)', border: '1px solid rgba(230,57,70,0.2)' }}>
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox"
                       checked={addrForm.isDefault}
                       onChange={e => setAddrForm(f => ({ ...f, isDefault: e.target.checked }))}
-                      className="accent-[#F4821F]" />
+                      className="accent-[#E63946]" />
                     <span className="text-[12px] font-bold flex items-center gap-1">
-                      <Star size={11} className="text-[#F4821F]" />
+                      <Star size={11} className="text-[#E63946]" />
                       Varsayılan adres olarak ayarla
                     </span>
                   </label>
@@ -621,7 +621,7 @@ export default function HesabimPage() {
                   İptal
                 </button>
                 <button onClick={saveAddress} disabled={savingAddr}
-                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F] hover:bg-[#e07010] transition-colors disabled:opacity-50">
+                  className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#E63946] hover:bg-[#C1272D] transition-colors disabled:opacity-50">
                   {savingAddr
                     ? <><Loader2 size={14} className="animate-spin" /> Kaydediliyor...</>
                     : <><Check size={14} /> {editingId ? 'Güncelle' : 'Kaydet'}</>}

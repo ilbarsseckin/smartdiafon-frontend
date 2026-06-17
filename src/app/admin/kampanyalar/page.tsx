@@ -302,7 +302,7 @@ function KampanyalarInner() {
             <button key={m} type="button" onClick={() => setMode(m)}
               className="flex-1 text-[11px] py-1.5 rounded-lg font-medium transition-colors"
               style={mode === m
-                ? { background: 'rgba(244,130,31,0.1)', color: '#DC2626', border: '1px solid rgba(244,130,31,0.2)' }
+                ? { background: 'rgba(230,57,70,0.1)', color: '#DC2626', border: '1px solid rgba(230,57,70,0.2)' }
                 : { color: 'var(--text-muted)', border: '1px solid var(--border)' }}>
               {m === 'url' ? <><LinkIcon size={11} className="inline mr-1" />URL</> : <><Upload size={11} className="inline mr-1" />Yükle</>}
             </button>
@@ -401,7 +401,7 @@ function KampanyalarInner() {
                   {c.slug ? (
                     <div className="flex items-center gap-2 mt-1">
                       <code className="text-[10px] px-2 py-0.5 rounded font-mono"
-                        style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+                        style={{ background: 'rgba(230,57,70,0.1)', color: '#DC2626' }}>
                         /lp/{c.slug}
                       </code>
                       <button onClick={() => copyLpUrl(c.slug!)}
@@ -672,7 +672,7 @@ function KampanyalarInner() {
 
               {/* Kampanya URL */}
               {productModalCampaign.slug && (
-                <div className="p-3 rounded-xl" style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)' }}>
+                <div className="p-3 rounded-xl" style={{ background: 'rgba(230,57,70,0.06)', border: '1px solid rgba(230,57,70,0.2)' }}>
                   <p className="text-[11px] font-bold mb-1" style={{ color: '#DC2626' }}>Kampanya URL</p>
                   <p className="text-[12px] font-mono" style={{ color: 'var(--text-secondary)' }}>
                     smartdiafon.com.tr/urun-kampanya?kampanya={productModalCampaign.slug}

@@ -64,7 +64,7 @@ export default function FavorilerimPage() {
           <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <Heart size={20} className="text-[#F4821F]" fill="#F4821F" />
+                <Heart size={20} className="text-[#E63946]" fill="#E63946" />
                 <h1 className="text-[24px] md:text-[28px] font-black tracking-[-0.5px]"
                   style={{ color: 'var(--text-primary)' }}>
                   Favorilerim
@@ -88,7 +88,7 @@ export default function FavorilerimPage() {
           {/* İçerik */}
           {loading ? (
             <div className="flex justify-center py-20">
-              <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+              <Loader2 size={28} className="animate-spin text-[#E63946]" />
             </div>
           ) : favorites.length === 0 ? (
             <EmptyState />
@@ -117,7 +117,7 @@ function EmptyState() {
         Daha sonra hızlıca tekrar bakabilirsin.
       </p>
       <Link href="/urunler"
-        className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-bold rounded-lg bg-[#F4821F] text-white hover:bg-[#e07010] transition-colors">
+        className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-bold rounded-lg bg-[#E63946] text-white hover:bg-[#C1272D] transition-colors">
         <ShoppingBag size={14} />
         Ürünlere Göz At
       </Link>
@@ -166,7 +166,7 @@ function ProductCard({ product }: { product: Product }) {
             <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
               {product.minPriceQty ? `${product.minPriceQty} adet` : 'başlangıç'}
             </span>
-            <span className="text-[14px] font-black text-[#F4821F]">
+            <span className="text-[14px] font-black text-[#E63946]">
               ${Number(product.minPriceUsd).toFixed(2)}
             </span>
           </div>

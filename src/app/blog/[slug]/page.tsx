@@ -73,7 +73,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         {/* CTA */}
         <div className="mt-10 p-6 rounded-2xl text-center"
-          style={{ background: 'rgba(244,130,31,0.08)', border: '1px solid rgba(244,130,31,0.2)' }}>
+          style={{ background: 'rgba(230,57,70,0.08)', border: '1px solid rgba(230,57,70,0.2)' }}>
           <h3 className="text-[18px] font-black mb-2" style={{ color: 'var(--text-primary)' }}>
             Projeniz için teklif alın
           </h3>
@@ -82,7 +82,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </p>
           <Link href="/teklif"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+            style={{ background: 'linear-gradient(135deg,#DC2626,#F08080)' }}>
             Hemen Teklif Al →
           </Link>
         </div>

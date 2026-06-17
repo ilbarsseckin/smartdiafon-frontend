@@ -32,10 +32,10 @@ function formatMessage(text: string) {
       return <strong key={i}>{part.slice(2, -2)}</strong>
     }
     if (part.match(/^\/[a-z\-]+$/)) {
-      return <Link key={i} href={part} className="underline font-bold" style={{ color: '#F4821F' }}>{part}</Link>
+      return <Link key={i} href={part} className="underline font-bold" style={{ color: '#E63946' }}>{part}</Link>
     }
     if (part.match(/^https?:\/\//)) {
-      return <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#F4821F' }}>{part}</a>
+      return <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: '#E63946' }}>{part}</a>
     }
     if (part.match(/^0\d{3}/)) {
       const phone = part.replace(/\s/g, '')
@@ -43,7 +43,7 @@ function formatMessage(text: string) {
       return <a key={i} href={wa} target="_blank" rel="noopener noreferrer" className="underline font-bold inline-flex items-center gap-1" style={{ color: '#25D366' }}>📱 {part}</a>
     }
     if (part.match(/^[\w.]+@[\w.]+\.[a-z]{2,}$/)) {
-      return <a key={i} href={`mailto:${part}`} className="underline font-bold" style={{ color: '#F4821F' }}>✉️ {part}</a>
+      return <a key={i} href={`mailto:${part}`} className="underline font-bold" style={{ color: '#E63946' }}>✉️ {part}</a>
     }
     return <span key={i}>{part}</span>
   })
@@ -63,10 +63,10 @@ function ProductCard({ p }: { p: Product }) {
         </p>
       )}
       <div className="flex items-center justify-between">
-        <span className="text-[14px] font-black" style={{ color: '#F4821F' }}>
+        <span className="text-[14px] font-black" style={{ color: '#E63946' }}>
           ₺{p.price.toLocaleString('tr-TR')}
         </span>
-        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: '#F4821F' }}>
+        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white" style={{ background: '#E63946' }}>
           İncele →
         </span>
       </div>
@@ -123,7 +123,7 @@ export default function ChatAsistan() {
       <button
         onClick={() => setOpen(o => !o)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105"
-        style={{ background: '#F4821F' }}
+        style={{ background: '#E63946' }}
         aria-label="Asistan ile konuş">
         {open
           ? <X size={24} color="white" />
@@ -143,9 +143,9 @@ export default function ChatAsistan() {
           }}>
 
           <div className="flex items-center gap-3 px-4 py-3 flex-shrink-0"
-            style={{ background: '#F4821F' }}>
+            style={{ background: '#E63946' }}>
             <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-              <MessageCircle size={16} color="#F4821F" />
+              <MessageCircle size={16} color="#E63946" />
             </div>
             <div>
               <p className="text-[13px] font-bold text-white">Smartdiafon Asistan</p>
@@ -158,7 +158,7 @@ export default function ChatAsistan() {
             {messages.length === 0 && (
               <div className="flex gap-2">
                 <div className="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-white"
-                  style={{ background: '#F4821F' }}>S</div>
+                  style={{ background: '#E63946' }}>S</div>
                 <div className="rounded-2xl rounded-tl-none px-3 py-2 text-[13px] max-w-[80%]"
                   style={{ background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
                   Merhaba! 👋 Ürün arayabilir veya merak ettiğinizi sorabilirsiniz.
@@ -188,7 +188,7 @@ export default function ChatAsistan() {
                 <div className={`flex gap-2 ${m.role === 'user' ? 'flex-row-reverse' : ''}`}>
                   {m.role === 'assistant' && (
                     <div className="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-white"
-                      style={{ background: '#F4821F' }}>S</div>
+                      style={{ background: '#E63946' }}>S</div>
                   )}
                   <div
                     className={`rounded-2xl px-3 py-2 text-[13px] max-w-[80%] leading-relaxed ${
@@ -197,7 +197,7 @@ export default function ChatAsistan() {
                         : 'rounded-tl-none'
                     }`}
                     style={m.role === 'user'
-                      ? { background: '#F4821F' }
+                      ? { background: '#E63946' }
                       : { background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
                     {m.role === 'assistant' ? formatMessage(m.content) : m.content}
                   </div>
@@ -214,10 +214,10 @@ export default function ChatAsistan() {
             {loading && (
               <div className="flex gap-2">
                 <div className="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-white"
-                  style={{ background: '#F4821F' }}>S</div>
+                  style={{ background: '#E63946' }}>S</div>
                 <div className="rounded-2xl rounded-tl-none px-3 py-2"
                   style={{ background: 'var(--bg-secondary)' }}>
-                  <Loader2 size={14} className="animate-spin" style={{ color: '#F4821F' }} />
+                  <Loader2 size={14} className="animate-spin" style={{ color: '#E63946' }} />
                 </div>
               </div>
             )}
@@ -244,7 +244,7 @@ export default function ChatAsistan() {
               onClick={() => sendMessage(input)}
               disabled={!input.trim() || loading}
               className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 disabled:opacity-40 transition-opacity"
-              style={{ background: '#F4821F' }}>
+              style={{ background: '#E63946' }}>
               <Send size={15} color="white" />
             </button>
           </div>

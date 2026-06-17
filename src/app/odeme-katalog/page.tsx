@@ -213,7 +213,7 @@ function OdemeKatalogContent() {
       <>
         <Navbar />
         <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-          <Loader2 size={28} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={28} className="animate-spin text-[#E63946]" />
         </main>
       </>
     )
@@ -310,7 +310,7 @@ function OdemeKatalogContent() {
                     <span className="text-[14px] font-bold" style={{ color: 'var(--text-primary)' }}>Toplam</span>
                     <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>KDV Dahil</p>
                   </div>
-                  <span className="text-[24px] font-black text-[#F4821F]">₺{fmtTL(displayTotal)}</span>
+                  <span className="text-[24px] font-black text-[#E63946]">₺{fmtTL(displayTotal)}</span>
                 </div>
               </div>
             </div>
@@ -321,7 +321,7 @@ function OdemeKatalogContent() {
             <div className="rounded-2xl p-4 mb-4"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-3">
-                <Tag size={14} style={{ color: '#F4821F' }} />
+                <Tag size={14} style={{ color: '#E63946' }} />
                 <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>İndirim Kuponu</p>
               </div>
 
@@ -346,15 +346,15 @@ function OdemeKatalogContent() {
                   {welcomeCoupon && (
                     <button onClick={() => applyCoupon(welcomeCoupon)} disabled={couponLoading}
                       className="w-full flex items-center gap-2 p-3 mb-2 rounded-xl transition-all hover:scale-[1.01] disabled:opacity-50"
-                      style={{ background: 'rgba(244,130,31,0.08)', border: '1px dashed rgba(244,130,31,0.4)' }}>
-                      <Gift size={16} className="text-[#F4821F] flex-shrink-0" />
+                      style={{ background: 'rgba(230,57,70,0.08)', border: '1px dashed rgba(230,57,70,0.4)' }}>
+                      <Gift size={16} className="text-[#E63946] flex-shrink-0" />
                       <div className="text-left flex-1 min-w-0">
-                        <p className="text-[12px] font-bold text-[#F4821F]">Hoş geldin kuponunuz var!</p>
+                        <p className="text-[12px] font-bold text-[#E63946]">Hoş geldin kuponunuz var!</p>
                         <p className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
                           {welcomeCoupon} — uygulamak için tıkla
                         </p>
                       </div>
-                      <span className="text-[10px] font-bold text-[#F4821F]">Uygula →</span>
+                      <span className="text-[10px] font-bold text-[#E63946]">Uygula →</span>
                     </button>
                   )}
                   <div className="flex gap-2">
@@ -365,7 +365,7 @@ function OdemeKatalogContent() {
                       className="flex-1 px-3.5 py-2.5 text-[13px] rounded-xl outline-none uppercase tracking-wider font-mono"
                       style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', color: 'var(--text-primary)' }} />
                     <button onClick={() => applyCoupon()} disabled={couponLoading || !couponInput.trim()}
-                      className="px-5 py-2.5 text-[12px] font-bold rounded-xl bg-[#F4821F] text-white hover:opacity-90 transition-all disabled:opacity-40">
+                      className="px-5 py-2.5 text-[12px] font-bold rounded-xl bg-[#E63946] text-white hover:opacity-90 transition-all disabled:opacity-40">
                       {couponLoading ? <Loader2 size={13} className="animate-spin" /> : 'Uygula'}
                     </button>
                   </div>
@@ -379,7 +379,7 @@ function OdemeKatalogContent() {
             <div className="rounded-2xl p-4 mb-4"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <div className="flex items-center gap-2 mb-3">
-                <Paperclip size={14} style={{ color: '#F4821F' }} />
+                <Paperclip size={14} style={{ color: '#E63946' }} />
                 <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>
                   Tasarım Dosyaları <span className="font-normal text-[11px]" style={{ color: 'var(--text-muted)' }}>({files.length})</span>
                 </p>
@@ -409,10 +409,10 @@ function OdemeKatalogContent() {
 
           {hasDesignSupport && (
             <div className="rounded-2xl p-4 mb-4"
-              style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)' }}>
+              style={{ background: 'rgba(230,57,70,0.06)', border: '1px solid rgba(230,57,70,0.2)' }}>
               <div className="flex items-start gap-2">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-[16px]"
-                  style={{ background: 'rgba(244,130,31,0.15)' }}>🎨</div>
+                  style={{ background: 'rgba(230,57,70,0.15)' }}>🎨</div>
                 <div>
                   <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Tasarım Desteği Talebi Alındı</p>
                   <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
@@ -516,7 +516,7 @@ function OdemeKatalogContent() {
             {/* Ödeme butonu */}
             <button onClick={handleSubmit} disabled={paymentLoading}
               className="w-full flex items-center justify-center gap-2 py-4 text-[14px] font-black text-white rounded-xl transition-all disabled:opacity-50 hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 6px 14px rgba(244,130,31,0.3)' }}>
+              style={{ background: 'linear-gradient(135deg, #E63946, #C1272D)', boxShadow: '0 6px 14px rgba(230,57,70,0.3)' }}>
               {paymentLoading
                 ? <><Loader2 size={16} className="animate-spin" /> Ödeme başlatılıyor...</>
                 : <>

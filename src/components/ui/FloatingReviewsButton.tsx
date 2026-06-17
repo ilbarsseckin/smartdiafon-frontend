@@ -20,9 +20,9 @@ export default function FloatingReviewsButton() {
         onClick={() => setCollapsed(o => !o)}
         className="w-5 flex items-center justify-center py-4 rounded-l-lg"
         style={{
-          background: 'rgba(244,130,31,0.15)',
+          background: 'rgba(230,57,70,0.15)',
           color: '#DC2626',
-          border: '1px solid rgba(244,130,31,0.3)',
+          border: '1px solid rgba(230,57,70,0.3)',
           borderRight: 'none',
         }}
         aria-label={collapsed ? 'Yorumları göster' : 'Gizle'}
@@ -48,11 +48,11 @@ export default function FloatingReviewsButton() {
           onClick={scrollToReviews}
           className="flex flex-col items-center justify-center gap-1.5 py-5 px-2.5"
           style={{
-            background: 'linear-gradient(180deg, #DC2626, #e07010)',
+            background: 'linear-gradient(180deg, #DC2626, #C1272D)',
             color: 'white',
             width: 36,
             borderRadius: '8px 0 0 8px',
-            boxShadow: '-3px 0 12px rgba(244,130,31,0.3)',
+            boxShadow: '-3px 0 12px rgba(230,57,70,0.3)',
             writingMode: 'vertical-rl',
             textOrientation: 'mixed',
             whiteSpace: 'nowrap',

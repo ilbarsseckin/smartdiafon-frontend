@@ -59,7 +59,7 @@ export default function RecentlyViewedSection({ currentProductId }: Props) {
       {/* Başlık */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <Clock size={16} style={{ color: '#F4821F' }} />
+          <Clock size={16} style={{ color: '#E63946' }} />
           <h2 className="text-[16px] sm:text-[18px] font-black" style={{ color: 'var(--text-primary)' }}>
             Son Baktıkların
           </h2>
@@ -135,12 +135,12 @@ function ProductCard({ product }: { product: Product }) {
               {product.categoryName}
             </p>
           )}
-          <p className="text-[12px] font-bold leading-tight line-clamp-2 group-hover:text-[#F4821F] transition-colors"
+          <p className="text-[12px] font-bold leading-tight line-clamp-2 group-hover:text-[#E63946] transition-colors"
             style={{ color: 'var(--text-primary)' }}>
             {product.name}
           </p>
           {minPrice != null && Number(minPrice) > 0 && (
-            <p className="text-[11px] font-black mt-1.5 text-[#F4821F]">
+            <p className="text-[11px] font-black mt-1.5 text-[#E63946]">
               ${Number(minPrice).toFixed(2)}
             </p>
           )}

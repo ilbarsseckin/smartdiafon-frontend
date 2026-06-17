@@ -33,7 +33,7 @@ export default function KayitPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-9 h-9 rounded-xl bg-gray-900 dark:bg-gray-100 flex items-center justify-center">
-              <Printer size={18} className="text-[#F4821F]" />
+              <Printer size={18} className="text-[#E63946]" />
             </div>
            <Logo className="h-7" />
           </Link>
@@ -56,13 +56,13 @@ export default function KayitPage() {
                     required: f.required ? `${f.label} zorunlu` : false,
                     ...(f.minLength ? { minLength: { value: f.minLength, message: `En az ${f.minLength} karakter` } } : {})
                   })}
-                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F] transition-colors" />
+                  className="w-full px-3.5 py-2.5 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946] transition-colors" />
                 {errors[f.key as keyof Form] && <p className="text-[11px] text-red-500 mt-1">{errors[f.key as keyof Form]?.message as string}</p>}
               </div>
             ))}
 
             <button type="submit" disabled={isSubmitting}
-              className="w-full bg-[#F4821F] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
+              className="w-full bg-[#E63946] text-white text-[14px] font-medium py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 mt-2">
               {isSubmitting ? 'Kayıt olunuyor...' : 'Kayıt ol'}
             </button>
           </form>
@@ -70,7 +70,7 @@ export default function KayitPage() {
 
         <p className="text-center text-[12px] text-gray-400 mt-4">
           Zaten hesabınız var mı?{' '}
-          <Link href="/giris" className="text-[#F4821F] hover:underline">Giriş yapın</Link>
+          <Link href="/giris" className="text-[#E63946] hover:underline">Giriş yapın</Link>
         </p>
       </div>
     </div>

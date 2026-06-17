@@ -9,12 +9,12 @@ interface USP {
 }
 
 const USPS: USP[] = [
-  { icon: Zap,             title: '48 Saatte Kapında',      desc: 'Onay sonrası hızlı üretim ve kargo. Acil işlerde 24 saat içinde teslim.',         color: '#F4821F' },
+  { icon: Zap,             title: '48 Saatte Kapında',      desc: 'Onay sonrası hızlı üretim ve kargo. Acil işlerde 24 saat içinde teslim.',         color: '#E63946' },
   { icon: Sparkles,        title: 'Orijinal Ürün Garantisi',    desc: 'Multitek ve güvenilir markaların orijinal, faturalı ürünleri.',                          color: '#8B5CF6' },
   { icon: CreditCard,      title: 'Güvenli Online Ödeme',   desc: 'Iyzico altyapısı, 3D Secure. Tüm kartlar ve havale ile ödeme.',                    color: '#16A34A' },
   { icon: Truck,           title: 'Türkiye\'nin Her Yerine', desc: 'Anlaşmalı kargo. 500₺ üstü siparişlerde kargo ücretsiz.',                          color: '#2563EB' },
   { icon: HeadphonesIcon,  title: '7/24 WhatsApp Destek',   desc: 'Sorunda anında yanıt. Tasarım yardımı ve teknik destek.',                          color: '#0891B2' },
-  { icon: ShieldCheck,     title: 'Memnuniyet Garantisi',   desc: 'Sorunlu üründe ücretsiz değişim veya tam para iadesi.',                     color: '#F4821F' },
+  { icon: ShieldCheck,     title: 'Memnuniyet Garantisi',   desc: 'Sorunlu üründe ücretsiz değişim veya tam para iadesi.',                     color: '#E63946' },
 ]
 
 const doubled = [...USPS, ...USPS]
@@ -41,7 +41,7 @@ export default function NedenBiz() {
         {/* Başlık */}
         <div className="text-center mb-10 md:mb-14">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] md:text-[11px] font-bold tracking-[1.5px] uppercase mb-3"
-            style={{ background: 'rgba(244,130,31,0.12)', color: '#F4821F' }}>
+            style={{ background: 'rgba(230,57,70,0.12)', color: '#E63946' }}>
             <ShieldCheck size={12} />
             NEDEN BİZ
           </span>

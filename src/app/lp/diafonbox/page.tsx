@@ -94,20 +94,20 @@ export default function DiafonBoxLP() {
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg, #1a0a00, #2d1200)', padding: '60px 20px 40px' }}>
         <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(244,130,31,0.15)', border: '1px solid rgba(244,130,31,0.3)', borderRadius: 20, padding: '4px 14px', marginBottom: 16 }}>
-            <Wifi size={12} color="#F4821F" />
-            <span style={{ color: '#F4821F', fontSize: 11, fontWeight: 700, letterSpacing: 1 }}>SMARTDIAFON</span>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(230,57,70,0.15)', border: '1px solid rgba(230,57,70,0.3)', borderRadius: 20, padding: '4px 14px', marginBottom: 16 }}>
+            <Wifi size={12} color="#E63946" />
+            <span style={{ color: '#E63946', fontSize: 11, fontWeight: 700, letterSpacing: 1 }}>SMARTDIAFON</span>
           </div>
           <h1 style={{ color: '#fff', fontSize: 32, fontWeight: 900, lineHeight: 1.2, marginBottom: 12 }}>
             Eski Diyafonunu<br />
-            <span style={{ color: '#F4821F' }}>Akıllı Telefona</span> Bağla
+            <span style={{ color: '#E63946' }}>Akıllı Telefona</span> Bağla
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, marginBottom: 28, lineHeight: 1.6 }}>
             DiafonBox ile mevcut sisteminizi değiştirmeden kapınızı telefondan yönetin.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#uyumluluk"
-              style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', color: '#fff', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              style={{ background: 'linear-gradient(135deg, #E63946, #C1272D)', color: '#fff', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
               Uyumluluk Testi <ArrowRight size={16} />
             </a>
             <a href="#urunler"
@@ -123,8 +123,8 @@ export default function DiafonBoxLP() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
           {FAYDALAR.map((f, i) => (
             <div key={i} style={{ background: '#1a1a1a', border: '1px solid #2a2a2a', borderRadius: 16, padding: '16px 14px' }}>
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(244,130,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 10 }}>
-                <f.icon size={18} color="#F4821F" />
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(230,57,70,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 10 }}>
+                <f.icon size={18} color="#E63946" />
               </div>
               <p style={{ color: '#fff', fontSize: 13, fontWeight: 700, marginBottom: 4 }}>{f.title}</p>
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, lineHeight: 1.5 }}>{f.desc}</p>
@@ -154,7 +154,7 @@ export default function DiafonBoxLP() {
             <div style={{ display: 'flex', gap: 10 }}>
               <button onClick={() => fileRef.current?.click()}
                 style={{ flex: 1, background: '#2a2a2a', border: '1.5px dashed #3a3a3a', borderRadius: 14, padding: '20px 12px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
-                <Camera size={24} color="#F4821F" />
+                <Camera size={24} color="#E63946" />
                 <span style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>Kamera</span>
                 <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11 }}>Fotoğraf çek</span>
               </button>
@@ -177,7 +177,7 @@ export default function DiafonBoxLP() {
 
               {!testResult && (
                 <button onClick={analizEt} disabled={testLoading}
-                  style={{ width: '100%', background: 'linear-gradient(135deg, #F4821F, #e07010)', border: 'none', color: '#fff', padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 14, cursor: testLoading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, opacity: testLoading ? 0.7 : 1 }}>
+                  style={{ width: '100%', background: 'linear-gradient(135deg, #E63946, #C1272D)', border: 'none', color: '#fff', padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 14, cursor: testLoading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, opacity: testLoading ? 0.7 : 1 }}>
                   {testLoading ? <><Loader2 size={16} className="animate-spin" /> Analiz ediliyor...</> : '🔍 Uyumluluk Analizi Yap'}
                 </button>
               )}
@@ -190,7 +190,7 @@ export default function DiafonBoxLP() {
                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>{testResult.message}</p>
                   {testResult.compatible && (
                     <a href="#urunler"
-                      style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, background: '#F4821F', color: '#fff', padding: '10px 18px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, background: '#E63946', color: '#fff', padding: '10px 18px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
                       Ürünleri İncele <ArrowRight size={14} />
                     </a>
                   )}
@@ -225,7 +225,7 @@ export default function DiafonBoxLP() {
 
         {loading ? (
           <div style={{ display: 'flex', justifyContent: 'center', padding: 40 }}>
-            <Loader2 size={24} color="#F4821F" className="animate-spin" />
+            <Loader2 size={24} color="#E63946" className="animate-spin" />
           </div>
         ) : (
           <div ref={scrollRef}
@@ -257,11 +257,11 @@ export default function DiafonBoxLP() {
                         {origPrice && origPrice > price && (
                           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, textDecoration: 'line-through' }}>₺{origPrice.toLocaleString('tr-TR')}</p>
                         )}
-                        <p style={{ color: '#F4821F', fontSize: 16, fontWeight: 900 }}>₺{price.toLocaleString('tr-TR')}</p>
+                        <p style={{ color: '#E63946', fontSize: 16, fontWeight: 900 }}>₺{price.toLocaleString('tr-TR')}</p>
                       </div>
                     )}
                     <Link href={`/urun/${p.slug}`}
-                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'rgba(244,130,31,0.15)', color: '#F4821F', padding: '8px', borderRadius: 8, fontSize: 12, fontWeight: 700, textDecoration: 'none', border: '1px solid rgba(244,130,31,0.3)' }}>
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'rgba(230,57,70,0.15)', color: '#E63946', padding: '8px', borderRadius: 8, fontSize: 12, fontWeight: 700, textDecoration: 'none', border: '1px solid rgba(230,57,70,0.3)' }}>
                       İncele <ChevronRight size={12} />
                     </Link>
                   </div>
@@ -293,7 +293,7 @@ export default function DiafonBoxLP() {
             Test Et
           </a>
           <Link href="/katalog"
-            style={{ flex: 2, background: 'linear-gradient(135deg, #F4821F, #e07010)', color: '#fff', padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 13, textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, boxShadow: '0 4px 16px rgba(244,130,31,0.4)' }}>
+            style={{ flex: 2, background: 'linear-gradient(135deg, #E63946, #C1272D)', color: '#fff', padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 13, textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, boxShadow: '0 4px 16px rgba(230,57,70,0.4)' }}>
             <ShoppingCart size={16} /> Ürünlere Git
           </Link>
         </div>

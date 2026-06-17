@@ -1,7 +1,7 @@
 import { Zap, Users, Globe, Star, Clock, Cpu } from 'lucide-react'
 
 const stats = [
-  { icon: Users, value: '12.000+', label: 'Mutlu Müşteri', color: '#F4821F' },
+  { icon: Users, value: '12.000+', label: 'Mutlu Müşteri', color: '#E63946' },
   { icon: Globe, value: '81 İl', label: 'Teslimat Ağı', color: '#378ADD' },
   { icon: Clock, value: '48 Saat', label: 'Ortalama Teslimat', color: '#1D9E75' },
   { icon: Cpu, value: '1.200 m²', label: 'Fabrika Alanı', color: '#534AB7' },

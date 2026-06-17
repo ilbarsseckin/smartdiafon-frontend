@@ -96,7 +96,7 @@ export default function IadeKosullariPage() {
           {/* Başlık */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-[11px] font-bold uppercase tracking-[2px]"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#DC2626' }}>
+              style={{ background: 'rgba(230,57,70,0.1)', color: '#DC2626' }}>
               <ShieldCheck size={14} />
               Tüketici Hakları
             </div>
@@ -160,7 +160,7 @@ export default function IadeKosullariPage() {
 
           {/* İletişim CTA */}
           <div className="mt-8 rounded-2xl p-6 text-center"
-            style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
+            style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)' }}>
             <Phone size={24} className="mx-auto mb-3 text-white" />
             <h3 className="text-[18px] font-black text-white mb-2">Sorunuz mu var?</h3>
             <p className="text-[13px] text-white/80 mb-4">

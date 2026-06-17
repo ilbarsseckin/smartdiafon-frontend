@@ -64,7 +64,7 @@ export default function AkilliEvShowcase() {
               >
                 {/* Nabız efekti */}
                 <span className="absolute inset-0 rounded-full animate-ping"
-                  style={{ background: 'rgba(244,130,31,0.4)' }} />
+                  style={{ background: 'rgba(230,57,70,0.4)' }} />
                 {/* Buton */}
                 <span className="relative flex items-center justify-center w-11 h-11 rounded-full shadow-lg transition-transform group-hover:scale-110"
                   style={{ background: isActive ? '#DC2626' : '#ffffff', border: '2px solid #DC2626' }}>
@@ -90,7 +90,7 @@ export default function AkilliEvShowcase() {
               className="flex items-center gap-2.5 px-4 py-3 rounded-xl transition-all active:scale-95"
               style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <span className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
-                style={{ background: 'rgba(244,130,31,0.1)' }}>
+                style={{ background: 'rgba(230,57,70,0.1)' }}>
                 <Icon size={17} style={{ color: '#DC2626' }} />
               </span>
               <span className="text-[12px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>

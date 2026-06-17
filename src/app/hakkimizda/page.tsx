@@ -25,9 +25,9 @@ export default function HakkimizdaPage() {
         {/* Hero */}
         <div className="relative overflow-hidden" style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#F4821F] mb-3">Hakkımızda</p>
+            <p className="text-[11px] tracking-[2.5px] uppercase font-bold text-[#E63946] mb-3">Hakkımızda</p>
             <h1 className="text-[36px] md:text-[48px] font-black tracking-[-1.5px] mb-4" style={{ color: 'var(--text-primary)' }}>
-              Ürünü de Ustası da <span className="text-[#F4821F]">Tek Yerden</span>
+              Ürünü de Ustası da <span className="text-[#E63946]">Tek Yerden</span>
             </h1>
             <p className="text-[16px] max-w-2xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               Smartdiafon; görüntülü diyafon, IP interkom ve güvenlik sistemleri satan,
@@ -87,7 +87,7 @@ export default function HakkimizdaPage() {
           <div className="flex gap-3 justify-center flex-wrap">
             <Link href="/teklif"
               className="px-6 py-3 rounded-xl text-[13px] font-bold text-white"
-              style={{ background: '#F4821F' }}>
+              style={{ background: '#E63946' }}>
               Ücretsiz Teklif Al
             </Link>
             <Link href="/iletisim"

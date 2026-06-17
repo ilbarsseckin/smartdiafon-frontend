@@ -85,10 +85,10 @@ function YelkenSVG() {
 
           <rect x="66" y="50" width="22" height="360" fill="url(#shine-y)" opacity="0.35" />
 
-          <path d="M43 88 C92 76 139 78 173 90" fill="none" stroke="#F4821F" strokeWidth="5" strokeLinecap="round" />
-          <path d="M45 101 C93 91 137 91 170 102" fill="none" stroke="#F4821F" strokeWidth="1.4" opacity="0.5" strokeLinecap="round" />
-          <path d="M41 371 C90 383 133 385 156 374" fill="none" stroke="#F4821F" strokeWidth="5" strokeLinecap="round" />
-          <path d="M43 360 C91 372 132 373 154 363" fill="none" stroke="#F4821F" strokeWidth="1.4" opacity="0.5" strokeLinecap="round" />
+          <path d="M43 88 C92 76 139 78 173 90" fill="none" stroke="#E63946" strokeWidth="5" strokeLinecap="round" />
+          <path d="M45 101 C93 91 137 91 170 102" fill="none" stroke="#E63946" strokeWidth="1.4" opacity="0.5" strokeLinecap="round" />
+          <path d="M41 371 C90 383 133 385 156 374" fill="none" stroke="#E63946" strokeWidth="5" strokeLinecap="round" />
+          <path d="M43 360 C91 372 132 373 154 363" fill="none" stroke="#E63946" strokeWidth="1.4" opacity="0.5" strokeLinecap="round" />
         </g>
 
         <g>
@@ -120,7 +120,7 @@ function YelkenSVG() {
             transform="rotate(-90 101 232)"
           >
             <tspan fill="#111111">baski</tspan>
-            <tspan fill="#F4821F">urunleri.com</tspan>
+            <tspan fill="#E63946">urunleri.com</tspan>
           </text>
 
           <text
@@ -200,7 +200,7 @@ function BayrakKart({ href, baslik, aciklama, gorsel }: KartProps) {
       </div>
 
       <div className="relative z-10 flex flex-col justify-center p-3 md:p-8">
-        <p className="mb-1 text-[9px] font-black uppercase tracking-[1.5px] text-[#F4821F] md:mb-2 md:text-[11px] md:tracking-[2px]">
+        <p className="mb-1 text-[9px] font-black uppercase tracking-[1.5px] text-[#E63946] md:mb-2 md:text-[11px] md:tracking-[2px]">
           Outdoor Reklam
         </p>
 
@@ -219,13 +219,13 @@ function BayrakKart({ href, baslik, aciklama, gorsel }: KartProps) {
         </p>
 
         <div className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-1 md:mb-4">
-          <span className="text-[17px] font-black text-[#F4821F] md:text-[26px]">₺990</span>
+          <span className="text-[17px] font-black text-[#E63946] md:text-[26px]">₺990</span>
           <span className="text-[9px] md:text-[11px]" style={{ color: 'var(--text-muted)' }}>
             başlayan fiyatlarla
           </span>
         </div>
 
-        <div className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#F4821F] px-3 py-2 text-[10px] font-bold text-white transition-colors group-hover:bg-[#e07010] md:gap-2 md:px-4 md:text-[12px]">
+        <div className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#E63946] px-3 py-2 text-[10px] font-bold text-white transition-colors group-hover:bg-[#C1272D] md:gap-2 md:px-4 md:text-[12px]">
           Ürünü incele <ArrowRight size={11} />
         </div>
       </div>

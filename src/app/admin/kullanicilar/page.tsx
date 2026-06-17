@@ -142,14 +142,14 @@ export default function KullanicilarPage() {
               <p className="text-[13px] text-gray-400 mt-0.5">{users.length} kullanıcı kayıtlı</p>
             </div>
             <button onClick={() => setShowCreate(true)}
-              className="flex items-center gap-1.5 bg-[#F4821F] text-white text-[12px] font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+              className="flex items-center gap-1.5 bg-[#E63946] text-white text-[12px] font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
               <Plus size={14} /> Yeni kullanıcı
             </button>
           </div>
 
           {/* Yeni kullanıcı formu */}
           {showCreate && (
-            <div className="bg-white dark:bg-[#141414] border border-[#F4821F] rounded-xl p-5 mb-4">
+            <div className="bg-white dark:bg-[#141414] border border-[#E63946] rounded-xl p-5 mb-4">
               <p className="text-[14px] font-medium text-gray-900 dark:text-gray-100 mb-4">Yeni kullanıcı oluştur</p>
               <div className="grid grid-cols-2 gap-3 mb-3">
                 {[
@@ -163,14 +163,14 @@ export default function KullanicilarPage() {
                     <input type={f.type} placeholder={f.placeholder}
                       value={(newUser as any)[f.key]}
                       onChange={e => setNewUser({ ...newUser, [f.key]: e.target.value })}
-                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]" />
+                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]" />
                   </div>
                 ))}
               </div>
               <div className="mb-4">
                 <label className="block text-[11px] font-medium text-gray-500 mb-1.5">Sistem rolü</label>
                 <select value={newUser.role} onChange={e => setNewUser({ ...newUser, role: e.target.value })}
-                  className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]">
+                  className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]">
                   <option value="CUSTOMER">Müşteri</option>
                   <option value="OPERATOR">Operatör</option>
                   <option value="ADMIN">Admin</option>
@@ -182,7 +182,7 @@ export default function KullanicilarPage() {
                   İptal
                 </button>
                 <button onClick={createUser} disabled={saving}
-                  className="text-[12px] font-medium bg-[#F4821F] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
+                  className="text-[12px] font-medium bg-[#E63946] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
                   {saving ? 'Oluşturuluyor...' : 'Oluştur'}
                 </button>
               </div>
@@ -199,18 +199,18 @@ export default function KullanicilarPage() {
                     <label className="block text-[11px] font-medium text-gray-500 mb-1.5">Ad Soyad</label>
                     <input type="text" value={editForm.name}
                       onChange={e => setEditForm({ ...editForm, name: e.target.value })}
-                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]" />
+                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]" />
                   </div>
                   <div>
                     <label className="block text-[11px] font-medium text-gray-500 mb-1.5">Telefon</label>
                     <input type="tel" value={editForm.phone}
                       onChange={e => setEditForm({ ...editForm, phone: e.target.value })}
-                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]" />
+                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]" />
                   </div>
                   <div>
                     <label className="block text-[11px] font-medium text-gray-500 mb-1.5">Sistem rolü</label>
                     <select value={editForm.role} onChange={e => setEditForm({ ...editForm, role: e.target.value })}
-                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]">
+                      className="w-full px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]">
                       <option value="CUSTOMER">Müşteri</option>
                       <option value="OPERATOR">Operatör</option>
                       <option value="ADMIN">Admin</option>
@@ -223,7 +223,7 @@ export default function KullanicilarPage() {
                     İptal
                   </button>
                   <button onClick={saveEdit} disabled={saving}
-                    className="text-[12px] font-medium bg-[#F4821F] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
+                    className="text-[12px] font-medium bg-[#E63946] text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
                     {saving ? 'Kaydediliyor...' : 'Kaydet'}
                   </button>
                 </div>
@@ -236,7 +236,7 @@ export default function KullanicilarPage() {
             <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input type="text" placeholder="İsim veya e-posta ara..." value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#141414] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]" />
+              className="w-full pl-9 pr-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#141414] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]" />
           </div>
 
           {/* Kullanıcı listesi */}
@@ -271,7 +271,7 @@ export default function KullanicilarPage() {
                         {roleLabels[u.role] || u.role}
                       </span>
                       <button onClick={() => startEdit(u)}
-                        className="w-7 h-7 rounded-lg border border-black/[0.08] dark:border-white/[0.08] flex items-center justify-center text-gray-400 hover:text-[#F4821F] hover:border-[#F4821F] transition-colors">
+                        className="w-7 h-7 rounded-lg border border-black/[0.08] dark:border-white/[0.08] flex items-center justify-center text-gray-400 hover:text-[#E63946] hover:border-[#E63946] transition-colors">
                         <Edit2 size={12} />
                       </button>
                       <button onClick={() => deleteUser(u.id, u.name)}
@@ -293,7 +293,7 @@ export default function KullanicilarPage() {
                           <div className="flex flex-wrap gap-2">
                             {uRoles.map(r => (
                               <div key={r.id} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white dark:bg-[#141414] border border-black/[0.07] dark:border-white/[0.07]">
-                                <Shield size={11} className="text-[#F4821F]" />
+                                <Shield size={11} className="text-[#E63946]" />
                                 <span className="text-[12px] text-gray-700 dark:text-gray-300">{r.name}</span>
                                 <button onClick={() => removeRole(u.id, r.id)}
                                   className="ml-1 text-gray-300 hover:text-red-500 transition-colors">
@@ -310,7 +310,7 @@ export default function KullanicilarPage() {
                         <div className="flex gap-2">
                           <select value={selectedRole[u.id] || ''}
                             onChange={e => setSelectedRole(prev => ({ ...prev, [u.id]: e.target.value }))}
-                            className="flex-1 px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#F4821F]">
+                            className="flex-1 px-3 py-2 text-[13px] border border-black/[0.08] dark:border-white/[0.08] rounded-lg bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100 outline-none focus:border-[#E63946]">
                             <option value="">Rol seçin...</option>
                             {roles.filter(r => r.isActive && !uRoles.some(ur => ur.id === r.id)).map(r => (
                               <option key={r.id} value={r.id}>{r.name}</option>
@@ -318,7 +318,7 @@ export default function KullanicilarPage() {
                           </select>
                           <button onClick={() => assignRole(u.id)}
                             disabled={assigning === u.id || !selectedRole[u.id]}
-                            className="bg-[#F4821F] text-white text-[12px] font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
+                            className="bg-[#E63946] text-white text-[12px] font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
                             {assigning === u.id ? 'Atanıyor...' : 'Ata'}
                           </button>
                         </div>

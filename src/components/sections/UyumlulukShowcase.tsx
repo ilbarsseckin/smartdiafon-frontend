@@ -53,8 +53,8 @@ export default function UyumlulukShowcase() {
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
                 style={{
-                  background: 'rgba(244,130,31,0.12)',
-                  border: '1px solid rgba(244,130,31,0.25)',
+                  background: 'rgba(230,57,70,0.12)',
+                  border: '1px solid rgba(230,57,70,0.25)',
                 }}
               >
                 <Sparkles size={14} style={{ color: '#DC2626' }} />
@@ -167,9 +167,9 @@ export default function UyumlulukShowcase() {
                 onClick={() => fileRef.current?.click()}
                 className="group w-full rounded-[26px] border-2 border-dashed p-5 md:p-7 transition-all hover:scale-[1.01] active:scale-[0.99]"
                 style={{
-                  borderColor: 'rgba(244,130,31,0.45)',
+                  borderColor: 'rgba(230,57,70,0.45)',
                   background:
-                    'linear-gradient(180deg, rgba(244,130,31,0.10), rgba(244,130,31,0.03))',
+                    'linear-gradient(180deg, rgba(230,57,70,0.10), rgba(230,57,70,0.03))',
                 }}
               >
                 <div

@@ -79,8 +79,8 @@ export default function AyarlarPage() {
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <div className="flex items-start gap-3 mb-5">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ background: 'rgba(244,130,31,0.12)' }}>
-                <DollarSign size={16} className="text-[#F4821F]" />
+                style={{ background: 'rgba(230,57,70,0.12)' }}>
+                <DollarSign size={16} className="text-[#E63946]" />
               </div>
               <div>
                 <h2 className="text-[15px] font-bold" style={{ color: 'var(--text-primary)' }}>USD / TL Kuru</h2>
@@ -96,7 +96,7 @@ export default function AyarlarPage() {
                   style={{ color: 'var(--text-muted)' }}>Güncel kur</label>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[14px] font-bold"
-                    style={{ color: '#F4821F' }}>$1 =</span>
+                    style={{ color: '#E63946' }}>$1 =</span>
                   <input type="number" value={kur} onChange={e => setKur(e.target.value)}
                     placeholder="45.00" step="0.01" min="0" disabled={loading}
                     className="w-full pl-16 pr-12 py-3.5 rounded-xl text-[16px] font-bold outline-none"
@@ -112,7 +112,7 @@ export default function AyarlarPage() {
               </button>
               <button onClick={handleSave} disabled={saving || loading}
                 className="flex items-center gap-2 text-[13px] font-bold px-6 py-3 rounded-xl disabled:opacity-60"
-                style={{ background: '#F4821F', color: 'white' }}>
+                style={{ background: '#E63946', color: 'white' }}>
                 <Save size={14} />
                 {saving ? 'Kaydediliyor...' : 'Kaydet'}
               </button>
@@ -133,8 +133,8 @@ export default function AyarlarPage() {
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
             <div className="flex items-start gap-3 mb-5">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ background: 'rgba(244,130,31,0.12)' }}>
-                <Bell size={16} className="text-[#F4821F]" />
+                style={{ background: 'rgba(230,57,70,0.12)' }}>
+                <Bell size={16} className="text-[#E63946]" />
               </div>
               <div>
                 <h2 className="text-[15px] font-bold" style={{ color: 'var(--text-primary)' }}>SMS ve Email Bildirimleri</h2>
@@ -198,7 +198,7 @@ export default function AyarlarPage() {
 
               <button onClick={handleSaveNotif} disabled={notifSaving}
                 className="flex items-center gap-2 text-[13px] font-bold px-6 py-3 rounded-xl disabled:opacity-60"
-                style={{ background: '#F4821F', color: 'white' }}>
+                style={{ background: '#E63946', color: 'white' }}>
                 <Save size={14} />
                 {notifSaving ? 'Kaydediliyor...' : 'Bildirim Ayarlarını Kaydet'}
               </button>

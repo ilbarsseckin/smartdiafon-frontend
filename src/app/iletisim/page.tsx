@@ -105,7 +105,7 @@ export default function IletisimPage() {
                   className="flex items-start gap-4 p-4 rounded-2xl"
                   style={{ background: 'var(--bg-card)', border: '0.5px solid var(--border)' }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'rgba(244,130,31,0.1)' }}>
+                    style={{ background: 'rgba(230,57,70,0.1)' }}>
                     <Icon size={17} color="#DC2626" />
                   </div>
                   <div>
@@ -206,7 +206,7 @@ export default function IletisimPage() {
                   <div className="flex gap-3 pt-1">
                     <button type="submit" disabled={loading}
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[13px] font-bold text-white disabled:opacity-60 transition-all"
-                      style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
+                      style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)' }}>
                       {loading ? <Loader2 size={15} className="animate-spin" /> : <Send size={14} />}
                       {loading ? 'Gönderiliyor...' : 'Mesaj Gönder'}
                     </button>

@@ -112,7 +112,7 @@ export default function HizliTeklif() {
         style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
 
         <div className="flex items-center gap-2 mb-2">
-          <span className="flex items-center justify-center w-7 h-7 rounded-lg" style={{ background: 'rgba(244,130,31,0.12)' }}>
+          <span className="flex items-center justify-center w-7 h-7 rounded-lg" style={{ background: 'rgba(230,57,70,0.12)' }}>
             <Zap size={15} style={{ color: '#DC2626' }} />
           </span>
           <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: '#DC2626' }}>
@@ -148,7 +148,7 @@ export default function HizliTeklif() {
             <button onClick={handleHesapla}
               disabled={!daire || parseInt(daire) <= 0}
               className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-[14px] text-white transition-all hover:scale-[1.01] disabled:opacity-40 disabled:hover:scale-100"
-              style={{ background: 'linear-gradient(135deg,#DC2626,#ff9f47)' }}>
+              style={{ background: 'linear-gradient(135deg,#DC2626,#F08080)' }}>
               <Calculator size={18} /> Sistemleri Karşılaştır <ArrowRight size={16} />
             </button>
             <p className="text-[11px] text-center" style={{ color: 'var(--text-muted)' }}>
@@ -166,7 +166,7 @@ export default function HizliTeklif() {
             </div>
             <div className="h-2.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-secondary)' }}>
               <div className="h-full rounded-full transition-all duration-300"
-                style={{ width: `${progress}%`, background: 'linear-gradient(90deg,#DC2626,#ff9f47)' }} />
+                style={{ width: `${progress}%`, background: 'linear-gradient(90deg,#DC2626,#F08080)' }} />
             </div>
             <p className="text-right text-[13px] font-black mt-2" style={{ color: '#DC2626' }}>%{progress}</p>
           </div>
@@ -204,7 +204,7 @@ export default function HizliTeklif() {
                     <button onClick={() => router.push(`/teklif?daire=${parseInt(daire)}&kapi=${parseInt(kapi)}&sistem=${s.key === 'linux' ? 'linux' : s.key}&auto=1`)}
                       className="w-full flex items-center justify-center gap-1 py-2.5 rounded-lg font-bold text-[12px] transition-all"
                       style={{
-                        background: enUcuzMu ? 'linear-gradient(135deg,#DC2626,#ff9f47)' : 'var(--bg-card)',
+                        background: enUcuzMu ? 'linear-gradient(135deg,#DC2626,#F08080)' : 'var(--bg-card)',
                         color: enUcuzMu ? '#fff' : 'var(--text-primary)',
                         border: enUcuzMu ? 'none' : '1px solid var(--border)',
                       }}>

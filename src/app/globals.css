@@ -5,7 +5,7 @@
 
 /* ── Renk değişkenleri — Kurumsal ── */
 :root {
-  --orange: #F4821F;
+  --orange: #E63946;
   --bg-primary:    #FFFFFF;
   --bg-secondary:  #F4F5F7;
   --bg-card:       #FFFFFF;
@@ -93,7 +93,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 
 /* ── Seçim rengi ── */
-::selection { background: rgba(244,130,31,0.18); color: var(--text-primary); }
+::selection { background: rgba(230,57,70,0.18); color: var(--text-primary); }
 
 @keyframes marquee {
   from { transform: translateX(0); }

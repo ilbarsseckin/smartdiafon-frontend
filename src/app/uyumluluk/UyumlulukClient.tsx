@@ -114,7 +114,7 @@ export default function UyumlulukClient() {
       <main className="min-h-screen pb-16" style={{ background: 'var(--bg-secondary)' }}>
         <div className="px-4 pt-10 pb-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
-            style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.25)' }}>
+            style={{ background: 'rgba(230,57,70,0.1)', border: '1px solid rgba(230,57,70,0.25)' }}>
             <Sparkles size={14} style={{ color: '#DC2626' }} />
             <span className="text-[12px] font-bold" style={{ color: '#DC2626' }}>Yapay Zeka Destekli</span>
           </div>
@@ -163,7 +163,7 @@ export default function UyumlulukClient() {
                   <button onClick={() => fileRef.current?.click()}
                     className="flex-1 rounded-xl border-2 border-dashed py-8 flex flex-col items-center gap-2 transition-all hover:border-[#DC2626]"
                     style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}>
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(244,130,31,0.1)' }}>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(230,57,70,0.1)' }}>
                       <Camera size={22} style={{ color: '#DC2626' }} />
                     </div>
                     <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Kamera</p>
@@ -192,7 +192,7 @@ export default function UyumlulukClient() {
 
               <button onClick={() => setStep(2)} disabled={!file}
                 className="w-full mt-5 flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl transition-all disabled:opacity-40"
-                style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
+                style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)' }}>
                 Devam Et <ArrowRight size={16} />
               </button>
             </div>
@@ -225,7 +225,7 @@ export default function UyumlulukClient() {
                 </button>
                 <button onClick={analizEt} disabled={loading}
                   className="flex-1 flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl transition-all disabled:opacity-60"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)' }}>
                   {loading ? <><Loader2 size={16} className="animate-spin" /> Analiz ediliyor...</> : <><Sparkles size={16} /> Uyumluluğu Kontrol Et</>}
                 </button>
               </div>
@@ -245,7 +245,7 @@ export default function UyumlulukClient() {
                 <p className="text-[14px] leading-relaxed mb-2" style={{ color: 'var(--text-secondary)' }}>{sonuc.mesaj}</p>
                 {sonuc.aiAnaliz?.aciklama && !sonuc.aiAnaliz?.aiHata && (
                   <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px]"
-                    style={{ background: 'rgba(244,130,31,0.08)', color: 'var(--text-muted)' }}>
+                    style={{ background: 'rgba(230,57,70,0.08)', color: 'var(--text-muted)' }}>
                     <Sparkles size={11} style={{ color: '#DC2626' }} /> AI gözlemi: {sonuc.aiAnaliz.aciklama}
                   </div>
                 )}
@@ -276,7 +276,7 @@ export default function UyumlulukClient() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link href="/teklif"
                   className="flex items-center justify-center gap-2 py-3.5 text-[14px] font-bold text-white rounded-xl"
-                  style={{ background: 'linear-gradient(135deg, #DC2626, #e07010)' }}>
+                  style={{ background: 'linear-gradient(135deg, #DC2626, #C1272D)' }}>
                   Detaylı Teklif Al <ArrowRight size={16} />
                 </Link>
                 <button onClick={waMesaj}
@@ -316,7 +316,7 @@ function SoruBlok({ label, deger, setDeger, secenekler }: {
           <button key={val} onClick={() => setDeger(val)}
             className="py-2.5 px-3 text-[13px] font-medium rounded-lg transition-all text-left"
             style={{
-              background: deger === val ? 'rgba(244,130,31,0.1)' : 'var(--bg-secondary)',
+              background: deger === val ? 'rgba(230,57,70,0.1)' : 'var(--bg-secondary)',
               border: deger === val ? '1.5px solid #DC2626' : '1px solid var(--border)',
               color: deger === val ? '#DC2626' : 'var(--text-secondary)',
             }}>

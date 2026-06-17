@@ -109,7 +109,7 @@ export default function WelcomeDialog() {
 
         {/* Üst — turuncu gradient header */}
         <div className="relative px-6 pt-8 pb-6 text-center"
-          style={{ background: 'linear-gradient(135deg, #F4821F, #FF6B35)' }}>
+          style={{ background: 'linear-gradient(135deg, #E63946, #E63946)' }}>
           <div className="absolute top-0 left-0 right-0 h-full opacity-10">
             <div className="absolute top-4 left-6"><Sparkles size={24} className="text-white" /></div>
             <div className="absolute top-12 right-10"><Sparkles size={16} className="text-white" /></div>
@@ -139,7 +139,7 @@ export default function WelcomeDialog() {
               {coupon.name}
             </p>
             <p className="text-[44px] font-black tracking-[-1px] leading-none"
-              style={{ color: '#F4821F' }}>
+              style={{ color: '#E63946' }}>
               {discountStr}
             </p>
             <p className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>
@@ -150,8 +150,8 @@ export default function WelcomeDialog() {
           {/* Kupon kodu kutusu — dashed border */}
           <div className="relative p-3 rounded-xl mb-4"
             style={{
-              border: '2px dashed #F4821F',
-              background: 'rgba(244,130,31,0.05)',
+              border: '2px dashed #E63946',
+              background: 'rgba(230,57,70,0.05)',
             }}>
             <p className="text-[10px] font-bold uppercase tracking-[2px] mb-1"
               style={{ color: 'var(--text-muted)' }}>
@@ -159,7 +159,7 @@ export default function WelcomeDialog() {
             </p>
             <div className="flex items-center justify-between gap-3">
               <p className="text-[20px] font-black tracking-[2px]"
-                style={{ color: '#F4821F' }}>
+                style={{ color: '#E63946' }}>
                 {coupon.code}
               </p>
               <button onClick={handleCopy}
@@ -195,8 +195,8 @@ export default function WelcomeDialog() {
             <button onClick={handleClaim}
               className="w-full py-3 text-[14px] font-black text-white rounded-xl transition-all"
               style={{
-                background: 'linear-gradient(135deg, #F4821F, #e07010)',
-                boxShadow: '0 6px 14px rgba(244,130,31,0.35)',
+                background: 'linear-gradient(135deg, #E63946, #C1272D)',
+                boxShadow: '0 6px 14px rgba(230,57,70,0.35)',
               }}>
               Kuponu Sepetime Ekle
             </button>

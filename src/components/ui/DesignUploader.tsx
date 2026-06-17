@@ -137,7 +137,7 @@ export default function DesignUploader({ value, onChange, supportPlaceholder }: 
 
       {/* Header */}
       <div className="flex items-center gap-2 mb-1">
-        <Paperclip size={15} className="text-[#F4821F]" />
+        <Paperclip size={15} className="text-[#E63946]" />
         <p className="text-[14px] font-bold" style={{ color: 'var(--text-primary)' }}>Tasarım</p>
       </div>
       <p className="text-[11px] mb-4" style={{ color: 'var(--text-muted)' }}>
@@ -153,10 +153,10 @@ export default function DesignUploader({ value, onChange, supportPlaceholder }: 
           <button key={mode} type="button" onClick={() => setMode(mode)}
             className="flex flex-col items-start gap-1 px-3 py-2.5 rounded-lg text-left transition-all"
             style={value.mode === mode
-              ? { background: 'rgba(244,130,31,0.08)', border: '1.5px solid #F4821F', color: 'var(--text-primary)' }
+              ? { background: 'rgba(230,57,70,0.08)', border: '1.5px solid #E63946', color: 'var(--text-primary)' }
               : { background: 'var(--bg-secondary)', border: '1.5px solid var(--border)', color: 'var(--text-secondary)' }}>
             <div className="flex items-center gap-1.5">
-              <Icon size={13} style={{ color: value.mode === mode ? '#F4821F' : 'var(--text-muted)' }} />
+              <Icon size={13} style={{ color: value.mode === mode ? '#E63946' : 'var(--text-muted)' }} />
               <span className="text-[12px] font-bold">{label}</span>
             </div>
             <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>{sub}</span>
@@ -202,12 +202,12 @@ export default function DesignUploader({ value, onChange, supportPlaceholder }: 
             onClick={() => uploadingCount === 0 && fileInputRef.current?.click()}
             className="flex flex-col items-center justify-center gap-1.5 cursor-pointer rounded-xl transition-colors py-6"
             style={{
-              border: `2px dashed ${dragOver ? '#F4821F' : 'var(--border)'}`,
-              background: dragOver ? 'rgba(244,130,31,0.05)' : 'transparent',
+              border: `2px dashed ${dragOver ? '#E63946' : 'var(--border)'}`,
+              background: dragOver ? 'rgba(230,57,70,0.05)' : 'transparent',
             }}>
             {uploadingCount > 0 ? (
               <>
-                <Loader2 size={20} className="animate-spin text-[#F4821F]" />
+                <Loader2 size={20} className="animate-spin text-[#E63946]" />
                 <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{uploadingCount} dosya yükleniyor...</p>
               </>
             ) : (
@@ -230,8 +230,8 @@ export default function DesignUploader({ value, onChange, supportPlaceholder }: 
       {value.mode === 'support' && (
         <div className="space-y-3">
           <div className="flex items-start gap-2 p-3 rounded-lg"
-            style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)' }}>
-            <Check size={13} className="text-[#F4821F] mt-0.5 flex-shrink-0" />
+            style={{ background: 'rgba(230,57,70,0.06)', border: '1px solid rgba(230,57,70,0.2)' }}>
+            <Check size={13} className="text-[#E63946] mt-0.5 flex-shrink-0" />
             <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text-primary)' }}>
               Tasarım ekibimiz sizinle iletişime geçecek ve tasarımınızı birlikte hazırlayacağız.
             </p>
@@ -260,7 +260,7 @@ export default function DesignUploader({ value, onChange, supportPlaceholder }: 
             className="w-full flex items-center justify-between text-left mb-2 transition-colors hover:opacity-70"
             style={{ color: 'var(--text-secondary)' }}>
             <div className="flex items-center gap-1.5">
-              <AlertCircle size={13} style={{ color: '#F4821F', flexShrink: 0 }} />
+              <AlertCircle size={13} style={{ color: '#E63946', flexShrink: 0 }} />
               <span className="text-[12px] font-bold">İade Koşulları ve Satış Şartları</span>
             </div>
             {termsOpen
@@ -281,14 +281,14 @@ export default function DesignUploader({ value, onChange, supportPlaceholder }: 
               onClick={() => onChange({ ...value, termsAccepted: !value.termsAccepted })}
               className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
               style={{
-                background: value.termsAccepted ? '#F4821F' : 'var(--bg-secondary)',
-                border: value.termsAccepted ? '2px solid #F4821F' : '2px solid var(--border)',
+                background: value.termsAccepted ? '#E63946' : 'var(--bg-secondary)',
+                border: value.termsAccepted ? '2px solid #E63946' : '2px solid var(--border)',
               }}>
               {value.termsAccepted && <Check size={11} className="text-white" />}
             </div>
             <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               <button type="button" onClick={() => setTermsOpen(true)}
-                className="font-bold underline hover:text-[#F4821F] transition-colors"
+                className="font-bold underline hover:text-[#E63946] transition-colors"
                 style={{ color: 'var(--text-primary)' }}>
                 Satış koşullarını ve iade şartlarını
               </button>

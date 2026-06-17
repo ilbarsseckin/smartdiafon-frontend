@@ -105,7 +105,7 @@ export function UrunDetayClient() {
       <>
         <Navbar />
         <main className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-secondary)' }}>
-          <Loader2 size={32} className="animate-spin text-[#F4821F]" />
+          <Loader2 size={32} className="animate-spin text-[#E63946]" />
         </main>
       </>
     )
@@ -120,7 +120,7 @@ export function UrunDetayClient() {
             <Package size={48} className="mx-auto mb-4 opacity-30" style={{ color: 'var(--text-muted)' }} />
             <h1 className="text-[24px] font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Ürün bulunamadı</h1>
             <Link href="/urunler"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#F4821F]">
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-[13px] font-bold text-white rounded-lg bg-[#E63946]">
               <ChevronLeft size={14} /> Ürünlere dön
             </Link>
           </div>
@@ -162,8 +162,8 @@ export function UrunDetayClient() {
     android: { label: 'Android', color: '#16A34A' },
     touchscreen: { label: 'Dokunmatik', color: '#DB2777' },
     rfid: { label: 'RFID', color: '#D97706' },
-    gsm: { label: 'GSM', color: '#F4821F' },
-    '4g': { label: '4G', color: '#F4821F' },
+    gsm: { label: 'GSM', color: '#E63946' },
+    '4g': { label: '4G', color: '#E63946' },
     sip: { label: 'SIP', color: '#0891B2' },
     video: { label: 'Video', color: '#7C3AED' },
   }
@@ -258,7 +258,7 @@ export function UrunDetayClient() {
                       </span>
                     )}
                     {product.featured && !product.badge && (
-                      <span data-overlay-no-drag className="absolute top-4 left-4 w-9 h-9 rounded-full bg-[#F4821F] flex items-center justify-center shadow-md">
+                      <span data-overlay-no-drag className="absolute top-4 left-4 w-9 h-9 rounded-full bg-[#E63946] flex items-center justify-center shadow-md">
                         <Star size={14} className="text-white fill-white" />
                       </span>
                     )}
@@ -328,9 +328,9 @@ export function UrunDetayClient() {
                             className="w-full pl-3.5 pr-10 py-3 text-[14px] rounded-lg outline-none appearance-none cursor-pointer transition-all font-medium"
                             style={{
                               background: 'var(--bg-card)',
-                              border: isSelected ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                              border: isSelected ? '1.5px solid #E63946' : '1px solid var(--border)',
                               color: 'var(--text-primary)',
-                              boxShadow: isSelected ? '0 1px 3px rgba(244,130,31,0.1)' : 'none',
+                              boxShadow: isSelected ? '0 1px 3px rgba(230,57,70,0.1)' : 'none',
                             }}>
                             <option value="">{attr.label} seçiniz</option>
                             {attr.selectedOptions.map(opt => (
@@ -338,7 +338,7 @@ export function UrunDetayClient() {
                             ))}
                           </select>
                           {isSelected
-                            ? <Lock size={13} className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#F4821F' }} />
+                            ? <Lock size={13} className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#E63946' }} />
                             : <ChevronDown size={15} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'var(--text-muted)' }} />}
                         </div>
                       </div>
@@ -356,16 +356,16 @@ export function UrunDetayClient() {
                         className="w-full pl-3.5 pr-10 py-3 text-[14px] rounded-lg outline-none appearance-none cursor-pointer transition-all font-medium"
                         style={{
                           background: 'var(--bg-card)',
-                          border: selectedTierId ? '1.5px solid #F4821F' : '1px solid var(--border)',
+                          border: selectedTierId ? '1.5px solid #E63946' : '1px solid var(--border)',
                           color: 'var(--text-primary)',
-                          boxShadow: selectedTierId ? '0 1px 3px rgba(244,130,31,0.1)' : 'none',
+                          boxShadow: selectedTierId ? '0 1px 3px rgba(230,57,70,0.1)' : 'none',
                         }}>
                         {product.tiers.map(t => (
                           <option key={t.id} value={t.id}>{t.qty.toLocaleString('tr-TR')} adet</option>
                         ))}
                       </select>
                       {selectedTierId
-                        ? <Lock size={13} className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#F4821F' }} />
+                        ? <Lock size={13} className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#E63946' }} />
                         : <ChevronDown size={15} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'var(--text-muted)' }} />}
                     </div>
                   </div>
@@ -397,7 +397,7 @@ export function UrunDetayClient() {
                       </div>
                       <div className="text-right flex-1">
                         <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Birim: ₺{birimTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</p>
-                        <p className="text-[18px] font-black text-[#F4821F]">
+                        <p className="text-[18px] font-black text-[#E63946]">
                           ₺{totalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                         </p>
                       </div>
@@ -408,8 +408,8 @@ export function UrunDetayClient() {
                   {adet >= 30 && (
                     <Link href="/teklif"
                       className="flex items-center gap-2 p-3 rounded-xl transition-all hover:scale-[1.01]"
-                      style={{ background: 'rgba(244,130,31,0.1)', border: '1px solid rgba(244,130,31,0.3)' }}>
-                      <Info size={16} style={{ color: '#F4821F', flexShrink: 0 }} />
+                      style={{ background: 'rgba(230,57,70,0.1)', border: '1px solid rgba(230,57,70,0.3)' }}>
+                      <Info size={16} style={{ color: '#E63946', flexShrink: 0 }} />
                       <span className="text-[12px] font-medium" style={{ color: 'var(--text-primary)' }}>
                         30+ adet için <b>özel proje teklifi</b> alın — daha avantajlı fiyatlar →
                       </span>
@@ -433,7 +433,7 @@ export function UrunDetayClient() {
                     <p className="text-[10px] font-bold uppercase tracking-[1.5px]" style={{ color: 'var(--text-muted)' }}>Toplam Fiyat</p>
                     {discountPct > 0 && (
                       <span className="text-[11px] font-black px-2 py-0.5 rounded-full text-white"
-                        style={{ background: '#F4821F' }}>
+                        style={{ background: '#E63946' }}>
                         -%{discountPct}
                       </span>
                     )}
@@ -446,15 +446,15 @@ export function UrunDetayClient() {
                       </p>
                     )}
                     <p className={`text-[28px] font-black tracking-[-1px] leading-tight ${hasOriginal ? 'text-red-500' : ''}`}
-                      style={!hasOriginal ? { color: '#F4821F' } : {}}>
+                      style={!hasOriginal ? { color: '#E63946' } : {}}>
                       ₺{totalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                     </p>
                   </div>
                   <button onClick={handleOrder} disabled={!canOrder}
                     className="w-full flex items-center justify-center gap-2 px-5 py-3 text-[13px] font-bold text-white rounded-xl transition-all disabled:opacity-50"
                     style={{
-                      background: canOrder ? 'linear-gradient(135deg, #F4821F, #e07010)' : '#9CA3AF',
-                      boxShadow: canOrder ? '0 6px 14px rgba(244,130,31,0.3)' : 'none',
+                      background: canOrder ? 'linear-gradient(135deg, #E63946, #C1272D)' : '#9CA3AF',
+                      boxShadow: canOrder ? '0 6px 14px rgba(230,57,70,0.3)' : 'none',
                     }}>
                     <ShoppingCart size={14} /> Sepete Ekle
                   </button>
@@ -462,8 +462,8 @@ export function UrunDetayClient() {
                     className="w-full flex items-center justify-center gap-2 px-5 py-3 mt-2 text-[13px] font-bold rounded-xl transition-all disabled:opacity-50"
                     style={{
                       background: canOrder ? 'var(--bg-secondary)' : 'transparent',
-                      border: '1.5px solid #F4821F',
-                      color: '#F4821F',
+                      border: '1.5px solid #E63946',
+                      color: '#E63946',
                     }}>
                     Hemen Al →
                   </button>
@@ -473,8 +473,8 @@ export function UrunDetayClient() {
                        missingRequired.length > 0 ? 'Tüm seçenekleri belirleyin' : ''}
                     </p>
                   )}
-                  <div className="mt-3 p-3 rounded-lg flex items-start gap-2" style={{ background: 'rgba(244,130,31,0.08)' }}>
-                    <Truck size={14} className="flex-shrink-0 mt-0.5 text-[#F4821F]" />
+                  <div className="mt-3 p-3 rounded-lg flex items-start gap-2" style={{ background: 'rgba(230,57,70,0.08)' }}>
+                    <Truck size={14} className="flex-shrink-0 mt-0.5 text-[#E63946]" />
                     <p className="text-[11px] leading-snug" style={{ color: 'var(--text-secondary)' }}>
                       Şimdi sipariş verirsen,<br />
                       <strong style={{ color: 'var(--text-primary)' }}>{deliveryStr}</strong> kargoda.
@@ -517,20 +517,20 @@ export function UrunDetayClient() {
                   return (
                     <button key={t.id} onClick={() => setSelectedTierId(t.id)}
                       className="text-left rounded-xl overflow-hidden transition-all hover:shadow-md"
-                      style={{ background: 'var(--bg-card)', border: isSelected ? '2px solid #F4821F' : '1px solid var(--border)' }}>
+                      style={{ background: 'var(--bg-card)', border: isSelected ? '2px solid #E63946' : '1px solid var(--border)' }}>
                       <div className="aspect-square overflow-hidden relative"
                         style={{ background: 'linear-gradient(135deg, #f3f4f6, #e5e7eb)' }}>
                         {product.images[0]?.url
                           ? <img src={product.images[0].url} alt={product.name} className="w-full h-full object-cover" />
                           : <div className="absolute inset-0 flex items-center justify-center"><Package size={32} className="opacity-30" /></div>}
-                        <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-black text-white" style={{ background: '#F4821F' }}>
+                        <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-black text-white" style={{ background: '#E63946' }}>
                           {t.qty} ADET
                         </span>
                       </div>
                       <div className="p-3">
                         <p className="text-[11px] font-bold truncate" style={{ color: 'var(--text-primary)' }}>{product.name}</p>
                         <p className="text-[10px] mb-1" style={{ color: 'var(--text-muted)' }}>{t.qty.toLocaleString('tr-TR')} Adet</p>
-                        <p className="text-[14px] font-black text-[#F4821F]">
+                        <p className="text-[14px] font-black text-[#E63946]">
                           ₺{price.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}
                           <span className="text-[9px] font-normal ml-1" style={{ color: 'var(--text-muted)' }}>KDV Dahil</span>
                         </p>
@@ -554,8 +554,8 @@ export function UrunDetayClient() {
                 <button key={t.id} onClick={() => setActiveTab(t.id)}
                   className="px-3 sm:px-5 py-3 text-[12px] sm:text-[13px] font-bold transition-colors -mb-px whitespace-nowrap flex-shrink-0"
                   style={{
-                    color: activeTab === t.id ? '#F4821F' : 'var(--text-muted)',
-                    borderBottom: activeTab === t.id ? '2px solid #F4821F' : '2px solid transparent',
+                    color: activeTab === t.id ? '#E63946' : 'var(--text-muted)',
+                    borderBottom: activeTab === t.id ? '2px solid #E63946' : '2px solid transparent',
                   }}>
                   {t.label}
                 </button>
@@ -628,7 +628,7 @@ export function UrunDetayClient() {
             {selectedTier && (
               <div className="flex items-center justify-between px-3 py-2.5 rounded-xl" style={{ background: 'var(--bg-secondary)' }}>
                 <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>{adet} adet</span>
-                <span className="text-[15px] font-black tex   t-[#F4821F]">₺{totalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</span>
+                <span className="text-[15px] font-black tex   t-[#E63946]">₺{totalTl.toLocaleString('tr-TR', { maximumFractionDigits: 0 })}</span>
               </div>
             )}
             <div className="grid grid-cols-2 gap-2">
@@ -639,7 +639,7 @@ export function UrunDetayClient() {
               </button>
               <button onClick={() => router.push('/sepet')}
                 className="py-3 text-[13px] font-bold rounded-xl text-white"
-                style={{ background: 'linear-gradient(135deg, #F4821F, #e07010)', boxShadow: '0 4px 12px rgba(244,130,31,0.3)' }}>
+                style={{ background: 'linear-gradient(135deg, #E63946, #C1272D)', boxShadow: '0 4px 12px rgba(230,57,70,0.3)' }}>
                 Sepete Git →
               </button>
             </div>

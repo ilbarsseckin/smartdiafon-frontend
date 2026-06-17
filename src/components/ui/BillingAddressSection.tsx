@@ -67,7 +67,7 @@ export default function BillingAddressSection({
 
       {/* Başlık */}
       <div className="flex items-center gap-2 mb-3">
-        <Receipt size={14} style={{ color: '#F4821F' }} />
+        <Receipt size={14} style={{ color: '#E63946' }} />
         <p className="text-[13px] font-bold" style={{ color: 'var(--text-primary)' }}>Fatura Bilgileri</p>
       </div>
 
@@ -76,7 +76,7 @@ export default function BillingAddressSection({
         style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
         <input type="checkbox" checked={sameBilling}
           onChange={e => onSameBillingChange(e.target.checked)}
-          className="accent-[#F4821F]" />
+          className="accent-[#E63946]" />
         <div>
           <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>
             Teslimat adresi fatura adresi olarak kullanılsın
@@ -131,9 +131,9 @@ export default function BillingAddressSection({
         style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}>
         <input type="checkbox" checked={corporate}
           onChange={e => onCorporateChange(e.target.checked)}
-          className="accent-[#F4821F]" />
+          className="accent-[#E63946]" />
         <div className="flex items-center gap-1.5">
-          <Building2 size={13} style={{ color: corporate ? '#F4821F' : 'var(--text-muted)' }} />
+          <Building2 size={13} style={{ color: corporate ? '#E63946' : 'var(--text-muted)' }} />
           <p className="text-[12px] font-bold" style={{ color: 'var(--text-primary)' }}>
             Kurumsal fatura istiyorum
           </p>
@@ -180,7 +180,7 @@ export default function BillingAddressSection({
             </div>
           </div>
           <div className="p-3 rounded-xl text-[11px] leading-relaxed"
-            style={{ background: 'rgba(244,130,31,0.06)', border: '1px solid rgba(244,130,31,0.2)', color: 'var(--text-secondary)' }}>
+            style={{ background: 'rgba(230,57,70,0.06)', border: '1px solid rgba(230,57,70,0.2)', color: 'var(--text-secondary)' }}>
             ℹ️ Kurumsal faturanız, sipariş teslim edildikten sonra e-posta ile iletilecektir.
           </div>
         </div>

@@ -43,7 +43,7 @@ function ProductCard({ product, rank }: { product: Product; rank: number }) {
           )}
           {rank <= 3 && (
             <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-1 rounded-full text-[9px] font-black uppercase tracking-[1px]"
-              style={{ background: '#F4821F', color: 'white' }}>
+              style={{ background: '#E63946', color: 'white' }}>
               <Flame size={9} fill="currentColor" />
               #{rank}
             </div>
@@ -55,7 +55,7 @@ function ProductCard({ product, rank }: { product: Product; rank: number }) {
             <p className="text-[9px] uppercase tracking-[1px] font-bold mb-0.5"
               style={{ color: 'var(--text-muted)' }}>{product.categoryName}</p>
           )}
-          <h3 className="text-[12px] sm:text-[13px] font-bold leading-tight line-clamp-2 group-hover:text-[#F4821F] transition-colors"
+          <h3 className="text-[12px] sm:text-[13px] font-bold leading-tight line-clamp-2 group-hover:text-[#E63946] transition-colors"
             style={{ color: 'var(--text-primary)' }}>{product.name}</h3>
           {product.orderCount != null && product.orderCount > 0 && (
             <p className="text-[10px] mt-1" style={{ color: 'var(--text-muted)' }}>
@@ -65,7 +65,7 @@ function ProductCard({ product, rank }: { product: Product; rank: number }) {
           {product.startingPriceUsd != null && (
             <div className="flex items-baseline gap-1 mt-2">
               <span className="text-[9px]" style={{ color: 'var(--text-muted)' }}>başlangıç</span>
-              <span className="text-[14px] font-black text-[#F4821F]">
+              <span className="text-[14px] font-black text-[#E63946]">
                 ${Number(product.startingPriceUsd).toFixed(2)}
               </span>
             </div>
@@ -111,8 +111,8 @@ export default function EnCokSatan() {
         <div className="flex items-center justify-between px-4 sm:px-6 mb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-2"
-              style={{ background: 'rgba(244,130,31,0.1)', color: '#F4821F' }}>
-              <Flame size={11} fill="#F4821F" />
+              style={{ background: 'rgba(230,57,70,0.1)', color: '#E63946' }}>
+              <Flame size={11} fill="#E63946" />
               <span className="text-[10px] font-bold uppercase tracking-[2px]">En Çok Satan</span>
             </div>
             <h2 className="text-[22px] sm:text-[28px] font-black tracking-[-1px]"
@@ -141,7 +141,7 @@ export default function EnCokSatan() {
         {/* Yatay kaydırma */}
         {loading ? (
           <div className="flex justify-center py-12">
-            <Loader2 size={24} className="animate-spin text-[#F4821F]" />
+            <Loader2 size={24} className="animate-spin text-[#E63946]" />
           </div>
         ) : (
           <div className="relative">
@@ -165,7 +165,7 @@ export default function EnCokSatan() {
         <div className="px-4 sm:px-6 mt-2">
           <Link href="/urunler?sort=popular"
             className="inline-flex items-center gap-1.5 text-[12px] font-bold hover:underline"
-            style={{ color: '#F4821F' }}>
+            style={{ color: '#E63946' }}>
             Tümünü gör →
           </Link>
         </div>
